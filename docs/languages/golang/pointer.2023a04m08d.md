@@ -7,6 +7,8 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/pointer-2023a04m08d
 ---
 
+__[back]({% link docs/languages/golang/pointer.md %})__
+
 # Pointer
 
 ## What is a pointer?

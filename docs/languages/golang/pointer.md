@@ -8,6 +8,7 @@ permalink: /docs/languages/golang/pointer
 ---
 
 Other examples:
+- [go pointers]({% link docs/languages/golang/pointer.2023a03m05d.md %}) [^2]
 - [did u really know about pointers in golang?]({% link docs/languages/golang/pointer.2023a04m08d.md %}) [^1]
 
 
@@ -110,3 +111,4 @@ func changeCreature(creature *Creature) {
 ----
 
 [^1]: [Did u really know about Pointers in Golang?](https://medium.com/@achmadrizkinf/did-u-really-know-about-pointers-in-golang-3e8be6ff668c)
+[^2]: [Go Pointers](https://medium.com/@nurettinabaci/go-pointers-a538c457a62e)
