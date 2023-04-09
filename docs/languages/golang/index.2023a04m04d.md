@@ -6,6 +6,8 @@ parent: Programming Languages
 permalink: /docs/languages/golang-2023a04m04d
 ---
 
+__[back]({% link docs/languages/golang/index.md %})__
+
 # Golang
 
 Statements in Go can be classified into various categories such as, [^1]

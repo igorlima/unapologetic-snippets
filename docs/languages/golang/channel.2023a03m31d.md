@@ -7,6 +7,8 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/channel-2023a03m31d
 ---
 
+__[back]({% link docs/languages/golang/channel.md %})__
+
 # Go Channel
 
 Channels are a typed, thread-safe queue. Channels allow different goroutines to communicate with each other. [^1]

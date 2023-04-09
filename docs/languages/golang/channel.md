@@ -11,6 +11,12 @@ Other examples:
 - [go channels — the ultimate guide]({% link docs/languages/golang/channel.2023a03m31d.md %}) [^1]
 
 
+Channels can be categorized as send-and-receive, read-only, and send-only according to whether the internal `recvq` and `sendq` queues are permitted to store the corresponding waiters, the `goroutines`.
+
+The key is to keep in mind the core of using channels, the __signal transmission between goroutines__. [^2]
+
+![image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a7botFtrJhid0KWeKB4AYg.png)
+
 # Channel
 
 In Go, channels are used to communicate between goroutines. Channels are like pipes through which you can pass data. However, when we try to read from a channel that has no data, it can cause the program __to block__. _To avoid blocking_, Go provides a built-in mechanism that allows us to detect if a channel is closed or if there is no data available. This mechanism is called the “comma ok” syntax.
@@ -63,6 +69,14 @@ func main() {
 }
 ```
 
+## When to Use Channel [^2]
+
+- trigger signal, including end and start
+- transfer data in async. Asynchronous worker processes one by one for the non-urgent
+- block for purpose. For critical steps, you need to block and wait
+- the worker pool. The worker is either woken up by the task or long blocked until the task comes
+
 ----
 
 [^1]: [Go Channels — The Ultimate Guide](https://medium.com/@lordmoma/go-channels-the-ultimate-guide-3a2552a2a458)
+[^2]: [When and How to Use the Go Channel](https://betterprogramming.pub/when-and-how-to-use-the-go-channel-58f82605156c)
