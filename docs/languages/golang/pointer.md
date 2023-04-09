@@ -7,6 +7,12 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/pointer
 ---
 
+Other examples:
+- [did u really know about pointers in golang?]({% link docs/languages/golang/pointer.2023a04m08d.md %}) [^1]
+
+
+# Pointer
+
 a one-pager to understanding pointers in Go
 
 ```golang
@@ -100,3 +106,7 @@ func changeCreature(creature *Creature) {
   fmt.Printf("2) %+v\n", creature)
 }
 ```
+
+----
+
+[^1]: [Did u really know about Pointers in Golang?](https://medium.com/@achmadrizkinf/did-u-really-know-about-pointers-in-golang-3e8be6ff668c)
