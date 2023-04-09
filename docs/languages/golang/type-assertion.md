@@ -7,6 +7,9 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/type-assertion
 ---
 
+Other examples:
+- [mastering type assertion]({% link docs/languages/golang/type-assertion.2023a03m10d.md %}) [^1]
+
 In Go programming language, assertion is a mechanism to check the dynamic type of a value during runtime.
 
 Type Assertion is used to ensure that the value of a variable conforms to a certain type or interface before executing operations on it.
@@ -55,3 +58,7 @@ type Person struct {
   age  int
 }
 ```
+
+----
+
+[^1]: [Mastering Type Assertion in Go: A Comprehensive Guide](https://medium.com/@jamal.kaksouri/mastering-type-assertion-in-go-a-comprehensive-guide-216864b4ea4d)
