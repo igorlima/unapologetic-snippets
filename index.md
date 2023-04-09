@@ -21,6 +21,10 @@ To get started with creating a site, just click "[use this template]"!
 
 If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
 
+| Actions tab | how to setup Github Pages |
+| :---: | :---: |
+| ![image](https://user-images.githubusercontent.com/1886786/230754150-352c81b5-8f7c-412e-91f0-0e25469fe486.png) | ![image](https://user-images.githubusercontent.com/1886786/230754168-77428273-ba60-4f94-a71f-89b29834f7de.png) |
+
 ----
 
 [^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
