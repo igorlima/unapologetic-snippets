@@ -9,6 +9,14 @@ permalink: /docs/languages/golang/function
 
 A function is just another type — just like `int` and `string` and `bool`. [^1]
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ## a function as a parameter
 

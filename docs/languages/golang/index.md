@@ -4,6 +4,7 @@ title: Golang
 nav_order: 6
 parent: Programming Languages
 has_children: true
+has_toc: false
 permalink: /docs/languages/golang
 ---
 

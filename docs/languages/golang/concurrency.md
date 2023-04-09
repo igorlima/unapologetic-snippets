@@ -12,6 +12,14 @@ Other examples:
 - [golang goroutines: powering high-performance applications]({% link docs/languages/golang/concurrency.goroutines.2023a04m02d.md %}) [^3]
 - [actor model for concurrent systems]({% link docs/languages/golang/concurrency.actor-model.2023a04m02d.md %}) [^2]
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 # Goroutine
 

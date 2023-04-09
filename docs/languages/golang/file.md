@@ -9,6 +9,15 @@ permalink: /docs/languages/golang/file
 
 File handling in Go is done using the `os` package. The `os` package provides a set of functions for creating, opening, reading, writing, and closing files.
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Create
 
 The Create function creates a new file with the specified name in the current directory.
