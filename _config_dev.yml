@@ -4,4 +4,8 @@ repository: igorlima/unapologetic-snippets # for github-metadata
 theme: just-the-docs
 
 aux_links:
-  Template Repository: https://github.com/igorlima/unapologetic-snippets
+  Github: https://github.com/igorlima/unapologetic-snippets
+
+nav_external_links:
+  - title: Snippets on GitHub
+    url: https://github.com/igorlima/unapologetic-snippets
