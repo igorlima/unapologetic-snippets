@@ -15,6 +15,9 @@ Unlike JavaScript, Go does not have something akin to the JavaScript undefined p
 
 Variables declared without an explicit initial value are given their zero value.
 
+- _further info:_
+  - [data types - zero value]({% link docs/languages/golang/data-types.md %}#zero-value)
+
 
 ## Difference between `new()` and `make()` in Golang [^1]
 
@@ -65,6 +68,9 @@ func main() {
   // [0 0 0 0]
 }
 ```
+
+- _further info:_
+  - [go pointers - new vs make]({% link docs/languages/golang/pointer.2023a03m05d.md %}#new--make)
 
 ----
 

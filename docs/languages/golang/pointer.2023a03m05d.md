@@ -94,6 +94,9 @@ new(T) returns a pointer to a new T
 make(T) returns a new T
 ```
 
+- _further info:_
+  - [variable - diff between new and make]({% link docs/languages/golang/variable.md %}#difference-between-new-and-make-in-golang-)
+
 ----
 
 [^1]: [Go Pointers](https://medium.com/@nurettinabaci/go-pointers-a538c457a62e)

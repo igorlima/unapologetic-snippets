@@ -99,3 +99,6 @@ The zero value of a data type is the default value that a variable of that type 
 For composite types like arrays, slices, and maps, the default value is `nil`.
 
 Understanding the zero value of a data type can help you write more concise and readable code.
+
+- _further info:_
+  - [variable - zero value]({% link docs/languages/golang/variable.md %}#zero-values)
