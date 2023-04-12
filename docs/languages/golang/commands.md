@@ -7,6 +7,15 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/commands
 ---
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## go run
 
 The `go run` command is used to compile and run a Go program in a single step. [^1][^2][^3]
