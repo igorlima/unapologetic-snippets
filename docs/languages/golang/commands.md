@@ -122,6 +122,7 @@ The `go generate` command is used to run code generators in Go.
 
 The `golint` command is a tool for checking Go code for style and correctness issues.
 
+----
 
 [^1]: [Useful Go Commands](https://njkhanh.com/useful-go-commands-p5f3234343234)
 [^2]: [Learn Go: Useful Commands](https://medium.com/@karan99/learn-go-useful-commands-7087dfc05e44)
