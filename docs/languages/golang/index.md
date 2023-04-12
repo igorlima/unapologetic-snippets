@@ -187,6 +187,9 @@ When running a command like `go build`, Go uses the current platform's `GOOS` an
 
 To build a Go program for a different operating systems and architecture, run something like: `GOOS=linux GOARCH=ppc64 go build` 
 
+## What is Golang used for?
+
+The reason why Google created Golang is to clear up software issues of scalability, where resources are limited by hardware. In other words, it’s convenient when it addresses bottleneck issues in processing time.
 
 ----
 
