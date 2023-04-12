@@ -7,6 +7,7 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/commands
 ---
 
+<br/>
 <details markdown="block">
   <summary>
     Table of contents
