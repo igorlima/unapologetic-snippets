@@ -40,7 +40,7 @@ GOFLAGS = -ldflags="-s -w"
 # Define the target executable
 TARGET = my_app
 
-# Change the main file if needed vi the variable MY_GO_FILE/file
+# Change the main file if needed via the variable MY_GO_FILE/file
 # $> export MY_GO_FILE=main.go
 # $> MY_GO_FILE=main.go make
 # $> make file=main.go
