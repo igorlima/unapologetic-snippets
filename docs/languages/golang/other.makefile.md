@@ -56,8 +56,8 @@ endif
 $(info MAIN_FILE is $(MAIN_FILE))
 
 # Default target: build the executable
-all: $(TARGET) $(MAIN_FILE)
-	echo "\nprerequisites are ok\nFILES:\n• $(TARGET)\n• $(MAIN_FILE) \n\nENV VAR:\n• MY_GO_FILE: $(MY_GO_FILE)"
+all:
+	@echo "\nprerequisites needed\nFILES:\n• $(TARGET)\n• $(MAIN_FILE) \n\nENV VAR:\n• MY_GO_FILE: $(MY_GO_FILE)"
 
 # Rule to build the target executable
 $(TARGET): $(MAIN_FILE)
@@ -67,11 +67,11 @@ build: $(MAIN_FILE)
 	$(GO) build $(GOFLAGS) -o $(TARGET) $(MAIN_FILE)
 
 # Run target: build and run the target executable
-run:
+run: $(TARGET) $(MAIN_FILE)
 	./$(TARGET)
 
 # Clean target: remove the target executable
-clean:
+clean: $(TARGET)
 	rm -f $(TARGET)
 
 # Test target: run Go tests for the project
