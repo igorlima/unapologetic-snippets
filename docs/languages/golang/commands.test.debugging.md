@@ -16,6 +16,8 @@ As it turns out, the go test command is completely configurable with all linker,
 
 - compile a test binary:
    - `go test -c`
+      - compile the tests using the `-c` flag:
+         - `-c` - _compile the test binary to `pkg.test` but do not run it (where pkg is the last element of the package's import path).  The file name can be changed with the -o flag._
    - `go test -c -- switchers_test.go`
 - run that binary through a debugger
    - with a compiled file:
@@ -24,9 +26,12 @@ As it turns out, the go test command is completely configurable with all linker,
       - `dlv test -- switchers_test.go`
 - to run a single unit test:
    - `dlv test -- -test.run ^TestSwitchC$`
+      - pass `-test.run` to select tests to run (just like `go test -run`)
       - once the debugger builds the test binary and launches, then set breakpoints relative to the start of the function.
       - witin the [go-vim](https://github.com/fatih/vim-go) plugin allows the same functionality using the `:GoDebugTestFunc` command with the cursor on the required function.
-
+- to print the full output even for passing package tests
+   - `go test -v`
+   - `dlv test -- -test.v`
 
 ```sh
 go mod init switchers
