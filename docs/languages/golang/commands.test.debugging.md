@@ -77,3 +77,37 @@ exit status 1
 FAIL    switchers       0.814s
 ```
 
+## Setting breakpoints
+
+To debug a specific test, it's needed to set a breakpoint on that test function.
+
+To print list of functions.
+```
+funcs [<regex>]
+```
+
+Discover the test functions with the following command:
+
+```
+(dlv) funcs switchers.*
+```
+
+With the provided list of test on hand, then set a breakpoint on a specific test:
+
+```
+(dlv) break switchers.TestSwitch
+(dlv) break switchers.SwitchFunction
+```
+
+To print all local variables:
+```
+(dlv) locals
+```
+
+To print a specific local, use the print (p) command:
+```
+p a
+p b
+p c
+```
+
