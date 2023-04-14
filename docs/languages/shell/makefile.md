@@ -60,6 +60,10 @@ echo YES OK
 YES OK
 ```
 
+## Function
+
+Make has a decent amount of [builtin functions](https://www.gnu.org/software/make/manual/html_node/Functions.html).
+
 # Samples
 
 - [Build Process with Makefiles in Golang]({% link docs/languages/golang/other.makefile.md %})
