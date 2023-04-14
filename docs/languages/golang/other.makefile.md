@@ -17,7 +17,7 @@ __[back]({% link docs/languages/golang/other.md %})__
 
 <br/>
 
-```Makefile
+```
 $(info ************ Build Process with Makefiles in Golang ************)
 
 # Define Go command and flags
