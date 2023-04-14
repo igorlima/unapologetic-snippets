@@ -64,6 +64,15 @@ YES OK
 
 Make has a decent amount of [builtin functions](https://www.gnu.org/software/make/manual/html_node/Functions.html).
 
+### The shell function
+
+shell - This calls the shell, but it replaces newlines with spaces!
+
+```
+all: 
+	@echo $(shell ls -la) # Very ugly because the newlines are gone!
+```
+
 # Samples
 
 - [Build Process with Makefiles in Golang]({% link docs/languages/golang/other.makefile.md %})
