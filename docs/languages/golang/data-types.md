@@ -7,7 +7,17 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/data-types
 ---
 
-#  Data Types
+<br/>
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+# Data Types
 
 1. __Numeric types__: These include integer types such as `int`, `int8`, `int16`, `int32`, and `int64`, as well as unsigned integer types such as `uint`, `uint8` (or `byte`), `uint16`, `uint32`, and `uint64`. In addition to these, there are also floating-point types `float32` and `float64`.
 1. __Boolean type__: The boolean type in Go is represented by the values `true` and `false`. It is used for logical comparisons and control flow in a program.
@@ -102,3 +112,33 @@ Understanding the zero value of a data type can help you write more concise and 
 
 - _further info:_
   - [variable - zero value]({% link docs/languages/golang/variable.md %}#zero-values)
+
+# How to determine the type of a generic variable in go
+
+There is a one problem with the generic functions in Go, the compiler does not allow to use `v.(type)` on a variable of type `T`.
+
+```golang
+import (
+  "fmt"
+  "strconv"
+)
+
+func conv[T string | int](v T) int {
+  // the solution is pretty simple: using a temporary variable of the interface type as a wrapper.
+  // `v.(type) throws an exception, t.(type) DOES NOT
+  var t any = v
+  switch v := t.(type) {
+  case string:
+    i, _ := strconv.Atoi(v)
+    return i
+  case int:
+    return v
+  }
+  return 0 // unreachable
+}
+
+func main() {
+  fmt.Println(conv("42"))
+  fmt.Println(conv(42))
+}
+```
