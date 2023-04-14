@@ -109,5 +109,6 @@ To print a specific local, use the print (p) command:
 p a
 p b
 p c
+p x
 ```
 
