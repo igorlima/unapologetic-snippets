@@ -40,9 +40,12 @@ GOFLAGS = -ldflags="-s -w"
 # Define the target executable
 TARGET = my_app
 
-# Change the main file if needed vi the variable FILE/file
-ifneq ($(origin FILE), undefined)
-	MAIN_FILE := $(FILE)
+# Change the main file if needed vi the variable MY_GO_FILE/file
+# $> export MY_GO_FILE=main.go
+# $> MY_GO_FILE=main.go make
+# $> make file=main.go
+ifneq ($(origin MY_GO_FILE), undefined)
+	MAIN_FILE := $(MY_GO_FILE)
 endif
 ifneq ($(origin file), undefined)
 	MAIN_FILE := $(file)
@@ -57,11 +60,11 @@ all: $(TARGET) $(MAIN_FILE)
 	echo "prerequisites are ok - all files needed are here: $(TARGET) $(MAIN_FILE)"
 
 # Rule to build the target executable
-$(TARGET): main.go
-	$(GO) build $(GOFLAGS) -o $(TARGET) main.go
+$(TARGET): $(MAIN_FILE)
+	$(GO) build $(GOFLAGS) -o $(TARGET) $(MAIN_FILE)
 # Rule to build the target executable
-build: main.go
-	$(GO) build $(GOFLAGS) -o $(TARGET) main.go
+build: $(MAIN_FILE)
+	$(GO) build $(GOFLAGS) -o $(TARGET) $(MAIN_FILE)
 
 # Run target: build and run the target executable
 run:
@@ -76,7 +79,7 @@ test:
 	$(GO) test ./...
 
 debug-build:
-	$(GO) build $(GODEBUGFLAGS) -o $(TARGET) main.go
+	$(GO) build $(GODEBUGFLAGS) -o $(TARGET) $(MAIN_FILE)
 
 debug-run: 
 	$(DELVE) --listen=0.0.0.0:$(DEBUGPORT) --headless=true --api-version=2 --accept-multiclient exec ./$(TARGET) --log
