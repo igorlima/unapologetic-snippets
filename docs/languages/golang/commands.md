@@ -71,6 +71,9 @@ func TestMyProgram(t *testing.T) {
 
 To run the tests: `go test`.
 
+- further info:
+   - [how to debug a go test]({% link docs/languages/golang/commands.test.debugging.md %})
+
 
 ## go get
 
