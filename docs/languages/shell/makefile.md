@@ -9,6 +9,8 @@ permalink: /docs/languages/shell/makefile
 
 # Makefile
 
+A Makefile is a simple text file that contains instructions for building a software project. The Makefile specifies the project’s dependencies, build rules, and targets, allowing the ‘make’ utility to compile and link your source files into an executable program.
+
 ## Conditional Directives
 
 The conditional directives are:
