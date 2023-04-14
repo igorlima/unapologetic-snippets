@@ -57,7 +57,7 @@ $(info MAIN_FILE is $(MAIN_FILE))
 
 # Default target: build the executable
 all: $(TARGET) $(MAIN_FILE)
-	echo "prerequisites are ok - all files needed are here: $(TARGET) $(MAIN_FILE)"
+	echo "prerequisites are ok - all files needed are here:\n• $(TARGET)\n• $(MAIN_FILE)"
 
 # Rule to build the target executable
 $(TARGET): $(MAIN_FILE)
