@@ -22,6 +22,11 @@ As it turns out, the go test command is completely configurable with all linker,
       - `dlv exec switchers.test`
    - without a compiled file:
       - `dlv test -- switchers_test.go`
+- to run a single unit test:
+   - `dlv test -- -test.run ^TestSwitchC$`
+      - once the debugger builds the test binary and launches, then set breakpoints relative to the start of the function.
+      - witin the [go-vim](https://github.com/fatih/vim-go) plugin allows the same functionality using the `:GoDebugTestFunc` command with the cursor on the required function.
+
 
 ```sh
 go mod init switchers
@@ -53,7 +58,6 @@ import (
 )
 
 func TestSwitch(t *testing.T) {
-
   var (
     a int
     b int
@@ -61,7 +65,19 @@ func TestSwitch(t *testing.T) {
   )
 
   x := SwitchFunction(a, b, c)
+  if x != "c" {
+    t.Error("wtf?")
+  }
+}
 
+func TestSwitchC(t *testing.T) {
+  var (
+    a int
+    b int
+    c int = 8
+  )
+
+  x := SwitchFunction(a, b, &c)
   if x != "c" {
     t.Error("wtf?")
   }
@@ -71,10 +87,10 @@ func TestSwitch(t *testing.T) {
 ```
 OUTPUT
 --- FAIL: TestSwitch (0.00s)
-    switchers_test.go:19: wtf?
+    switchers_test.go:17: wtf?
 FAIL
 exit status 1
-FAIL    switchers       0.814s
+FAIL    switchers       1.358s
 ```
 
 ## Setting breakpoints
