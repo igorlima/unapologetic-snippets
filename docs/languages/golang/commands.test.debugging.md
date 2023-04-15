@@ -133,3 +133,13 @@ p c
 p x
 ```
 
+## Testing libraries
+
+Most of the developers use the Go standard testing library only, but the Go ecosystem provides [numerous testing libraries](https://bmuschko.com/blog/go-testing-frameworks/) each with an advantage and special attributes of its own.
+- [Testify](https://github.com/stretchr/testify): Testify is the most popular assertion and mocking toolkit for Go. It can be seamlessly integrated with the Go standard testing library and this improves readability of the test code.
+- [Gocheck](https://github.com/go-check/check): Gocheck provides similar functionality to Testify. It is an __assertion helper__ library for Go. It also supports fixture callbacks and test suite definitions.
+- [Gopwt](https://github.com/ToQoz/gopwt): It is a power assertion type library. It is quite difficult to identify the cause of a failed assertion and may require further debugging. A power assertion library like Gopwt helps to provide the evaluated result as part of the error message for each part of the equation.
+- [Go-Testdeep](https://github.com/maxatome/go-testdeep): It is a deep comparison helper library.
+- [Ginkgo](https://github.com/onsi/ginkgo) and [Gomega](https://github.com/onsi/gomega): It is a heavyweight BDD(behavior driven development) testing framework with assertion helpers.
+- [Goconvey](https://github.com/smartystreets/goconvey): Behavior Driven Development (BDD) testing library with a web user interface.
+- [Goblin](https://github.com/franela/goblin): A less popular BDD testing library.
