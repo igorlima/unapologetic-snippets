@@ -56,6 +56,7 @@ How to mark a test as failed in Go? There are several ways to do this besides si
 Overly duplicated and cumbersome? Instead, use a table-driven test approach:
 
 ```golang
+// add_test.go
 package add
 
 import "testing"
@@ -89,6 +90,7 @@ To use subtests in the testing package, it's needed to get familiar with a new f
 `t.Run()` creates a subtest with the given name and runs the function `f` in a separate goroutine. Even though each subtest runs in its own goroutine, they run **sequentially**. 
 
 ```golang
+// add_test.go
 package add
 
 import "testing"
@@ -140,6 +142,7 @@ ok      add     0.328s
 To run subtests in parallel, use `t.Parallel()` to turn on the parallel mode. This can be useful when test cases are independent of each other, since it can make our tests run faster:
 
 ```golang
+// add_test.go
 package add
 
 import "testing"
