@@ -7,6 +7,16 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/test-beyond-basics
 ---
 
+<br/>
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Golang Testing Beyond the Basics
 
 __[back]({% link docs/languages/golang/test.md %}#go-test)__
