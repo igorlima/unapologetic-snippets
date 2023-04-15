@@ -223,7 +223,8 @@ func FuzzAdd(f *testing.F) {
 ```sh
 go test -fuzz FuzzAdd
 go test -fuzz .
-# by default, fuzzing will run indefinitely, as long as there isn’t a failure. The `-fuzztime` flag should be to specify the maximum time for which fuzzing should run.
+# by default, fuzzing will run indefinitely, as long as there isn’t a failure
+# the `-fuzztime` flag should be to specify the maximum time for which fuzzing should run.
 go test -test.fuzztime=10s -fuzzminimizetime=10s -test.fuzz FuzzAdd
 go test -test.fuzztime=10s -fuzzminimizetime=10s -test.fuzz "^FuzzAdd$"
 ```
