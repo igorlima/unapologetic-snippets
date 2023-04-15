@@ -49,6 +49,14 @@ func TestAdd(t *testing.T) {
 }
 ```
 
+```sh
+go test
+go test -v # verbose mode
+go test -v -- -test.run ^TestAdd$
+go test -run ^TestAdd$ -v
+go test -run "^TestAdd$" -v
+```
+
 Further info:
   - [the command `go test`]({% link docs/languages/golang/commands.md %}#go-test)
   - [golang testing beyond the basics]({% link docs/languages/golang/test.beyond-basics.md %})
