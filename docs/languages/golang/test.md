@@ -52,4 +52,5 @@ func TestAdd(t *testing.T) {
 Further info:
   - [the command `go test`]({% link docs/languages/golang/commands.md %}#go-test)
   - [golang testing beyond the basics]({% link docs/languages/golang/test.beyond-basics.md %})
+  - [skipping, coverage, benchmark, and Fuzz]({% link docs/languages/golang/test.cover-bench-fuzz.md %})
   - [how to debug a go test]({% link docs/languages/golang/commands.test.debugging.md %})
