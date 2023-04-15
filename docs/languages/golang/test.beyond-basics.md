@@ -19,7 +19,7 @@ permalink: /docs/languages/golang/test-beyond-basics
 
 # Golang Testing Beyond the Basics
 
-__[back]({% link docs/languages/golang/test.md %}#go-test)__
+__[back]({% link docs/languages/golang/test.md %})__
 <br/>
 
 Discover advanced Go testing features like parallel testing, subtests, teardown functions, and test helpers to enhance your testing capabilities... [^1]
