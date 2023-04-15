@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Golang Testing Beyond the Basics
+title: Skip, Cover, Bench, and Fuzz
 nav_exclude: true
 parent: Golang
 grand_parent: Programming Languages
@@ -17,7 +17,7 @@ permalink: /docs/languages/golang/test-cover-bench-fuzz
 {:toc}
 </details>
 
-# A Guide to Testing in Go
+# Skip, Cover, Bench, and Fuzz
 
 __[back]({% link docs/languages/golang/test.md %})__
 <br/>
