@@ -115,10 +115,10 @@ func main() {
 ```
 
 ```
-Sending value
 Receiving value
-10
+Sending value
 Value sent
+10
 Value received
 ```
 
