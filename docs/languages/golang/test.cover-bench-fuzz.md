@@ -186,8 +186,6 @@ To create a fuzz test:
 - the test function must define initial values, called _seed corpus_, with the `f.Add()` method.
 - the test function must define a _fuzz target_.
 
-![image](https://user-images.githubusercontent.com/1886786/232262443-d9fe834f-5dee-40bf-a6f2-667d314cfdd4.png)
-
 ```sh
 go mod init add
 go mod tidy
