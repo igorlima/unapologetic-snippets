@@ -90,6 +90,11 @@ After the package is installed, you can import it into your Go code by adding th
 import "github.com/gin-gonic/gin"
 ```
 
+
+- _further info:_
+   - [how to fetch modules from private repository]({% link docs/languages/golang/commands.get.private-repo.md %})
+
+
 ## go fmt
 
 The `go fmt` command is used to format Go code according to the standard Go formatting rules.
