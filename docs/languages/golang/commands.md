@@ -128,6 +128,11 @@ You can also use the `go doc` command to view documentation for specific functio
 go doc mypackage.HelloWorld
 ```
 
+
+- _further info:_
+   - [writing documentation in golang]({% link docs/languages/golang/commands.doc.md %})
+
+
 ## go generate
 
 The `go generate` command is used to run code generators in Go. 
