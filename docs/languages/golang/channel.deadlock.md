@@ -13,6 +13,9 @@ __[back]({% link docs/languages/golang/channel.md %})__
 
 _What happens when you try to send data to a full channel or receive data from an empty channel?_
 
+![image](https://user-images.githubusercontent.com/1886786/232350393-b08733cd-eff2-4785-ab81-459139aaf804.png)
+
+
 When you try to send data to a full channel or receive data from an __empty__ channel, __the operation will block until the channel has the available capacity__ or until there is data to be received. [^1]
 
 If a channel is __full__ and you try to send data to it, __the sending operation will block until there is available capacity in the channel__. This means that the sending goroutine will wait until a receiver removes an element from the channel to make space for the new element. [^1]
