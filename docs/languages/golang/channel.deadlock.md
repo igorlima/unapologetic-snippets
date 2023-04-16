@@ -10,6 +10,8 @@ permalink: /docs/languages/golang/channel-deadlock
 # Go Channel - Deadlock
 __[back]({% link docs/languages/golang/channel.md %})__
 
+- _See more:_
+  - [go channel — deadlock]({% link docs/languages/golang/channel.2023a03m31d.md %}#deadlock)
 
 _What happens when you try to send data to a full channel or receive data from an empty channel?_
 

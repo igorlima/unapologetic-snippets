@@ -49,6 +49,9 @@ func () {
 }()
 ```
 
+- _See more:_
+  - [go channels — deadlock]({% link docs/languages/golang/channel.deadlock.md %})
+
 
 ## Channels Continued
 
