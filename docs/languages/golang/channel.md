@@ -9,6 +9,7 @@ permalink: /docs/languages/golang/channel
 
 Other examples:
 - [go channels — the ultimate guide]({% link docs/languages/golang/channel.2023a03m31d.md %}) [^1]
+- [go channels — deadlock]({% link docs/languages/golang/channel.deadlock.md %})
 
 
 Channels can be categorized as send-and-receive, read-only, and send-only according to whether the internal `recvq` and `sendq` queues are permitted to store the corresponding waiters, the `goroutines`.

@@ -12,9 +12,9 @@ permalink: /docs/languages/golang/commands-get-private-repo
 __[back]({% link docs/languages/golang/commands.md %}#go-get)__
 <br/>
 
-Fix: go get private repository return error reading sum.golang.org/lookup … 410 gone
+Fix: go get private repository return error reading sum.golang.org/lookup … 410 gone [^1]
 
-Fixing error: go get gomodule on private module with error message pattern verifying git-host… reading sum.golang.org/lookup … 410 gone
+Fixing error: go get gomodule on private module with error message pattern verifying git-host… reading sum.golang.org/lookup … 410 gone [^1]
 
 ## Using `GOPRIVATE`
 
@@ -47,4 +47,6 @@ export GONOSUMDB="gitlab.com/idmabar,bitbucket.org/idmabar,github.com/idmabar"
 
 Actually this issue only happens in new Golang version 1.13 and afterward.
 
+----
 
+[^1]: [Today I Learned — Fix: go get private repository return error reading sum.golang.org/lookup … 410 gone](https://medium.com/mabar/today-i-learned-fix-go-get-private-repository-return-error-reading-sum-golang-org-lookup-93058a058dd8)
