@@ -15,6 +15,8 @@ __[back]({% link docs/languages/golang/other.md %})__
 
 ## Makefile sample
 
+Any **update** in this Makefile will be [in this gist](https://gist.github.com/igorlima/e3be354c2c3aa78a2f7956d046b0bf3a).
+
 <br/>
 
 ```
