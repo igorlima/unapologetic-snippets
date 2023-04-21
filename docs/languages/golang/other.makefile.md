@@ -50,18 +50,5 @@ else
 endif
 
 # https://www.gnu.org/software/make/manual/html_node/Multi_002dLine.html
-define GIST_API
 # https://docs.github.com/en/rest/gists/gists?apiVersion=2022-11-28#list-gist-commits
-# List gist commits
-curl -L \
-	-H "Accept: application/vnd.github+json" \
-	-H "X-GitHub-Api-Version: 2022-11-28" \
-	https://api.github.com/gists/e3be354c2c3aa78a2f7956d046b0bf3a/commits?per_page=10
-
-# Get a gist revision
-curl -L \
-	-H "Accept: application/vnd.github+json" \
-	-H "X-GitHub-Api-Version: 2022-11-28" \
-	https://api.github.com/gists/e3be354c2c3aa78a2f7956d046b0bf3a/d3c088a4370741f96159c12fac1a1525729c9a3f
-endef
 ```
