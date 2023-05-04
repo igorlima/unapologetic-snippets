@@ -4,7 +4,7 @@ title: Channel
 nav_order: 3
 parent: Golang
 grand_parent: Programming Languages
-permalink: /docs/languages/golang/channel 
+permalink: /docs/languages/golang/channel
 ---
 
 Other examples:

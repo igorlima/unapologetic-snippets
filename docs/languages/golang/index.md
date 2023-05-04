@@ -185,7 +185,7 @@ The Go tooling has command that can print a list of the possible platforms that 
 
 When running a command like `go build`, Go uses the current platform's `GOOS` and `GOARCH` to determine how to build the binary. To find out what combination the platform is, use the `go env` command and pass `GOOS` and `GOARCH` as arguments: `go env GOOS GOARCH`.
 
-To build a Go program for a different operating systems and architecture, run something like: `GOOS=linux GOARCH=ppc64 go build` 
+To build a Go program for a different operating systems and architecture, run something like: `GOOS=linux GOARCH=ppc64 go build`
 
 ## What is Golang used for?
 

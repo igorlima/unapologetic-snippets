@@ -42,7 +42,7 @@ loop:
   }
 }
 //output
-0 1 2 3 4 5 6 7 8 9 
+0 1 2 3 4 5 6 7 8 9
 ```
 
 It’s worth noting that the use of `goto` is limited to the same function and can only be used to jump to a labeled statement within that function.

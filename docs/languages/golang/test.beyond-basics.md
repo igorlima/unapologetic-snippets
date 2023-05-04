@@ -87,7 +87,7 @@ It can’t tell much about the test apart from whether it failed or passed. Also
 To use subtests in the testing package, it's needed to get familiar with a new function called `t.Run()`:
 - `t.Run(name string, f func(t *testing.T)) (isSuccess bool)`
 
-`t.Run()` creates a subtest with the given name and runs the function `f` in a separate goroutine. Even though each subtest runs in its own goroutine, they run **sequentially**. 
+`t.Run()` creates a subtest with the given name and runs the function `f` in a separate goroutine. Even though each subtest runs in its own goroutine, they run **sequentially**.
 
 ```golang
 // add_test.go
@@ -180,7 +180,7 @@ func main() {
       fmt.Println(i)
     }()
   }
-  
+
   time.Sleep(5 * time.Second)
 }
 ```

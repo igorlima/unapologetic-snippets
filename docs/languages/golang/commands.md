@@ -40,7 +40,7 @@ To compile the program: `go build myprogram.go`.
 
 ## go install
 
-The `go install` command is used to compile a Go package and install it in the `$GOPATH` directory. 
+The `go install` command is used to compile a Go package and install it in the `$GOPATH` directory.
 
 ```golang
 package main
@@ -140,7 +140,7 @@ go doc mypackage.HelloWorld
 
 ## go generate
 
-The `go generate` command is used to run code generators in Go. 
+The `go generate` command is used to run code generators in Go.
 
 ## golint
 

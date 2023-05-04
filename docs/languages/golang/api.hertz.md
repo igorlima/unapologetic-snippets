@@ -11,7 +11,7 @@ __[back]({% link docs/languages/golang/api.md %})__
 
 # [Hertz](https://github.com/cloudwego/hertz)
 
-Go HTTP framework with high- performance and strong- extensibility for building micro- services.
+Go HTTP framework with high- performance and strong- extensibility for building micro-services.
 
 ```golang
 package main

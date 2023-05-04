@@ -7,7 +7,24 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/json
 ---
 
-Pretty Printing JSON Structs in Go
+other resources:
+- [http server sample converting and responding in JSON]({% link docs/languages/golang/api.http.md %})
+- [http client and http server interacting through JSON]({% link docs/languages/golang/api.http-client-server.md %})
+
+<br/>
+
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+----
+
+## Pretty Printing JSON Structs in Go
 
 ```golang
 package main
@@ -38,7 +55,7 @@ func main() {
 }
 ```
 
-Map of map 
+## Nested map of map
 
 ```golang
 package main

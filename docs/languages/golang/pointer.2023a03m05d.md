@@ -22,15 +22,15 @@ import "fmt"
 
 func main() {
   str := "Hello Cosmos"
- 
+
   // Pointer to string
   var pStr *string
- 
+
   // pStr points to addr of message
   pStr = &str
   fmt.Println("Message = ", *pStr)
   fmt.Println("Message Address = ", pStr)
- 
+
   // Change message using pointer de-referencing
   *pStr = "Hello Universe"
   fmt.Println("Message = ", *pStr)

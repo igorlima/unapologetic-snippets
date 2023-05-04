@@ -33,7 +33,7 @@ And to verify if this worked, you can do the `go env` command.
 ```
 
 So this `env-variable` will tell the `go get` command to use the private host proxy to retrieve the package.
- 
+
 
 ## Using `GONOSUMDB`
 

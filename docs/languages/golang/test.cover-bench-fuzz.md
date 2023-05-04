@@ -26,7 +26,7 @@ Testing is an essential part of the development process, and it’s a critical p
 
 ## Skipping Tests
 
-Using the `Skip()` method allows you to separate unit tests from integration tests. 
+Using the `Skip()` method allows you to separate unit tests from integration tests.
 
 `go test` does not decide whether tests are “short” or not. It requires to use a combination of `testing.Short()`, which is set to true when `-short` is used, and `t.Skip()`, as illustrated below:
 
@@ -59,7 +59,7 @@ Use `-coverpkg` to include all packages in the coverage calculation:
 go test ./... -coverpkg=./...
 ```
 
-Using the flag `-coverprofile` will create a local coverage report file. 
+Using the flag `-coverprofile` will create a local coverage report file.
 
 ```sh
 go test -coverprofile=output_filename
