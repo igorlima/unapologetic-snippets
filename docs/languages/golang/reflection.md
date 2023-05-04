@@ -7,6 +7,14 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/reflection
 ---
 
+<br/>
+other samples:
+- [a struct validator sample]({% link docs/languages/golang/reflection.validator-sample.md %})
+
+
+-----
+
+
 Reflection in Go allows you to examine and manipulate variables and types while your program is running. This means that you can check the type of a variable, change its value, or even call its methods.[^1]
 
 The __reflect__ package has two main types, `reflect.Type` and `reflect.Value`, which allow you to examine the type and value of a variable.
