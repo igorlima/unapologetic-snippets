@@ -10,6 +10,8 @@ permalink: /docs/languages/golang/json
 other resources:
 - [http server sample converting and responding in JSON]({% link docs/languages/golang/api.http.md %})
 - [http client and http server interacting through JSON]({% link docs/languages/golang/api.http-client-server.md %})
+- [decode string JSON to int]({% link docs/languages/golang/json.decode-string-json-to-int.md %})
+  - `json: cannot unmarshal string into Go struct field Item.item_id of type int`
 
 <br/>
 
@@ -109,3 +111,4 @@ func main() {
   fmt.Println(mapOfMap["46"]["B"])
 }
 ```
+
