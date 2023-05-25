@@ -98,6 +98,11 @@ type Item struct {
 
 -----
 
+<details markdown="block">
+  <summary>
+    a full code snippet
+  </summary>
+
 A full code snippet below [^2]:
 
 ```golang
@@ -233,6 +238,9 @@ func printIndentedJSON(jsonData []byte) {
   fmt.Printf("%+v\n", string(str))
 }
 ```
+
+<br/>
+</details>
 
 [^1]: [Code sahara - Golang Cannot unmarshal string into Go value of type int](https://codesahara.com/blog/golang-cannot-unmarshal-string-into-go-value-of-type-int/)
 [^2]: [Cannot unmarshal string into Go value of type int](https://github.com/Keithwachira/golang-decode-string-json-to-int)
