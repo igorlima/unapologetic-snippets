@@ -20,30 +20,11 @@ A function is just another type — just like `int` and `string` and `bool`. [^1
 
 ## a function as a parameter
 
-```golang
-package main
 
-import "fmt"
-
-func add(x, y int) int {
-  return x + y
-}
-
-func mul(x, y int) int {
-  return x * y
-}
-
-// aggregate applies the given math function to the first 3 inputs
-func aggregate(a, b, c int, arithmetic func(int, int) int) int {
-  return arithmetic(arithmetic(a, b), c)
-}
-
-func main() {
-  fmt.Println(aggregate(2, 3, 4, add)) // prints 9
-  fmt.Println(aggregate(2, 3, 4, mul)) // prints 24
-  fmt.Println("vim-go")
-}
-```
+<details markdown="block">
+  <summary>
+    <i>a full code snippet</i>
+  </summary>
 
 ```golang
 package main
@@ -69,10 +50,42 @@ func main() {
   fmt.Println("vim-go")
 }
 ```
+
+```golang
+package main
+
+import "fmt"
+
+func add(x, y int) int {
+  return x + y
+}
+
+func mul(x, y int) int {
+  return x * y
+}
+
+// aggregate applies the given math function to the first 3 inputs
+func aggregate(a, b, c int, arithmetic func(int, int) int) int {
+  return arithmetic(arithmetic(a, b), c)
+}
+
+func main() {
+  fmt.Println(aggregate(2, 3, 4, add)) // prints 9
+  fmt.Println(aggregate(2, 3, 4, mul)) // prints 24
+  fmt.Println("vim-go")
+}
+```
+</details>
 
 ## currying
 
 Function currying is the practice of writing a function that takes a function (or functions) as input, and returns a new function.
+
+
+<details markdown="block">
+  <summary>
+    <i>a full code snippet</i>
+  </summary>
 
 ```golang
 package main
@@ -100,9 +113,17 @@ func selfMath(mathFunc func(int, int) int) func(int) int {
 }
 ```
 
+</details>
+
 ## closures
 
 A closure is a function that references variables from outside its body. The function may access and assign to the referenced variables.
+
+
+<details markdown="block">
+  <summary>
+    <i>a full code snippet</i>
+  </summary>
 
 ```golang
 package main
@@ -174,9 +195,17 @@ You've sent 45 emails and it has cost you 135 cents.
 */
 ```
 
+</details>
+
 ## anonymous functions
 
 Anonymous functions are useful when defining a function that will only be used once or to create a quick closure.
+
+
+<details markdown="block">
+  <summary>
+    <i>a full code snippet</i>
+  </summary>
 
 ```golang
 package main
@@ -207,6 +236,72 @@ func main() {
 }
 ```
 
+</details>
+
+## variadic functions
+
+Variadic functions allow to pass an arbitrary number of arguments to a
+function, making your code more flexible and efficient.[^2]
+A variadic function has the `...` operator followed by the type of arguments.
+
+<details markdown="block">
+  <summary>
+    <i>a full code snippet</i>
+  </summary>
+
+A variadic function is a function that can accept an arbitrary number of
+arguments. In Go, you can define a variadic function by using the `...` operator
+followed by the type of the arguments. Let's take a look at an example:
+
+```golang
+func sum(nums ...int) {
+  fmt.Print(nums, " ")
+  total := 0
+
+  for _, num := range nums {
+    total += num
+  }
+  fmt.Println(total)
+}
+```
+
+In the above code, `sum` is a variadic function that accepts any number of
+integers. Within the function, the type of `nums` is equivalent to `[]int`, which
+means we can call `len(nums)`, iterate over it with `range`, and perform any other
+operations that we can do on a slice.
+
+__calling variadic functions__
+
+```golang
+sum(1, 2)
+sum(1, 2, 3)
+
+nums := []int{1, 2, 3, 4}
+sum(nums...)
+```
+
+__variadic functions with other parameters__
+
+Variadic functions can also have other parameters. The variadic parameter must
+be the last parameter in the function signature. Here’s an example:
+
+```golang
+func printNumbers(sep string, nums ...int) {
+  for i, num := range nums {
+    if i > 0 {
+      fmt.Print(sep)
+    }
+    fmt.Print(num)
+  }
+  fmt.Println()
+}
+
+printNumbers(", ", 1, 2, 3) // prints "1, 2, 3"
+```
+
+</details>
+
 ----
 
 [^1]: [Learn Golang — Advanced Functions](https://medium.com/@lordmoma/learn-golang-advanced-functions-e69853996e39)
+[^2]: [Mastering Variadic Functions in Go](https://medium.com/@isuruvihan/mastering-variadic-functions-in-go-d6c70a537d47)
