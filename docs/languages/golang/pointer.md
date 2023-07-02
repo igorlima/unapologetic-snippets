@@ -10,6 +10,7 @@ permalink: /docs/languages/golang/pointer
 Other examples:
 - [go pointers]({% link docs/languages/golang/pointer.2023a03m05d.md %}) [^2]
 - [did u really know about pointers in golang?]({% link docs/languages/golang/pointer.2023a04m08d.md %}) [^1]
+- [what is nil?]({% link docs/languages/golang/pointer.nil.2023a07m02d.md %})
 
 
 # Pointer
