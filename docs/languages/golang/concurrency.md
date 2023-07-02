@@ -11,6 +11,7 @@ Other examples:
 - [more samples for channel, statement, and mutex]({% link docs/languages/golang/concurrency.2023a04m02d.md %}) [^1]
 - [golang goroutines: powering high-performance applications]({% link docs/languages/golang/concurrency.goroutines.2023a04m02d.md %}) [^3]
 - [actor model for concurrent systems]({% link docs/languages/golang/concurrency.actor-model.2023a04m02d.md %}) [^2]
+- [understanding `context`]({% link docs/languages/golang/concurrency.context.2023a07m02d.md %})
 
 <details markdown="block">
   <summary>
