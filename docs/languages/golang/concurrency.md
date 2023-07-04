@@ -26,6 +26,48 @@ Other examples:
 
 A goroutine is a lightweight thread that runs concurrently with other goroutines in the same address space.
 
+<details markdown="block">
+  <summary>
+    sample one
+  </summary>
+
+```golang
+package main
+
+import (
+  "fmt"
+  "time"
+)
+
+func printMessage(message string, ch chan string, sec int) {
+  time.Sleep(time.Duration(sec) * time.Second)
+  ch <- message
+}
+
+func main() {
+  ch := make(chan string)
+  fmt.Println("1")
+  go printMessage("Hello, Go!", ch, 2)
+  go printMessage("Welcome to Concurrency!", ch, 1)
+
+  fmt.Println("2")
+  msg1 := <-ch
+  fmt.Println(msg1)
+
+  msg2 := <-ch
+  fmt.Println(msg2)
+  fmt.Println("3")
+}
+```
+
+<br/>
+</details>
+
+<details markdown="block">
+  <summary>
+    sample two
+  </summary>
+
 ```golang
 package main
 
@@ -64,6 +106,9 @@ Hello
 goroutine
 */
 ```
+
+<br/>
+</details>
 
 # Channels
 
