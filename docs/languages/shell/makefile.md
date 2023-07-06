@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Makefile
-nav_order: 3
+nav_order: 9
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/makefile

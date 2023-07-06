@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bash Script
-nav_order: 3
+nav_order: 2
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/bash-script
