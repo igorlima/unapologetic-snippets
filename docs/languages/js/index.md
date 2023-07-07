@@ -8,7 +8,7 @@ permalink: /docs/languages/js
 ---
 
 
-<br />
+<br/>
 <details markdown="block">
   <summary>
     JS Performance Timing
@@ -81,6 +81,88 @@ performance.clearMeasures()
     console.log(`performance timing was ${measure.duration}ms`)
   })
 })();
+```
+
+<br/>
+</details>
+
+
+<br/>
+<details markdown="block">
+  <summary>
+    JS Performance Timing - wrapper fn
+  </summary>
+
+```js
+// sync
+const perfduration = (metricName, func) => (...args) => {
+  performance.mark(`${metricName} start`)
+  const result = func(...args)
+  performance.mark(`${metricName} end`)
+  performance.measure(`${metricName}`, `${metricName} start`, `${metricName} end`)
+
+  const measures = performance.getEntriesByName(`${metricName}`)
+  // the reverse fn will get the lastest measurement via destructuring
+  const [measure] = measures.reverse()
+  console.log(`${metricName}: performance timing was ${measure.duration}ms`)
+  return result
+}
+
+
+function measurementTest(iterations = 10) {
+  for (let i = 0; i < iterations; i++) {
+    console.log(i);
+  }
+}
+
+perfduration('testing...', measurementTest)();
+perfduration('testing...', measurementTest)(20);
+perfduration('testing...', measurementTest)(100);
+```
+
+```js
+// async
+const perfduration = (metricName, func) => (...args) => {
+  performance.mark(`${metricName} start`)
+  return Promise.resolve(func(...args)).then((...data) => {
+    performance.mark(`${metricName} end`)
+    performance.measure(`${metricName}`, `${metricName} start`, `${metricName} end`)
+
+    const measures = performance.getEntriesByName(`${metricName}`)
+    // the reverse fn will get the lastest measurement via destructuring
+    const [measure] = measures.reverse()
+    console.log(`${metricName}: performance timing was ${measure.duration}ms`)
+    return Promise.resolve(...data)
+  })
+}
+
+
+function measurementTest(callback, iterations = 3) {
+  return new Promise(resolve => {
+    console.log(`doing some work... counting down ${iterations}...`)
+    setTimeout(function() {
+      if (iterations <= 0 ) {
+        callback()
+        resolve(true)
+        return
+      } else {
+        resolve(measurementTest(callback, iterations - 1))
+      }
+    }, 1000)
+  })
+}
+
+perfduration('testing 1...', measurementTest)(function callback () {
+  console.log('done 1')
+}, 1);
+
+perfduration('testing 2...', measurementTest)(function callback () {
+  console.log('done 2')
+}, 2);
+
+perfduration('testing 4...', measurementTest)(function callback () {
+  console.log('done 4')
+}, 4);
 ```
 
 <br/>
