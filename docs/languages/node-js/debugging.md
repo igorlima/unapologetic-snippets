@@ -24,7 +24,7 @@ other resources:
 
 ----
 
-## through the terminal
+## debugging on the terminal
 
 ```sh
 # quote the label to prevent the backticks from being evaluated
@@ -45,7 +45,7 @@ EOF
 node --inspect-brk=0.0.0.0:9235 node-testing.js
 
 # connect to it
-node inspect 0.0.0.0:9235 node-testing.js
+node inspect 0.0.0.0:9235
 ```
 
 <details markdown="block">
@@ -103,4 +103,68 @@ measurementTest(function() {
 
 <br/>
 </details>
+
+<details markdown="block">
+  <summary>
+    Debugging Worker thread - Node.js v14.21.3
+  </summary>
+
+```js
+// worker-main.js
+const { Worker } = require('worker_threads')
+
+const runService = (workerData) => {
+  return new Promise((resolve, reject) => {
+    // https://nodejs.org/docs/v12.14.1/api/worker_threads.html#worker_threads_new_worker_filename_options
+    // https://nodejs.org/docs/latest-v14.x/api/worker_threads.html#worker_threads_new_worker_filename_options
+    const worker = new Worker('./worker-thread.js', {
+      workerData,
+      argv: ["--inspect-brk"],
+      execArgv: ["--inspect-brk=0.0.0.0:9235"]
+    })
+    worker.on('message', resolve)
+    worker.on('error', reject)
+    worker.on('exit', (code) => {
+      if (code !== 0)
+        reject(new Error(`stopped with  ${code} exit code`))
+    })
+  })
+}
+
+const run = async () => {
+  debugger
+  const result = await runService('hello John Doe')
+  debugger
+  console.log(result)
+}
+
+run().catch(err => console.error(err))
+```
+
+```js
+// worker-thread.js
+const { workerData, parentPort } = require('worker_threads')
+const inspector = require("inspector")
+
+// https://github.com/nodejs/node/issues/26609
+console.log(process.execArgv)
+if ((process.execArgv || []).find(arg => arg.includes('--inspect'))) {
+  console.log("--------xxxxxxx----------")
+  inspector.open();
+  inspector.waitForDebugger();
+}
+
+console.log("--------*******----------")
+console.log(workerData)
+console.log("--------*******----------")
+debugger
+parentPort.postMessage({ welcome: workerData })
+```
+
+```sh
+node --inspect-brk worker-main.js
+node inspect 0.0.0.0:9235
+```
+
 <br/>
+</details>
