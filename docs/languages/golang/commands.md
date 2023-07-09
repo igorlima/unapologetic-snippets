@@ -93,6 +93,7 @@ import "github.com/gin-gonic/gin"
 
 - _further info:_
    - [how to fetch modules from private repository]({% link docs/languages/golang/commands.get.private-repo.md %})
+   - [go package]({% link docs/languages/golang/package.md %})
 
 
 ## go fmt

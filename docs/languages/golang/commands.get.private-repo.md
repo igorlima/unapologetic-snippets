@@ -9,7 +9,7 @@ permalink: /docs/languages/golang/commands-get-private-repo
 
 
 # How to fetch modules from private repository
-__[back]({% link docs/languages/golang/commands.md %}#go-get)__
+__[back to `go get`]({% link docs/languages/golang/commands.md %}#go-get)__
 <br/>
 
 Fix: go get private repository return error reading sum.golang.org/lookup … 410 gone [^1]
