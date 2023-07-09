@@ -38,6 +38,8 @@ Other examples:
 ```
 
 ```sh
+mkdir -p greeting version random
+
 cat << "EOF" > package-main.go
 paste the code here
 EOF
@@ -57,24 +59,6 @@ EOF
 cat << "EOF" > random/a.go
 paste the code here
 EOF
-```
-
-```sh
-# golang version: 1.20
-
-go mod init package-example
-go mod tidy
-
-# create a sub package inside the current package
-(cd random && \
-go mod init package-random && \
-go mod tidy)
-
-# create an alias for the sub package above
-# use the relative package path above
-go mod edit -replace foo=./random
-go get foo
-go mod tidy
 ```
 
 ```golang
@@ -169,6 +153,24 @@ import "fmt"
 func RandomA() {
   fmt.Println("aaaaa")
 }
+```
+
+```sh
+# golang version: 1.20
+
+go mod init package-example
+go mod tidy
+
+# create a sub package inside the current package
+(cd random && \
+go mod init package-random && \
+go mod tidy)
+
+# create an alias for the sub package above
+# use the relative package path above
+go mod edit -replace foo=./random
+go get foo
+go mod tidy
 ```
 
 <br/>
