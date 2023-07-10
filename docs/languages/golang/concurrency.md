@@ -299,8 +299,15 @@ Hello from channel 1!
 */
 ```
 
+# Context
+
+In Go, the `context` package provides a powerful mechanism for managing the lifecycle of operations and __propagating cancellation signals across goroutines__. It allows to set deadlines, timeouts, and cancelation signals, helping to control the execution of the code and handle resource cleanup gracefully. There are three commonly used functions in the context package for managing cancellation: `WithCancel`, `WithTimeout`, and `WithDeadline`. [^4]
+- [understanding `context`]({% link docs/languages/golang/concurrency.context.2023a07m02d.md %})
+
+
 ----
 
 [^1]: [Mastering Advanced Go Concurrency: Powerful Concepts and Examples](https://medium.com/@utkarshjha_81903/mastering-advanced-go-concurrency-powerful-concepts-and-examples-2011d8b01855)
 [^2]: [Actor model for concurrent systems, an introduction in GO](https://medium.com/@joao_vaz/actor-model-for-concurrent-systems-an-introduction-in-go-75fd25f2f04e)
 [^3]: [Golang Goroutines: Powering High-Performance Applications](https://medium.com/@cerebrovinny/golang-goroutines-powering-high-performance-applications-767742d961ce)
+[^4]: [Context in GoLang _by Sai Teja_](https://medium.com/@saiteja180/context-in-golang-e8cde4fba1e2)

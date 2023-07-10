@@ -7,7 +7,7 @@ grand_parent: Programming Languages
 permalink: /docs/languages/golang/concurrency-context-2023a07m02d
 ---
 
-__[back]({% link docs/languages/golang/concurrency.md %})__
+__[back]({% link docs/languages/golang/concurrency.md %}#context)__
 
 The problems `context` plans to solve are: [^1]
 
@@ -28,6 +28,170 @@ type Context interface {
 
 // Context is just an interface, which is very hard to imagine how to use it.
 ```
+
+<details markdown="block">
+  <summary>
+    WithCancel
+  </summary>
+
+```golang
+// Context With Cancel
+package main
+
+import (
+  "context"
+  "fmt"
+  "time"
+)
+
+func main() {
+  ctxA, cancelFuncA := context.WithCancel(context.Background())
+  ctxB, cancelFuncB := context.WithCancel(context.WithValue(ctxA, "foo", "bar"))
+
+  go stopTheTaskIfNotInterested(ctxA)
+  go stopTheTaskIfNotInterested(ctxB)
+
+  time.Sleep(3 * time.Second)
+  fmt.Println("DONE")
+
+  // cancelling the context
+  cancelFuncA()
+  cancelFuncB()
+  time.Sleep(2 * time.Second)
+}
+
+func stopTheTaskIfNotInterested(ctx context.Context) {
+  select {
+  case <-ctx.Done():
+    fmt.Println("exiting the task... because parent not interested..!!", ctx.Value("foo"))
+    return
+  }
+}
+
+/*
+OUTPUT
+
+DONE
+exiting the task... because parent not interested..!! <nil>
+exiting the task... because parent not interested..!! bar
+*/
+```
+
+<br/>
+<!-- WithCancel -->
+</details>
+
+<details markdown="block">
+  <summary>
+    WithTimeout
+  </summary>
+
+```golang
+// Context With Timeout
+package main
+
+import (
+  "context"
+  "fmt"
+  "time"
+)
+
+func main() {
+  aux := context.Background()
+  ctx, cancelFunc := context.WithTimeout(aux, time.Second*1)
+
+  go stopTheTaskIfNotCompletedWithInGivenTime(ctx)
+
+  time.Sleep(3 * time.Second)
+  fmt.Println("...")
+  time.Sleep(2 * time.Second)
+
+  // cancels the context if timeout was not reached yet
+  defer func() {
+    cancelFunc()
+    fmt.Println("Done")
+  }()
+  fmt.Println("DONE")
+  time.Sleep(2 * time.Second)
+}
+
+func stopTheTaskIfNotCompletedWithInGivenTime(ctx context.Context) {
+  select {
+  case <-ctx.Done():
+    fmt.Println("exiting the task. because i am not able to complete with in time..!!!")
+    return
+  }
+}
+
+/*
+OUTPUT
+
+exiting the task. because i am not able to complete with in time..!!!
+...
+DONE
+Done
+*/
+```
+
+<br/>
+<!-- WithTimeout -->
+</details>
+
+
+<details markdown="block">
+  <summary>
+    WithDeadline
+  </summary>
+
+```golang
+package main
+
+import (
+  "context"
+  "fmt"
+  "time"
+)
+
+func main() {
+  ctx, cancelFunc := context.WithDeadline(context.Background(), time.Now().Add(time.Second*2))
+
+  go stopTheTaskIfNotCompletedWithInGivenTime(ctx)
+
+  time.Sleep(3 * time.Second)
+  fmt.Println("...")
+  time.Sleep(2 * time.Second)
+
+  // cancels the context if deadline was not reached yet
+  defer func() {
+    cancelFunc()
+    fmt.Println("Done")
+  }()
+  fmt.Println("DONE")
+  time.Sleep(2 * time.Second)
+}
+
+func stopTheTaskIfNotCompletedWithInGivenTime(ctx context.Context) {
+  select {
+  case <-ctx.Done():
+    fmt.Println("exiting the task. because i am not able to complete with in time... dealine exceeded!!!")
+    return
+  }
+}
+
+/*
+OUTPUT
+
+exiting the task. because i am not able to complete with in time... dealine exceeded!!!
+...
+DONE
+Done
+*/
+```
+
+<br/>
+<!-- WithDeadline -->
+</details>
+<br/>
 
 ----
 
