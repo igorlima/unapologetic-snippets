@@ -78,7 +78,78 @@ exiting the task... because parent not interested..!! bar
 ```
 
 <br/>
-<!-- WithCancel -->
+<!-- WithCancel 1 -->
+</details>
+
+<details markdown="block">
+  <summary>
+    WithCancel <sup><i>plus <code>sync.WaitGroup</code>, <code>context.WithValue</code> </i></sup>
+  </summary>
+
+```golang
+// Context With Cancel
+package main
+
+import (
+  "context"
+  "fmt"
+  "sync"
+)
+
+func main() {
+  var wg sync.WaitGroup
+  ctx, cancelFunc := context.WithCancel(context.WithValue(context.Background(), "foo", "bar"))
+
+  wg.Add(1)
+  fmt.Println("1")
+  go stopTheTaskIfNotInterested(ctx, &wg)
+  fmt.Println("2")
+  cancelFunc()
+
+  fmt.Println("3")
+  wg.Wait()
+  fmt.Println("5")
+  fmt.Println("DONE")
+
+  select {
+  case <-ctx.Done():
+    fmt.Println("6")
+    // the context is over, stop processing results
+    fmt.Println("all done", ctx.Value("foo"))
+  }
+
+  fmt.Println("7")
+}
+
+func stopTheTaskIfNotInterested(ctx context.Context, wg *sync.WaitGroup) {
+  select {
+  case <-ctx.Done():
+    fmt.Println("4")
+    fmt.Println("exiting the task... because parent not interested..!!", ctx.Value("foo"))
+    wg.Done()
+    return
+  }
+}
+
+/*
+OUTPUT
+
+1
+2
+3
+4
+exiting the task... because parent not interested..!! bar
+5
+DONE
+6
+all done bar
+7
+*/
+```
+
+<br/>
+<!-- WithCancel 2 -->
+<!-- WithCancel plus sync.WaitGroup, context.WithValue -->
 </details>
 
 <details markdown="block">
@@ -192,6 +263,14 @@ Done
 <!-- WithDeadline -->
 </details>
 <br/>
+
+- `context.Background()`: This function returns a background context, which serves as the root parent context. It is often used as the starting point for creating other contexts.
+- `context.WithValue(parentContext, key, value)`: This function creates a child context derived from a parent context (`parentContext`). It associates a key-value pair with the child context, allowing for the passing of request-scoped values. The child context inherits the values from the parent context and can add or overwrite values specific to itself.
+
+__Context propogate from parent to child.__
+When a parent goroutine creates a child goroutine in Go, the context can be propagated from the parent to the child. Context propagation allows the child goroutine to inherit and carry forward the same context values, deadlines, and cancellations.
+In Go, context propagation is achieved through the use of the `context.Context` type, which is passed as an argument to functions or goroutines that need access to the context.
+
 
 ----
 

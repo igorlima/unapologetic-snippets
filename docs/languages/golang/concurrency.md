@@ -304,6 +304,13 @@ Hello from channel 1!
 In Go, the `context` package provides a powerful mechanism for managing the lifecycle of operations and __propagating cancellation signals across goroutines__. It allows to set deadlines, timeouts, and cancelation signals, helping to control the execution of the code and handle resource cleanup gracefully. There are three commonly used functions in the context package for managing cancellation: `WithCancel`, `WithTimeout`, and `WithDeadline`. [^4]
 - [understanding `context`]({% link docs/languages/golang/concurrency.context.2023a07m02d.md %})
 
+__What is the purpose of the `context` package in Go?__
+The `context` package provides a way to pass cancellation signals, deadlines, and other request-scoped values across API boundaries.
+It is used to manage the lifecycle of operations and facilitate cancellation and timeout handling.
+
+__What is `context` and why it is needed?__
+In Go, a context is a mechanism for managing concurrent operations, such as goroutines, by passing information and signals between different parts of a program. It allows for handling timeouts, cancellations, and sharing values in a controlled manner.
+
 
 ----
 
