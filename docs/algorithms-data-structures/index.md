@@ -17,6 +17,8 @@ Feature flags are virtual switches that you can integrate into your app to contr
 
 Data Races are the toughest and the most time-consuming thing to debug. [^2]
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/ef38951f-2876-4b87-82d8-553f4ac598bc)
+
 
 
 ------ ------
