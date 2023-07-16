@@ -13,7 +13,13 @@ An A/B test is a type of testing in which two variations of an app are released 
 __The role feature flags play.__
 Feature flags are virtual switches that you can integrate into your app to control what features users can and cannot see.
 
+## Data Races
+
+Data Races are the toughest and the most time-consuming thing to debug. [^2]
+
+
 
 ------ ------
 
 [^1]: [How to conduct an A/B test experiment in Go using feature flags](https://medium.com/@chavezharris/how-to-conduct-an-a-b-test-experiment-in-go-using-feature-flags-660edef536f6)
+[^2]: [Golang: How are Data Races, Context Switching, and Multi-Core Computing interlinked](https://mourya-g9.medium.com/golang-how-are-data-races-context-switching-and-multi-core-computing-related-cba8d17b542a)
