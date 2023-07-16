@@ -92,8 +92,9 @@ import "github.com/gin-gonic/gin"
 
 
 - _further info:_
-   - [how to fetch modules from private repository]({% link docs/languages/golang/commands.get.private-repo.md %})
-   - [go package]({% link docs/languages/golang/package.md %})
+  - [how to fetch modules from private repository]({% link docs/languages/golang/commands.get.private-repo.md %})
+  - [go package]({% link docs/languages/golang/package.md %})
+    - [a module sample using gRPC]({% link docs/languages/golang/other.grpc.md %})
 
 
 ## go fmt
