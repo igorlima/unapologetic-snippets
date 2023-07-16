@@ -11,3 +11,4 @@ See:
 - [Get value from an environment variable]({% link docs/languages/golang/other.env-var.md %})
 - [Build Process with Makefiles in Golang]({% link docs/languages/golang/other.makefile.md %})
 - [WebAssembly with Go]({% link docs/languages/golang/other.webassembly.md %})
+- [gRPC Server and Client in Go]({% link docs/languages/golang/other.grpc.md %})

@@ -75,6 +75,7 @@ func main() {
       }
       resources = append(resources, resource)
       w.WriteHeader(http.StatusCreated)
+      logger.Log("added", resource)
     default:
       w.WriteHeader(http.StatusMethodNotAllowed)
     }
