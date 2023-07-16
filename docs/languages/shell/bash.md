@@ -7,6 +7,9 @@ grand_parent: Programming Languages
 permalink: /docs/languages/shell/bash-script
 ---
 
+Other things:
+- [symbol & commands]({% link docs/languages/shell/bash.symbol-command.md %})
+
 ## Bash scripting syntax
 
 setting variables
@@ -204,3 +207,4 @@ str="Python"
 change_str_var str
 echo $str
 ```
+
