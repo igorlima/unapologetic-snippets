@@ -18,6 +18,7 @@ Feature flags are virtual switches that you can integrate into your app to contr
 Data Races are the toughest and the most time-consuming thing to debug. [^2]
 
 ![data race ilustration](https://github.com/igorlima/unapologetic-snippets/assets/1886786/a3866f1d-7506-4d2d-9ada-fc0229483187)
+<sup style="display:block;">image from [Medium](https://mourya-g9.medium.com/golang-how-are-data-races-context-switching-and-multi-core-computing-related-cba8d17b542a) [^2]</sup>
 
 
 ------ ------
