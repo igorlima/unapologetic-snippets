@@ -6,6 +6,8 @@ nav_order: 98
 
 [Return to main website]({{site.baseurl}}/).
 
+# Algorithms and Data Structures
+
 ## A/B test experiment
 
 __What is an A/B Test?__ [^1]
