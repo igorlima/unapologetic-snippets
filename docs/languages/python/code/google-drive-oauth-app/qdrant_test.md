@@ -4,6 +4,12 @@ title: Google Drive as a Knowledge Base - qdrant_test.py
 nav_exclude: true
 ---
 
+- OpenAI APY key
+  - an OpenAI developer account is required because it uses their embedding API.
+    - `https://platform.openai.com/account/api-keys`
+      - [link](https://help.openai.com) for help if needed
+    - `YOUR-OPENAI-API-KEY`
+
 ```python
 import uuid
 

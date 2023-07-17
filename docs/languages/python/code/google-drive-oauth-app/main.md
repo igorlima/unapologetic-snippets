@@ -4,6 +4,40 @@ title: Google Drive as a Knowledge Base - main.py
 nav_exclude: true
 ---
 
+This snippet shows how to connect with Google Drive. The same idea can be applied to Notion, Salesforce, Zendesk, Dropbox, Slack, Gmail, Rippling, and so on... In doing so, the application can chat with a private data using natural language.
+
+This API has four endpoints: [^2]
+1. An authorize endpoint
+  - initializes the process to connect to Google Drive
+2. A callback endpoint
+  - verifies user identity and creates credentials
+    - a `gdrive_credentials.txt` file should be in the application folder after the authorization. In doing so, it reuses the credentials text file for future API calls without re-authenticating through the authorization flow again.
+3. A load data endpoint
+  - loads all of the documents from Google Drive into a vector database
+    - it extracts all of the private documents under the given folder
+    - and then it stores the text data inside a vector databse
+4. A query endpoint
+  - allows us to chat with our documents
+    - it requires an OpenAI developer account for this step because it uses their embedding API.
+    - it also needs a vector database - the idea is to upload all of the text from the private documents into a vector database. Whenever a user queries, it finds similar content in the databse and uses that as context to answer the user's question.
+  - it performs a vector search to find the pieces of text that match a given query and retrieve only those. These pieces of text will serve as a __context__, which ChatGPT will use to answer the question.
+
+----
+
+- Google Drive credentials [^1]
+  - Head over to `https://console.cloud.google.com/apis/credentials` and create a new OAuth Client ID credential
+  - Select Web Application as the Application Type
+  - Give the credential any name you want. You don’t need to add anything for Authorized JavaScript origins
+  - Under Authorized redirect URIs, add the following URL: `http://127.0.0.1:5000/oauth/redirect`
+  - Click Create
+  - Download the credentials JSON file for the next step
+    - `{"web":{"client_id":"72246653...", "project_id": ...}}`
+- OpenAI APY key
+  - an OpenAI developer account is required because it uses their embedding API.
+    - `https://platform.openai.com/account/api-keys`
+      - [link](https://help.openai.com) for help if needed
+    - `YOUR-OPENAI-API-KEY`
+
 ```python
 # https://github.com/htrivedi99/chatgpt-gdrive-article
 # https://medium.com/better-programming/using-google-drive-as-a-knowledge-base-for-your-chatgpt-application-805962812547
@@ -225,3 +259,8 @@ def query_knowledge_base():
 if __name__ == "__main__":
     app.run()
 ```
+
+-----
+
+[^1]: [Using Google Drive as a Knowledge Base For Your ChatGPT Application](https://medium.com/better-programming/using-google-drive-as-a-knowledge-base-for-your-chatgpt-application-805962812547)
+[^2]: [Original full code](https://github.com/htrivedi99/chatgpt-gdrive-article)
