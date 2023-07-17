@@ -27,6 +27,65 @@ other resources:
 ## debugging on the terminal
 
 ```sh
+node -h
+-e, --eval script          evaluate script
+-i, --interactive          always enter the REPL even if stdin
+-r, --require=...          module to preload (option can be repeated)
+```
+
+```sh
+# RUNning REPL with preloading a module
+node -i -r "./build/main/index.js"
+```
+
+```sh
+# RUNning REPL by injecting a script in advance
+node -i -e '
+function decode(ctx, text = ``) {
+  const bufferedText = Buffer.from(text, `base64`)
+  try {
+    return JSON.parse(bufferedText.toString(`utf-8`))
+  } catch (error) {
+    ctx.logger.error(`Error parsing decoded text: ${error}`)
+    return {}
+  }
+}
+
+function encode(text = {}) {
+  const bufferedText = JSON.stringify(text)
+  const encodedString = Buffer.from(bufferedText, `utf-8`).toString(`base64`)
+  return encodedString
+}
+'
+```
+
+```sh
+# DEBUGging a script in REPL mode
+# use either `inspect` or `--inspect`
+node inspect -i -e '
+function decode(ctx, text = ``) {
+  const bufferedText = Buffer.from(text, `base64`)
+  debugger
+  try {
+    return JSON.parse(bufferedText.toString(`utf-8`))
+  } catch (error) {
+    ctx.logger.error(`Error parsing decoded text: ${error}`)
+    return {}
+  }
+}
+
+function encode(text = {}) {
+  debugger
+  const bufferedText = JSON.stringify(text)
+  const encodedString = Buffer.from(bufferedText, `utf-8`).toString(`base64`)
+  return encodedString
+}
+'
+```
+
+## debugging performance on the terminal
+
+```sh
 # quote the label to prevent the backticks from being evaluated
 cat << "EOF" > node-testing.js
 return new Promise(resolve => {
