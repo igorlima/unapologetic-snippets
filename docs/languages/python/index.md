@@ -15,7 +15,7 @@ Plenty of articles have been about using ChatGPT to chat with a PDF document.
 
 So, instead of bringing your documents to ChatGPT; instead, bring ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
 
-> "You don’t need to build a new knowledge base. You just need to use the knowledge base you already have."
+> "You don’t need to build a new knowledge base. You just need to use the knowledge base you already have." [^1]
 
 Breakdown of what is been covering: [^1]
 
