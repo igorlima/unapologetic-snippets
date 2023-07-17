@@ -28,6 +28,12 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 
 - [a sample in Go]({% link docs/languages/golang/other.grpc.md %})
 
+## Artificial Intelligence (AI)
+
+- [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/index.md %})
+  - a Python implementation that, instead of bringing your documents to ChatGPT; instead, brings ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
+
+
 ------ ------
 
 [^1]: [How to conduct an A/B test experiment in Go using feature flags](https://medium.com/@chavezharris/how-to-conduct-an-a-b-test-experiment-in-go-using-feature-flags-660edef536f6)
