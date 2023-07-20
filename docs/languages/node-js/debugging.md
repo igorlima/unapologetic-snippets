@@ -41,7 +41,7 @@ node -i -r "./build/main/index.js"
 ```sh
 # RUNning REPL by injecting a script in advance
 node -i -e '
-function decode(ctx, text = ``) {
+function decode(text = ``) {
   const bufferedText = Buffer.from(text, `base64`)
   try {
     return JSON.parse(bufferedText.toString(`utf-8`))
@@ -63,7 +63,7 @@ function encode(text = {}) {
 # DEBUGging a script in REPL mode
 # use either `inspect` or `--inspect`
 node inspect -i -e '
-function decode(ctx, text = ``) {
+function decode(text = ``) {
   const bufferedText = Buffer.from(text, `base64`)
   debugger
   try {
