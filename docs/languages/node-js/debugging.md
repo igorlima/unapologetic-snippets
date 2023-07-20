@@ -46,7 +46,7 @@ function decode(ctx, text = ``) {
   try {
     return JSON.parse(bufferedText.toString(`utf-8`))
   } catch (error) {
-    ctx.logger.error(`Error parsing decoded text: ${error}`)
+    console.error(`Error parsing decoded text: ${error}`)
     return {}
   }
 }
@@ -69,7 +69,7 @@ function decode(ctx, text = ``) {
   try {
     return JSON.parse(bufferedText.toString(`utf-8`))
   } catch (error) {
-    ctx.logger.error(`Error parsing decoded text: ${error}`)
+    console.error(`Error parsing decoded text: ${error}`)
     return {}
   }
 }
