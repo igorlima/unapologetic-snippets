@@ -181,7 +181,8 @@ A Console for Mobile Browsers — If you’re in a situation where you have no a
 - [github](https://github.com/liriliri/eruda)
 
 Browse it on your phone:
-- [home page](https://eruda.liriliri.io/)
+- [ilima wiki](http://wiki.ilima.xyz/eruda.html)
+- [eruda home page](https://eruda.liriliri.io/)
 
 In order to try it for different sites, execute the script below on browser address bar.
 
