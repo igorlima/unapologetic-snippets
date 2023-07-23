@@ -225,6 +225,8 @@ javascript:(function () { var script = document.createElement('script'); script.
 <script>
 eruda.init();
 // eruda.position({x:0, y: 0});
+// eruda.util.evalCss.setTheme('Dark')
+// eruda.util.evalCss.setTheme('Light')
 eruda.add(erudaCode);
 </script>
 </body>
