@@ -208,6 +208,8 @@ https://cdn.jsdelivr.net/npm/eruda-code@2.1.0/eruda-code.min.js
 
 <button type="button" onClick="eruda.show()">Show</button>
 <button type="button" onClick="eruda.hide()">Hide</button>
+<button type="button" onClick="eruda.util.evalCss.setTheme('Dark')">Dark</button>
+<button type="button" onClick="eruda.util.evalCss.setTheme('Light')">Light</button>
 <h1>Console for mobile browsers</h1>
 <ul>
   <li><a href="https://github.com/liriliri/eruda">Github</a></li>
