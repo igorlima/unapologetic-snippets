@@ -192,23 +192,23 @@ javascript:(function () { var script = document.createElement('script'); script.
 
 ```html
 <!DOCTYPE html>
+<!--
+https://www.jsdelivr.com/package/npm/eruda
+https://www.jsdelivr.com/package/npm/eruda-code
+
+https://cdn.jsdelivr.net/npm/eruda@3.0.1/eruda.min.js
+https://cdn.jsdelivr.net/npm/eruda-code@2.1.0/eruda-code.min.js
+-->
 <html>
   <head>
-    <!--
-    https://www.jsdelivr.com/package/npm/eruda
-    https://www.jsdelivr.com/package/npm/eruda-code
-
-    https://cdn.jsdelivr.net/npm/eruda@3.0.1/eruda.min.js
-    https://cdn.jsdelivr.net/npm/eruda-code@2.1.0/eruda-code.min.js
-    -->
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
     <script src="//cdn.jsdelivr.net/npm/eruda-code"></script>
-    <script>eruda.init(); eruda.position({x:0, y: 0}); eruda.add(erudaCode);</script>
   </head>
 <body>
 
+<button type="button" onClick="eruda.show()">Show</button>
+<button type="button" onClick="eruda.hide()">Hide</button>
 <h1>Console for mobile browsers</h1>
-
 <ul>
   <li><a href="https://github.com/liriliri/eruda">Github</a></li>
   <li><a href="https://eruda.liriliri.io/">Documentation</a></li>
@@ -220,10 +220,13 @@ javascript:(function () { var script = document.createElement('script'); script.
 </code>
 
 <br/><br/>
-<code>
-python3 -m http.server 8000
-</code>
+<code>python3 -m http.server 8000</code>
 
+<script>
+eruda.init();
+// eruda.position({x:0, y: 0});
+eruda.add(erudaCode);
+</script>
 </body>
 </html>
 ```
