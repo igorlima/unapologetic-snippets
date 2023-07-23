@@ -194,8 +194,16 @@ javascript:(function () { var script = document.createElement('script'); script.
 <!DOCTYPE html>
 <html>
   <head>
+    <!--
+    https://www.jsdelivr.com/package/npm/eruda
+    https://www.jsdelivr.com/package/npm/eruda-code
+
+    https://cdn.jsdelivr.net/npm/eruda@3.0.1/eruda.min.js
+    https://cdn.jsdelivr.net/npm/eruda-code@2.1.0/eruda-code.min.js
+    -->
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
+    <script src="//cdn.jsdelivr.net/npm/eruda-code"></script>
+    <script>eruda.init(); eruda.position({x:0, y: 0}); eruda.add(erudaCode);</script>
   </head>
 <body>
 
