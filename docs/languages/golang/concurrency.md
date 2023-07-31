@@ -249,6 +249,8 @@ A mutex is a mutual exclusion lock that allows only one goroutine to access a re
 
 A WaitGroup waits for a collection of goroutines to finish before continuing.
 
+A Wait Group is essentially a counter that __keeps track of the number of goroutines that are active or pending completion__. It allows the main goroutine to wait until all other goroutines have finished executing.
+
 ```golang
 package main
 
