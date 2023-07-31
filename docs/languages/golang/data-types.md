@@ -115,6 +115,12 @@ Understanding the zero value of a data type can help you write more concise and 
 
 # How to determine the type of a generic variable in go
 
+
+<details markdown="block">
+  <summary>
+    sample one
+  </summary>
+
 There is a one problem with the generic functions in Go, the compiler does not allow to use `v.(type)` on a variable of type `T`.
 
 ```golang
@@ -142,3 +148,49 @@ func main() {
   fmt.Println(conv(42))
 }
 ```
+----
+<!-- sample one -->
+</details>
+
+<details markdown="block">
+  <summary>
+    sample two
+  </summary>
+
+Exploring Generics in Go: A Step Towards More Flexible Code
+
+```golang
+package main
+
+import "fmt"
+
+type Stack[T any] struct {
+  elements []T
+}
+
+func (s *Stack[T]) Push(item T) {
+  s.elements = append(s.elements, item)
+}
+
+func (s *Stack[T]) Pop() *T {
+  if len(s.elements) == 0 {
+    return nil
+  }
+  item := s.elements[len(s.elements)-1]
+  s.elements = s.elements[:len(s.elements)-1]
+  return &item
+}
+
+func main() {
+  stackInt := Stack[int]{}
+  stackInt.Push(1)
+  fmt.Println(*stackInt.Pop())
+
+  stackString := Stack[string]{}
+  stackString.Push("word")
+  fmt.Println(*stackString.Pop())
+}
+```
+----
+<!-- sample two -->
+</details>
