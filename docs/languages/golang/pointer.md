@@ -15,6 +15,61 @@ Other examples:
 
 # Pointer
 
+<details markdown="block">
+  <summary>
+    a gentle introduction to Pointers
+  </summary>
+
+
+When assigning a value to a variable in Go, the value is stored at a particular address in the computer's memory.
+
+Use the reference operator `&` to get this address, like so:
+
+```golang
+package main
+import "fmt"
+func main() {
+  var answer int = 42
+  fmt.Println(&answer) // prints something like 0x14000122008
+}
+```
+
+When using the `&` operator on a variable it actually returns a pointer.
+
+In simple terms, a pointer is a variable that hols the memory address of another variable. Think of them as "pointing to" a specific spot in memory.
+
+Like the variables that they point to, pointers in Go also have types. A pointer with the type `*int` can only hold the memory address of an `int` variable. And a pointer with the type `*string` can only hold the memory address of a `string` variable. And so on.
+
+```golang
+package main
+import "fmt"
+func main() {
+  var answer int = 42
+  var answerPtr *int = &answer
+  fmt.Println(answerPtr) // prints something like 0x1400012c008
+}
+```
+
+Use the deference operator `*` to read or set the underlying value that a pointer points to. This is often known as indirection.
+
+```golang
+package main
+import "fmt"
+func main() {
+  answer := 42
+  answerPtr := &answer
+  fmt.Println(answerPtr)  // prints something like 0x14000122008
+  fmt.Println(*answerPtr) // prints 42
+  *answerPtr = 99         // use the dereference operator to assign a new value
+  fmt.Println(answer)     // prints 99
+}
+```
+
+----
+
+<!-- A gentle introduction to Pointers -->
+</details>
+
 a one-pager to understanding pointers in Go
 
 ```golang
