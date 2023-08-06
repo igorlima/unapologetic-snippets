@@ -33,6 +33,10 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 - [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/index.md %})
   - a Python implementation that, instead of bringing your documents to ChatGPT; instead, brings ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
 
+### Prompts
+
+In AI writing, prompts are what the user says to the AI writing tool to create the context they want. Prompts are essentially commands, which specify the parameters of the assignment such as the topic, length, style, and which words to use. [^5]
+
 ## Coroutines, Threads, and Generators
 
 At first glance, coroutines, threads, and generators look alike. All three provide concurrency in one form or another, but they differ in important ways. [^4]
@@ -52,3 +56,4 @@ Coroutines are a useful building block for writing programs that want concurrenc
 [^2]: [Golang: How are Data Races, Context Switching, and Multi-Core Computing interlinked](https://mourya-g9.medium.com/golang-how-are-data-races-context-switching-and-multi-core-computing-related-cba8d17b542a)
 [^3]: [Introduction to Microservices, Go-Kit, Grpc. Golang](https://medium.com/@edwinsiby/introduction-to-microservices-go-kit-grpc-golang-e187853d6c45)
 [^4]: [Coroutines for Go](https://research.swtch.com/coro)
+[^5]: [17 Writing Tasks You Can Do With AI](https://www.grammarly.com/blog/ai-writing-tasks/)
