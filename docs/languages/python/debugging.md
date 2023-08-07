@@ -28,4 +28,8 @@ inspect(text_file, methods=True)
 inspect(text_file, methods=True, help=True)
 ```
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/16cfa090-7093-4b6e-add7-7014a1a7b73f)
+
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/91ece1da-bbfd-4381-b9fc-2c01a18f877a)
+
 </details>
