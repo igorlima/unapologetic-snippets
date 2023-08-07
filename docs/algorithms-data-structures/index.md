@@ -37,6 +37,10 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 
 In AI writing, prompts are what the user says to the AI writing tool to create the context they want. Prompts are essentially commands, which specify the parameters of the assignment such as the topic, length, style, and which words to use. [^5]
 
+## Functional Programming
+
+Functional programming principles is about empowering the developer to work with immutable data, compose functions, and bring a declarative flair to the code.
+
 ## Coroutines, Threads, and Generators
 
 At first glance, coroutines, threads, and generators look alike. All three provide concurrency in one form or another, but they differ in important ways. [^4]
