@@ -54,6 +54,30 @@ For this taxonomy, Go's goroutines are cheap threads: a goroutine switch is clos
 
 Coroutines are a useful building block for writing programs that want concurrency for program structuring but not for parallelism.
 
+## Data Science Notebook
+
+Data Science notebooks – or just “code notebooks”. [^6]
+
+The typical use case for a data team’s code is much more __iterative__ than a software engineer’s. _For every line of code you write, you want to see the output to check if it did what you intended._
+
+And another thing: data science and analytics work is often __exploratory__: the goal isn’t to create some sort of artifact (an app, a file). Instead, it’s to see what’s up – ask a few questions, make a chart, make a transformation. _Exploratory work is by definition iterative!_
+
+### Breaking down the notebook
+
+The idea behind the notebook is that you write a block of code, run it, and see what the output is. Then you move on to the next block, and so on and so forth. We can break down what makes notebooks great into a few broad categories:
+
+1. Notebooks are iterative: instead of writing all your code together, you can run it piece by piece and see what the output looks like.
+2. Notebooks are visual: integrated tables, charts, and text make it easier to visualize what’s going on in your code.
+3. Notebooks are organized: a great notebook is like a presentation. You can name each cell, reorder them, and add markdown to build a story.
+
+Notebooks are pretty much the standard for how data teams do exploratory work today. Data teams use notebooks to:
+- Clean up and categorize data
+- Visualize data in charts and tables
+- Build prototypes of ML models
+- Create presentations and data stories for their stakeholders Report regularly on metrics with dashboards
+- ...and a lot more
+
+
 ------ ------
 
 [^1]: [How to conduct an A/B test experiment in Go using feature flags](https://medium.com/@chavezharris/how-to-conduct-an-a-b-test-experiment-in-go-using-feature-flags-660edef536f6)
@@ -61,3 +85,4 @@ Coroutines are a useful building block for writing programs that want concurrenc
 [^3]: [Introduction to Microservices, Go-Kit, Grpc. Golang](https://medium.com/@edwinsiby/introduction-to-microservices-go-kit-grpc-golang-e187853d6c45)
 [^4]: [Coroutines for Go](https://research.swtch.com/coro)
 [^5]: [17 Writing Tasks You Can Do With AI](https://www.grammarly.com/blog/ai-writing-tasks/)
+[^6]: [What’s a data science notebook?](https://technically.substack.com/p/whats-a-data-science-notebook)
