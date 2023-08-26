@@ -165,6 +165,82 @@ func main() {
 
 </details>
 
+# ways to read text files
+
+<details markdown="block">
+  <summary>
+    a full code snippet
+  </summary>
+## Loading the file into memory
+
+```golang
+package main
+
+import (
+  "bytes"
+  "fmt"
+  "os"
+)
+
+func main() {
+  // Section 1
+  fileData, err := os.ReadFile("data.txt")
+  if err != nil {
+    fmt.Println("something wrong", err)
+    return
+  }
+
+  // Section 2
+  word := []byte{}
+  breakLine := "\n"
+  for _, data := range fileData {
+    if !bytes.Equal([]byte{data}, []byte(breakLine)) {
+      word = append(word, data)
+    } else {
+      fmt.Printf("ReadLine: %q\n", word)
+      word = word[:0]
+    }
+  }
+}
+```
+
+## Creating a data buffer
+
+```golang
+package main
+
+import (
+  "bufio"
+  "fmt"
+  "os"
+)
+
+func main() {
+  // Section 1
+  file, err := os.Open("words.txt")
+  defer file.Close()
+  if err != nil {
+    fmt.Println("something wrong", err)
+    return
+  }
+  r := bufio.NewReader(file)
+
+  // Section 2
+  for {
+    line, _, err := r.ReadLine()
+    if len(line) > 0 {
+      fmt.Printf("ReadLine: %q\n", line)
+    }
+    if err != nil {
+      break
+    }
+  }
+}
+```
+
+<!-- ways to read text files -->
+</details>
+
 # Persisting a Go objects to disk
 
 A simple code that lets save Go objects to disk, and read them back [^1].
