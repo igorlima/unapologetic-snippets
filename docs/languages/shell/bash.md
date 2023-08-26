@@ -10,6 +10,15 @@ permalink: /docs/languages/shell/bash-script
 Other things:
 - [symbol & commands]({% link docs/languages/shell/bash.symbol-command.md %})
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Bash scripting syntax
 
 setting variables
@@ -59,6 +68,33 @@ if [ $? -eq 0 ]; then
   echo "The last command was successful."
 else
   echo "The last command was unsuccessful."
+fi
+```
+
+## Strict Mode
+
+Strict mode is a set of options that can be activated to improve the safety and dependability of the script.
+
+The following is an explanation of the choices made in stringent mode:
+1. The `-e` option means to “exit immediately if any command fails.” When enabled, if any command within it exits with a non-zero status, denoting an error or failure, the script will end immediately. This aids in spotting mistakes at an early stage and stops the script from running with unexpected or incorrect data.
+2. The `-u` option interprets unset variables as an error. The script will end in error if any variable is utilized before receiving a value. This lowers the possibility of defects and unexpected behavior by identifying potential problems brought on by the use of uninitialized variables.
+3. The `-o pipefail` option also takes pipeline failures into account. Typically, pipelines in Bash scripts report the exit status of the final command in the pipeline (commands connected using pipes are denoted by the symbol `|` ). When `pipefail` is enabled, the pipeline is deemed to have failed even if the last command succeeds if any command in the pipeline fails (returns a non-zero status). This makes sure that pipeline faults are handled correctly and are not disregarded.
+
+```bash
+#!/bin/bash
+set -euo pipefail
+
+# -e: Exit immediately if any command fails
+# -u: Treat unset variables as an error
+# -o pipefail: Consider pipeline failures as well
+```
+
+### Command failure
+
+```bash
+if ! command; then
+  echo "Command failed." >&2
+  exit 1
 fi
 ```
 

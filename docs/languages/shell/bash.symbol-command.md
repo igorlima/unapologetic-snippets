@@ -103,6 +103,21 @@ esac
 
 will check the value of the variable `fruit` and print "It's an apple" if it equals "apple", "It's a banana" if it equals "banana", or "It's something else" for any other value.
 
+### Use of double brackets
+
+Double brackets are a more effective and suggested method for conditional checks in Bash. When a condition is enclosed in a single bracket, it is evaluated as a straightforward command that runs string or number comparisons. Single brackets have several limits, particularly when dealing with complex conditions or strings that contain spaces, even though they can still be useful in simple circumstances.
+
+```bash
+# Good
+  if [[ $condition ]]; then # Code block
+fi
+
+# Bad
+  if [ $condition ]; then # Code block
+fi
+```
+
+
 ## Loops
 
 - `for`: Used to create a loop that iterates over a list of items. For example, `for fruit in apple banana orange; do echo $fruit; done` will output "apple", "banana", and "orange" on separate lines.
