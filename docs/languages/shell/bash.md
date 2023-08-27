@@ -26,7 +26,7 @@ Other things:
     getting started...
   </summary>
 
-__What is Bash?__
+__What is Bash?__[^1]
 Bash, short for _“Bourne Again Shell”_ is a command-line interface and scripting language used in Unix-like operating systems. It provides a way to interact with the operating system by running commands, and it also supports writing scripts to automate tasks.
 
 __variables__
@@ -308,3 +308,48 @@ change_str_var str
 echo $str
 ```
 
+## Cron System [^2]
+
+The `cron system` is a time-based job scheduling mechanism in Unix-like operating systems. It allows you to automate repetitive tasks by scheduling them to run at specific intervals. The term “cron” comes from the Greek word “chronos,” meaning time.
+
+__Components of the Cron System__
+- Cron Daemon (cron): The cron daemon is a background service that manages the scheduling and execution of cron jobs. It constantly checks the system's crontab files to determine when to run scheduled tasks.
+- Cron Jobs: A cron job is a command or script that you want to run automatically at a specified time or interval. Each cron job consists of a command and a schedule defined by cron syntax.
+
+Cron Syntax: Cron uses a specific syntax to define when a job should be executed. The syntax consists of five fields (plus an optional command field):
+```
+* * * * * command_to_run
+| | | | |
+| | | | +----- Day of the week (0 - 6) (Sunday = 0)
+| | | +------- Month (1 - 12)
+| | +--------- Day of the month (1 - 31)
+| +----------- Hour (0 - 23)
++------------- Minute (0 - 59)
+```
+
+Cron Samples:
+- run a script every night at midnight
+  - `0 0 * * * /path/to/script.sh`
+- send system statistics every hour
+  - `0 * * * * /usr/bin/collect_stats.sh`
+
+## Lynx [^1]
+
+`lynx` is a text-based web browser that allows users to browse the internet and view web pages from the command line in Unix-like operating systems. It's a versatile tool for accessing information from websites without requiring a graphical user interface.
+
+While it doesn’t render images or complex layouts like modern graphical browsers, it’s useful for quick access to text-based content, checking links, and accessing web resources in a terminal environment.
+
+- basic usage
+  - `lynx [options] [URL]`
+- lynx samples
+  - viewing a web page
+    - `lynx https://www.example.com`
+  - viewing page source
+    - `lynx -source https://www.example.com`
+  - viewing plain text version
+    - `lynx -dump https://www.example.com`
+
+----
+
+[^1]: [Bash, the magic that empowers the Cloud](https://dev.to/sm0ke/bash-the-magic-that-empowers-the-cloud-5394)
+[^2]: [Cron System by DeployPro](https://www.docs.deploypro.dev/script-languages/bash/cron-system)
