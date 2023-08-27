@@ -21,6 +21,70 @@ Other things:
 
 ## Bash scripting syntax
 
+<details markdown="block">
+  <summary>
+    getting started...
+  </summary>
+
+__What is Bash?__
+Bash, short for _“Bourne Again Shell”_ is a command-line interface and scripting language used in Unix-like operating systems. It provides a way to interact with the operating system by running commands, and it also supports writing scripts to automate tasks.
+
+__variables__
+Bash uses variables to store and manipulate data.
+```bash
+name="John"
+echo "Hello, $name!"
+```
+
+__input and output__
+- echo : Print text to the screen.
+- read : Read input from the user.
+```bash
+echo "What's your name?"
+read name
+echo "Hello, $name!"
+```
+
+__conditional statements__
+Bash supports `if` statements for conditional execution.
+_[See]({% link docs/languages/shell/bash.symbol-command.md %}#use-of-double-brackets) a difference between double brackets and when a condition is enclosed in a single bracket._
+```bash
+age=25
+if [ "$age" -lt 18 ]; then
+  echo "You're a minor."
+else
+  echo "You're an adult."
+fi
+```
+
+__loops__
+```bash
+for fruit in apple banana orange; do
+  echo "I like $fruit."
+done
+```
+
+__functions__
+```bash
+greet() {
+  echo "Hello, $1!"
+}
+greet "Alice"
+```
+
+__simple calculator script__
+```bash
+#!/bin/bash
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+sum=$((num1 + num2))
+echo "Sum: $sum"
+```
+
+-----
+<!-- getting started -->
+</details>
+
 setting variables
 ```sh
 TEST_VAR='Hello World!'
