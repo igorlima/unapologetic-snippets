@@ -164,6 +164,71 @@ func changeCreature(creature *Creature) {
 }
 ```
 
+## Pointer in function
+
+Function argument passing is value copying, which also applies to pointer arguments. When `doubleInt(p)` is called, a copy of pointer `p` is created first and then passed to the function `doubleInt`. The modification on the copy of the pointer `p` in `doubleInt` will not reflect on the original pointer `p` in the main function.
+
+<details markdown="block">
+  <summary>
+    pointer in function sample
+  </summary>
+```golang
+package main
+
+import "fmt"
+
+func doubleInt(x int) {
+  x = x * 2
+}
+func main() {
+  a := 1
+  doubleInt(a)
+  fmt.Println(a) // 1
+}
+```
+
+```golang
+package main
+
+import "fmt"
+
+func doubleInt(x *int) {
+  *x = *x * 2
+  x = nil // update the pointer x to nil
+}
+
+func main() {
+  a := 1
+  p := &a
+  doubleInt(p)
+  fmt.Println(a) //2 fmt.Println(p == nil) //false
+}
+```
+</details>
+
+### NIL pointer
+
+The zero value of a pointer type is nil. if you try to dereference a pointer which points to nothing (`nil`), it will cause a runtime panic.
+With that being said, we should always check if the pointer is `nil` before trying to dereference it.
+
+<details markdown="block">
+  <summary>
+    a nill pointer sample
+  </summary>
+```golang
+package main
+
+import "fmt"
+
+func main() {
+  var ptr *int
+  fmt.Println(ptr) // <nil>
+  ptrValue := *ptr // panic: runtime error: invalid memory address or nil
+  fmt.Println(ptrValue)
+}
+```
+</details>
+
 ----
 
 [^1]: [Did u really know about Pointers in Golang?](https://medium.com/@achmadrizkinf/did-u-really-know-about-pointers-in-golang-3e8be6ff668c)
