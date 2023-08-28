@@ -26,7 +26,7 @@ package main
 import "fmt"
 
 func main() {
- fmt.Println("Hello, World!")
+  fmt.Println("Hello, World!")
 }
 ```
 
@@ -38,6 +38,9 @@ The go build command is used to compile a Go program into an executable binary.
 
 To compile the program: `go build myprogram.go`.
 
+- _further info:_
+  - [compiling application - go binary]({% link docs/languages/golang/commands.build.binary.md %})
+
 ## go install
 
 The `go install` command is used to compile a Go package and install it in the `$GOPATH` directory.
@@ -46,7 +49,7 @@ The `go install` command is used to compile a Go package and install it in the `
 package main
 import "fmt"
 func main() {
- fmt.Println("Hello, World!")
+  fmt.Println("Hello, World!")
 }
 ```
 
@@ -62,18 +65,18 @@ The `go test` command is used to run tests for a Go package.
 package main
 import "testing"
 func TestMyProgram(t *testing.T) {
- result := MyProgram()
- if result != "Hello, World!" {
- t.Errorf("Expected 'Hello, World!', but got '%s'", result)
- }
+  result := MyProgram()
+  if result != "Hello, World!" {
+    t.Errorf("Expected 'Hello, World!', but got '%s'", result)
+  }
 }
 ```
 
 To run the tests: `go test`.
 
-- further info:
-   - [the basic]({% link docs/languages/golang/test.md %})
-   - [how to debug a go test]({% link docs/languages/golang/commands.test.debugging.md %})
+- _further info:_
+  - [the basic]({% link docs/languages/golang/test.md %})
+  - [how to debug a go test]({% link docs/languages/golang/commands.test.debugging.md %})
 
 
 ## go get
@@ -137,7 +140,7 @@ go doc mypackage.HelloWorld
 
 
 - _further info:_
-   - [writing documentation in golang]({% link docs/languages/golang/commands.doc.md %})
+  - [writing documentation in golang]({% link docs/languages/golang/commands.doc.md %})
 
 
 ## go generate
