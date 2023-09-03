@@ -15,4 +15,5 @@ __[back]({% link docs/languages/golang/other.md %})__
 
 __samples:__
 - [code sample A]({% link docs/languages/golang/other.grpc.sample-a.md %})
+- [code sample B]({% link docs/languages/golang/other.grpc.sample-b.md %})
 
