@@ -17,6 +17,39 @@ permalink: /docs/languages/golang/data-types
 {:toc}
 </details>
 
+<br/>
+<details markdown="block">
+  <summary>
+    variables getting started...
+  </summary>
+
+1. declaring variables:
+  - `var x int`
+  - `var y int = 10`
+  - `var a, b, c int`
+2. short declaration:
+  - `z := 20`
+3. zero values:
+  - `0` _for numeric types_
+  - `false` _for the boolean type_
+  - `""` _(empty string) for strings_
+  - `nil` _for pointers, functions, interfaces, slices, channels, and maps._
+4. constants:
+  - `const Pi = 3.14159`
+5. data types:
+  - basic types: — `int`, `int8`, `int16`, `int32`, `int64` - `uint`, `uint8`, `uint16`, `uint32`, `uint64`, `uintptr` - `float32`, `float64` - `complex64`, `complex128` - `bool` - `string`
+  - composite types: — `array` - `slice` - `map` - `struct` - `channel` - `interface` - `pointer` - `function`
+6. pointers:
+  - `var ptr *int`
+7. scope:
+  - __local__: _inside a function or block, only accessible within that function_.
+  - __package__: _outside a function but inside a package, accessible throughout the package_.
+  - __global__: _declared outside a function, accessible throughout the program_.
+  - __exported/unexported__: _variables starting with an uppercase letter are exported and can be accessed from other packages. Those with lowercase are unexported and are private to their package_.
+
+<!-- variables getting started -->
+</details>
+
 # Data Types
 
 1. __Numeric types__: These include integer types such as `int`, `int8`, `int16`, `int32`, and `int64`, as well as unsigned integer types such as `uint`, `uint8` (or `byte`), `uint16`, `uint32`, and `uint64`. In addition to these, there are also floating-point types `float32` and `float64`.
