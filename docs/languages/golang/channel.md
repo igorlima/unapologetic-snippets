@@ -18,6 +18,10 @@ The key is to keep in mind the core of using channels, the __signal transmission
 
 ![image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a7botFtrJhid0KWeKB4AYg.png)
 
+One of the main features of Go programming language is its eponymous `go` statement. In Go, it’s super-easy to start a new goroutine. But how do you get its results? How do you know if it may have errored? How do you wait for it to complete? How do you cancel it, if you don’t need its results anymore? Those familiar with Go will say: well, obviously, use channels. But channel in Go is still a low level construct. _The more channels you have — the more problems. Channels can deadlock. Channels can panic._ [^3]
+
+Different languages and frameworks have a design pattern to defer value. Some call it __Future__, other call it __Promise__, and a bunch of other names. A `go` statement is eager by its nature. [^3]
+
 # Channel
 
 In Go, channels are used to communicate between goroutines. Channels are like pipes through which you can pass data. However, when we try to read from a channel that has no data, it can cause the program __to block__. _To avoid blocking_, Go provides a built-in mechanism that allows us to detect if a channel is closed or if there is no data available. This mechanism is called the “comma ok” syntax.
@@ -81,3 +85,4 @@ func main() {
 
 [^1]: [Go Channels — The Ultimate Guide](https://medium.com/@lordmoma/go-channels-the-ultimate-guide-3a2552a2a458)
 [^2]: [When and How to Use the Go Channel](https://betterprogramming.pub/when-and-how-to-use-the-go-channel-58f82605156c)
+[^3]: [Build your own Future in Go](https://levelup.gitconnected.com/build-your-own-future-in-go-f66c568e9a7a)
