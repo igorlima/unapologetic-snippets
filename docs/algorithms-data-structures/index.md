@@ -41,6 +41,8 @@ In AI writing, prompts are what the user says to the AI writing tool to create t
 
 Functional programming principles is about empowering the developer to work with immutable data, compose functions, and bring a declarative flair to the code.
 
+- [Functional Paradigms in Go]({% link docs/languages/golang/other.functional-paradigms.md %})
+
 ## Coroutines, Threads, and Generators
 
 At first glance, coroutines, threads, and generators look alike. All three provide concurrency in one form or another, but they differ in important ways. [^4]
