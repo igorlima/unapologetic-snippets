@@ -11,6 +11,46 @@ __[back]({% link docs/languages/golang/api.md %})__
 
 # [Gin](https://github.com/gin-gonic/gin)
 
+<details markdown="block">
+  <summary>
+    getting started
+  </summary>
+
+A sample from a Medium post [^1].
+
+```bash
+go mod init github.com/igorlima/gin-2023a09m04d-21h19
+go get -u github.com/gin-gonic/gin
+```
+
+```golang
+package main
+
+import (
+  "net/http"
+
+  "github.com/gin-gonic/gin"
+)
+
+func main() {
+  r := gin.New()
+
+  r.GET("/", func(c *gin.Context) {
+    c.String(http.StatusOK, "Hello, world!")
+  })
+
+  r.Run(":3000")
+}
+```
+----
+<br/>
+<!-- getting started -->
+</details>
+
+<details markdown="block">
+  <summary>
+    sample A
+  </summary>
 ```golang
 package main
 
@@ -35,7 +75,15 @@ func main() {
   r.Run() // listen and serve on 0.0.0.0:8080
 }
 ```
+----
+<br/>
+<!-- sample A -->
+</details>
 
+<details markdown="block">
+  <summary>
+    sample B
+  </summary>
 ```js
 // encode a string to Base64 in JavaScript
 btoa('foo:bar')
@@ -120,3 +168,11 @@ func main() {
   r.Run(":8080")
 }
 ```
+----
+<br/>
+<!-- sample B -->
+</details>
+
+---
+
+[^1]: [Go: Gin vs Fiber vs Echo Hello World performance](https://medium.com/deno-the-complete-reference/go-gin-vs-fiber-vs-echo-hello-world-performance-a69a76a64d34)
