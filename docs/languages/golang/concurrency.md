@@ -114,6 +114,10 @@ goroutine
 
 A channel is a typed conduit thorugh which you can send and receive values with the `<-` operator. Channels ensure safe and efficient communication between concurrent processes.
 
+<details markdown="block">
+  <summary>
+    channel sample
+  </summary>
 ```golang
 package main
 
@@ -145,12 +149,20 @@ Hello from channel!
 Hi from channel!
 */
 ```
+----
+<br/>
+<!-- channel sample -->
+</details>
 
 ## Buffered Channels
 
 Buffered channels are channels that can hold a certain number of values before they are read.
 Buffered channels are created using the `make` function with a second argument specfying the buffer size.
 
+<details markdown="block">
+  <summary>
+    buffered channel sample
+  </summary>
 ```golang
 package main
 
@@ -198,12 +210,20 @@ Hi there from channel!
 ---
 */
 ```
+----
+<br/>
+<!-- buffered channel sample -->
+</details>
 
 # Select Statement
 
 The select statement in Go allows you to wait on multiple channel operations simultaneously.
 The select statement blocks until one of its cases can proceed, at which point it executes that case.
 
+<details markdown="block">
+  <summary>
+    select statement sample
+  </summary>
 ```golang
 package main
 
@@ -242,7 +262,48 @@ OUTPUT
 Hello from channel 1!
 */
 ```
+----
+<br/>
+<!-- select statement sample -->
+</details>
 
+<details markdown="block">
+  <summary>
+    a golang channel for doing a graceful shutdown
+  </summary>
+
+A sample from a Medium post. [^5]
+
+```golang
+package main
+
+import (
+  "fmt"
+  "os"
+  "os/signal"
+  "syscall"
+  "time"
+)
+
+func main() {
+  quit := make(chan os.Signal, 1)
+  signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+  select {
+  case sig := <-quit:
+    fmt.Printf("Received signal: %s\n", sig)
+    // Perform graceful shutdown logic
+  case <-time.After(time.Second * 10):
+    fmt.Println("Timeout reached, shutting down...")
+    // Perform graceful shutdown logic
+  }
+  fmt.Println("Server gracefully shut down")
+}
+```
+
+----
+<br/>
+<!-- a golang channel for doing a graceful shutdown -->
+</details>
 # Mutex and WaitGroup
 
 A mutex is a mutual exclusion lock that allows only one goroutine to access a resource at a time. Any other goroutines that attempt to acces the resource while it's locked will be blocked until the lock is released.
@@ -251,6 +312,10 @@ A WaitGroup waits for a collection of goroutines to finish before continuing.
 
 A Wait Group is essentially a counter that __keeps track of the number of goroutines that are active or pending completion__. It allows the main goroutine to wait until all other goroutines have finished executing.
 
+<details markdown="block">
+  <summary>
+    mutex and waitgroup sample
+  </summary>
 ```golang
 package main
 
@@ -300,6 +365,10 @@ OUTPUT
 Hello from channel 1!
 */
 ```
+----
+<br/>
+<!-- mutex and waitgroup sample -->
+</details>
 
 # Context
 
@@ -320,3 +389,4 @@ In Go, a context is a mechanism for managing concurrent operations, such as goro
 [^2]: [Actor model for concurrent systems, an introduction in GO](https://medium.com/@joao_vaz/actor-model-for-concurrent-systems-an-introduction-in-go-75fd25f2f04e)
 [^3]: [Golang Goroutines: Powering High-Performance Applications](https://medium.com/@cerebrovinny/golang-goroutines-powering-high-performance-applications-767742d961ce)
 [^4]: [Context in GoLang _by Sai Teja_](https://medium.com/@saiteja180/context-in-golang-e8cde4fba1e2)
+[^5]: [An use case of go channels that you did not know about](https://dsysd-dev.medium.com/an-use-case-of-go-channels-that-you-did-not-know-about-2459b491a9f5)
