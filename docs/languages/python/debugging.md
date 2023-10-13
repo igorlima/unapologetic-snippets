@@ -10,6 +10,8 @@ permalink: /docs/languages/python/debugging
 
 # Debugging
 
+> “The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.” _Andrew Singer_
+
 ## Using Rich Inspect to interrogate Python objects
 
 <details markdown="block">

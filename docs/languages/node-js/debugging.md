@@ -8,6 +8,8 @@ has_children: true
 permalink: /docs/languages/node-js/debugging
 ---
 
+> “The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.” _Andrew Singer_
+
 other resources:
 - not yet available
 
