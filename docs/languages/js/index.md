@@ -7,6 +7,10 @@ has_children: true
 permalink: /docs/languages/js
 ---
 
+```html
+data:text/html,<html contenteditable>
+```
+
 # Navigation Structure
 {: .no_toc }
 
