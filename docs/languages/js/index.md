@@ -7,6 +7,7 @@ has_children: true
 permalink: /docs/languages/js
 ---
 
+<sub>[open editable html]({% link /editable.html %})</sub>
 ```html
 data:text/html,<html contenteditable>
 ```
