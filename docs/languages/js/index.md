@@ -11,7 +11,8 @@ permalink: /docs/languages/js
 ```html
 data:text/html,<html contenteditable>
 ```
-<sup>[open editable html - option two](data:text/html,<html contenteditable>)</sup>
+- [option two](data:text/html,<html contenteditable>) <sup>by clicking on right button to open another tab</sup>
+  - [StackEdit](https://stackedit.io/)
 
 # Navigation Structure
 {: .no_toc }
