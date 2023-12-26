@@ -45,6 +45,8 @@ The foundation technology for modern-day natural language processing techniques 
 
 Matching is about finding similarities, and there are many ways of doing it. One popular way of doing this whit text data is with _cosine similarity_. _Cosine similarity_[^7] is a measure of how similar 2 vectors are.
 
+A _vector database_ is a database that can store vectors along with other information.
+
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/db077170-411b-47cf-b9dc-84a82297ae4c)
 
 
