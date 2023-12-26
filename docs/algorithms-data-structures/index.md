@@ -45,6 +45,9 @@ The foundation technology for modern-day natural language processing techniques 
 
 Matching is about finding similarities, and there are many ways of doing it. One popular way of doing this whit text data is with _cosine similarity_. _Cosine similarity_ is a measure of how similar 2 vectors are.
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/db077170-411b-47cf-b9dc-84a82297ae4c)
+
+
 ## Functional Programming
 
 Functional programming principles is about empowering the developer to work with immutable data, compose functions, and bring a declarative flair to the code.
