@@ -8,6 +8,8 @@ has_children: true
 permalink: /docs/languages/node-js/debugging
 ---
 
+There are three main pillars of being a good software engineer: writing code, debugging code and reviewing code.
+
 > “The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.” _Andrew Singer_
 
 > "Debugging is a separate skill from writing code. Writing code is creative, its like art. Debugging is like science, you need to formulate a small hypothesis and test it, then keep doing that till you've fixed the problem".
