@@ -10,6 +10,8 @@ permalink: /docs/languages/js/debugging
 
 > “The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.” _Andrew Singer_
 
+> "Debugging is a separate skill from writing code. Writing code is creative, its like art. Debugging is like science, you need to formulate a small hypothesis and test it, then keep doing that till you've fixed the problem".
+
 other resources:
 - not yet available
 
