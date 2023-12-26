@@ -41,6 +41,10 @@ In AI writing, prompts are what the user says to the AI writing tool to create t
 
 The foundation technology for modern-day natural language processing techniques is _text empowering_. It's a step we need to convert input into the correct representation. A text embedding, also called a _vector_, is a piece of text that's projected into a high-dimensional space.
 
+### Similarity
+
+Matching is about finding similarities, and there are many ways of doing it. One popular way of doing this whit text data is with _cosine similarity_. _Cosine similarity_ is a measure of how similar 2 vectors are.
+
 ## Functional Programming
 
 Functional programming principles is about empowering the developer to work with immutable data, compose functions, and bring a declarative flair to the code.
