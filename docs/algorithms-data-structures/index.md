@@ -37,6 +37,10 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 
 In AI writing, prompts are what the user says to the AI writing tool to create the context they want. Prompts are essentially commands, which specify the parameters of the assignment such as the topic, length, style, and which words to use. [^5]
 
+### Text embeddings
+
+The foundation technology for modern-day natural language processing techniques is _text empowering_. It's a step we need to convert input into the correct representation. A text embedding, also called a _vector_, is a piece of text that's projected into a high-dimensional space.
+
 ## Functional Programming
 
 Functional programming principles is about empowering the developer to work with immutable data, compose functions, and bring a declarative flair to the code.
