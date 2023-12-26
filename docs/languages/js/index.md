@@ -21,6 +21,9 @@ stateful information _(such as items added in the shopping cart in an online
 store)_ or to record the user's browsing activity _(including clicking particular
 buttons, logging in, or recording which pages were visited in the past)_.
 
+The server can then use these cookies to identify the user, remember their
+preferences, track their session, etc.
+
 # Navigation Structure
 {: .no_toc }
 
