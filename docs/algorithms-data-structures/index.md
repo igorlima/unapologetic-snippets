@@ -39,11 +39,11 @@ In AI writing, prompts are what the user says to the AI writing tool to create t
 
 ### Text embeddings
 
-The foundation technology for modern-day natural language processing techniques is _text empowering_. It's a step we need to convert input into the correct representation. A text embedding, also called a _vector_, is a piece of text that's projected into a high-dimensional space.
+The foundation technology for modern-day natural language processing techniques is _text empowering_. It's a step we need to convert input into the correct representation. A text embedding[^7], also called a _vector_, is a piece of text that's projected into a high-dimensional space.
 
 ### Similarity
 
-Matching is about finding similarities, and there are many ways of doing it. One popular way of doing this whit text data is with _cosine similarity_. _Cosine similarity_ is a measure of how similar 2 vectors are.
+Matching is about finding similarities, and there are many ways of doing it. One popular way of doing this whit text data is with _cosine similarity_. _Cosine similarity_[^7] is a measure of how similar 2 vectors are.
 
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/db077170-411b-47cf-b9dc-84a82297ae4c)
 
@@ -99,3 +99,4 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 [^4]: [Coroutines for Go](https://research.swtch.com/coro)
 [^5]: [17 Writing Tasks You Can Do With AI](https://www.grammarly.com/blog/ai-writing-tasks/)
 [^6]: [What’s a data science notebook?](https://technically.substack.com/p/whats-a-data-science-notebook)
+[^7]: [Matching resumes with job postings using LLMs and Go](https://sausheong.com/matching-resumes-with-job-postings-using-llms-and-go-8ad9f0dfce6a)
