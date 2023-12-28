@@ -30,7 +30,7 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 
 ## Artificial Intelligence (AI)
 
-- [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/index.md %})
+- [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/other.md %})
   - a Python implementation that, instead of bringing your documents to ChatGPT; instead, brings ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
 
 ### Prompts

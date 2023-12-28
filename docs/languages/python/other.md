@@ -89,6 +89,11 @@ curl -X POST 'http://127.0.0.1:5000/query' \
 -d '{"query": "what the difference between structured data and unstructured data"}'
 ```
 
+- Other Resources:
+  - reference to do something alike using AWS infra-structure
+    - [Knowledge Bases now delivers fully managed RAG experience in Amazon Bedrock](https://aws.amazon.com/blogs/aws/knowledge-bases-now-delivers-fully-managed-rag-experience-in-amazon-bedrock/)
+    - [How to Integrate AWS Bedrock via Boto3 and Langchain in Large Language Model Applications](https://medium.com/@wwwbbb8510/how-to-integrate-aws-bedrock-via-boto3-and-langchain-in-large-language-model-applications-568732931dce)
+
 
 -----
 
