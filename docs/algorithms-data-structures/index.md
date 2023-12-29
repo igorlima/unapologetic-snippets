@@ -101,4 +101,4 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 [^4]: [Coroutines for Go](https://research.swtch.com/coro)
 [^5]: [17 Writing Tasks You Can Do With AI](https://www.grammarly.com/blog/ai-writing-tasks/)
 [^6]: [What’s a data science notebook?](https://technically.substack.com/p/whats-a-data-science-notebook)
-[^7]: [Matching resumes with job postings using LLMs and Go](https://sausheong.com/matching-resumes-with-job-postings-using-llms-and-go-8ad9f0dfce6a)
+[^7]: [Matching resumes with job postings using LLMs and Go](https://medium.com/@sausheong/matching-resumes-with-job-postings-using-llms-and-go-8ad9f0dfce6a)
