@@ -90,7 +90,7 @@ go tool pprof -http=:8080 mem.prof
 
 | `cpu.prof` | `mem.prof` |
 | :---: | :---: |
-| | |
+| ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/d53f5f67-f95b-4cc5-848d-07d76ef98dbf) | ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/c9ab5b80-b7a4-4838-b37e-017b909411fc) |
 
   <details markdown="block"><summary>fixing it...</summary>
 
