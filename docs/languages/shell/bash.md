@@ -9,6 +9,8 @@ permalink: /docs/languages/shell/bash-script
 
 Other things:
 - [symbol & commands]({% link docs/languages/shell/bash.symbol-command.md %})
+- [bash sample]({% link docs/languages/shell/bash.sample.md %})
+  - _automatically run a command every n minutes_
 
 <details markdown="block">
   <summary>
@@ -65,6 +67,9 @@ done
 ```
 
 __functions__
+
+- [more about functions]({% link docs/languages/shell/bash.symbol-command.md %}#functions)
+
 ```bash
 greet() {
   echo "Hello, $1!"
@@ -134,6 +139,54 @@ else
   echo "The last command was unsuccessful."
 fi
 ```
+
+## Control Flow Statements
+
+__if statements__
+
+```bash
+if condition
+then
+  code_to_execute
+fi
+
+my_variable="Welcome to a new world!"
+if [ "$my_variable" == "Welcome to a new world!" ]
+then
+  echo "This variable says Welcome to a new world!"
+if
+```
+
+__for loops__
+
+```bash
+for variable_name in list
+do
+  code_to_execute
+done
+
+fruits=("apple" "banana" "orange")
+for fruit in "${fruits[@]}"
+do
+  echo $fruit
+done
+```
+
+__while loops__
+
+```bash
+while condition
+do
+  code_to_execute
+done
+
+while [ "$my_variable" == "Hello, world!" ]
+do
+  echo "The variable is equal to Hello, world!"
+  my_variable="Goodbye, world!"
+done
+```
+
 
 ## Strict Mode
 
