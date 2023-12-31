@@ -11,6 +11,7 @@ Other things:
 - [symbol & commands]({% link docs/languages/shell/bash.symbol-command.md %})
 - [bash sample]({% link docs/languages/shell/bash.sample.md %})
   - _automatically run a command every n minutes_
+- [further more...]({% link docs/languages/shell/bash.further-more.md %})
 
 <details markdown="block">
   <summary>
