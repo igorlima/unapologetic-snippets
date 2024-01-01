@@ -42,7 +42,7 @@ __Design Your API.__[^10] The `.proto` files for the service defines the source 
 
 ## Artificial Intelligence (AI)
 
-- [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/other.md %})
+- [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/other.chatgpt-knowledge-base.md %})
   - a Python implementation that, instead of bringing your documents to ChatGPT; instead, brings ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
 
 ### Prompts
@@ -92,6 +92,12 @@ For this taxonomy, Go's goroutines are cheap threads: a goroutine switch is clos
 - Generators provide less power than coroutines, because only the top-most frame in the coroutine is allowed to yield. That frame is moved back and forth between an object and the call stack to suspend and resume it.
 
 Coroutines are a useful building block for writing programs that want concurrency for program structuring but not for parallelism.
+
+## Bitwise Operations
+
+Bitwise operators are characters that represent actions (bitwise operations) to be performed on single bits. They operate at the binary level and perform operations on bit patterns that involve the manipulation of individual bits.
+
+- bitwise operations in Python
 
 ## Data Science Notebook
 
