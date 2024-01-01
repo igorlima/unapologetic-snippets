@@ -12,6 +12,16 @@ permalink: /docs/languages/python/debugging
 
 > “The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.” _Andrew Singer_
 
+```python
+# Full-screen console debugger for Python
+# https://documen.tician.de/pudb/
+# https://github.com/inducer/pudb
+import pudb; pu.db
+t = 10
+y = 'Hello'
+pu.db
+```
+
 ## Using Rich Inspect to interrogate Python objects
 
 <details markdown="block">
@@ -35,3 +45,51 @@ inspect(text_file, methods=True, help=True)
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/91ece1da-bbfd-4381-b9fc-2c01a18f877a)
 
 </details>
+
+## Building a samll REPL in Python
+
+Python comes with a bunch of batteries included, starting from embedding a normal Python REPL in the project. [^1]
+
+<details markdown="block">
+  <summary>
+    sample
+  </summary>
+
+```python
+import code
+
+print("Welcome to the Python interactive shell!")
+
+t = 10
+y = 'Hello'
+
+# • dir()      will give you the list of in-scope variables
+# • globals()  will give you a dictionary of global variables
+# • locals()   will give you a dictionary of local variables
+# print(locals())
+# print(globals())
+
+# Documentation:
+# Interpreter base classes
+# https://docs.python.org/3/library/code.html#code.InteractiveConsole
+repl = code.InteractiveConsole(locals=locals())
+repl.interact()
+```
+
+If you (`chmod +x repl.py` and) run this, you get what looks like a normal Python REPL, plus a little extra output:
+
+```python
+#!/usr/bin/env python3
+# repl.py
+import code
+repl = code.InteractiveConsole()
+repl.interact()
+```
+
+</details>
+
+
+
+------ ------
+
+[^1]: [Building a small REPL in Python](https://bernsteinbear.com/blog/simple-python-repl/)
