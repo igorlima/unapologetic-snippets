@@ -97,7 +97,7 @@ Coroutines are a useful building block for writing programs that want concurrenc
 
 Bitwise operators are characters that represent actions (bitwise operations) to be performed on single bits. They operate at the binary level and perform operations on bit patterns that involve the manipulation of individual bits.
 
-- bitwise operations in Python
+- [bitwise operations in Python]({% link docs/languages/python/other.bitwise-operations.md %})
 
 ## Data Science Notebook
 

@@ -10,4 +10,5 @@ permalink: /docs/languages/python/other
 
 - Other Resources:
   - [How to Use Google Drive as a Knowledge Base For a ChatGPT Application]({% link docs/languages/python/other.chatgpt-knowledge-base.md %})
+  - [Bitwise Operations]({% link docs/languages/python/other.bitwise-operations.md %})
 
