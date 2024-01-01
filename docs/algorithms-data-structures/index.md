@@ -49,6 +49,18 @@ A _vector database_ is a database that can store vectors along with other inform
 
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/db077170-411b-47cf-b9dc-84a82297ae4c)
 
+### Retrieval Augmented Generation (RAG)
+
+__What is a RAG?__
+Retrieval Augmented Generation (RAG)[^8]. Simply put, RAGs help LLMs by giving them access to external data so that they can generate a response with additional context. This context can be anything from recent news, audio transcripts of a lecture, or in my case — fantasy football news.
+
+__How do they work?__
+You can think of RAG as an LLM with vector search attached. Here are the 4 key steps that take place:
+1. Load a vector database with encoded documents.
+1. Encode the query into a vector using a sentence transformer.
+1. Based on the inputted query, retrieve relevant context from thevector database.
+1. Leverage context along with the query to prompt the LLM.
+
 
 ## Functional Programming
 
@@ -102,3 +114,4 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 [^5]: [17 Writing Tasks You Can Do With AI](https://www.grammarly.com/blog/ai-writing-tasks/)
 [^6]: [What’s a data science notebook?](https://technically.substack.com/p/whats-a-data-science-notebook)
 [^7]: [Matching resumes with job postings using LLMs and Go](https://medium.com/@sausheong/matching-resumes-with-job-postings-using-llms-and-go-8ad9f0dfce6a)
+[^8]: [Build your own RAG with Mistral-7B and LangChain](https://medium.com/@thakermadhav/build-your-own-rag-with-mistral-7b-and-langchain-97d0c92fa146)
