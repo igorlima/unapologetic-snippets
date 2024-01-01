@@ -13,3 +13,4 @@ See:
 - [WebAssembly with Go]({% link docs/languages/golang/other.webassembly.md %})
 - [gRPC Server and Client in Go]({% link docs/languages/golang/other.grpc.md %})
 - [Functional Paradigms in Go]({% link docs/languages/golang/other.functional-paradigms.md %})
+- [Command Line Interface (__CLI__)]({% link docs/languages/golang/other.cli.md %})
