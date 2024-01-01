@@ -28,6 +28,15 @@ gRPC is a high-performance, open-source framework for remote procedure calls (RP
 
 - [a sample in Go]({% link docs/languages/golang/other.grpc.md %})
 - [a sample building a gRPC server and client in Node.js](https://semaphoreci.medium.com/an-introduction-to-grpc-building-distributed-systems-with-efficiency-and-scalability-in-mind-c13024e4b0d3)
+- [a implementation of Protocol Buffers in TypeScript](https://github.com/bufbuild/protobuf-es)
+
+__What are Protocol Buffers?__
+In a nutshell, Protocol Buffers have two main functions:
+- They are a language for writing schemas for your data.
+- They define a binary format for serializing your data.
+
+These two independent traits functions work together to allow your project and everyone who interacts with it to define messages, fields, and service APIs in the exact same way.
+Protocol Buffers also allow you to serialize this structured data.
 
 __How does gRPC work?__[^9] gRPC utilizes Remote Procedure Call (RPC) technology to facilitate communication between disparate services using a protocol buffer. _The protocol buffer serves as a conduit for structured data exchange between systems_.
 
@@ -38,6 +47,7 @@ __Advantages of gRPC__:
 - gRPC supports bi-directional streaming, allowing both the client and server to send and receive data simultaneously, which enables real-time communication and reduces latency.
 
 __Design Your API.__[^10] The `.proto` files for the service defines the source of truth for your API spec. Well commented ones can even be used to [generate documentation](https://github.com/pseudomuto/protoc-gen-doc).
+
 
 
 ## Artificial Intelligence (AI)
