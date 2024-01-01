@@ -27,6 +27,18 @@ Data Races are the toughest and the most time-consuming thing to debug. [^2]
 gRPC is a high-performance, open-source framework for remote procedure calls (RPC). It uses Protocol Buffers (protobuf) as the interface definition language and supports various programming languages, including Go. gRPC enables communication between microservices using a strongly-typed contract, allowing for efficient and reliable service-to-service communication. [^3]
 
 - [a sample in Go]({% link docs/languages/golang/other.grpc.md %})
+- [a sample building a gRPC server and client in Node.js](https://semaphoreci.medium.com/an-introduction-to-grpc-building-distributed-systems-with-efficiency-and-scalability-in-mind-c13024e4b0d3)
+
+__How does gRPC work?__[^9] gRPC utilizes Remote Procedure Call (RPC) technology to facilitate communication between disparate services using a protocol buffer. _The protocol buffer serves as a conduit for structured data exchange between systems_.
+
+__gRPC API service methods__[^9] are functionalities that can be remotely called by clients in gRPC API are defined by service methods. These methods are specified in an _Interface Definition Language_ (IDL) file written in Protocol Buffer format (`.proto`). This IDL file is utilized to create the server and client code for gRPC.
+
+__Advantages of gRPC__:
+- gRPC offers strongly typed contracts that use Protocol Buffers to define the service contract. This ensures that the data being transmitted is consistent and validated, which reduces the chance of errors and bugs.
+- gRPC supports bi-directional streaming, allowing both the client and server to send and receive data simultaneously, which enables real-time communication and reduces latency.
+
+__Design Your API.__[^10] The `.proto` files for the service defines the source of truth for your API spec. Well commented ones can even be used to [generate documentation](https://github.com/pseudomuto/protoc-gen-doc).
+
 
 ## Artificial Intelligence (AI)
 
@@ -115,3 +127,5 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 [^6]: [What’s a data science notebook?](https://technically.substack.com/p/whats-a-data-science-notebook)
 [^7]: [Matching resumes with job postings using LLMs and Go](https://medium.com/@sausheong/matching-resumes-with-job-postings-using-llms-and-go-8ad9f0dfce6a)
 [^8]: [Build your own RAG with Mistral-7B and LangChain](https://medium.com/@thakermadhav/build-your-own-rag-with-mistral-7b-and-langchain-97d0c92fa146)
+[^9]: [An Introduction to gRPC: Building Distributed Systems With Efficiency and Scalability in Mind](https://medium.com/@semaphoreci/an-introduction-to-grpc-building-distributed-systems-with-efficiency-and-scalability-in-mind-c13024e4b0d3)
+[^10]: [Go Services over gRPC](https://medium.kieranwarwick.dev/go-services-over-grpc-2fdc3bd7daeb)
