@@ -24,6 +24,43 @@ CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -tags=containers
 
 Once you have the binary, you’ll create a container image by using a Dockerfile.
 
+## Possible platforms for `GOOS` and `GOARCH`
+
+```sh
+# uname (short for unix name) is a computer program in Unix and Unix-like
+# computer operating systems that prints the name, version and other details
+# about the current machine and the operating system running on it
+uname
+uname -a
+# how to detect 386, amd64, arm, or arm64 OS architecture:
+uname -m
+
+# how to see golang list of GOOS and GOARCH
+# https://go.dev/doc/install/source#environment
+# https://gist.github.com/asukakenji/f15ba7e588ac42795f421b48b8aede63
+go tool dist list
+go tool dist list -json
+```
+
+```sh
+env GOOS=target-OS GOARCH=target-architecture go build package-import-path -o my-app
+
+env GOOS=darwin GOARCH=amd64 go build -o main-darwin-amd64 main.go
+env GOOS=darwin GOARCH=arm64 go build -o main-darwin-arm64 main.go
+env GOOS=ios GOARCH=amd64 go build -o main-ios-amd64 main.go
+env GOOS=ios GOARCH=arm64 go build -o main-ios-arm64 main.go
+```
+
+### Build a library for Android and iOS
+
+resource:
+- [gomobile documentation](https://pkg.go.dev/golang.org/x/mobile/cmd/gomobile#hdr-Build_a_library_for_Android_and_iOS - https://stackoverflow.com/questions/69947002/go-compilation-for-ios)
+
+```bash
+gomobile build -target ios -o main-ios main.go
+```
+
+
 ----
 
 [^1]: [Compiling Your Go Application for Containers](https://medium.com/pragmatic-programmers/compiling-your-go-application-for-co-ntainers-b513190471aa)
