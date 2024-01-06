@@ -10,7 +10,7 @@ permalink: /docs/languages/shell/cli-gh
 __[back]({% link docs/languages/shell/cli.md %})__
 
 
-GitHub CLI brings the GitHub to the terminal[^1].
+GitHub CLI brings the GitHub to the terminal[^1]. [GitHub CLI & hub](https://github.com/cli/cli/blob/586eb8b865ea539832716a3d8c5cb42b11ee784c/docs/gh-vs-hub.md).
 
 - [https://cli.github.com/](https://cli.github.com/)
 
@@ -37,6 +37,9 @@ brew install gh
 - `gh repo --help`
 - `gh issue create`
 - `gh issue list`
+- `gh label list [flags]`
+  - `gh label list --sort name`
+  - `gh label list --search bug`
 - `gh pr`
   - [https://cli.github.com/manual/gh_pr](https://cli.github.com/manual/gh_pr)
     - `-R`, `--repo <[HOST/]OWNER/REPO>`
