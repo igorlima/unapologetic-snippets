@@ -1,7 +1,10 @@
 ---
-layout: minimal
+layout: default
 title: Algorithms and Data Structures
-nav_order: 98
+nav_order: 4
+has_children: true
+has_toc: false
+permalink: /docs/algorithms-and-data-structures
 ---
 
 [Return to main website]({{site.baseurl}}/).
@@ -50,7 +53,7 @@ __Design Your API.__[^10] The `.proto` files for the service defines the source 
 
 
 
-## Artificial Intelligence (AI)
+## [Artificial Intelligence (AI)]({% link docs/algorithms-data-structures/ai/index.md %})
 
 - [a knowledge base powered by ChatGPT in Python]({% link docs/languages/python/other.chatgpt-knowledge-base.md %})
   - a Python implementation that, instead of bringing your documents to ChatGPT; instead, brings ChatGPT to your documents using apps like Google Drive, Notion, and Dropbox as your knowledge base.
