@@ -7,6 +7,11 @@ grand_parent: Programming Languages
 permalink: /docs/languages/shell/zsh
 ---
 
+Other things:
+- [file descriptor]({% link docs/languages/shell/zsh.file-descriptor.md %})
+
+----
+
 `zsh`, colloquially known as the “Z shell,” is a souped-up version of the Bourne Shell (sh). Even without plugins, Zsh boasts of features missing in `sh`, such as:
 
 - direct directory access: no need to type `cd`; just enter the directory name.
