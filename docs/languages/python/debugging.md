@@ -22,6 +22,9 @@ y = 'Hello'
 pu.db
 ```
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/a30a6667-0375-41ba-8972-73e6c5127934)
+
+
 ## Using Rich Inspect to interrogate Python objects
 
 <details markdown="block">
