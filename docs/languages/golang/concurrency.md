@@ -383,6 +383,18 @@ __What is `context` and why it is needed?__
 In Go, a context is a mechanism for managing concurrent operations, such as goroutines, by passing information and signals between different parts of a program. It allows for handling timeouts, cancellations, and sharing values in a controlled manner.
 
 
+__Best practices for handling context plumbing:__ [^6]
+- __Context__ is the first argument passed to functions that accept contexts.
+- Purpose of context:
+  - Provide a control-flow mechanism across API boundaries with signals.
+  - Carrying request-scoped data across API boundaries.
+- A couple of rules of thumb:
+  - Only entry-point functions (the one at the top of a call chain) should create an empty context (i.e., `context.Background()`).
+  - The [documentation](https://pkg.go.dev/context) for context states:
+    - _**"Do not store Contexts inside a struct type; instead, pass a Context explicitly to each function that needs it."**_
+  - the core of the rule is:
+    - _**"When a function takes a context parameter, that context should only be used for the duration of the call, not after it returns."**_
+
 ----
 
 [^1]: [Mastering Advanced Go Concurrency: Powerful Concepts and Examples](https://medium.com/@utkarshjha_81903/mastering-advanced-go-concurrency-powerful-concepts-and-examples-2011d8b01855)
@@ -390,3 +402,4 @@ In Go, a context is a mechanism for managing concurrent operations, such as goro
 [^3]: [Golang Goroutines: Powering High-Performance Applications](https://medium.com/@cerebrovinny/golang-goroutines-powering-high-performance-applications-767742d961ce)
 [^4]: [Context in GoLang _by Sai Teja_](https://medium.com/@saiteja180/context-in-golang-e8cde4fba1e2)
 [^5]: [An use case of go channels that you did not know about](https://dsysd-dev.medium.com/an-use-case-of-go-channels-that-you-did-not-know-about-2459b491a9f5)
+[^6]: [Context Control in Go](https://zenhorace.dev/blog/context-control-go/)
