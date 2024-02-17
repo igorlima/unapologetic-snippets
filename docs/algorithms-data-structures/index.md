@@ -135,6 +135,12 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 - Create presentations and data stories for their stakeholders Report regularly on metrics with dashboards
 - ...and a lot more
 
+## Webhook
+
+__What Are Webhooks?__ [^11] Webhooks works like a notification system. Imagine giving your phone number to a friend who will call you whenever they have news. In the digital world, Webhooks do this through URLs instead of phone numbers. You give a third-party software your URL which they immediately notify when something happens.
+- For example, if something changes in a GitHub repository, like a failed pipeline. GitHub will instantly send a message (webhook) to a specified URL of your choice. This URL should lead to your service waiting to hear the news.
+
+What’s needed to use WebHooks is **an API that listens on the URL provided to the service**, to accept the information sent.
 
 ------ ------
 
@@ -148,3 +154,4 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 [^8]: [Build your own RAG with Mistral-7B and LangChain](https://medium.com/@thakermadhav/build-your-own-rag-with-mistral-7b-and-langchain-97d0c92fa146)
 [^9]: [An Introduction to gRPC: Building Distributed Systems With Efficiency and Scalability in Mind](https://medium.com/@semaphoreci/an-introduction-to-grpc-building-distributed-systems-with-efficiency-and-scalability-in-mind-c13024e4b0d3)
 [^10]: [Go Services over gRPC](https://medium.kieranwarwick.dev/go-services-over-grpc-2fdc3bd7daeb)
+[^11]: [Webhook Testing Without the Headache: A Developer’s Sanity-Saving Tutorial](https://itnext.io/webhook-testing-without-the-headache-a-developers-sanity-saving-tutorial-d6aea887f582)
