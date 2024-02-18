@@ -49,7 +49,7 @@ inspect(text_file, methods=True, help=True)
 
 </details>
 
-## Building a samll REPL in Python
+## Building a small REPL in Python
 
 Python comes with a bunch of batteries included, starting from embedding a normal Python REPL in the project. [^1]
 
@@ -91,6 +91,13 @@ repl.interact()
 
 </details>
 
+## Other alternatives for debugging
+
+- libraries
+  - [web-pdb](https://github.com/romanvm/python-web-pdb)
+    - _Web interface for Python's built-in PDB debugger_
+  - [birdseye](https://github.com/alexmojaki/birdseye)
+    - _Graphical Python debugger which lets you easily view the values of all evaluated expressions_
 
 
 ------ ------
