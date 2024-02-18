@@ -76,7 +76,34 @@ __Use single quotes when needed__: use single quotes to indicate a quote within 
 
 __Use text separators__: use text separators such as `"""` and `===` to separate different sections of your prompt. This helps the model understand the structure of your prompt and generate a relevant response.
 
+## How can you write better prompts when you’re feeling lazy? [^2]
+
+The main idea behind meta-prompting is: you are better at assessing the quality of a prompt than you are at writing one.
+
+Make the model write a better prompt for you. Here’s the compressed meta-prompt:
+```
+Act as an expert Prompt Engineer.
+I'll give you a messy prompt.
+Reason step by step to improve it.
+Write the final prompt as an elegant template with clear sections.
+Use lists, placeholders, and examples.
+##
+Prompt:"""<Insert your prompt here, and yes please, use the triple quotes.>"""
+```
+
+Prompt Engineering is a fancy way to say _**“Write better and better instructions for AI until it does exactly what you want"**_.
+
+The idea of meta-prompting is to use that very skill to your advantage. You make your model ask itself a better question than the one you’d ask yourself.
+
+And just like with people, you get better answers if you ask better.
+
+To build the quick fix we’ll use three [prompting techniques](https://towardsdatascience.com/how-to-write-expert-prompts-for-chatgpt-gpt-4-and-other-language-models-23133dc85550) to create an efficient meta-prompt:
+
+- **Role Prompting**: _you give a role to your LLM, which indirectly specifies the context, objective, and other parameters like the style._
+- **Chain-of-Thought prompting (CoT)**: _also known as “Reason step by step.” This is the most powerful sentence you can use when prompting an LLM. When LLMs “reason step by step,” they use tokens to “think” through stochastic predictions, which increases accuracy._
+- **Placeholders**: _this is a way to both write and submit flexible prompts. Placeholders `<like_this>` allow you to play with different inputs and pick from a set of options._
+
 ----
 
 [^1]: [LLM Prompt Engineering For Developers](https://leanpub.com/LLM-Prompt-Engineering-For-Developers)
-
+[^2]: [How to Improve Any Prompt in Less Than 5 Minutes (Chat UI and Code)](https://towardsdatascience.com/how-to-improve-any-prompt-in-less-than-5-minutes-chat-ui-and-code-8a819e2fa2ba)
