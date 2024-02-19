@@ -125,6 +125,8 @@ Compared to humans, AI systems require more details, precise explanations, clear
 
 The hottest new programming language is English.
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/91a0afd9-791f-49dd-b1f9-014146a1c70a)
+
 
 ---
 
