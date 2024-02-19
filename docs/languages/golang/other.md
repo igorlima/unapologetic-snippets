@@ -14,3 +14,5 @@ See:
 - [gRPC Server and Client in Go]({% link docs/languages/golang/other.grpc.md %})
 - [Functional Paradigms in Go]({% link docs/languages/golang/other.functional-paradigms.md %})
 - [Command Line Interface (__CLI__)]({% link docs/languages/golang/other.cli.md %})
+- [AI models in Go]({% link docs/languages/golang/other.ai.md %})
+  - [_about AI terminology..._]({% link docs/algorithms-data-structures/index.md %}#artificial-intelligence-ai)
