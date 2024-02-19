@@ -123,26 +123,20 @@ Prompt Engineering is a fancy way to say, __“Write better and better instructi
 
 Compared to humans, AI systems require more details, precise explanations, clearer instructions, and a bit of repetition. You want to be intentional with each word you write — __almost as if you were writing code__.
 
-The hottest new programming language is English.
+
+<details markdown="block"><summary>The hottest new programming language is <strong>English</strong>.</summary>
 
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/91a0afd9-791f-49dd-b1f9-014146a1c70a)
+_<sup style="display:block;">image from Medium [^4]</sup>_
 
+- __Why is Prompt Engineering harder than you think?__
+  - The short answer is “an illusion of ease".
+    - Since we use natural language to write prompts, we don’t see it as a complex skill that requires practice. All you have to do is write instructions in plain English.
+    - When you talk to humans, you prompt them the same way you’d prompt an AI. Both humans and AI use inner models to respond to your prompt.
+    - The human model draws on cognitive abilities, past experiences, theoretical knowledge, and real-time sensory data. Language Models, on the other hand, rely solely on language patterns.
 
----
+</details>
 
-downlod image at page 10
-
-Why is Prompt Engineering harder than you think?
-
-The short answer is “an illusion of ease".
-
-Since we use natural language to write prompts, we don’t see it as a complex skill that requires practice. All you have to do is write instructions in plain English.
-
-When you talk to humans, you prompt them the same way you’d prompt an AI. Both humans and AI use inner models to respond to your prompt.
-
-The human model draws on cognitive abilities, past experiences, theoretical knowledge, and real-time sensory data. Language Models, on the other hand, rely solely on language patterns.
-
----
 
 Each prompt has the following format: [^4]
 
@@ -205,9 +199,9 @@ Prompt content: Content of the prompt that sometimes includes <placeholders>.
     - Use empty `<placeholders>` to illustrate the desired format. Here you don’t have to write the content of each placeholder.
 - Specify the style/tone
   - a few examples of styles you can pick from:
-    - __Generic styles__: formal, informal, persuasive, conversational, sarcastic, dramatic, condescending, nuanced, biased, humorous, optimistic, pessimistic, etc.
-    - __Domain-specific styles__: academic, legal, political, technical, medical, news, scientific, marketing, creative, instructional, etc.
-    - __Mimicking the style of a real person__: Agatha Christie, Daniel Kahneman, J.K Rowling, James Baldwin, Hajime Isayama, etc.
+    - __Generic styles__: _formal, informal, persuasive, conversational, sarcastic, dramatic, condescending, nuanced, biased, humorous, optimistic, pessimistic, etc._
+    - __Domain-specific styles__: _academic, legal, political, technical, medical, news, scientific, marketing, creative, instructional, etc._
+    - __Mimicking the style of a real person__: _Agatha Christie, Daniel Kahneman, J.K Rowling, James Baldwin, Hajime Isayama, etc._
 - Specify the length of the desired response
 - Specify the target audience
   - <details markdown="block"><summary><sup><i>example</i></sup></summary>
