@@ -117,8 +117,221 @@ To build the quick fix we’ll use three [prompting techniques](https://towardsd
 - **Chain-of-Thought prompting (CoT)**: _also known as “Reason step by step.” This is the most powerful sentence you can use when prompting an LLM. When LLMs “reason step by step,” they use tokens to “think” through stochastic predictions, which increases accuracy._
 - **Placeholders**: _this is a way to both write and submit flexible prompts. Placeholders `<like_this>` allow you to play with different inputs and pick from a set of options._
 
+# How to Write Expert Prompts [^4]
+
+Prompt Engineering is a fancy way to say, __“Write better and better instructions for an AI model until it does exactly what you want"__.
+
+Compared to humans, AI systems require more details, precise explanations, clearer instructions, and a bit of repetition. You want to be intentional with each word you write — __almost as if you were writing code__.
+
+The hottest new programming language is English.
+
+
+---
+
+downlod image at page 10
+
+Why is Prompt Engineering harder than you think?
+
+The short answer is “an illusion of ease".
+
+Since we use natural language to write prompts, we don’t see it as a complex skill that requires practice. All you have to do is write instructions in plain English.
+
+When you talk to humans, you prompt them the same way you’d prompt an AI. Both humans and AI use inner models to respond to your prompt.
+
+The human model draws on cognitive abilities, past experiences, theoretical knowledge, and real-time sensory data. Language Models, on the other hand, rely solely on language patterns.
+
+---
+
+Each prompt has the following format: [^4]
+
+```
+[Title of the prompt]
+
+Prompt content: Content of the prompt that sometimes includes <placeholders>.
+<placeholders> are a tool you use to make better prompt templates.
+
+(Comments that are not part of the prompt are written between parenthesis like this)
+
+## (The two hashtags separate the same prompt into two or more sections)
+
+--- (The three dashes separate examples inside the same prompt)
+
+*** (The three stars separate two different prompts or two different outputs)
+```
+
+<details markdown="block"><summary>Prompt Engineering <strong>Topics</strong></summary>
+
+- __The Basics of Prompting__ [^4]
+  - Each prompt is a bridge between what you want and what your Language Model generates. The shape of your bridge depends on the problem you want to solve, but the underlying structure remains the same.
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    
+    ```
+    [Examples of a simple prompts]
+    
+    Prompt example #1: Act as an independant analyst who specializes in <field_1> and <field_2>.
+    Search the internet for the pros and cons of soy milk.
+    
+    Use 5 bullet points for pros and 5 bullet points for cons.
+    Browse at least 6 different sources and cite each one of them in your analysis.
+    
+    ##
+    
+    <field_1>: Food industry
+    <field_2>: Nutrition
+    
+    .***
+    
+    Prompt example #2: Explain the five love languages as if you're talking to a 16-year-old.
+    
+    ##
+    
+    Desired format:
+    Introduction.
+    - Love language #1: explanation and example.
+    - Love language #2: explanation and example.
+    - Love language #3: explanation and example.
+    - Love language #4: explanation and example.
+    - Love language #5: explanation and example.
+    Conclusion.
+    ```
+    </details>
+- Specify the context (also called “Priming”)
+- Specify the desired format
+- Use `<placeholders>`
+  - Placeholders `<like_this>` help you achieve two separate goals.
+    - Use `<placeholders>` to write flexible prompts that can take different inputs. You have to indicate the content of each placeholder in your prompt. In this case, __a placeholder is a parameter__.
+    - Use empty `<placeholders>` to illustrate the desired format. Here you don’t have to write the content of each placeholder.
+- Specify the style/tone
+  - a few examples of styles you can pick from:
+    - __Generic styles__: formal, informal, persuasive, conversational, sarcastic, dramatic, condescending, nuanced, biased, humorous, optimistic, pessimistic, etc.
+    - __Domain-specific styles__: academic, legal, political, technical, medical, news, scientific, marketing, creative, instructional, etc.
+    - __Mimicking the style of a real person__: Agatha Christie, Daniel Kahneman, J.K Rowling, James Baldwin, Hajime Isayama, etc.
+- Specify the length of the desired response
+- Specify the target audience
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    ```
+    [Specify the target audience]
+     
+    Prompt that targets general adult readers: Please explain the benefits of regular exercise in a way that is easy to understand for the general public.
+     
+    .***
+     
+    Prompt that targets medical professionals: Please write a scientific article that targets medical professionals. The article discusses the physiological and psychological benefits of regular exercise. Make sure the article responds to the expectations of an audience of medical professionals.
+    ```
+    </details>
+  - One common mistake people make when writing prompts is to consider “style” and “target audience” as the same parameter. In reality, the style determines _**how the text sounds**_ and the target audience decides _**which words to use**_.
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    ```
+    [Specify the target audience]
+    
+    Example #1: Explain to an audience of visual artists how Generative AI will impact their field of work.
+    
+    .***
+    
+    Example #2: Write a tweet that promotes an article about AI-driven disinformation. The tweet targets people interested in technology, communication, and social media.
+    
+    .***
+    
+    Example #3: Outline a fundraising campaign and kindly add actionable tips. The content will be sent to a group of non-profiters to help them improve their current methods.
+    ```
+    </details>
+- Many-Examples Prompting
+  - Many-Examples prompting is particularly useful for tasks that involve imagination
+- Temperature Control
+  - Temperature is a parameter that influences the “randomness” of the response generated by your language model. It typically ranges from 0 to 1, but in some instances, you can bring the temperature beyond 1.
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    ```
+    [Temperature control]
+    
+    Example #1: At a temperature of 0.7, please explain why banana bread is called "bread" and not "cake" even though it tastes like a cake.
+    
+    .***
+    
+    Example #2: Write a Python script that transposes a 10x10 matrix. Please provide two versions of the code where the first is generated at a temperature of 0 and the second at a temperature of 0.4.
+    
+    .***
+    
+    Example #3: Act like an expert developer in <name_of_the_programming_language>. I will submit a few lines of code in the chat, and you'll review the code, then perform the following 7 tasks in the specified order defined below. When you write code, always use a temperature of <temperature_value>.
+    
+    ##
+    
+    <name_of_the_programming_language> = Python.
+    <temperature_value> = 0.
+    ```
+    </details>
+- Zero-Shot Prompting (no examples)
+  - Zero-shot prompting is to write an instruction for your AI model without providing context or examples.
+- Few-Shot Prompting (several high-quality examples)
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    ```
+    [Few-shot prompting]
+    
+    Prompt:
+    
+    Text #1: My favorite part of networking events is eating all the food while everybody is busy trying to impress each other.
+    
+    Tone #1: Playful.
+    
+    ##
+    
+    Text #2: She stormed out of the conference room, slamming the door behind 42 staff members who instantly turned their eyes away as if ashamed of their lack of courage.
+    
+    Tone #2: Angry.
+    
+    ##
+    
+    Text #3: Do you think they noticed the missing "export" feature in today's demo? I'm pretty sure Nabil whispered something into the client's ear. I really don't like that bald dude!
+    Tone #3: Anxious.
+    ```
+    </details>
+    - _a prompt that takes advantage of using tone_
+- Zero-Shot/Few-Shot — The simple version
+- In-context Learning vs. Chat History
+  - In-context learning is a prompting technique that allows you to steer the responses of your LLMs in a specific direction. All you need are a few examples, just like few-shot prompting.
+  - In-context learning vs chat history
+    - Use in-context learning to fine-tune a “raw” model like GPT-4, OpenLLaMa, or Falcon. In other words, you can create a customized chatbot but the process can be tedious.
+    - Use chat history to leverage “memory” and “long conversations.” It’s easier to customize your output but the quality may go down over time.
+- Chain of Thought Prompting
+  - Chain of Thought (CoT) prompting means you tell your Language Model to reason step by step before arriving at a final response. It’s as if you ask your model to think out loud.
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+     
+    ```
+    1. 4x3 = 4+4+4
+    2. 4+4+4 = (4+4) + 4
+    3. (4+4) + 4 = 8+4
+    4. 8+4 = 12
+    ```
+    </details>
+  - CoT prompts are typically used to solve logical riddles. The idea is to break down complex problems into smaller, more manageable questions.
+- Zero-Shot Chain of Thought
+- Role Prompting
+  - Assigning a specific role to your Language Model helps it capture more and better semantic relationships (ie: logic and meaning).
+  - In a way, Role Prompting helps you nudge your model to focus on specific information inside its training data. It’s a shortcut to specify many variables at once — like context, style, perspective, and vocabulary.
+- Knowledge Generation Prompting
+- Knowledge Integration
+  - Here’s a prompt you can use to summarize a document.
+  - <details markdown="block"><summary><sup><i>example</i></sup></summary>
+    ```
+    [Prompt to generate summaries using Microsoft Edge's Chat feature]
+    
+    Prompt: Summarize this paper. Start the summary with the title of the paper and its URL. Then list the main ideas in bullet points. Please illustrate the main ideas with examples extracted from the paper.
+    ```
+    </details>
+- Directional Stimulus (DS) Prompting
+- Recursive Criticism and Improvement (RCI) Prompting
+- Self-Refinement Prompting
+  - Self-Refinement Prompting Self-refinement is a variant of RCI prompting.
+- Reverse Prompt Engineering
+- Prompt Revision
+- Program Simulation Prompting
+
+<!-- Prompt Engineering Topics -->
+</details>
+
+
 ----
 
 [^1]: [LLM Prompt Engineering For Developers](https://leanpub.com/LLM-Prompt-Engineering-For-Developers)
 [^2]: [How to Improve Any Prompt in Less Than 5 Minutes (Chat UI and Code)](https://towardsdatascience.com/how-to-improve-any-prompt-in-less-than-5-minutes-chat-ui-and-code-8a819e2fa2ba)
 [^3]: [Generative AI Terminology — An Evolving Taxonomy To Get You Started](https://pub.towardsai.net/generative-ai-terminology-an-evolving-taxonomy-to-get-you-started-4ca487bfe2d8)
+[^4]: [How to Write Expert Prompts for ChatGPT (GPT-4) and Other Language Models](https://towardsdatascience.com/how-to-write-expert-prompts-for-chatgpt-gpt-4-and-other-language-models-23133dc85550#29a6)
