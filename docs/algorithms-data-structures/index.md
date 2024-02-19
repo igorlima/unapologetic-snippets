@@ -87,6 +87,12 @@ You can think of RAG as an LLM with vector search attached. Here are the 4 key s
 1. Leverage context along with the query to prompt the LLM.
 
 Retrieval Augmented Generation (RAG) is a powerful NLP technique that combines large language models with selective access to knowledge - by providing the relevant pieces of the context from our documents. [^12]
+- <details markdown="block"><summary><i>image ilustrating RAG</i></summary>
+   
+  ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/ee7c67e7-9dc8-4f96-8802-233303d3bc1a)
+  _<sup style="display:block;">image from Medium [^13]</sup>_
+  </details>
+
 
 ## Functional Programming
 
@@ -157,3 +163,4 @@ What’s needed to use WebHooks is **an API that listens on the URL provided to 
 [^10]: [Go Services over gRPC](https://medium.kieranwarwick.dev/go-services-over-grpc-2fdc3bd7daeb)
 [^11]: [Webhook Testing Without the Headache: A Developer’s Sanity-Saving Tutorial](https://itnext.io/webhook-testing-without-the-headache-a-developers-sanity-saving-tutorial-d6aea887f582)
 [^12]: [Building, Evaluating and Tracking a Local Advanced RAG System | Mistral 7b + LlamaIndex + W&B](https://towardsdatascience.com/building-evaluating-and-tracking-a-local-advanced-rag-system-mistral-7b-llamaindex-w-b-5c9c69059f92)
+[^13]: [Generative AI Terminology — An Evolving Taxonomy To Get You Started](https://pub.towardsai.net/generative-ai-terminology-an-evolving-taxonomy-to-get-you-started-4ca487bfe2d8)
