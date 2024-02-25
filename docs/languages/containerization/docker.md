@@ -20,7 +20,7 @@ To work with Docker, we need to understand three concepts, __Dockerfile__, __Doc
 
 __Docker volumes.__ A volume is a location in your local filesystem, managed by Docker. Volume doesn’t increase the size of the containers using it, and the volume’s contents exist outside the lifecycle of a given container.
 
-[Docker Hub](https://hub.docker.com/) repository. Create an account if you haven’t already. My is [`igorlima`](https://hub.docker.com/u/igorlima).
+[Docker Hub](https://hub.docker.com/) repository. Create an account if you haven’t already. Mine is [`igorlima`](https://hub.docker.com/u/igorlima).
 
 To push the image to the docker hub.
 ```sh
