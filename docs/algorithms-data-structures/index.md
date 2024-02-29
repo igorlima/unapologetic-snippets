@@ -127,6 +127,8 @@ The typical use case for a data team’s code is much more __iterative__ than a 
 
 And another thing: data science and analytics work is often __exploratory__: the goal isn’t to create some sort of artifact (an app, a file). Instead, it’s to see what’s up – ask a few questions, make a chart, make a transformation. _Exploratory work is by definition iterative!_
 
+Jupyter Notebooks are common place in data science. They allow a mixture of __“repeat, evaluation, loop”__ (REPL) code writing and documentation in a single place. They’re most commonly used for analysis and brainstorming purposes. [^14]
+
 ### Breaking down the notebook
 
 The idea behind the notebook is that you write a block of code, run it, and see what the output is. Then you move on to the next block, and so on and so forth. We can break down what makes notebooks great into a few broad categories:
@@ -164,3 +166,4 @@ What’s needed to use WebHooks is **an API that listens on the URL provided to 
 [^11]: [Webhook Testing Without the Headache: A Developer’s Sanity-Saving Tutorial](https://itnext.io/webhook-testing-without-the-headache-a-developers-sanity-saving-tutorial-d6aea887f582)
 [^12]: [Building, Evaluating and Tracking a Local Advanced RAG System | Mistral 7b + LlamaIndex + W&B](https://towardsdatascience.com/building-evaluating-and-tracking-a-local-advanced-rag-system-mistral-7b-llamaindex-w-b-5c9c69059f92)
 [^13]: [Generative AI Terminology — An Evolving Taxonomy To Get You Started](https://pub.towardsai.net/generative-ai-terminology-an-evolving-taxonomy-to-get-you-started-4ca487bfe2d8)
+[^14]: [Using IPython Jupyter Magic Commands to Improve the Notebook Experience](https://towardsdatascience.com/using-ipython-jupyter-magic-commands-to-improve-the-notebook-experience-f2c870cab356)
