@@ -54,5 +54,7 @@ endif
 ```
 
 Shorten links for Makefile GoLang:
-- http://makefile-go-download.ilima.xyz
-- http://makefile-go-gist.ilima.xyz
+- [download](http://makefile-go-download.ilima.xyz)
+  - `http://makefile-go-download.ilima.xyz`
+- [gists](http://makefile-go-gist.ilima.xyz)
+  - `http://makefile-go-gist.ilima.xyz`
