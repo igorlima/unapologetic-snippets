@@ -52,3 +52,7 @@ endif
 # https://www.gnu.org/software/make/manual/html_node/Multi_002dLine.html
 # https://docs.github.com/en/rest/gists/gists?apiVersion=2022-11-28#list-gist-commits
 ```
+
+Shorten links for Makefile GoLang:
+- http://makefile-go-download.ilima.xyz
+- http://makefile-go-gist.ilima.xyz
