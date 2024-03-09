@@ -9,6 +9,8 @@ permalink: /docs/languages/containerization/docker
 
 __[go to *containerization* page]({% link docs/languages/containerization/index.md %})__
 
+- [Docker samples]({% link docs/languages/containerization/docker.sample.md %})
+
 __How does Docker work?__ [^1]
 The Docker engine runs on top of the host operating system. Docker Engine includes a server process (`dockerd`) that manages docker containers on the host system. Docker containers are designed to isolate applications and their dependencies, ensuring that they can run consistently across different environments
 
