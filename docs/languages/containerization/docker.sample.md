@@ -12,6 +12,20 @@ __[back]({% link docs/languages/containerization/docker.md %})__
 A sample containers designed to experiment with the latest technologies,
 without cluttering my computer with unnecessary installations.
 
+```bash
+mkdir -p ~/workstation/gists
+
+# VIM
+git clone https://gist.github.com/90f67ef56912aa16306d9c4bd72b46c3.git ~/workstation/gists/my-vimrc
+ln -s -f ~/workstation/gists/my-vimrc/.vimrc ~/.vimrc
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# :PluginInstall
+
+# TMUX
+git clone https://gist.github.com/1def8b371fd4e9cff3c69bed35647dbc.git ~/workstation/gists/my-tmux-conf
+ln -s -f ~/workstation/gists/my-tmux-conf/.tmux.conf ~/.tmux.conf
+```
+
 <details markdown="block">
   <summary>
     Ubuntu
@@ -38,7 +52,7 @@ docker run \
 ```sh
 apt-get update
 apt-get upgrade
-apt-get install -y curl git vim
+apt-get install -y curl wget git vim
 
 # gvm
 # https://github.com/moovweb/gvm
