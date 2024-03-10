@@ -9,6 +9,8 @@ permalink: /docs/languages/containerization/docker-samples
 
 __[back]({% link docs/languages/containerization/docker.md %})__
 
+- [AI samples]({% link docs/languages/containerization/docker.sample.ai.md %})
+
 A sample containers designed to experiment with the latest technologies,
 without cluttering my computer with unnecessary installations.
 
