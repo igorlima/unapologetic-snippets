@@ -43,12 +43,14 @@ without cluttering my computer with unnecessary installations.
 # https://hub.docker.com/_/ubuntu
 # $> docker image ls
 #
+# Automatically REMOVE THE CONTAINER when it exits
 # $> mkdir -p ~/Downloads/temp
 docker run \
   --name linux-learning --rm \
   --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
   --workdir /home/local \
   -it ubuntu:22.04 bash
+  # -p 8086:8086 \
   # --mount src=`pwd`,target=/home/local,type=bind \
 
 # DETACH
@@ -59,11 +61,13 @@ docker run \
   --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
   --workdir /home/local \
   -it ubuntu:22.04 bash
+  # -p 8086:8086 \
   # --mount src=`pwd`,target=/home/local,type=bind \
-
+# ...
 docker exec -it linux-learning bash
 docker stop linux-learning
 docker start linux-learning
+docker rm linux-learning
 ```
 
 ```sh
@@ -116,6 +120,27 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # nvm ls-remote
 # nvm install v21.7.1
 # nvm use v21.7.1
+
+# rvm
+# Ruby Version Manager (RVM)
+# RVM is a command-line tool which allows you to easily install, manage, and
+# work with multiple ruby environments from interpreters to sets of gems.
+apt-get install -y bash make gnupg2 autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+# https://rvm.io/
+# https://rvm.io/rvm/install
+gpg2 --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable
+#  `source /usr/local/rvm/scripts/rvm`
+#  `echo "source /usr/local/rvm/scripts/rvm" >> ~/.bash_profile`
+# RVM USAGE
+# https://rvm.io/rvm/basics
+# rvm install 3.1.3
+# rvm use 3.1.3
+#
+# Jekyll
+# bundle install
+# bundle exec jekyll serve --config _config_dev.yml --host 0.0.0.0 --port 8086
+#  http://localhost:8086/
 ```
 
 ----
