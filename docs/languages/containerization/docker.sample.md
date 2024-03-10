@@ -113,6 +113,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 ```bash
 # https://github.com/gollum/gollum/wiki/Gollum-via-Docker
+# https://github.com/gollum/gollum#configuration
 # https://github.com/gollum/gollum
 # tells Docker to use the current working directory as the git repository you want to serve your wiki from
 docker run \
