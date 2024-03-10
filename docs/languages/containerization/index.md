@@ -4,7 +4,7 @@ title: Containerization
 nav_order: 10
 parent: Programming Languages
 has_children: true
-has_toc: false
+has_toc: true
 permalink: /docs/languages/containerization
 ---
 

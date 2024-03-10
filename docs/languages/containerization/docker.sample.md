@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Docker Samples
+title: Docker - Samples
 nav_exclude: true
 parent: Containerization
 grand_parent: Programming Languages
-permalink: /docs/languages/containerization/docker-sample
+permalink: /docs/languages/containerization/docker-samples
 ---
 
 __[back]({% link docs/languages/containerization/docker.md %})__
@@ -115,7 +115,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # https://github.com/gollum/gollum/wiki/Gollum-via-Docker
 # https://github.com/gollum/gollum#configuration
 # https://github.com/gollum/gollum
-# tells Docker to use the current working directory as the git repository you want to serve your wiki from
+#
+# tells Docker to use the current working directory as the git repository you
+# want to serve your wiki from
 docker run \
   --name gh-wiki --rm \
   -p 4567:4567 \
