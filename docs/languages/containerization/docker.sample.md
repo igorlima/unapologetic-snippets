@@ -14,8 +14,6 @@ __[back]({% link docs/languages/containerization/docker.md %})__
 A sample containers designed to experiment with the latest technologies,
 without cluttering my computer with unnecessary installations.
 
-## ubuntu
-
 ```bash
 mkdir -p ~/workstation/gists
 
@@ -29,6 +27,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://gist.github.com/1def8b371fd4e9cff3c69bed35647dbc.git ~/workstation/gists/my-tmux-conf
 ln -s -f ~/workstation/gists/my-tmux-conf/.tmux.conf ~/.tmux.conf
 ```
+
+## ubuntu
 
 <details markdown="block">
   <summary>
@@ -49,8 +49,21 @@ docker run \
   --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
   --workdir /home/local \
   -it ubuntu:22.04 bash
-  #
   # --mount src=`pwd`,target=/home/local,type=bind \
+
+# DETACH
+# $> mkdir -p ~/Downloads/temp
+docker run \
+  --detach \
+  --name linux-learning \
+  --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
+  --workdir /home/local \
+  -it ubuntu:22.04 bash
+  # --mount src=`pwd`,target=/home/local,type=bind \
+
+docker exec -it linux-learning bash
+docker stop linux-learning
+docker start linux-learning
 ```
 
 ```sh
