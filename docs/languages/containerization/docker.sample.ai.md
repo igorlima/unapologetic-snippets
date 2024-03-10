@@ -44,7 +44,8 @@ services:
   database:
     container_name: khoj-db
     hostname: khoj-db
-    image: ankane/pgvector
+    # https://hub.docker.com/r/ankane/pgvector/tags
+    image: ankane/pgvector:v0.5.1
     ports:
       - "5432:5432"
     environment:
@@ -65,7 +66,8 @@ services:
       database:
         condition: service_healthy
     # Use the following line to use the latest version of khoj. Otherwise, it will build from source.
-    image: ghcr.io/khoj-ai/khoj:latest
+    # https://github.com/khoj-ai/khoj/pkgs/container/khoj
+    image: ghcr.io/khoj-ai/khoj:1.6.2
     # Uncomment the following line to build from source. This will take a few minutes. Comment the next two lines out if you want to use the offiicial image.
     # build:
       # context: .
