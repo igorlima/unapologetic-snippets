@@ -13,6 +13,8 @@ AI copilot for knowledge base - to easily chat and search things  on top of pers
 
 Merge AI with the brain.
 
+## khoj
+
 <details markdown="block">
   <summary>
     khoj <sub><i>a copilot to search and chat (using RAG) with your knowledge base (pdf, markdown, org)</i></sub>
