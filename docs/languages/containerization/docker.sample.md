@@ -93,7 +93,7 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 # Simple Python version management
 # https://github.com/pyenv/pyenv
 apt-get install -y zlib1g-dev
-apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git 
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
 curl https://pyenv.run | bash
 # Load pyenv-virtualenv
 #  `export PYENV_ROOT="$HOME/.pyenv"`
@@ -184,6 +184,41 @@ docker stop gh-wiki
 ----
 <br/>
 <!-- Github Wiki - Gollum -->
+</details>
+
+## Google Cloud CLI
+
+<details markdown="block">
+  <summary>
+    gcloud
+  </summary>
+
+```bash
+# Google Cloud CLI Docker
+# https://cloud.google.com/sdk/docs/downloads-docker
+#
+# Artifact Registry
+# https://gcr.io/google.com/cloudsdktool/google-cloud-cli
+docker pull gcr.io/google.com/cloudsdktool/google-cloud-cli:468.0.0
+
+# $> mkdir -p ~/Downloads/temp
+docker run \
+  --name google-cloud-cli --rm \
+  --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
+  --workdir /home/local \
+  -it \
+  gcr.io/google.com/cloudsdktool/google-cloud-cli:468.0.0 \
+  bash
+
+# https://github.com/sigoden/aichat/blob/601288029dd7affa2115547a70c74b21d2003b66/config.example.yaml#L83
+# https://igorlima.github.io/unapologetic-snippets/docs/languages/shell/cli-ai#aichat
+# https://igorlima.github.io/unapologetic-snippets/docs/languages/containerization/docker-samples-ai#aichat
+gcloud auth application-default login
+```
+
+----
+<br/>
+<!-- gcloud -->
 </details>
 
 ## OSX

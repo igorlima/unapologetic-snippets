@@ -43,6 +43,7 @@ temperature: 0.5       # GPT temperature, between 0 and 2
 
 clients:
   # all clients configuration
+  # https://github.com/sigoden/aichat/blob/601288029dd7affa2115547a70c74b21d2003b66/config.example.yaml
 
   # see https://ai.google.dev/docs
   - type: gemini
@@ -55,6 +56,18 @@ clients:
   - type: openai
     name: kindle-gmail
     api_key: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  # see https://cloud.google.com/vertex-ai
+  - type: vertexai
+    # global locations - regions & zones
+    # https://cloud.google.com/about/locations
+    api_base: https://{REGION}-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/{REGION}/publishers/google/models
+    #
+    # setup Application Default Credentials (ADC) file, optional field
+    # run `gcloud auth application-default login` to setup adc
+    # see https://cloud.google.com/docs/authentication/external/set-up-adc
+    adc_file: <path-to/gcloud/application_default_credentials.json>
+    # aichat --info
 ```
 
 ```bash
