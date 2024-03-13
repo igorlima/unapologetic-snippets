@@ -1,6 +1,6 @@
 ---
 layout: default
-title: cURL CLI
+title: Shell - CLI cURL
 nav_exclude: true
 parent: Shell
 grand_parent: Programming Languages

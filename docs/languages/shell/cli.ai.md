@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AI CLI
+title: Shell - CLI AI
 nav_exclude: true
 parent: Shell
 grand_parent: Programming Languages

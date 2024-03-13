@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Github CLI
+title: Shell - CLI Github
 nav_exclude: true
 parent: Shell
 grand_parent: Programming Languages
