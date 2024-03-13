@@ -141,6 +141,16 @@ curl -sSL https://get.rvm.io | bash -s stable
 # bundle install
 # bundle exec jekyll serve --config _config_dev.yml --host 0.0.0.0 --port 8086
 #  http://localhost:8086/
+
+# rust
+# Install Rust and Cargo
+# https://doc.rust-lang.org/cargo/getting-started/installation.html
+curl https://sh.rustup.rs -sSf | sh
+# SSL peer certificate
+apt-get install -y libssl-dev
+# run one of the following (note the leading DOT):
+#  `. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh`
+#  `source "$HOME/.cargo/env.fish"  # For fish`
 ```
 
 ----
