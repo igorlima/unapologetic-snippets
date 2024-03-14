@@ -9,6 +9,30 @@ permalink: /docs/languages/shell/mosh
 
 # mosh
 
+_basic things_
+```bash
+mosh opc@oracle-learn             # 1) learn.ilima.xyz
+mosh opc@oracle-docker            # 2) docker.ilima.xyz
+
+# upload: local -> remote
+scp ~/Downloads/file.txt opc@oracle-learn:/home/opc/file.txt
+# download: remote -> local
+scp opc@oracle-learn:/home/opc/file.txt ~/Downloads/
+```
+
+_when an IDE instance die/stop/shutdown_
+```bash
+# start Docker
+sudo systemctl start docker
+
+# stop Docker
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+
+# give it a go
+sudo docker run hello-world
+```
+
 ## Synchronize a local directory with a remote machine utilizing Secure Shell (SSH) protocol.
 
 ```bash
