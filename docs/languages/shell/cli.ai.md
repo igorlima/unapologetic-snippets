@@ -33,6 +33,12 @@ Mistral, LocalAI, Ollama, VertexAI, Ernie, Qianwen...
 #  `cat ~/Library/Application\ Support/aichat/config.yaml`
 # $> aichat --info
 # $> aichat --list-sessions
+#
+# TMUX
+# further info about tmux sockets/servers in .tmux.conf file
+# `tmux -L aichat a`
+# `tmux -L aichat new`
+# `tmux -L aichat ls`
 
 model: gemini          # LLM model
 
