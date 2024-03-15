@@ -68,6 +68,14 @@ clients:
     # see https://cloud.google.com/docs/authentication/external/set-up-adc
     adc_file: <path-to/gcloud/application_default_credentials.json>
     # aichat --info
+
+  # see https://docs.anthropic.com/claude/reference/getting-started-with-the-api
+  - type: claude
+    api_key: sk-xxx
+
+  # https://chat.mistral.ai/
+  - type: mistral
+    api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ```bash
