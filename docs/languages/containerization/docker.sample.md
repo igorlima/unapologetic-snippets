@@ -158,6 +158,61 @@ apt-get install -y libssl-dev
 <!-- Ubuntu -->
 </details>
 
+## programming languages
+
+<details markdown="block">
+  <summary>
+    Programming Languages
+  </summary>
+
+A Docker container to experiment and learn new things without cluttering my computer with unnecessary installations.
+
+```sh
+mkdir -p ~/Downloads/temp
+```
+
+### Python
+
+<details markdown="block">
+  <summary>
+    Python
+  </summary>
+
+```bash
+# a docker for playing with Python
+# https://hub.docker.com/_/python
+# $> docker image ls
+#
+# Automatically REMOVE THE CONTAINER when it exits
+docker run \
+  --name python-learning --rm \
+  --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
+  --workdir /home/local \
+  -it python:3.12.2 bash
+  # -p 8086:8086 \
+  # --mount src=`pwd`,target=/home/local,type=bind \
+
+# DETACH
+docker run \
+  --detach \
+  --name python-learning \
+  --mount src=`realpath ~/Downloads/temp`,target=/home/local,type=bind \
+  --workdir /home/local \
+  -it python:3.12.2 bash
+  # -p 8086:8086 \
+  # --mount src=`pwd`,target=/home/local,type=bind \
+# ...
+docker exec -it python-learning bash
+docker stop python-learning
+docker start python-learning
+docker rm python-learning
+```
+<!-- Python -->
+</details>
+
+<!-- Programming Languages -->
+</details>
+
 ## wiki
 
 <details markdown="block">
