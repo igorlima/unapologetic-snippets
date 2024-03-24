@@ -144,6 +144,9 @@ Notebooks are pretty much the standard for how data teams do exploratory work to
 - Create presentations and data stories for their stakeholders Report regularly on metrics with dashboards
 - ...and a lot more
 
+*__links:__*
+- [Python Notebook]({% link docs/languages/python/notebook.md %})
+
 ## Webhook
 
 __What Are Webhooks?__ [^11] Webhooks works like a notification system. Imagine giving your phone number to a friend who will call you whenever they have news. In the digital world, Webhooks do this through URLs instead of phone numbers. You give a third-party software your URL which they immediately notify when something happens.
@@ -164,6 +167,6 @@ What’s needed to use WebHooks is **an API that listens on the URL provided to 
 [^9]: [An Introduction to gRPC: Building Distributed Systems With Efficiency and Scalability in Mind](https://medium.com/@semaphoreci/an-introduction-to-grpc-building-distributed-systems-with-efficiency-and-scalability-in-mind-c13024e4b0d3)
 [^10]: [Go Services over gRPC](https://medium.kieranwarwick.dev/go-services-over-grpc-2fdc3bd7daeb)
 [^11]: [Webhook Testing Without the Headache: A Developer’s Sanity-Saving Tutorial](https://itnext.io/webhook-testing-without-the-headache-a-developers-sanity-saving-tutorial-d6aea887f582)
-[^12]: [Building, Evaluating and Tracking a Local Advanced RAG System | Mistral 7b + LlamaIndex + W&B](https://towardsdatascience.com/building-evaluating-and-tracking-a-local-advanced-rag-system-mistral-7b-llamaindex-w-b-5c9c69059f92)
+[^12]: [Building, Evaluating and Tracking a Local Advanced RAG System : Mistral 7b + LlamaIndex + W&B](https://towardsdatascience.com/building-evaluating-and-tracking-a-local-advanced-rag-system-mistral-7b-llamaindex-w-b-5c9c69059f92)
 [^13]: [Generative AI Terminology — An Evolving Taxonomy To Get You Started](https://pub.towardsai.net/generative-ai-terminology-an-evolving-taxonomy-to-get-you-started-4ca487bfe2d8)
 [^14]: [Using IPython Jupyter Magic Commands to Improve the Notebook Experience](https://towardsdatascience.com/using-ipython-jupyter-magic-commands-to-improve-the-notebook-experience-f2c870cab356)
