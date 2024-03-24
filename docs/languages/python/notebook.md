@@ -38,6 +38,54 @@ pip3 install ipykernel
 #   ctrl-h: show help.
 ```
 
+<details markdown="block">
+  <summary>
+    <i>sample notebook</i>
+  </summary>
+
+```json
+{
+  "cells": [
+    {
+      "source": "This is a raw cell",
+      "cell_type": "raw",
+      "metadata": {}
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": "This is a markdown cell"
+    },
+    {
+      "execution_count": 1,
+      "cell_type": "code",
+      "source": "a = 3\nprint(a+1)\n",
+      "outputs": [],
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "language": "python",
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "version": "3.9.2",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "file_extension": ".py"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 4
+}
+```
+
+-----
+<!-- sample notebook -->
+</details>
+
 ------ ------
 
 [^1]: [...](...)
