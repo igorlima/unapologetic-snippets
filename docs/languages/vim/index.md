@@ -7,4 +7,17 @@ has_children: true
 permalink: /docs/languages/vim
 ---
 
-This is an draft page.
+
+__How to use VI to search for lines with a certain length?__
+
+- [find any lines exceeding a certain length]({% link docs/languages/shell/text-processing.md %})
+
+how to use VI to find lines longer than a certain number of characters:
+```vim
+/\%>80v.\+
+```
+
+to find lines shorter than 25 characters:
+```vim
+/^.\{,25}$/
+```

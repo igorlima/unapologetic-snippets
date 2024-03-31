@@ -16,6 +16,9 @@ permalink: /docs/languages/shell/sed
 {:toc}
 </details>
 
+- [more about advanced text processing]({% link docs/languages/shell/text-processing.md %})
+
+
 Sed stands for Stream Editor. It is very powerful tool to manipulate, filter, and transform text.
 
 ```sh
@@ -82,6 +85,12 @@ sed -n '{
 }' /etc/passwd
 ```
 
+__basic sed alternative__
+```sh
+sed -i -e 's|^that starts with|the replace|' filename.ext
+sed -i -e 's|^#precedence ::ffff:0:0/96  100|precedence ::ffff:0:0/96  100|' /etc/gai.conf
+```
+
 ## Sed Scripting Flow
 
 Sed will:
@@ -93,4 +102,5 @@ Sed will:
 
 ## other resources
 
-- not yet available
+- [more about advanced text processing]({% link docs/languages/shell/text-processing.md %})
+
