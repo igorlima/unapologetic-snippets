@@ -10,6 +10,7 @@ permalink: /docs/languages/golang/reflection
 <br/>
 other samples:
 - [a struct validator sample]({% link docs/languages/golang/reflection.validator-sample.md %})
+- [custom tag]({% link docs/languages/golang/reflection.custom-tag.md %})
 
 
 -----
