@@ -57,8 +57,10 @@ go test -run ^TestAdd$ -v
 go test -run "^TestAdd$" -v
 ```
 
+<br/>
 Further info:
   - [the command `go test`]({% link docs/languages/golang/commands.md %}#go-test)
   - [golang testing beyond the basics]({% link docs/languages/golang/test.beyond-basics.md %})
+  - [testify samples]({% link docs/languages/golang/test.testify.md %})
   - [skipping, coverage, benchmark, and fuzz]({% link docs/languages/golang/test.cover-bench-fuzz.md %})
   - [how to debug a go test]({% link docs/languages/golang/commands.test.debugging.md %})
