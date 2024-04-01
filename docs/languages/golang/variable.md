@@ -22,9 +22,32 @@ Variables declared without an explicit initial value are given their zero value.
 ## Difference between `new()` and `make()` in Golang [^1]
 
 <details markdown="block">
-  <summary>
-    demystifying...
-  </summary>
+  <summary> in short...  </summary>
+
+In the Go programming language, `new()` and `make()` are two commonly used functions for creating and initializing variables of different types.
+
+`new()` is used to create a variable of a specified type with a zero value and returns a pointer to that variable.
+
+In variable declaration, when we don’t specify initial values for variables, their default values are their zero values.
+
+```go
+numPtr := new(int)
+```
+
+`make()` is used to create and initialize variables of reference types, such as slices, maps, and channels.
+
+It is suitable for creating these variables because they are not set to zero values but are initialized based on their types.
+
+```go
+slice := make([]int, 3)
+```
+
+<!-- in short... -->
+-----
+</details>
+
+<details markdown="block">
+  <summary> demystifying...  </summary>
 
 These functions `new()` and `make()`[^2] which might seem similar at first serve different purposes and are crucial for _memory allocation_ and _data initialization_ in Go.
 
@@ -79,7 +102,7 @@ To summarize[^2]:
 - use `make()` to create and initialize slices, maps, and channels (reference types) _with their respective types and initial capacities_.
 
 -----
-
+<!-- demystifying... -->
 </details>
 
 In Golang, there are two ways to allocate memory: and new . While both of these keywords can be used to allocate memory, they are used for different purposes.
