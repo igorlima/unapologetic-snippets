@@ -229,6 +229,25 @@ func main() {
 ```
 </details>
 
+## What really is `unsafe.Pointer`?
+
+To get a start, let’s examine its definition in the code:
+
+```go
+type Pointer *ArbitraryType
+```
+
+Unlike a `*int`, which can only point to an `int`, or a `*bool`, which is restricted to bool values, `unsafe.Pointer` has the
+liberty to point to any arbitrary type, sweet flexibility right?
+
+`unsafe.Pointer` is a special kind of pointer that turns off the usual safety rules. When you use it, you're telling the Go compiler: _“I know what I'm doing, so trust me”_. Be careful, because you're going around the normal safety checks.
+
+```go
+var a int64 = 10
+aPtr := unsafe.Pointer(&a)
+b := (*float64)(aPtr)
+```
+
 ----
 
 [^1]: [Did u really know about Pointers in Golang?](https://medium.com/@achmadrizkinf/did-u-really-know-about-pointers-in-golang-3e8be6ff668c)
