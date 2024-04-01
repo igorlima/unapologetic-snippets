@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Test - Testify
-nav_order: 4
+nav_exclude: true
 parent: Golang
 grand_parent: Programming Languages
 permalink: /docs/languages/golang/test-testify
