@@ -9,6 +9,7 @@ permalink: /docs/languages/golang/type-assertion
 
 Other examples:
 - [mastering type assertion]({% link docs/languages/golang/type-assertion.2023a03m10d.md %}) [^1]
+- [interface check]({% link docs/languages/golang/type-assertion.interface-check.md %})
 
 In Go programming language, assertion is a mechanism to check the dynamic type of a value during runtime.
 
