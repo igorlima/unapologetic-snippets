@@ -7,7 +7,8 @@ grand_parent: Algorithms and Data Structures
 permalink: /docs/algorithms-and-data-structures/ai/prompt-engineering
 ---
 
-- [go back]({% link docs/algorithms-data-structures/ai/index.md %})
+- [go back to index]({% link docs/algorithms-data-structures/ai/index.md %})
+- [go to AI prompts]({% link docs/algorithms-data-structures/ai/ai-prompts.md %})
 
 # LLM Prompt Engineering [^1]
 

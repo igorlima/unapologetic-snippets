@@ -60,6 +60,15 @@ If you’re looking for NLP and rapid prototyping, including language translatio
 [Fastembed](https://github.com/qdrant/fastembed), which we’ll use on the example below, is designed for efficiency and speed, great for applications needing lowlatency responses, such as autocomplete and instant content recommendations.
 
 
+__LLM Vector Databases__ [^2]
+
+Vector databases excel in managing this unstructured data, converting complex text into high-dimensional vectors that encapsulate the semantic essence of the information.
+
+Traditional databases are adept at handling structured data, but they falter when it comes to unstructured data, a domain where most of today’s digital information resides.
+
+Vector databases address this by converting unstructured data into vector space, enabling efficient and accurate similarity search. This is particularly crucial in fields such as recommendation systems, where capturing the essence of user preferences or content semantics is key.
+
 ----
 
 [^1]: [What are Vector Embeddings?](https://dev.to/qdrant/what-are-vector-embeddings-24pd)
+[^2]: [LLM Vector DataBases: Get Started with Pinecone](https://medium.com/forcodesake/pinecone-api-chatgpt-artificial-intelligence-4332de128dd5)
