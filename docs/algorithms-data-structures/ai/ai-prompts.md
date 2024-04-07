@@ -59,6 +59,19 @@ Ditch “rewrite” and improve your AI content immediately with these prompts: 
 
 ```
 Output a journal writing prompt example - to help me write what I've done and
+how I felt on such a day.  Give me insights into why I feel <my_mood> or any
+other mood during the day.
+
+##
+
+<my_mood>: in good spirits
+```
+<sup><i>**list of moods**: positive, enthusiastic, happy, excited, cheerful, delighted,
+thrilled, in high spirits, in good spirits, uplifting, heartening, fulfilling,
+pleasing, delightful, pleasurable, enjoyable, agreeable, satisfying.</i></sup>
+
+```
+Output a journal writing prompt example - to help me write what I've done and
 how I felt on such a day; one thing I can think of today is <one_today_event>.
 Give me insights into why I felt <my_mood> or any other mood during the day.
 Besides <one_today_event>, help me remember anything else.
@@ -68,10 +81,6 @@ Besides <one_today_event>, help me remember anything else.
 <one_today_event>: a birthday party
 <my_mood>: in good spirits
 ```
-
-<sup><i>**list of moods**: positive, enthusiastic, happy, excited, cheerful, delighted,
-thrilled, in high spirits, in good spirits, uplifting, heartening, fulfilling,
-pleasing, delightful, pleasurable, enjoyable, agreeable, satisfying.</i></sup>
 
 
 <details markdown="block"><summary>others things related to journal writing prompts</summary>
