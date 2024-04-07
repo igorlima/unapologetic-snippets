@@ -46,6 +46,7 @@ Ditch “rewrite” and improve your AI content immediately with these prompts: 
   - `exaggerate`: _when you want to hype-up hyperbole in the rewrite. Great for sales pitches (just watch those pesky facts)!_
   - `downplay`: _when you want a more mellow, mild-mannered tone. Great for research, and no-nonsense evidence-based testimonials._
   - `glamorize`: _prompt to make the rewrite sexier and more appealing._
+- [list of tones of voice](#list-of-tones-of-voice)
 - __rewriting text using__
   - **_"reinterpret the above from an `X` perspective, for publication as `Y`"_**
     - `X` could be your intended audience (e.g. consumers, Americans, youth), or a certain mindset or ideology (business-oriented, environmentalist, etc.
@@ -53,6 +54,205 @@ Ditch “rewrite” and improve your AI content immediately with these prompts: 
   - **_"reuse the above concept in a `{insert}` tone of voice, that will resonate with `{insert intended audience}`"_**
     - another ‘rewrite’ that comes from [Amanda Weston at Blogs By Jasper](https://www.blogsbyjarvis.com/).
   - **_“rewrite the above in a tone of voice that is professional, informative, and friendly, emphasizing clarity, conciseness, objectivity, relevance, and organization in a conversational tone to engage the audience”_**
+
+# Journal Writing Prompts
+
+```
+Output a journal writing prompt example - to help me write what I've done and
+how I felt on such a day; one thing I can think of today is <one_today_event>.
+Give me insights into why I felt <my_mood> or any other mood during the day.
+Besides <one_today_event>, help me remember anything else.
+
+##
+
+<one_today_event>: a birthday party
+<my_mood>: in good spirits
+```
+
+<sup><i>**list of moods**: positive, enthusiastic, happy, excited, cheerful, delighted,
+thrilled, in high spirits, in good spirits, uplifting, heartening, fulfilling,
+pleasing, delightful, pleasurable, enjoyable, agreeable, satisfying.</i></sup>
+
+
+<details markdown="block"><summary>others things related to journal writing prompts</summary>
+
+```
+<one_today_event>: a birthday party
+<my_mood>: positive, enthusiastic, happy, excited, cheerful, delighted,
+thrilled, in high spirits, in good spirits, uplifting, heartening, fulfilling,
+pleasing, delightful, pleasurable, enjoyable, agreeable, satisfying.
+```
+
+- <a id="list-of-tones-of-voice"></a> **tones of voice**
+  - in action
+    - happy
+    - compelling
+    - rapturous
+  - writing assistant
+    - ‘blog review’ _<sub>when to have to create a product review</sub>_
+    - ‘copywriting’ _<sub>when to have a sales-like copy</sub>_
+  - <details markdown="block"><summary>writing and marketing</summary>
+
+      - simple
+      - interesting
+      - informative
+      - creative
+      - compelling
+      - copywriting
+      - Neil Patel
+      - Guy Kawasaki
+      - Gary Vaynerchuk
+    </details>
+  - <details markdown="block"><summary>serious, journalistic, academic</summary>
+
+      - New York Times
+      - The Guardian
+      - Scientific American
+      - factual
+      - informative
+      - descriptive
+      - research
+      - Harvard Business Review
+      - academic
+      - serious
+      - somber
+      - journalistic
+      - blog review
+      - court
+      - legal
+    </details>
+  - <details markdown="block"><summary>happy and joyful</summary>
+
+      - ecstatic
+      - positive
+      - motivational
+      - joyful
+      - playful
+      - passionate
+      - romantic
+      - affirmative
+      - enthusiastic
+      - uplifting
+      - oprah
+      - creative
+    </details>
+  - <details markdown="block"><summary>positive emotional</summary>
+
+      - motivated
+      - inspired
+      - lovestruck
+      - enchanted
+      - blissful
+      - excited
+      - thrilling
+      - amazing/amazed
+      - powerful
+      - light
+    </details>
+  - <details markdown="block"><summary>negative emotional</summary>
+
+      - anxious
+      - melancholy
+      - depressed
+      - sad
+      - infuriating
+      - disturbing
+      - angry
+      - hopeless
+      - enraged
+      - provocative
+      - embarrassing
+      - greedy
+      - dark
+      - sad
+      - abusive
+    </details>
+  - <details markdown="block"><summary>other tone of voices to consider</summary>
+
+      - approachable
+      - excited
+      - playful
+      - assertive
+      - formal
+      - poetic
+      - bold
+      - friendly
+      - positive
+      - candid
+      - funny
+      - powerful
+      - caring
+      - gentle
+      - professional
+      - casual
+      - helpful
+      - quirky
+      - cheerful
+      - hopeful
+      - reassuring
+      - clear
+      - humorous
+      - reflective
+      - commanding
+      - informal
+      - respectful
+      - comprehensive
+      - informative
+      - romantic
+      - confident
+      - inspirational
+      - sarcastic
+      - conversational
+      - inspiring
+      - scientific
+      - curious
+      - lively
+      - serious
+      - detailed
+      - melancholic
+      - technical
+      - educational
+      - motivational
+      - thought-provoking
+      - eloquent
+      - negative
+      - thoughtful
+      - emotional
+      - neutral
+      - uplifting
+      - empathetic
+      - nostalgic
+      - urgent
+      - empowering
+      - offbeat
+      - vibrant
+      - encouraging
+      - passionate
+      - visionary
+      - engaging
+      - personal
+      - witty
+      - enthusiastic
+      - persuasive
+      - zealous
+    </details>
+  - <details markdown="block"><summary>diverse personalities</summary>
+
+      - knowledgeable companion
+      - approachable educator
+      - visual narrator
+      - fairytale friendliness
+      - witty cynic
+      - empathetic encourager
+      - playful entertainer
+      - confident commander
+      - thoughtful advisor
+      - provocative prankster.
+    </details>
+
+-----
+<!-- others things related to journal writing prompts -->
+</details>
 
 ----
 

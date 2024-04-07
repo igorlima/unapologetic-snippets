@@ -203,6 +203,7 @@ Prompt content: Content of the prompt that sometimes includes <placeholders>.
     - __Generic styles__: _formal, informal, persuasive, conversational, sarcastic, dramatic, condescending, nuanced, biased, humorous, optimistic, pessimistic, etc._
     - __Domain-specific styles__: _academic, legal, political, technical, medical, news, scientific, marketing, creative, instructional, etc._
     - __Mimicking the style of a real person__: _Agatha Christie, Daniel Kahneman, J.K Rowling, James Baldwin, Hajime Isayama, etc._
+  - [list of tones of voice]({% link docs/algorithms-data-structures/ai/ai-prompts.md %}#list-of-tones-of-voice)
 - Specify the length of the desired response
 - Specify the target audience
   - <details markdown="block"><summary><sup><i>example</i></sup></summary>
@@ -282,6 +283,7 @@ Prompt content: Content of the prompt that sometimes includes <placeholders>.
     ```
     </details>
     - _a prompt that takes advantage of using tone_
+      - [list of tones of voice]({% link docs/algorithms-data-structures/ai/ai-prompts.md %}#list-of-tones-of-voice)
 - Zero-Shot/Few-Shot — The simple version
 - In-context Learning vs. Chat History
   - In-context learning is a prompting technique that allows you to steer the responses of your LLMs in a specific direction. All you need are a few examples, just like few-shot prompting.
