@@ -207,6 +207,16 @@ the config file on MacOS is by default in this following location:
    - print value should be in the register `@"`
 - `<Leader>gP`  or `:GoDebugPrint call`
    - print value should be in the register `@"`
+      - ```
+        " REDIRECT/COPY OUTPUT OF A COMMAND TO A REGISTER
+        :redir @*
+        :redir END
+        " SAMPLE COMMAND
+        :redir @* | set guifont | redir END
+
+        " `:redir` command redirects the output of a command to a register `(@*)`.
+        " the register `@*` refers to the clipboard.
+        ```
 - `<Leader>gdS`  or `:GoDebugStop`
 - `<Leader>gdH`  or `:GoDebugHalt`
 - `:GoDebugSet {var} {value}`
