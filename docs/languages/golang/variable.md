@@ -156,6 +156,44 @@ func main() {
 - _further info:_
   - [go pointers - new vs make]({% link docs/languages/golang/pointer.2023a03m05d.md %}#new--make)
 
+## Conversion
+
+### Converting map to struct
+
+
+One way is to roundtrip it through JSON. Otherwise see much more [here]({% link docs/languages/golang/json.md %}#converting-map-to-struct) on how to convert map to struct and vice-versa.
+```golang
+package main
+import (
+  "bytes"
+  "encoding/json"
+)
+func transcode(in, out interface{}) {
+  buf := new(bytes.Buffer)
+  json.NewEncoder(buf).Encode(in)
+  json.NewDecoder(buf).Decode(out)
+}
+```
+
+Example:
+```golang
+package main
+import "fmt"
+type myStruct struct {
+  Name string
+  Age  int64
+}
+func main() {
+  myData := map[string]interface{}{
+    "Name": "Tony",
+    "Age": 23,
+  }
+  var result myStruct
+  transcode(myData, &result)
+  fmt.Printf("%+v\n", result) // {Name:Tony Age:23}
+}
+```
+
 ----
 
 # Footnotes

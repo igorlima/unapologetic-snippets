@@ -162,3 +162,186 @@ func main() {
 }
 ```
 
+## Converting map to struct
+
+One way is to roundtrip it through JSON
+
+```golang
+package main
+
+import (
+  "bytes"
+  "encoding/json"
+)
+
+func transcode(in, out interface{}) {
+  buf := new(bytes.Buffer)
+  json.NewEncoder(buf).Encode(in)
+  json.NewDecoder(buf).Decode(out)
+}
+```
+
+Example:
+```golang
+package main
+import "fmt"
+
+type myStruct struct {
+  Name string
+  Age  int64
+}
+
+func main() {
+  myData := map[string]interface{}{
+    "Name": "Tony",
+    "Age": 23,
+  }
+  var result myStruct
+  transcode(myData, &result)
+  fmt.Printf("%+v\n", result) // {Name:Tony Age:23}
+}
+```
+
+### Conversion by marshalling and unmarshalling
+
+- [map[string]interface{} to struct](https://hossainemruz.gitbook.io/notes/go/conversion/map-string-interface-to-struct#map-string-interface-to-struct)
+- [struct to map[string]interface{}](https://hossainemruz.gitbook.io/notes/go/conversion/map-string-interface-to-struct#struct-to-map-string-interface)
+
+<details markdown="block"><summary>example to convert map to struct by marshalling and unmarshalling</summary>
+
+__`map[string]interface{} to struct`__
+```golang
+package main
+
+import (
+  "encoding/json"
+  "fmt"
+)
+
+func main() {
+  // map data
+  mapData := map[string]interface{}{
+    "Name": "noknow",
+    "Age": 2,
+    "Admin": true,
+    "Hobbies": []string{"IT","Travel"},
+    "Address": map[string]interface{}{
+      "PostalCode": 1111,
+      "Country": "Japan",
+    },
+    "Null": nil,
+  }
+
+  // struct - Need to be defined according to the above map data.
+  type Addr struct {
+    PostalCode int
+    Country string
+  }
+  type Me struct {
+    Name string
+    Age int
+    Admin bool
+    Hobbies []string
+    Address Addr
+    Null interface{}
+  }
+
+  // Convert map to json string
+  jsonStr, err := json.Marshal(mapData)
+  if err != nil {
+    fmt.Println(err)
+  }
+
+  // Convert json string to struct
+  var me Me
+  if err := json.Unmarshal(jsonStr, &me); err != nil {
+    fmt.Println(err)
+  }
+
+  // Output
+  fmt.Printf("Name: %s
+Age: %d
+Admin: %t
+Hobbies: %v
+Address: %v
+Null: %v
+", me.Name, me.Age, me.Admin, me.Hobbies, me.Address, me.Null)
+}
+```
+
+__`struct to map[string]interface{}`__
+```golang
+package main
+
+import (
+  "encoding/json"
+  "fmt"
+)
+
+func main() {
+  // struct data
+  type Addr struct {
+    PostalCode int
+    Country string
+  }
+  type Me struct {
+    Name string
+    Age int
+    Admin bool
+    Hobbies []string
+    Address Addr
+    Null interface{}
+  }
+  addr := Addr{
+    PostalCode: 1111,
+    Country: "Japan",
+  }
+  me := Me{
+    Name: "noknow",
+    Age: 2,
+    Admin: true,
+    Hobbies: []string{"IT","Travel"},
+    Address: addr,
+    Null: nil,
+  }
+
+  // Convert map to json string
+  jsonStr, err := json.Marshal(me)
+  if err != nil {
+    fmt.Println(err)
+  }
+
+  // Convert struct
+  var mapData map[string]interface{}
+  if err := json.Unmarshal(jsonStr, &mapData); err != nil {
+    fmt.Println(err)
+  }
+
+  // Output
+  fmt.Printf("Name: %v (%T)
+Age: %v (%T)
+Admin: %v (%T)
+Hobbies: %v (%T)
+Address: %v (%T)
+Null: %v (%T)
+", mapData["Name"], mapData["Name"], mapData["Age"], mapData["Age"], mapData["Admin"], mapData["Admin"], mapData["Hobbies"], mapData["Hobbies"], mapData["Address"], mapData["Address"], mapData["Null"], mapData["Null"])
+}
+```
+
+-----
+<!-- example to convert map to struct by marshalling and unmarshalling -->
+</details>
+
+### other alternatives to convert map to struct
+
+- __via library:__
+  - [https://github.com/mitchellh/mapstructure](https://github.com/mitchellh/mapstructure)
+    - Go library for decoding generic map values into native Go structures and vice versa.
+    - ```golang
+      import "github.com/mitchellh/mapstructure"
+
+      // Hashicorp's https://github.com/mitchellh/mapstructure library does this out of the box:
+      // the second result parameter has to be an address of the struct.
+      mapstructure.Decode(myData, &result)
+      ```
+

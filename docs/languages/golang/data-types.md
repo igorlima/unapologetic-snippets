@@ -59,6 +59,7 @@ permalink: /docs/languages/golang/data-types
 1. __Map type__: A map is a collection of key-value pairs, where each key maps to a corresponding value. Maps are a powerful tool for storing and accessing data in a program.
 1. __Pointer type__: A pointer is a variable that holds the memory address of another variable. Pointers are used extensively in Go for efficient memory management and to enable passing values by reference.
 1. __Struct type__: A struct is a composite data type that groups together zero or more values with different types under a single name.
+  - [how to convert map to struct and vice-versa]({% link docs/languages/golang/json.md %}#converting-map-to-struct)
 
 ```golang
 package main
