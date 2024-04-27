@@ -38,6 +38,44 @@ to execute a file containing a list of delve commands:
 - `(dlv) source dlv.cmd`
 
 <details markdown="block">
+  <summary> quick win... </summary>
+
+Delve (`dlv`) is a CLI-based debugger for Go, tailored to the language’s concurrency model and runtime. It allows you to set breakpoints, inspect goroutines, and evaluate and manipulate variables in real-time.
+
+- [quick tips](#dlv-tips)
+- [keyboard shortcuts](#dlv-keyboard-shortcuts)
+
+__Side Note__: Breakpoints `runtime-fatal-throw` and `unrecoverable-panic` do exactly what they sound like. Delve includes breakpoints on these critical failure points to debug a fatal runtime throw or an unrecoverable panic easily.
+
+### dlv tips
+
+| Task                       | Go Command                     | Delve Command                    |
+| ----                       | ----------                     | -------------                    |
+| Run Program                | `go run main.go`               | `dlv debug`                      |
+| Run Tsts                   | `go test`                      | `dlv test`                       |
+| Compile and Run Executable | `go build -o myapp && ./myapp` | `dlv exec ./myapp`               |
+| Run Specific Test          | `go test -run TestName`        | `dlv test -- -test.run TestName` |
+
+### dlv keyboard shortcuts
+
+| Command Name | Shortcut | Description                                                                   |
+| ------------ | -------- | -----------                                                                   |
+| `break`      | `b`      | Sets a breakpoint at a specific source location.                              |
+| `continue`   | `c`      | Continues execution until the next breakpoint.                                |
+| `step`       | `s`      | Executes the current line and stops at the next line, entering functions.     |
+| `next`       | `n`      | Executes the current line and stops at the next line in the current function. |
+| `print`      | `p`      | Evaluates an expression and prints its value.                                 |
+| `list`       | `l`      | Shows the source code around the current line.                                |
+| `set`        |          | Changes the value of a variable.                                              |
+| `locals`     |          | Prints all local variables in the current scope.                              |
+| `clear`      |          | Removes a breakpoint.                                                         |
+| `exit`       |          | Exits the debugger.                                                           |
+
+-----
+<!-- delve - quick win -->
+</details>
+
+<details markdown="block">
   <summary> more... </summary>
   
 - [using breaking points in delve](#using-breaking-points-in-delve)
