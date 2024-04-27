@@ -154,6 +154,10 @@ __What Are Webhooks?__ [^11] Webhooks works like a notification system. Imagine 
 
 What’s needed to use WebHooks is **an API that listens on the URL provided to the service**, to accept the information sent.
 
+## [Authentication]({% link docs/algorithms-data-structures/authentication/index.md %})
+
+Authentication in computer science refers to the process of verifying the identity of a user or system attempting to access a network, device, or application. It ensures that the entity requesting access is who they claim to be. In simple terms, authentication is like showing your ID to confirm your identity before entering a secure area. It involves providing credentials, such as a username and password, a fingerprint, or a security token, to prove that you are authorized to access the system. This verification step is crucial for maintaining security and preventing unauthorized access to sensitive information or resources.
+
 ------ ------
 
 [^1]: [How to conduct an A/B test experiment in Go using feature flags](https://medium.com/@chavezharris/how-to-conduct-an-a-b-test-experiment-in-go-using-feature-flags-660edef536f6)
