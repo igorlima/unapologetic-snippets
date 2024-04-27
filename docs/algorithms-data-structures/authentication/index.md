@@ -60,6 +60,8 @@ It is calculated using the header, the payload, and the secret, which are fed to
 signature = HMAC-SHA256(base64urlEncode(header) + "." + base64urlEncode(payload), secret_salt)
 ```
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/0bb79cff-3ea0-4000-bff0-948c90d814e6)
+
 
 
 ------ ------
