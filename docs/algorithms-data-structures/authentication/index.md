@@ -26,6 +26,8 @@ A JSON Web Token consists of 3 parts separated by a period.
 The header, the payload, and the signature.
 Each section is base64 encoded.
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/0bb79cff-3ea0-4000-bff0-948c90d814e6)
+
 __Header__
 
 The header consists of token type, which is JWT, and the signing algorithm used, such as HMAC SHA256 or RSA.
@@ -59,8 +61,6 @@ It is calculated using the header, the payload, and the secret, which are fed to
 ```plaintext
 signature = HMAC-SHA256(base64urlEncode(header) + "." + base64urlEncode(payload), secret_salt)
 ```
-
-![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/0bb79cff-3ea0-4000-bff0-948c90d814e6)
 
 
 
