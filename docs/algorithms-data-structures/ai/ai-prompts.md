@@ -258,6 +258,9 @@ pleasing, delightful, pleasurable, enjoyable, agreeable, satisfying.
       - thoughtful advisor
       - provocative prankster.
     </details>
+  - miscellaneous
+    - constructive / feedback :: _provide constructive feedback_
+      - make sure that you explain the "Why" behind the feedback so that it reduces the need for follow-ups and gives the necessary context.
 
 -----
 <!-- others things related to journal writing prompts -->
