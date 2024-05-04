@@ -7,4 +7,16 @@ has_children: true
 permalink: /docs/languages/python
 ---
 
-This is an draft page.
+# Python
+
+## Python Virtual Env
+
+```sh
+python3 -m venv my-env-llama-index
+source my-env-llama-index/bin/activate
+
+# how to leave/exit/deactivate a Python virtualenv
+deactivate 
+# if this doesn't work, try
+source deactivate
+```
