@@ -13,6 +13,25 @@ permalink: /docs/languages/python/notebbok
 - [What is a data science Notebook?]({% link docs/algorithms-data-structures/index.md %}#data-science-notebook)
 
 ```sh
+# to install
+pip3 install jupyter
+
+# to run
+# by default, run on: http://localhost:8888
+jupyter notebook
+```
+
+__virtual env__
+
+```sh
+python3 -m venv my-jupyter-env       # to create a virtualenv
+source my-juptyer-env/bin/activate   # to activate the virtualenv
+deactivate                           # to leave the virtualenv
+```
+
+__Jupyter in the terminal__
+
+```sh
 # Jupyter in the terminal.
 # https://github.com/davidbrochart/jpterm
 # Key bindings
