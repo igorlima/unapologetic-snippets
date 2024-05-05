@@ -47,6 +47,24 @@ export GONOSUMDB="gitlab.com/idmabar,bitbucket.org/idmabar,github.com/idmabar"
 
 Actually this issue only happens in new Golang version 1.13 and afterward.
 
+
+## Miscellaneous
+
+- clone repo and run `GOINSECURE=true go get`
+  - troubleshooting
+    - `GOPRIVATE=gitlab.xyz.tech go get all`
+      - [GOPRIVATE environment variable](https://stackoverflow.com/questions/58305567/how-to-set-goprivate-environment-variable)
+        - [`GOPRIVATE=*.mydomain.com`](https://stackoverflow.com/questions/65755940/go-get-fails-to-download-a-go-package-git-repository-hosted-on-a-github-entre)
+        - [`GOPRIVATE=*.gitlab.xyz.tech`](https://github.com/goproxyio/goproxy.io/blob/4de6666201d3b15e26ed53a8d03aa42ef31c5f34/content/docs/GOPRIVATE-env.md)
+    - `go clean --modcache`
+      - `GOPRIVATE=gitlab.xyz.tech,xyz-github.corp go get all`
+      - _if any of those below..._
+        - `verifying module - 404 Not Found`
+        - `server response: not found`
+        - `dial tcp: lookup - no such host`
+    - `go get -insecure`
+      - _`-insecure` flag is no longer supported; use `GOINSECURE` instead_
+
 ----
 
 [^1]: [Today I Learned — Fix: go get private repository return error reading sum.golang.org/lookup … 410 gone](https://medium.com/mabar/today-i-learned-fix-go-get-private-repository-return-error-reading-sum-golang-org-lookup-93058a058dd8)
