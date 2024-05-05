@@ -33,16 +33,32 @@ permalink: /docs/languages/vim
 
 ## How to...
 
-__How to use VI to search for lines with a certain length?__
-
-- [find any lines exceeding a certain length]({% link docs/languages/shell/text-processing.md %})
-
-how to use VI to find lines longer than a certain number of characters:
-```vim
-/\%>80v.\+
-```
-
-to find lines shorter than 25 characters:
-```vim
-/^.\{,25}$/
-```
+- __how to use VI to search for lines with a certain length?__
+  - [find any lines exceeding a certain length]({% link docs/languages/shell/text-processing.md %})
+  - how to use VI to find lines longer than a certain number of characters:
+    - ```vim
+      /\%>80v.\+
+      ```
+  - to find lines shorter than 25 characters:
+    - ```vim
+      /^.\{,25}$/
+      ```
+- __how to open multiple files in vim splits and tabs__
+  - ```sh
+    vim `fzf`
+    ```
+  - in horizontal splits
+    - `vim -o file1 file2`
+    - ```sh
+      vim -o `fzf`
+      ```
+  - in vertical splits
+    - `vim -O file1 file2`
+    - ```sh
+      vim -O `fzf`
+      ```
+  - in vim tabs
+    - `vim -p file1 file2`
+    - ```sh
+      vim -p `fzf`
+      ```
