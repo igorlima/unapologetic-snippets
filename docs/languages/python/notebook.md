@@ -105,6 +105,55 @@ pip3 install ipykernel
 <!-- sample notebook -->
 </details>
 
+## CentOS
+
+- [see jupyter docker in CentOS]({% link docs/languages/containerization/docker.sample.md %}#jupyter-notebook)
+
+```sh
+pip3 install --upgrade --force-reinstall jupyter
+pip3 install --upgrade --force-reinstall notebook
+jupyter notebook --allow-root
+
+# 155.248.192.51:8088/tree?token=xxxxx
+jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxxxx'
+```
+
+<details markdown="block"><summary><i>other kernels</i></summary>
+
+  <details markdown="block"><summary><i>golang</i></summary>
+
+  ```sh
+  apt update
+  apt install golang-go
+  
+  go install github.com/janpfeifer/gonb@latest
+  go install golang.org/x/tools/cmd/goimports@latest
+  go install golang.org/x/tools/gopls@latest
+  
+  export PATH="/root/go/bin:$PATH"
+  
+  ~/go/bin/gonb --install
+  ```
+  
+  ```jupyter
+  // reference documentation
+  %help
+  ```
+  
+  ```jupyter
+  import "fmt"
+  %%
+  fmt.Println("Hello, Gianni!")
+  ```
+  -----
+  <!-- kernel golang -->
+  </details>
+
+
+-----
+<!-- other kernels -->
+</details>
+
 ------ ------
 
 [^1]: [...](...)

@@ -243,6 +243,68 @@ docker stop gh-wiki
 <!-- Github Wiki - Gollum -->
 </details>
 
+## Oracle Cloud - IDE
+
+<details markdown="block"><summary>CentOS</summary>
+
+### Jupyter Notebook
+
+<details markdown="block"><summary>CentOS - Jupyter</summary>
+
+- [My notebooks]({% link docs/languages/python/notebook.md %}#centos)
+
+```sh
+#!/bin/bash
+
+# chmod +x run-docker-bash.sh
+sudo docker exec -it python-learning bash
+
+# see the ip address of the container
+# $> curl ifconfig.me
+
+# Run Jupyter Notebook
+# $> jupyter notebook --allow-root --ip=0.0.0.0 --port=8888
+```
+```sh
+#!/bin/bash
+
+# chmod +x run-docker-d.sh
+sudo docker run \
+  --name python-learning --detach \
+  --mount src=`pwd`,target=/home/local,type=bind \
+  -p 8088:8888 \
+  --workdir /home/local \
+  -it python:3.12.2 bash
+
+# ...
+# docker exec -it python-learning bash
+# docker stop python-learning
+# docker start python-learning
+# docker rm python-learning
+```
+```sh
+#!/bin/bash
+
+# chmod +x run-docker.sh
+sudo docker run \
+  --name python-learning --rm \
+  --mount src=`pwd`,target=/home/local,type=bind \
+  -p 8088:8888 \
+  --workdir /home/local \
+  -it python:3.12.2 bash
+```
+
+----
+<br/>
+<!-- CentOS - Jupyter -->
+</details>
+
+----
+<br/>
+<!-- CentOS -->
+</details>
+
+
 ## Google Cloud CLI
 
 <details markdown="block">
