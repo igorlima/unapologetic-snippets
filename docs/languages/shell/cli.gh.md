@@ -18,6 +18,16 @@ GitHub CLI brings the GitHub to the terminal[^1]. [GitHub CLI & hub](https://git
 brew install gh
 ```
 
+- ```sh
+  # list of prs involving me
+  gh search prs --state=open --involves=@me
+  # search by PR title
+  gh pr list -S "state:open type:pr in:name IPM"
+  # looking for things related to me
+  gh pr list -S "is:open type:pr involves:@me"
+  # view PR using a pager
+  PAGER=less gh pr view 13992
+  ```
 - `gh api <endpoint> [flags]`
   - [https://cli.github.com/manual/gh_api](https://cli.github.com/manual/gh_api)
   - `--hostname <string>`
@@ -62,6 +72,87 @@ brew install gh
       - _specify the body of a review_
     - `-c`, `--comment`
     - `-r`, `--request-changes`
+- ```sh
+  # ALIAS
+  gh alias set all-with-me 'search prs --state=open --involves=@me'
+  gh alias set with-me 'pr list -S "is:open type:pr involves:@me"'
+  ```
+
+## GitHub Search Queries
+
+<br>
+*__GitHub Search Tips__*
+
+to exclude something prepend a hyphen (`-`):
+```
+foo_library -repo:owner1/repoX -repo:owner2/repo
+```
+
+- basic
+  - `is:issue`
+  - `is:open`
+  - `is:public`
+  - `is:private`
+  - `label:beginner `
+  - `type:issue`
+  - `type:pr`
+  - `no:project`
+  - `no:milestone`
+  - `no:label`
+  - `no:assignee`
+- <details markdown="block"><summary><i>further more...</i></summary>
+
+  - find by people
+    - `involves:octocat`
+    - `author:octocat`
+    - `user:octocat`
+    - `commenter:octocat`
+    - `answered-by:octocat`
+    - `assignee:octocat`
+  - find by content through name, description/readme, and so on
+    - `in:name`
+    - `in:title`
+    - `in:description`
+    - `in:readme`
+    - `in:topic`
+    - `in:body`
+    - `in:comments`
+  - find by date: `YYYY-MM-DD`
+    - use `<`, `>`, `>=`, `<=` and `..`
+    - `created:<2022-10-01`
+    - `updated:>2022-10-01`
+    - `merged:>=2022-10-01`
+    - `closed:<=2022-10-01`
+    - `closed:2024-05-01..2024-05-09`
+  - find numbers through stars, forks, and so on
+    - to further narrow your search use: `<`, `>`, `<=`, `>=` & `..`
+    - `stars:n`
+    - `stars:1000`
+    - `forks:n`
+    - `forks:<100`
+    - `comments:n`
+  - miscellaneous
+    - `org:freecodecamp`
+    - `language:LANGUAGE`
+    - `language:PHP`
+    - `license:LICENSE_KEYWORD`
+    - `license:MIT`
+    - `in:path user.rb` or `filename:user.rb`
+    - `sort:reactions-+1-desc`
+    - `state:open`
+    - `draft:false`
+  - additional resources:
+    - [github search documentation](https://docs.github.com/en/search-github)
+      - [understanding code search syntax](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax)
+        - [using boolean operations](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax#using-boolean-operations)
+        - [using qualifiers](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax#using-qualifiers)
+        - [using regular expressions](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax#using-regular-expressions)
+    - searching on GitHub
+      - [searching discussions](https://docs.github.com/en/search-github/searching-on-github/searching-discussions)
+      - [searching code](https://docs.github.com/en/search-github/searching-on-github/searching-code)
+
+  <br/>
+  </details>
 
 ----
 
