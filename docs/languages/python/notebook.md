@@ -105,6 +105,20 @@ pip3 install ipykernel
 <!-- sample notebook -->
 </details>
 
+## Notebook Viewer
+
+- a simple way to share Jupyter Notebooks:
+  - [nbviewer](https://nbviewer.org/)
+- convert notebooks to other formats
+  - ```sh
+    # nbconvert
+    # convert notebooks to other formats
+    # https://nbconvert.readthedocs.io/en/latest/
+    jupyter nbconvert --to html mynotebook.ipynb
+    jupyter nbconvert --to markdown mynotebook.ipynb
+    jupyter nbconvert --to pdf mynotebook.ipynb
+    ```
+
 ## CentOS
 
 - [see jupyter docker in CentOS]({% link docs/languages/containerization/docker.sample.md %}#jupyter-notebook)
@@ -115,6 +129,7 @@ pip3 install --upgrade --force-reinstall notebook
 jupyter notebook --allow-root
 
 # 155.248.192.51:8088/tree?token=xxxxx
+# learn.ilima.xyz:8088/tree?token=xxxxx
 jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxxxx'
 ```
 
@@ -150,9 +165,51 @@ jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxx
   </details>
 
 
+  <details markdown="block"><summary><i>bash</i></summary>
+
+  ```sh
+  pip3 install bash_kernel
+  python3 -m bash_kernel.install
+  ```
+  
+  ```jupyter
+  cat dog.png | display
+  echo "<b>Dog</b>, not a cat." | displayHTML
+  echo "alert('It is known khaleesi\!');" | displayJS
+  ```
+  
+  -----
+  <!-- kernel bash -->
+  </details>
+
+
+  <details markdown="block"><summary><i>nodejs</i></summary>
+
+  ```sh
+  # Instal NodeJS
+  apt update
+  apt install nodejs
+  apt install npm
+  # NVM
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  source ~/.bashrc
+  ```
+  
+  ```sh
+  # Install a javascript kernel for the Jupyter notebook
+  npm install -g ijavascript
+  ijsinstall
+  ```
+  
+  -----
+  <!-- kernel nodejs -->
+  </details>
+
+
 -----
 <!-- other kernels -->
 </details>
+
 
 ------ ------
 
