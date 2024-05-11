@@ -15,16 +15,16 @@ permalink: /docs/algorithms-and-data-structures/notebooks
   - [html]({% link docs/algorithms-data-structures/notebooks/html/python-workspace.html %})
   - nbviewer
 - [Golang]({% link docs/languages/golang/index.md %})
-  - ipynb
-  - html
+  - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/golang-workspace.ipynb %})
+  - [html]({% link docs/algorithms-data-structures/notebooks/html/golang-workspace.html %})
   - nbviewer
 - [NodeJS]({% link docs/languages/node-js/index.md %})
-  - ipynb
-  - html
+  - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/nodejs-workspace.ipynb %})
+  - [html]({% link docs/algorithms-data-structures/notebooks/html/nodejs-workspace.html %})
   - nbviewer
 - [Bash]({% link docs/languages/shell/index.md %})
-  - ipynb
-  - html
+  - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/bash-workspace.ipynb %})
+  - [html]({% link docs/algorithms-data-structures/notebooks/html/bash-workspace.html %})
   - nbviewer
 
 ## Notebook Viewer
@@ -52,6 +52,7 @@ permalink: /docs/algorithms-and-data-structures/notebooks
     # the ‘Templates’ folder is not included in version 6.0.0
     pip3 install --upgrade --force-reinstall nbconvert==5.6.1
 
+    source my-env-jupyter/bin/activate
     cd docs/algorithms-data-structures/notebooks/files
     jupyter nbconvert --to html *.ipynb
     mv *.html ../html/
