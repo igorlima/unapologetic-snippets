@@ -11,6 +11,7 @@ permalink: /docs/languages/python/notebbok
 # Notebook
 
 - [What is a data science Notebook?]({% link docs/algorithms-data-structures/index.md %}#data-science-notebook)
+  - [My Notebooks]({% link docs/algorithms-data-structures/notebooks/index.md %})
 
 ```sh
 # to install

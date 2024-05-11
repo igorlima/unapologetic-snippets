@@ -8,7 +8,11 @@ has_toc: true
 permalink: /docs/algorithms-and-data-structures/notebooks
 ---
 
-# My Notebooks
+# Notebooks
+
+- [Python Notebook]({% link docs/languages/python/notebook.md %})
+
+## My Notebooks
 
 - [Python]({% link docs/languages/python/index.md %})
   - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/python-workspace.ipynb %})
