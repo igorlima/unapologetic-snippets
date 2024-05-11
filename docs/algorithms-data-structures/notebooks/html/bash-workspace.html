@@ -7510,13 +7510,81 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34182546-9522-4b23-9b52-fc1f60531b7e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Bash-Workspace">Bash Workspace<a class="anchor-link" href="#Bash-Workspace">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a5d4032-4df7-4f5c-b506-d318eb466353">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Intro">Intro<a class="anchor-link" href="#Intro">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c2f6493-62be-4f4a-9859-0c44db6ef03c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>List all the shells that are currently installed on our machine by reading the <code>/etc/shell</code> file:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3d8ddd65-8cd8-4167-92ae-ed4eea04c347">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>cat<span class="w"> </span>/etc/shells
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre># /etc/shells: valid login shells
+/bin/sh
+/usr/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/dash
+/usr/bin/dash
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f0108b8f-a67f-49d8-87ea-127a89676cbe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="A-Jupyter-kernel-for-bash">A Jupyter kernel for bash<a class="anchor-link" href="#A-Jupyter-kernel-for-bash">¶</a></h1><ul>
+<h2 id="A-Jupyter-kernel-for-bash">A Jupyter kernel for bash<a class="anchor-link" href="#A-Jupyter-kernel-for-bash">¶</a></h2><ul>
 <li><a href="https://github.com/takluyver/bash_kernel">github repo</a></li>
 </ul>
 <div class="highlight"><pre><span></span>cat<span class="w"> </span>dog.png<span class="w"> </span><span class="p">|</span><span class="w"> </span>display
@@ -7551,6 +7619,487 @@ a.anchor-link {
 bash-workspace.ipynb	run-docker-bash.sh	run-docker.sh
 golang-workspace.ipynb	run-docker-d.sh
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=813aa084-1094-4390-9501-cedbd403eb10">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Handle-Arguments-And-Options">Handle Arguments And Options<a class="anchor-link" href="#Handle-Arguments-And-Options">¶</a></h2><p>Sometimes, we want to add arguments to provide to our script variables to make it more generic.</p>
+<ul>
+<li><code>$1</code> is the first argument</li>
+<li><code>$#</code> variable returns the number of arguments provided to the command line</li>
+<li><code>${#args[@]}</code> returns the number of args array elements</li>
+</ul>
+<p>The <code>shift</code> command is another handy tool for managing arguments in bash scripts. It ‘shifts’ all arguments to the left. For instance, if you use shift, <code>$2</code> becomes <code>$1</code>, <code>$3</code> becomes <code>$2</code>, and so on. The original first argument is discarded.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b7c6ddc-c656-47e2-84d2-c504c6285625">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="One-argument">One argument<a class="anchor-link" href="#One-argument">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85aec4b6-aae3-4510-bd5c-c7b15cea0d60">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># ONE ARGUMENT</span>
+oneArgument<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span>
+<span class="o">}</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\nONE ARGUMENT"</span>
+oneArgument<span class="w"> </span>hello
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+ONE ARGUMENT
+hello
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa387d82-c35c-428e-a9c3-f6e0f3bebdad">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Multiple-Arguments">Multiple Arguments<a class="anchor-link" href="#Multiple-Arguments">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e7f7a259-21ea-4c96-962c-2d5af30abbdd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># MULTIPLE ARGUMENTS</span>
+multipleArguments<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">args</span><span class="o">=(</span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">args</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Missing or too many arguments."</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">helloMessage</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[0]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">name</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$helloMessage</span><span class="w"> </span><span class="nv">$name</span>
+<span class="o">}</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\nMULTIPLE ARGUMENTS"</span>
+multipleArguments<span class="w"> </span>hi<span class="w"> </span>John
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+MULTIPLE ARGUMENTS
+hi John
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc0276a1-4604-4877-85df-e7d256e161b9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Simple-Option">Simple Option<a class="anchor-link" href="#Simple-Option">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4026ab95-ae61-46c1-9725-027577e6bb16">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># SIMPLE OPTION</span>
+simpleOption<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span>args
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">false</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<span class="w">      </span>-s<span class="p">|</span>--short-presentation<span class="o">)</span>
+<span class="w">        </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-*<span class="p">|</span>--*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Invalid option: </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nv">args</span><span class="o">+=(</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">args</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Missing or too many arguments."</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">helloMessage</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[0]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">name</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$short_presentation</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$helloMessage</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$helloMessage</span><span class="w"> </span><span class="nv">$name</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\nSIMPLE OPTION"</span>
+simpleOption<span class="w"> </span>hello<span class="w"> </span>Anna
+simpleOption<span class="w"> </span>-s<span class="w"> </span>hello<span class="w"> </span>Anna
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+SIMPLE OPTION
+hello Anna
+hello
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dccd5487-28e3-4aa4-a816-9cbee4ddf9f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Value-Option">Value Option<a class="anchor-link" href="#Value-Option">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e09305e6-f135-4f3b-98c6-8a0d87af7041">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># VALUE OPTION</span>
+valueOption<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span>args
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">false</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">allowed_colors</span><span class="o">=</span><span class="s2">"green yellow red"</span>
+<span class="w">  </span>check_option<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>option<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$2</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$option</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="w">      </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">done</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Invalid option value : </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="w">  </span>echo_color<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>green<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;32m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>yellow<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;33m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>red<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;31m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<span class="w">      </span>-s<span class="p">|</span>--short-presentation<span class="o">)</span>
+<span class="w">        </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-c<span class="o">=</span>*<span class="p">|</span>--color<span class="o">=</span>*<span class="o">)</span>
+<span class="w">        </span>check_option<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="p">#*=</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$allowed_colors</span><span class="s2">"</span>
+<span class="w">        </span><span class="nv">color</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="p">#*=</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-*<span class="p">|</span>--*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Invalid option: </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nv">args</span><span class="o">+=(</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">args</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Missing or too many arguments."</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">helloMessage</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[0]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">name</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$short_presentation</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>echo_color<span class="w"> </span><span class="nv">$color</span><span class="w"> </span><span class="nv">$helloMessage</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span>echo_color<span class="w"> </span><span class="nv">$color</span><span class="w"> </span><span class="nv">$helloMessage</span><span class="w"> </span><span class="nv">$name</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\nVALUE OPTION"</span>
+valueOption<span class="w"> </span><span class="s2">"hi"</span><span class="w"> </span><span class="s2">"Jhon"</span><span class="w"> </span>--color<span class="o">=</span>red
+valueOption<span class="w"> </span><span class="s2">"what's up"</span><span class="w"> </span><span class="s2">"John"</span><span class="w"> </span>--color<span class="o">=</span>green
+valueOption<span class="w"> </span>hello<span class="w"> </span>Anna<span class="w"> </span>--color<span class="o">=</span>yellow
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+VALUE OPTION
+\033[0;31mhi Jhon\033[0m
+\033[0;32mwhat's John\033[0m
+\033[0;33mhello Anna\033[0m
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=794a9874-0a62-4f37-970d-4b96066d911c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Usage">Usage<a class="anchor-link" href="#Usage">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fbb48b07-594b-44d6-8344-64d7c5ba1aab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>usage<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w">    </span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> [...options] &lt;hello_message&gt; &lt;name&gt;"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Options:"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  -h, --help                 Show this help message."</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  -c, --color COLOR          Set the color for the message (green, yellow or red)."</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  -s, --short-presentation   Display presentation message without name."</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Example: </span><span class="nv">$0</span><span class="s2"> -c green 'Hello' 'John'"</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="o">}</span>
+usage
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Usage: /usr/bin/bash [...options] &lt;hello_message&gt; &lt;name&gt;
+Options:
+  -h, --help                 Show this help message.
+  -c, --color COLOR          Set the color for the message (green, yellow or red).
+  -s, --short-presentation   Display presentation message without name.
+
+Example: /usr/bin/bash -c green 'Hello' 'John'
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=29a2dc0d-3228-4921-97f6-386a57fadf4f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># SIMPLE USAGE</span>
+simpleUsage<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span>args
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">false</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">allowed_colors</span><span class="o">=</span><span class="s2">"green yellow red"</span>
+<span class="w">  </span>usage<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> [-s|--short-presentation] [-c|--color=&lt;green|yellow|red&gt;] [-h|--help] &lt;hello_message&gt; &lt;name&gt;"</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="w">  </span>check_option<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>option<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$2</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$option</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="w">      </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">done</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Invalid option value : </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span>usage
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="w">  </span>echo_color<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>green<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;32m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>yellow<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;33m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>red<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"\033[0;31m</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">\033[0m"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">      </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<span class="w">      </span>-h<span class="p">|</span>--help<span class="o">)</span>
+<span class="w">        </span>usage
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-s<span class="p">|</span>--short-presentation<span class="o">)</span>
+<span class="w">        </span><span class="nv">short_presentation</span><span class="o">=</span><span class="nb">true</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-c<span class="o">=</span>*<span class="p">|</span>--color<span class="o">=</span>*<span class="o">)</span>
+<span class="w">        </span>check_option<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="p">#*=</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$allowed_colors</span><span class="s2">"</span>
+<span class="w">        </span><span class="nv">color</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="p">#*=</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>-*<span class="p">|</span>--*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Invalid option: </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">        </span>usage
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nv">args</span><span class="o">+=(</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">args</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Missing or too many arguments."</span>
+<span class="w">    </span>usage
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">helloMessage</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[0]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">name</span><span class="o">=(</span><span class="si">${</span><span class="nv">args</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$short_presentation</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>echo_color<span class="w"> </span><span class="nv">$color</span><span class="w"> </span><span class="nv">$helloMessage</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span>echo_color<span class="w"> </span><span class="nv">$color</span><span class="w"> </span><span class="nv">$helloMessage</span><span class="w"> </span><span class="nv">$name</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\nSIMPLE USAGE"</span>
+<span class="c1"># simpleUsage -h</span>
+<span class="c1"># simpleUsage "what's up" "John" "how's it going"</span>
+<span class="c1"># simpleUsage hello Anna --color=purple</span>
+simpleUsage<span class="w"> </span>hello<span class="w"> </span>Anna<span class="w"> </span>-d
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+SIMPLE USAGE
+Error: Invalid option: -d
+
+Usage: /usr/bin/bash [-s|--short-presentation] [-c|--color=&lt;green|yellow|red&gt;] [-h|--help] &lt;hello_message&gt; &lt;name&gt;
+
+exit
+Restarting Bash
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ef607852-fb51-4570-bf58-41a9941fa7ed">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>
+</pre></div>
 </div>
 </div>
 </div>
