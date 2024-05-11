@@ -16,3 +16,6 @@ vendor/
 
 # MacOS thing
 *.DS_Store
+
+# Ignore Python virtual environment
+my-env-jupyter/
