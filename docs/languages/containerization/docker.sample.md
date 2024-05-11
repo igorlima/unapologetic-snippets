@@ -256,7 +256,7 @@ docker stop gh-wiki
 ```sh
 #!/bin/bash
 
-# chmod +x run-docker-bash.sh
+# chmod +x exec-docker-bash.sh
 sudo docker exec -it python-learning bash
 
 # see the ip address of the container
@@ -264,6 +264,28 @@ sudo docker exec -it python-learning bash
 
 # Run Jupyter Notebook
 # $> jupyter notebook --allow-root --ip=0.0.0.0 --port=8888
+```
+```sh
+#!/bin/bash
+
+# chmod +x exec-docker-notebook-d.sh
+sudo docker exec -d \
+  -e GOPATH=/root/go \
+  -e PATH=/root/go/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin \
+  -it python-learning \
+  jupyter notebook \
+    --allow-root --ip=0.0.0.0 --port=8888 \
+    --NotebookApp.token='0fd8d941-9f43-49ef-b987-3efb21966bb9'
+
+# generating UUID
+# $> echo `uuidgen | tr '[:upper:]' '[:lower:]'`
+
+# See the IP address of the container
+# http://155.248.192.51:8088/
+# $> curl ifconfig.me
+
+# Run Jupyter Notebook
+# $> jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxxxx'
 ```
 ```sh
 #!/bin/bash

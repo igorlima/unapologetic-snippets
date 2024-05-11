@@ -146,7 +146,11 @@ jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxx
   go install golang.org/x/tools/cmd/goimports@latest
   go install golang.org/x/tools/gopls@latest
   
-  export PATH="/root/go/bin:$PATH"
+  echo -e "\nexport GOPATH=/root/go" >> ~/.bashrc
+  echo -e "\nexport PATH=\"$GOPATH/bin:$PATH\"" >> ~/.bashrc
+
+  export GOPATH="/root/go"
+  export PATH="$GOPATH/bin:$PATH"
   
   ~/go/bin/gonb --install
   ```
