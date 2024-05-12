@@ -20,6 +20,8 @@ permalink: /docs/algorithms-and-data-structures/notebooks
   - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/golang-workspace.ipynb %}) / [html]({% link docs/algorithms-data-structures/notebooks/html/golang-workspace.html %}) / [nbviewer](https://nbviewer.org/urls/igorlima.github.io/unapologetic-snippets/docs/algorithms-data-structures/notebooks/files/golang-workspace.ipynb)
 - [NodeJS]({% link docs/languages/node-js/index.md %})
   - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/nodejs-workspace.ipynb %}) / [html]({% link docs/algorithms-data-structures/notebooks/html/nodejs-workspace.html %}) / [nbviewer](https://nbviewer.org/urls/igorlima.github.io/unapologetic-snippets/docs/algorithms-data-structures/notebooks/files/nodejs-workspace.ipynb)
+- Deno
+  - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/deno-workspace.ipynb %}) / [html]({% link docs/algorithms-data-structures/notebooks/html/deno-workspace.html %}) / [nbviewer](https://nbviewer.org/urls/igorlima.github.io/unapologetic-snippets/docs/algorithms-data-structures/notebooks/files/deno-workspace.ipynb)
 - [Bash]({% link docs/languages/shell/index.md %})
   - [ipynb]({% link docs/algorithms-data-structures/notebooks/files/bash-workspace.ipynb %}) / [html]({% link docs/algorithms-data-structures/notebooks/html/bash-workspace.html %}) / [nbviewer](https://nbviewer.org/urls/igorlima.github.io/unapologetic-snippets/docs/algorithms-data-structures/notebooks/files/bash-workspace.ipynb)
 

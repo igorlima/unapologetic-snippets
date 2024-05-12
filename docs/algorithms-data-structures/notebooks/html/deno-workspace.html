@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>nodejs-workspace</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>deno-workspace</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7509,31 +7509,7 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d84281b-af46-4c1b-88d2-9d9e2814ded2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="NodeJS-Workspace">NodeJS Workspace<a class="anchor-link" href="#NodeJS-Workspace">¶</a></h1><ul>
-<li><a href="https://github.com/n-riesco/ijavascript">JS kernel github repo</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8741d128-6398-44a7-b601-d41c794c1169">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Intro">Intro<a class="anchor-link" href="#Intro">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cee3bfd2-4731-4ca4-aae1-d80daf37ce66">
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a3f923a-1bdf-4f72-bd97-86156b129326">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7541,10 +7517,26 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-javascript"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">foo</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">1</span><span class="o">+</span><span class="mf">2</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nx">foo</span><span class="p">()</span>
+<div class="highlight hl-typescript"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">_id</span><span class="p">;</span><span class="w"> </span><span class="c1">// Implicit Declearation</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">fb_id</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">;</span><span class="w"> </span><span class="c1">// Explicit Declearation</span>
+<span class="nx">fb_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">fb_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">23423523</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Riyad"</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hossain"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">isLoading</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="nx">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">roll</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">423</span><span class="p">;</span>
+<span class="nx">roll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"423"</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">device</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Union Type</span>
+<span class="nx">device</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Mobile"</span><span class="p">;</span>
+<span class="nx">device</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4323523</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">re</span><span class="o">:</span><span class="w"> </span><span class="kt">RegExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\w+/g</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7557,7 +7549,45 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>3
+<pre>hello
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c923d338-8d93-41df-b514-b99c1c34fd92">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-typescript"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="w"> </span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">logPoint</span><span class="p">(</span><span class="nx">p</span><span class="o">:</span><span class="w"> </span><span class="kt">Point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="w"> </span>
+<span class="c1">// logs "12, 26"</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">26</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">logPoint</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>12, 26
 </pre>
 </div>
 </div>
