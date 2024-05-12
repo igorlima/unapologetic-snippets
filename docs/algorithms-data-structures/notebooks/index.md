@@ -125,7 +125,7 @@ permalink: /docs/algorithms-and-data-structures/notebooks
         echo "File -> $f"
       done
 
-      # remove extansion
+      # remove file extension
       for x in *.txt; do
         t=$(echo $x | sed 's/\.txt$//');
         echo "moved $x -> $t"

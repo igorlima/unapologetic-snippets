@@ -7624,6 +7624,537 @@ golang-workspace.ipynb	run-docker-d.sh
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=107aac76-a493-4b78-adcb-a9f4cdfb41ea">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Special-Characters-and-Operatons">Special Characters and Operatons<a class="anchor-link" href="#Special-Characters-and-Operatons">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9cffc3d8-46d0-4383-bfac-c444b8ea366d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>specialChars<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>~+<span class="w"> </span><span class="c1"># same as "echo $PWD"</span>
+<span class="w">  </span><span class="nb">cd</span><span class="w"> </span>~
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>~-<span class="w"> </span><span class="c1"># same as "echo $OLDPWD"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$*</span><span class="w"> </span><span class="c1"># all positional arguments passed to script, function, etc</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="c1"># same as above</span>
+
+<span class="w">  </span>:<span class="w">  </span><span class="c1"># means no operation (no-op)</span>
+
+<span class="w">  </span><span class="c1"># ternary operator in Bash!</span>
+<span class="w">  </span><span class="nv">variable</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="m">1</span><span class="o">&gt;</span><span class="m">2</span><span class="w"> </span>?<span class="w"> </span><span class="m">1</span>:2<span class="w"> </span><span class="k">))</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$variable</span>
+<span class="w">  </span><span class="c1"># 2</span>
+
+<span class="w">  </span><span class="c1"># get last positional parameter</span>
+<span class="w">  </span><span class="nv">last_arg</span><span class="o">=</span><span class="si">${</span><span class="p">!#</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$last_arg</span>
+<span class="w">  </span><span class="c1"># ./script.sh 1 2 3 4</span>
+<span class="w">  </span><span class="c1"># 4</span>
+
+<span class="w">  </span><span class="c1"># if `username` not set, set default value to output of `whoami` command</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">username</span><span class="k">:-$(</span>whoami<span class="k">)</span><span class="si">}</span>
+<span class="w">  </span><span class="c1"># output of `whoami` command</span>
+
+<span class="w">  </span><span class="c1"># if variable is set, use alternative value</span>
+<span class="w">  </span><span class="nv">path</span><span class="o">=</span>/some/path
+<span class="w">  </span><span class="nv">path</span><span class="o">=</span><span class="si">${</span><span class="nv">path</span><span class="p">:+/some/alternative/path</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$path</span>
+<span class="w">  </span><span class="c1"># /some/alternative/path</span>
+<span class="o">}</span>
+specialChars
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>/root
+/root
+
+
+2
+/usr/bin/bash
+root
+/some/alternative/path
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d036af37-7570-487b-b892-995bf50b28e3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="base-64-/-hex-string">base 64 / hex string<a class="anchor-link" href="#base-64-/-hex-string">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f7d92c3e-b755-475f-b99a-42f99655e3a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># generating all the characters for a valid base 64 / hex string</span>
+baseAndHex<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">b64_chars</span><span class="o">=(</span><span class="w"> </span><span class="o">{</span>a..z<span class="o">}</span><span class="w"> </span><span class="o">{</span>A..Z<span class="o">}</span><span class="w"> </span><span class="o">{</span><span class="m">0</span>..9<span class="o">}</span><span class="w"> </span>+<span class="w"> </span>/<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">)</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$b64_chars</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">b64_chars</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="c1"># a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 + / =</span>
+
+<span class="w">  </span><span class="nv">hex_chars</span><span class="o">=(</span><span class="w"> </span><span class="o">{</span><span class="m">0</span>..9<span class="o">}</span><span class="w"> </span><span class="o">{</span>a..f<span class="o">}</span><span class="w"> </span><span class="o">)</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$hex_chars</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">hex_chars</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="c1"># 0 1 2 3 4 5 6 7 8 9 a b c d e f</span>
+<span class="o">}</span>
+baseAndHex
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a
+65
+0
+16
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13cdc67a-f46f-4ff3-984a-462786887d96">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="checking-if-parameter-is-set,-else-printing-error-message-and-exit">checking if parameter is set, else printing error message and exit<a class="anchor-link" href="#checking-if-parameter-is-set,-else-printing-error-message-and-exit">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4bd90c40-d1c7-4f3b-a31f-12c7d094cc2f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>checkParameter<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">args</span><span class="o">=(</span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">args</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">args</span><span class="p">[1]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">args</span><span class="p">[2]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span>:<span class="w"> </span><span class="si">${</span><span class="nv">1</span><span class="p">?</span><span class="s2">"usage: `basename </span><span class="nv">$0</span><span class="s2">` &lt;username&gt;"</span><span class="si">}</span>
+<span class="w">  </span>:<span class="w"> </span><span class="si">${</span><span class="nv">2</span><span class="p">?</span><span class="s2">"usage: `basename </span><span class="nv">$0</span><span class="s2">` &lt;username&gt;"</span><span class="si">}</span>
+<span class="o">}</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+checkParameter
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+checkParameter<span class="w"> </span><span class="s2">"a"</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+checkParameter<span class="w"> </span><span class="s2">"a"</span><span class="w"> </span><span class="s2">"b"</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+...
+
+
+
+bash: 1: usage: bash &lt;username&gt;
+
+...
+a
+
+
+bash: 2: usage: bash &lt;username&gt;
+
+...
+a
+b
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b5b6e65-9e43-406e-a980-eea857cee82b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="anonymous-functions">anonymous functions<a class="anchor-link" href="#anonymous-functions">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e85f3c4a-2286-4510-b290-05938905e512">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># send output of code block to file</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'listing HOME folder'</span>
+<span class="w">  </span>ls<span class="w"> </span>-l<span class="w"> </span>~
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'pinging Amazon.com'</span>
+<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span>results.txt
+cat<span class="w"> </span>results.txt
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># invoke anonymous function after conditional check</span>
+<span class="c1"># the "-z" option in bash scripting is a test operator that checks if a string is null.</span>
+<span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-z<span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>ls<span class="w"> </span>-l<span class="w"> </span>~
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'do something else'</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>listing HOME folder
+total 4
+drwxr-xr-x. 4 root root 28 May  8 02:46 go
+-rw-r--r--. 1 root root 20 May 12 21:04 results.txt
+pinging Amazon.com
+
+...
+total 4
+drwxr-xr-x. 4 root root  28 May  8 02:46 go
+-rw-r--r--. 1 root root 142 May 12 21:04 results.txt
+do something else
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb25c03b-a540-4497-ba33-e850c967d25e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="string-manipulation">string manipulation<a class="anchor-link" href="#string-manipulation">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=11425c73-36de-4f63-aee4-3276ec370e59">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>strManipulation<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s1">'cool is Bash - Bash is so cool cool!'</span>
+
+<span class="w">  </span><span class="c1"># substitute first occurence of word "cool" with "awesome"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">/cool/awesome</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># substitute all occurances of word "cool with "awesome"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">//cool/awesome</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># strip string until first occurence of "cool" from front of string</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">#*cool</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># strip string until last occurance of "cool" from front of string</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">##*cool</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># strip string until first occurence of "cool" from back of string</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">%cool*</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># strip string until last occurence of "cool" from back of string</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">%%cool*</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># if variable prefix (beginning of string) matches "cool"</span>
+<span class="w">  </span><span class="c1"># replace "cool" with tricky</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">/#cool/tricky</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># if variable suffix (end of string) matches "cool!"</span>
+<span class="w">  </span><span class="c1"># replace "cool!" with tricky!</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">/%cool</span><span class="se">\\</span><span class="p">!/trick!</span><span class="si">}</span>
+<span class="o">}</span>
+strManipulation
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>bash: !/trick!}: event not found
+awesome is Bash - Bash is so cool cool!
+awesome is Bash - Bash is so awesome awesome!
+is Bash - Bash is so cool cool!
+!
+cool is Bash - Bash is so cool
+
+tricky is Bash - Bash is so cool cool!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=53c48773-2f62-4e55-b640-4a8ac6c9b069">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="loop-using-shift">loop using shift<a class="anchor-link" href="#loop-using-shift">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=523f3554-58a1-4768-9d2c-fa6e06743817">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># Until loop using shift to parse args passed to script or function</span>
+loopShift<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">until</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">]</span>
+<span class="w">  </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"arg: </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">shift</span><span class="w"> </span><span class="c1"># moves all positional parameters to the left</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="o">}</span>
+loopShift<span class="w"> </span><span class="s1">'a'</span><span class="w"> </span><span class="s1">'b'</span><span class="w"> </span><span class="s1">'c'</span><span class="w"> </span><span class="s1">'d'</span><span class="w"> </span><span class="s1">'e'</span><span class="w"> </span><span class="s1">'f'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>arg: a
+arg: b
+arg: c
+arg: d
+arg: e
+arg: f
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f80f3f2-064c-4da4-9c3f-b2096189421f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="parse-space-separated-values">parse space-separated values<a class="anchor-link" href="#parse-space-separated-values">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ff9b5e42-47fd-4531-ae58-b379ef31e272">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># use "set" to parse space-separated values as positional arguments</span>
+parse<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span>arg<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"Will 31"</span><span class="w"> </span><span class="s2">"Jack 40"</span><span class="w"> </span><span class="s2">"Elizabeth 29"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="c1"># NOTE: '--' tells Bash that values starting "-" should be treated as</span>
+<span class="w">    </span><span class="c1"># positional arguments and not options.</span>
+<span class="w">    </span><span class="nb">set</span><span class="w"> </span>--<span class="w"> </span><span class="nv">$arg</span>
+<span class="w">    </span><span class="nv">name</span><span class="o">=</span><span class="nv">$1</span>
+<span class="w">    </span><span class="nv">age</span><span class="o">=</span><span class="nv">$2</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$name</span><span class="s2"> is </span><span class="nv">$age</span><span class="s2"> years old"</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="w">  </span><span class="c1"># Will is 31 years old</span>
+<span class="w">  </span><span class="c1"># Jack is 40 years old</span>
+<span class="w">  </span><span class="c1"># Elizabeth is 29 years old</span>
+<span class="o">}</span>
+parse<span class="w"> </span><span class="s1">'a'</span><span class="w"> </span><span class="s1">'b'</span><span class="w"> </span><span class="s1">'c'</span><span class="w"> </span><span class="s1">'d'</span><span class="w"> </span><span class="s1">'e'</span><span class="w"> </span><span class="s1">'f'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Will is 31 years old
+Jack is 40 years old
+Elizabeth is 29 years old
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4aebd190-3ef0-42c3-8339-ef1410d855ba">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Handle-Errors">Handle Errors<a class="anchor-link" href="#Handle-Errors">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6ba5300b-c2a5-4699-843e-6bbecbc27456">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>handleError<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>cat<span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Exit code 0. No problems."</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Exit code </span><span class="nv">$?</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Handling error.."</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+handleError
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>cat: file: No such file or directory
+Exit code 1
+Handling error..
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82e414be-c7b2-4708-aec2-2b0baedfcb08">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Timeout">Timeout<a class="anchor-link" href="#Timeout">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=555fa1e5-d4b1-41d9-9c8f-99a24a0824df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>date
+timeout<span class="w"> </span>2s<span class="w"> </span>sleep<span class="w"> </span><span class="m">5</span>
+date
+timeout<span class="w"> </span>2s<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Done
+date
+timeout<span class="w"> </span>3s<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo DONE'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Sun May 12 21:24:38 UTC 2024
+Sun May 12 21:24:40 UTC 2024
+Done
+Sun May 12 21:24:40 UTC 2024
+DONE
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=813aa084-1094-4390-9501-cedbd403eb10">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8090,16 +8621,385 @@ Restarting Bash
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ef607852-fb51-4570-bf58-41a9941fa7ed">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9585a70b-f513-4cfe-884b-37c4b776b1ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="String-Manipulation">String Manipulation<a class="anchor-link" href="#String-Manipulation">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c924a848-bbb8-475c-8778-033c9d8970c5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="substring-extraction-and-replacement">substring extraction and replacement<a class="anchor-link" href="#substring-extraction-and-replacement">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7251b401-537b-4b45-8f87-5df3ba09f268">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-bash"><pre><span></span>
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># substring extraction by providing character position and length</span>
+stringExtration<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"2023-10-12"</span>
+
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">:</span><span class="nv">5</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="c1"># 10</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">::</span><span class="nv">4</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># 2023</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">:</span><span class="nv">5</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># 10-12</span>
+<span class="o">}</span>
+stringExtration
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># substring from the right side, as folloes</span>
+stringExtration<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"backup.sql"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"original</span><span class="si">${</span><span class="nv">str</span><span class="p">:(-4)</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># original.sql</span>
+<span class="o">}</span>
+stringExtration
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># inbuilt syntax for subtring replacements</span>
+stringExtration<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"obin-linux_x64-bin"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/x64/armhf</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># obin-linux_armhf-bin</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/bin/dist</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># odist-linux_x64-bin</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">//bin/dist</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># odist-linux_x64-dist</span>
+<span class="o">}</span>
+stringExtration
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># replace string prefixes and suffixes</span>
+<span class="c1"># replacing a file extension with another extension is a good example</span>
+stringExtration<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"db_config_backup.zip"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/%.zip/.conf</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># db_config_backup.conf</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/#db/settings</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># settings_config_backup.zip</span>
+
+<span class="w">  </span><span class="c1"># in the above substring replacement,</span>
+<span class="w">  </span><span class="c1"># it used the exact substring segment for matching</span>
+<span class="w">  </span><span class="c1"># to use a part of the substring, us the "*" wildcard character</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/%.*/.bak</span><span class="si">}</span><span class="s2">"</span><span class="w">      </span><span class="c1"># db_config_backup.bak</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/#*_/new</span><span class="si">}</span><span class="s2">"</span><span class="w">       </span><span class="c1"># newbackup.zip</span>
+<span class="o">}</span>
+stringExtration
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>10
+2023
+10-12
+
+...
+original.sql
+
+...
+obin-linux_armhf-bin
+odist-linux_x64-bin
+odist-linux_x64-dist
+
+...
+db_config_backup.conf
+settings_config_backup.zip
+db_config_backup.bak
+newbackup.zip
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8271cf17-b069-4bfc-b845-2dcc1bc058b5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="regex-matches,-extractions,-and-replacements">regex matches, extractions, and replacements<a class="anchor-link" href="#regex-matches,-extractions,-and-replacements">¶</a></h3><p>Use inbuilt Bash regex features to handle text processing faster than external binaries</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96357468-7ad0-4d19-8a62-f4e5352785d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># performs a regex match with an if-condition</span>
+<span class="c1"># and the "=~" operator</span>
+regexSample<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"db_backup_2003.zip"</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$str</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="m">200</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]</span>+<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"regex_matched"</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+regexSample
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># replace the if-statement with an iline conditional</span>
+regexSample<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="o">[[</span><span class="w"> </span><span class="nv">$str</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="m">200</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]</span>+<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"regex_matched"</span>
+<span class="o">}</span>
+regexSample
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># once the Bash interpreter performs a regex match,</span>
+<span class="c1"># it typically stores all matches in the "BASH_REMATCH" shell variable.</span>
+<span class="c1"># this variable is a read-only array, and</span>
+<span class="c1"># it stores the entire matched data in the first index.</span>
+<span class="c1"># IF using sub-patterns, Bash incrementally keeps those matches in other indexes.</span>
+regexSample<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"db_backup_2003.zip"</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$str</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="o">(</span><span class="m">200</span><span class="o">[</span><span class="m">0</span>-5<span class="o">])(</span>.*$<span class="o">)</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BASH_REMATCH</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># 2003.zip</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BASH_REMATCH</span><span class="p">[1]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># 2003</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BASH_REMATCH</span><span class="p">[2]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># .zip</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+regexSample
+
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n..."</span>
+<span class="c1"># it's possible to use regex definitions inside parameter expansions</span>
+regexSample<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"db_backup_2003.zip"</span>
+<span class="w">  </span><span class="nv">re</span><span class="o">=</span><span class="s2">"200[0-3].zip"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/</span><span class="nv">$re</span><span class="p">/new</span><span class="si">}</span><span class="s2">.bak"</span><span class="w">  </span><span class="c1"># db_backup_new.bak</span>
+<span class="o">}</span>
+regexSample
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>regex_matched
+
+...
+regex_matched
+
+...
+2003.zip
+2003
+.zip
+
+...
+db_backup_new.bak
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c1d675b-1702-4d08-b664-ac5a7ba2f06e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="substring-removal-techniques">substring removal techniques<a class="anchor-link" href="#substring-removal-techniques">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=32369d0a-71be-442b-b35d-551de8a576e9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># use the substring replacement syntax</span>
+<span class="c1"># but omit the replacement string parameter for string removals</span>
+removal_technique<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"ver5.02-2224.e2"</span>
+<span class="w">  </span><span class="nv">ver</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">#ver</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ver</span><span class="w">              </span><span class="c1"># 5.02-2224.e2</span>
+<span class="w">  </span><span class="nv">maj</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">ver</span><span class="p">/.*</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$maj</span><span class="w">              </span><span class="c1"># 5</span>
+
+<span class="w">  </span><span class="c1"># in the above, it used the exact substring</span>
+<span class="w">  </span><span class="c1"># and a wildcard for substring removal.</span>
+<span class="w">  </span><span class="c1"># check below how to extract a clean version number without excessive characters</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"ver5.02-2224_release"</span>
+<span class="w">  </span><span class="nv">ver</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">//[a-z_]</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ver</span><span class="w">              </span><span class="c1"># 5.02-2224</span>
+<span class="o">}</span>
+removal_technique
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>5.02-2224.e2
+5
+5.02-2224
+
+...
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab1f16e0-906f-4d19-adf1-bb8ee1d9f053">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="case-conversions-and-case-based-variables">case conversions and case-based variables<a class="anchor-link" href="#case-conversions-and-case-based-variables">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=966fb744-5489-4be4-a41e-6bc30a064da1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>caseString<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"Hello Bash!"</span>
+<span class="w">  </span><span class="nv">lower</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">,,</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nv">upper</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">^^</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$lower</span><span class="w">         </span><span class="c1"># hello bash!</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$upper</span><span class="w">         </span><span class="c1"># HELLO BASH!</span>
+
+<span class="w">  </span><span class="c1"># uppercase or lowercase only the first character of a particular string</span>
+<span class="w">  </span><span class="nv">ver1</span><span class="o">=</span><span class="s2">"V2.0-release"</span>
+<span class="w">  </span><span class="nv">ver2</span><span class="o">=</span><span class="s2">"v4.0-release"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ver1</span><span class="p">,</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1"># v2.0-release</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ver2</span><span class="p">^</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1"># V4.0-release</span>
+
+<span class="w">  </span><span class="c1"># if need to make a specific variable strictly uppercase or lowercase,</span>
+<span class="w">  </span><span class="c1"># add case attributes to a particular variable with the inbuilt "declare" command</span>
+<span class="w">  </span><span class="nb">declare</span><span class="w"> </span>-l<span class="w"> </span>ver1
+<span class="w">  </span><span class="nb">declare</span><span class="w"> </span>-u<span class="w"> </span>ver2
+<span class="w">  </span><span class="nv">ver1</span><span class="o">=</span><span class="s2">"V4.02.2"</span>
+<span class="w">  </span><span class="nv">ver2</span><span class="o">=</span><span class="s2">"v2.22.1"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ver1</span><span class="w">          </span><span class="c1"># v4.02.2</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ver2</span><span class="w">          </span><span class="c1"># V2.22.1</span>
+<span class="w">  </span><span class="c1"># the above "ver1" and "ver2" variables receive a case attribute during the declaration,</span>
+<span class="w">  </span><span class="c1"># so whenever you assign a value for a specific variable,</span>
+<span class="w">  </span><span class="c1"># Bash converts the text case based on variable attributes.</span>
+<span class="o">}</span>
+caseString
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello bash!
+HELLO BASH!
+v2.0-release
+V4.0-release
+v4.02.2
+V2.22.1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=448050c9-594d-48f8-8f9d-a6ad2b1d1d05">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="splitting-strings-(string-to-array-conversion)">splitting strings (string-to-array conversion)<a class="anchor-link" href="#splitting-strings-(string-to-array-conversion)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f71cd09f-340d-4f05-b6da-5803156ef5e7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span><span class="c1"># using "IFS" and "read" is one of the simplest and error-free ways to split a string</span>
+splitting<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"C,C++,JavaScript,Python,Bash"</span>
+<span class="w">  </span><span class="nv">IFS</span><span class="o">=</span><span class="s2">","</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-ra<span class="w"> </span>arr<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">"</span><span class="nv">$str</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># 5</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">arr</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># C</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">arr</span><span class="p">[4]</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># Bash</span>
+<span class="w">  </span><span class="c1"># the above uses "," as the split delimiter</span>
+<span class="w">  </span><span class="c1"># and uses the "read" inbuilt command to create an array based on "IFS"</span>
+
+<span class="w">  </span><span class="c1"># BUT it breaks when including "*"</span>
+<span class="w">  </span><span class="c1"># (expands to current directory's content)</span>
+<span class="w">  </span><span class="c1"># as an element and space as the delimiter</span>
+<span class="w">  </span><span class="c1"># WARNING: This code has several hidden issues.</span>
+<span class="w">  </span><span class="nv">str</span><span class="o">=</span><span class="s2">"C,Bash,*"</span>
+<span class="w">  </span><span class="nv">arr</span><span class="o">=(</span><span class="si">${</span><span class="nv">str</span><span class="p">//,/ </span><span class="si">}</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"..."</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># </span>
+<span class="o">}</span>
+splitting
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>5
+C
+Bash
+...
+7
+</pre>
 </div>
 </div>
 </div>
