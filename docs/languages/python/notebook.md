@@ -211,6 +211,37 @@ jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='xxxx
   </details>
 
 
+  <details markdown="block"><summary><i>deno</i></summary>
+
+  Deno brings __TypeScript__, __JavaScript__, __npm__, and __ES Modules__ to Jupyter with an easy to install kernel.
+  - [https://docs.deno.com](https://docs.deno.com/)
+  
+  ```sh
+  # Install
+  # https://docs.deno.com/runtime/manual/getting_started/installation
+  curl -fsSL https://deno.land/install.sh | sh
+  
+  # deno jupyter kernel installation:
+  deno jupyter --unstable --install
+  ```
+  
+  ```sh
+  # Deno was installed successfully to /root/.deno/bin/deno
+  # Manually add the directory to your $HOME/.bashrc (or similar)
+    export DENO_INSTALL="/root/.deno"
+    export PATH="$DENO_INSTALL/bin:$PATH"
+  # Run '/root/.deno/bin/deno --help' to get started
+  ```
+  
+  TypeScript kernel alternatives:
+  - [https://github.com/winnekes/itypescript](https://github.com/winnekes/itypescript)
+  - [https://github.com/yunabe/tslab](https://github.com/yunabe/tslab)
+    
+  -----
+  <!-- kernel deno -->
+  </details>
+
+
 -----
 <!-- other kernels -->
 </details>
