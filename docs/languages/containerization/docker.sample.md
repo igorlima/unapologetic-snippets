@@ -373,6 +373,9 @@ sudo docker run --rm --name my-sftpgo \
 # docker exec -it my-sftpgo bash
 ```
 
+![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/deaa0b2c-2451-48f2-87ab-064f3f7231cc)
+
+
 ----
 <br/>
 <!-- CentOS - Others -->
