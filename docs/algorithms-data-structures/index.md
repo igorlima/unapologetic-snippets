@@ -119,6 +119,53 @@ Bitwise operators are characters that represent actions (bitwise operations) to 
 
 - [bitwise operations in Python]({% link docs/languages/python/other.bitwise-operations.md %})
 
+## Observability
+
+Observability is how businesses know what’s going on with their different systems and operations. [^15]
+
+- Businesses are made up of **different software systems**, from apps and infrastructure to data pipelines
+- Observability helps teams **monitor when things go wrong** and **profile how things change** over time; basically, knowing what’s going on under the hood
+- There are **4 major types of observability**, from infrastructure to your whole business, and each carries different tools and responsible teams When teams can clearly see what’s happening in their systems – whether it’s an app, server, or part of the business – then they can make better decisions and ultimately get better outcomes
+
+**Observability basics: what the hell is going on?** Observability is a complicated word for a pretty simple thing: companies want to know **what’s going on** with their systems and their business. Startups, and big companies, have a lot happening, from software to operations to why my campaigns aren’t converting this week, and the teams responsible for those things some visibility into them
+
+In practice, observability usually manifests itself as a piece of software – one that you write yourself, or buy from someone else – that monitors the signals of your and spits some things out. The consumers of that observability are usually interested in **alerts** when things go wrong, but also **profiling and understanding** their better so they can make improvements.
+
+- here’s one example:
+  - **who**: your backend engineering team
+  - **what**: how fast the database is running queries
+  - **how**: query plans and times
+  - **using**: built-in Postgres functions or Datadog
+- here’s another example:
+  - **who**: your data team
+  - **what**: how clean a new data pipeline is
+  - **how**: missing and null values
+  - **using**: custom queries or Datafold
+- and yet another example:
+  - **who**: your product team
+  - **what**: how larger customers are using a new feature
+  - **how**: feature adoption and user growth
+  - **using**: product analytics tools or Rupert
+
+Examples abound. For a more conceptual backing though, you can pretty clearly split observability into **4 distinct categories**.
+
+- Application observability
+  - who: your frontend and backend engineering teams
+  - what: how your application is performing for users
+  - how: APM monitoring tools like DataDog or New Relic or Grafana
+- Infrastructure observability
+  - who: your backend engineering / DevOps engineering / SREs
+  - what: the utilization and performance of your servers (and services, and other infra)
+  - how: infrastructure monitoring tools like Datadog or Prometheus or Grafana
+- Data observability
+  - who: your data team, data engineers, data scientists
+  - what: the quality of your data and systems built on top of it
+  - how: custom queries and tools like Datafold
+- Business observability
+  - who: your functional teams (customer success, marketing, sales, etc), plus data owners
+  - what: what's going on with your metrics and business events
+  - how: dashboards and monitoring/alerting tools like Rupert
+
 ## Data Science Notebook
 
 Data Science notebooks – or just “code notebooks”. [^6]
@@ -174,3 +221,4 @@ Authentication in computer science refers to the process of verifying the identi
 [^12]: [Building, Evaluating and Tracking a Local Advanced RAG System : Mistral 7b + LlamaIndex + W&B](https://towardsdatascience.com/building-evaluating-and-tracking-a-local-advanced-rag-system-mistral-7b-llamaindex-w-b-5c9c69059f92)
 [^13]: [Generative AI Terminology — An Evolving Taxonomy To Get You Started](https://pub.towardsai.net/generative-ai-terminology-an-evolving-taxonomy-to-get-you-started-4ca487bfe2d8)
 [^14]: [Using IPython Jupyter Magic Commands to Improve the Notebook Experience](https://towardsdatascience.com/using-ipython-jupyter-magic-commands-to-improve-the-notebook-experience-f2c870cab356)
+[^15]: [What is Observability?](https://read.technically.dev/p/what-is-observability)
