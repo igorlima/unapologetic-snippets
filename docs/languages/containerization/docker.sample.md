@@ -321,6 +321,63 @@ sudo docker run \
 <!-- CentOS - Jupyter -->
 </details>
 
+### Others
+
+<details markdown="block"><summary>CentOS - Others</summary>
+
+```sh
+#!/bin/bash
+
+# chmod +x run-docker-ttyd.sh
+sudo docker run -d --name ttyd \
+  --restart unless-stopped \
+  -p 8083:8083 \
+  -e TZ="America/Sao_Paulo" \
+  --mount src="$(pwd)/workspace/ttyd",target=/root/workspace,type=bind \
+  --privileged \
+  -it tsl0922/ttyd:1.7.3 ttyd -p 8083 -c user:password bash
+
+# docker exec -it --privileged ttyd bash
+# docker exec -d --privileged ttyd dockerd
+```
+
+```sh
+#!/bin/bash
+
+# chmod +x exec-docker-ttyd.sh
+# sudo docker run -d --name ttyd \
+#   --restart unless-stopped \
+#   -p 8083:8083 \
+#   -e TZ="America/Sao_Paulo" \
+#   --mount src="$(pwd)/workspace/ttyd",target=/root/workspace,type=bind \
+#   --privileged \
+#   -it tsl0922/ttyd:1.7.3 ttyd -p 8083 -c user:password bash
+
+sudo docker exec -it --privileged ttyd bash
+# docker exec -d --privileged ttyd dockerd
+```
+
+```sh
+#!/bin/bash
+
+# chmod +x run-docker-sftpgo.sh
+sudo docker run --rm --name my-sftpgo \
+   -p 8080:8080 \
+   -e TZ="America/Sao_Paulo" \
+   -e SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN=true \
+   -e SFTPGO_DEFAULT_ADMIN_USERNAME=user \
+   -e SFTPGO_DEFAULT_ADMIN_PASSWORD=password \
+   --mount type=bind,source="$(pwd)/workspace/ttyd",target=/srv/sftpgo \
+   -d drakkan/sftpgo:2.5.x
+
+# docker exec -it my-sftpgo bash
+```
+
+----
+<br/>
+<!-- CentOS - Others -->
+</details>
+
 ----
 <br/>
 <!-- CentOS -->
