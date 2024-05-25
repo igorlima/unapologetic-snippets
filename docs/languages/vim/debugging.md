@@ -21,6 +21,19 @@ permalink: /docs/languages/vim/debugging
 {:toc}
 </details>
 
+## Vim Modes
+
+- Normal
+- Insert
+- Visual
+- Ex mode
+  - `:help Ex-mode`
+  - to enter Ex mode type either `Q` or `gQ`
+  - when entering Ex mode. Type `visual` to go to Normal mode.
+  - browse your command-line history
+    - `q:`, or `:<C-f>`, instead provides a way to browse command-line history and edit it like a normal buffer. This makes it easy to find a previous command you ran, edit it with normal Vim commands, and then run the modified command. The `q/` and `q?` commands exist to provide the same functionality for the search history.
+
+## Debugging Vimscript
 
 ```
 " debug on a line
