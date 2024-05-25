@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shell - CLI
+title: shell - CLI
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/cli

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Bash Script
+title: bash script
 nav_order: 2
 parent: Shell
 grand_parent: Programming Languages

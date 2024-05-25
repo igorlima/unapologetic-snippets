@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Z shell
+title: z shell
 nav_order: 2
 parent: Shell
 grand_parent: Programming Languages
