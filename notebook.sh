@@ -26,7 +26,7 @@ simpleUsage () {
         exit 1
         ;;
       -e|--init-env-py)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo -e '
         To create a Python environment for Jupyter Notebook, run the following commands:
         $> python3 -m venv '$MY_PYTHON_ENV_NAME'
@@ -35,7 +35,7 @@ simpleUsage () {
         exit 0
         ;;
       -x|--deactivate-env-py)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo -e '
         To deactivate the Python environment for Jupyter Notebook, run the following commands:
         $> deactivate          # how to leave/exit/deactivate
@@ -44,7 +44,7 @@ simpleUsage () {
         exit 0
         ;;
       -i|--install-python-modules)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         # pip3 install -I jupyter==0.3.2
         # pip3 install --upgrade --force-reinstall jupyter
         # pip3 show juptyer
@@ -64,7 +64,7 @@ simpleUsage () {
         exit 0
         ;;
       -r|--rename-ipynb-to-old)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo 'Going to the notebook files directory...'
         cd docs/algorithms-data-structures/notebooks/files
         echo 'Renaming all the `.ipynb` files to `-old.ipynb`...'
@@ -78,7 +78,7 @@ simpleUsage () {
         exit 0
         ;;
       --rm|--remove-old-ipynb)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo 'Going to the notebook files directory...'
         cd docs/algorithms-data-structures/notebooks/files
         echo 'Removing all the `-old.ipynb` files...'
@@ -87,7 +87,7 @@ simpleUsage () {
         exit 0
         ;;
       -c|--convert-notebook-to-html)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo 'Activating the Python environment for Jupyter Notebook...'
         . $MY_PYTHON_ENV_NAME/bin/activate
         echo 'Going to the notebook files directory...'
@@ -100,7 +100,7 @@ simpleUsage () {
         exit 0
         ;;
       --diff|--diff-notebooks)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo 'Activating the Python environment for Jupyter Notebook...'
         . $MY_PYTHON_ENV_NAME/bin/activate
         echo 'Going to the notebook files directory...'
@@ -132,7 +132,7 @@ simpleUsage () {
         exit 0
         ;;
       --open|--open-notebook)
-        # https://igorlima.github.io/unapologetic-thoughts/technical/2024/05/12/steps-to-publish-notebook.html
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
         echo 'Activating the Python environment for Jupyter Notebook...'
         . $MY_PYTHON_ENV_NAME/bin/activate
         echo 'Going to the notebook files directory...'
