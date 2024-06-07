@@ -13,6 +13,7 @@ simpleUsage () {
     -i     | --install-python-modules
     -r     | --rename-ipynb-to-old
     -c     | --convert-notebook-to-html
+    -o     | --open-juptyer-notebook
     --rm   | --remove-old-ipynb
     --diff | --diff-notebooks
     --open | --open-notebooks
@@ -84,6 +85,18 @@ simpleUsage () {
         echo 'Removing all the `-old.ipynb` files...'
         rm *-old.ipynb
         echo 'Done!'
+        exit 0
+        ;;
+      -o|--open-jupyter-notebook)
+        # https://igorlima.github.io/unapologetic-snippets/docs/algorithms-and-data-structures/notebooks#notebook-viewer
+        echo 'Activating the Python environment for Jupyter Notebook...'
+        . $MY_PYTHON_ENV_NAME/bin/activate
+        echo 'Going to the notebook files directory...'
+        cd docs/algorithms-data-structures/notebooks/files
+        echo 'Converting notebook to HTML...'
+        jupyter notebook
+        echo 'Done!'
+        wait
         exit 0
         ;;
       -c|--convert-notebook-to-html)
