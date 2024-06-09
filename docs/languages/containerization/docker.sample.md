@@ -412,9 +412,25 @@ docker run \
   bash
 
 # https://github.com/sigoden/aichat/blob/601288029dd7affa2115547a70c74b21d2003b66/config.example.yaml#L83
+# https://github.com/sigoden/aichat/blob/5635ca6a58fb4a590419335b098b7317285bfb82/config.example.yaml#L146
 # https://igorlima.github.io/unapologetic-snippets/docs/languages/shell/cli-ai#aichat
 # https://igorlima.github.io/unapologetic-snippets/docs/languages/containerization/docker-samples-ai#aichat
 gcloud auth application-default login
+gcloud auth login
+gcloud config set project PROJECT_ID
+gcloud auth application-default set-quota-project PROJECT_ID
+
+cp ~/.config/gcloud/application_default_credentials.json .
+```
+```sh
+# Set the quota project with a REST request
+# https://cloud.google.com/docs/authentication/rest#set-billing-project
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "x-goog-user-project: PROJECT_ID" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d @request.json \
+  "https://translation.googleapis.com/language/translate/v2"
 ```
 
 ----
