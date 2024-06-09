@@ -121,8 +121,8 @@ simpleUsage () {
         echo 'Comparing the `.ipynb` files with the `-old.ipynb` files...'
         for x in *-old.ipynb; do
           # compare if file content is equal
-          # ../../my-env-jupyter/bin/nbdiff
-          # ../../my-env-jupyter/bin/nbdiff-web
+          # ../../../../my-env-jupyter/bin/nbdiff
+          # ../../../../my-env-jupyter/bin/nbdiff-web
           aux=$(echo $x | sed 's/\-old\.ipynb$//');
           n="$aux.ipynb"
 
@@ -134,7 +134,7 @@ simpleUsage () {
               echo "they're equal: $x / $n";
             else
               echo "they're different: $x / $n";
-              ./../../my-env-jupyter/bin/nbdiff-web $x $n >/dev/null 2>&1 &
+              ./../../../../my-env-jupyter/bin/nbdiff-web $x $n >/dev/null 2>&1 &
             fi
           else
             echo "nothing to compare: $x / $n";
