@@ -31,25 +31,25 @@ __Breakpoints__ can be set just by pointing at a source line and hitting `b` and
 
 Drop to a Python shell in the current environment by pressing `!`. Or open a command prompt alongside the source-code via `Ctrl-X`.
 
-```sh
-# https://documen.tician.de/pudb/starting.html
-PYTHONBREAKPOINT="pudb.set_trace" python3 -c '
-def hello_world():
-  name = "you"
-  print(f"Hey {name}")
-breakpoint()
-'
-```
-
-```sh
-python3 -c '
-import pudb
-def hello_world():
-  name = "you"
-  print(f"Hey {name}")
-pu.db
-'
-```
+- using PuDB as REPL:
+  - ```sh
+    # https://documen.tician.de/pudb/starting.html
+    PYTHONBREAKPOINT="pudb.set_trace" python3 -c '
+    def hello_world():
+      name = "you"
+      print(f"Hey {name}")
+    breakpoint()
+    '
+    ```
+  - ```sh
+    python3 -c '
+    import pudb
+    def hello_world():
+      name = "you"
+      print(f"Hey {name}")
+    pu.db
+    '
+    ```
 </details>
 
 ![image](https://github.com/igorlima/unapologetic-snippets/assets/1886786/a30a6667-0375-41ba-8972-73e6c5127934)
