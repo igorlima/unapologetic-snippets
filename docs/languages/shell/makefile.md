@@ -11,6 +11,21 @@ permalink: /docs/languages/shell/makefile
 
 A Makefile is a simple text file that contains instructions for building a software project. The Makefile specifies the project’s dependencies, build rules, and targets, allowing the ‘make’ utility to compile and link your source files into an executable program.
 
+## Structure
+
+A makefile consists of __three sections__: _target, dependencies, and rules_. The __target__ is normally either an executable or object file name. The __dependencies__ are source code or other things needed to make the target. The __rules__ are the commands needed to make the target.
+
+A simple makefile might be structured like this:
+
+```Makefile
+# comments are preceded by the hash symbol
+target: dependencies
+        command 1
+        command 2
+        ...
+        command n
+```
+
 ## Conditional Directives
 
 The conditional directives are:
