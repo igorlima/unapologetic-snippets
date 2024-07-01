@@ -10,7 +10,7 @@ permalink: /docs/algorithms-and-data-structures/ai/ai-prompts
 - [go back to index]({% link docs/algorithms-data-structures/ai/index.md %})
 - [go to prompt engineering]({% link docs/algorithms-data-structures/ai/prompt-engineering.md %})
 
-# Rewrite and improve a text
+## Rewrite and improve a text
 
 Ditch “rewrite” and improve your AI content immediately with these prompts: [^1]
 
@@ -55,7 +55,20 @@ Ditch “rewrite” and improve your AI content immediately with these prompts: 
     - another ‘rewrite’ that comes from [Amanda Weston at Blogs By Jasper](https://www.blogsbyjarvis.com/).
   - **_“rewrite the above in a tone of voice that is professional, informative, and friendly, emphasizing clarity, conciseness, objectivity, relevance, and organization in a conversational tone to engage the audience”_**
 
-# Journal Writing Prompts
+## Text Classification
+
+- _"Classify the sentiment of the following text as either positive or negative."_
+  - <details markdown="block"><summary><i>more...</i></summary>
+
+    - | prompts  |
+      | :------  |
+      | "Categorize the following news article into one of these categories: Politics, Technology, Sports, Entertainment, or Business." |
+      | "Assign relevant tags to the following text. Choose as many as appropriate from this list: Technology, AI, Business, Innovation, Social Media, Privacy, Cybersecurity." |
+      | Classify the following text into one of these categories: <br> Technology, Business, or Politics. <br>Provide a confidence score (0-100) for each category. <br>""" <br> ... <br>""" <br>Classification: <br>Technology: [score] <br>Business: [score] <br>Politics: [score] |
+
+    </details>
+
+## Journal Writing Prompts
 
 ```
 Output a journal writing prompt example - to help me write what I've done and
