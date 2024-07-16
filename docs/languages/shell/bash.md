@@ -404,7 +404,24 @@ While it doesn’t render images or complex layouts like modern graphical browse
   - viewing plain text version
     - `lynx -dump https://www.example.com`
 
+## Miscellaneous for script
+
+- escaping characters in bash (for JSON) [^3]
+  - using `jq`
+    - sample 1:
+      - `echo -n '猫に小判' | jq -Rsa .`
+        - _outputs_: `"\u732b\u306b\u5c0f\u5224"`
+    - sample 2:
+      - `cat tmp.txt | jq -Rsa .`
+    - to explain:
+      - `-R` means "raw input"
+      - `-s` means "include linebreaks" (mnemonic: "slurp")
+      - `-a` means "ascii output" (optional)
+      - `.` means "output the root of the JSON document"
+- [others]({% link docs/languages/shell/text-processing.md %}#miscellaneous-for-script)
+
 ----
 
 [^1]: [Bash, the magic that empowers the Cloud](https://dev.to/sm0ke/bash-the-magic-that-empowers-the-cloud-5394)
 [^2]: [Cron System by DeployPro](https://www.docs.deploypro.dev/script-languages/bash/cron-system)
+[^3]: [Escaping characters in bash (for JSON) - _convert string to JSON_](https://stackoverflow.com/questions/10053678/escaping-characters-in-bash-for-json)

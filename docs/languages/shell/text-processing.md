@@ -29,3 +29,23 @@ perl -nle 'print if length$_>79' file
 awk 'length>79' file
 sed -n '/.\{80\}/p' file
 ```
+
+# Miscellaneous for script
+
+- escaping characters in bash (for JSON) [^1]
+  - using `jq`
+    - sample 1:
+      - `echo -n '猫に小判' | jq -Rsa .`
+        - _outputs_: `"\u732b\u306b\u5c0f\u5224"`
+    - sample 2:
+      - `cat tmp.txt | jq -Rsa .`
+    - to explain:
+      - `-R` means "raw input"
+      - `-s` means "include linebreaks" (mnemonic: "slurp")
+      - `-a` means "ascii output" (optional)
+      - `.` means "output the root of the JSON document"
+- [others]({% link docs/languages/shell/bash.md %}#miscellaneous-for-script)
+
+----
+
+[^1]: [Escaping characters in bash (for JSON) - _convert string to JSON_](https://stackoverflow.com/questions/10053678/escaping-characters-in-bash-for-json)
