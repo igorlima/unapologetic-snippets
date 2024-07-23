@@ -1,5 +1,15 @@
+# ROOT
+# ignore any Makefile in the root directory
+Makefile
+# ignore json file to track makefile changes
+makefile.go.json
+
 # GOLANG
 # ignore Makefile for debugging purposes
 golang/Makefile
 # ignore all json files
 golang/*.json
+# ignore golang executables
+golang/my_app
+
+
