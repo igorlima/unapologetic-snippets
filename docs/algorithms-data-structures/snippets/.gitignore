@@ -1,0 +1,5 @@
+# GOLANG
+# ignore Makefile for debugging purposes
+golang/Makefile
+# ignore all json files
+golang/*.json
