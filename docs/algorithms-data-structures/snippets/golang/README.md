@@ -32,7 +32,7 @@ Go - up to now version 1.22 - supports following built-in basic types:
 - two built-in complex numeric types: `complex64` and `complex128`.
 - one built-in string type: `string`.
 
-## Zero Values
+### Zero Values
 
 Each type has a zero value. The zero value of a type can be viewed as the
 default value of the type.
@@ -41,7 +41,9 @@ default value of the type.
   types may have different sizes in memory.
 - The zero value of a string type is an empty string.”
 
-## String value literals
+## String
+
+### String value literals
 
 There are two forms of string value literals, interpreted string literal
 (double quotes form) and raw string literal (back quotes form). For example,
@@ -59,4 +61,59 @@ world!
 
 In a raw string literal, no character sequences will be escaped. The back quote
 character is not allowed to appear in a raw string literal.
+
+### String Concatenation
+
+```go
+println("Go" + "lang") // Golang
+var a = "Go"
+a += "lang"
+println(a) // Golang
+```
+
+### `fmt.Printf` Format Verbs
+
+A list if format verbs:
+- `%v`, which will be replaced with the general string representation of the
+  corresponding argument.
+- `%T`, which will be replaced with the type name or type literal of the
+  corresponding argument.
+- `%x`, which will be replaced with the hex string representation of the
+  corresponding argument.  Note, the hex string representations for values of
+  some kinds of types are not defined.  Generally, the corresponding arguments
+  of `%x` should be strings, integers, integer arrays or integer slices (arrays
+  and slices will be explained in a later article).
+- `%s`, which will be replaced with the string representation of the
+  corresponding argument. The corresponding argument should be a string or byte
+  slice.
+- Format verb `%%` represents a percent sign.
+
+
+## Operators
+
+### Boolean (a.k.a. Logical) Operators
+
+| Operator   | Name                                        | Requirements for Operand(s)                                    |
+| ---------- | ------                                      | ------------------------------                                 |
+| `&&`       | boolean and (binary) a.k.a. conditional and | The two operands must be both values of the same boolean type. |
+| `||`       | boolean or (binary) a.k.a. conditional or   | The two operands must be both values of the same boolean type. |
+| `!`        | boolean not (unary)                         | The type of the only operand must be a boolean type.           |
+
+### Comparison Operators
+
+| Operator | Name                    | Requirements for the Two Operands                                                                  |
+| -------- | ------                  | ------------------------------                                                                     |
+| `==`     | equal to                | Generally, the types of its two operands must be the same.                                         |
+| `!=`     | not equal to            |                                                                                                    |
+| `<`      | less than               | The two operands must be both values of the same integer type, floating-point type or string type. |
+| `<=`     | less than or equal to   |                                                                                                    |
+| `>`      | larger than             |                                                                                                    |
+| `>=`     | larger than or equal to |                                                                                                    |
+
+## Functions
+
+### Built-in Functions
+
+There are some built-in functions in Go, for example, the `println` and `print`
+functions. We can call these functions without importing any packages.
 
