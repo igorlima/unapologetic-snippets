@@ -117,3 +117,98 @@ A list if format verbs:
 There are some built-in functions in Go, for example, the `println` and `print`
 functions. We can call these functions without importing any packages.
 
+## Expressions, Statements
+
+Simply speaking, an expression represents a value and a statement represents an
+operation.
+
+## Control Flows
+
+There are three kinds of basic control flow code blocks in Go:
+- `if-else` two-way conditional execution block.
+- `for` loop block.
+- `switch-case` multi-way conditional execution block.
+
+### `if-else` Control Flow Blocks
+
+The full form of a if-else code block is like:
+
+```go
+if InitSimpleStatement; Condition {
+   // do something
+} else {
+   // do something
+}
+```
+
+The `Condition` portion can be enclosed in a pair of `()` or not, but it can't
+be enclosed together with the InitSimpleStatement portion.  If the
+InitSimpleStatement is absent, then the semicolon following it is optional.
+
+
+### `for` Loop Control Flow Blocks
+
+The full form of a for loop block is:
+```go
+for InitSimpleStatement; Condition; PostSimpleStatement {
+   // do something
+}
+```
+
+### `for-range` Control Flow Blocks
+
+The following code:
+```go
+for i := range anInteger {
+   ...
+}
+```
+
+is actually a short form of
+```go
+for i := 0; i < anInteger; i++ {
+   ...
+}
+```
+
+### `switch-case` Control Flow Blocks
+
+The full form a switch-case block is like:
+```go
+switch InitSimpleStatement; CompareOperand0 {
+case CompareOperandList1:
+   // do something
+case CompareOperandList2:
+   // do something
+...
+case CompareOperandListN:
+   // do something
+default:
+   // do something
+}
+```
+
+Go provides a `fallthrough` keyword to do this task. For example, in the
+following example, every branch code block will get executed, by their orders,
+from top to down.
+
+Note:
+- a fallthrough statement must be the final statement in a branch.
+- a fallthrough statement can't show up in the final branch in a switch-case
+  control flow block.
+
+Another obvious difference from many other languages is the order of the
+`default` branch in a switch-case control flow block can be arbitrary.
+
+### `goto` Statement
+
+A `goto` keyword must be followed by a label to form a statement. A label is
+declared with the form `LabelName:`, where `LabelName` must be an identifier. A
+label which name is not the blank identifier must be used at least once.
+
+__`break` and `continue` Statements With Labels__: a `break` or `continue`
+statement can also contain a label, but the label is optional. Generally,
+`break` containing labels are used in nested breakable control flow blocks and
+`continue` statements containing labels are used in nested loop control flow
+blocks.
+
