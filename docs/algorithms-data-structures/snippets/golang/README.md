@@ -212,3 +212,102 @@ statement can also contain a label, but the label is optional. Generally,
 `continue` statements containing labels are used in nested loop control flow
 blocks.
 
+
+## Go Routines
+
+Goroutines are also often called green threads. Green threads are maintained
+and scheduled by the language runtime instead of the operating systems. The
+cost of memory consumption and context switching, of a goroutine is much lesser
+than an OS thread.
+
+Each Go program starts with only one goroutine, we call it the main goroutine.
+A goroutine can create new goroutines.
+
+When the main goroutine exits, the whole program also exits, even if there are
+still some other goroutines which have not exited yet.
+
+### Concurrency Synchronization
+
+The WaitGroup type has three methods (special functions, will be explained
+later): `Add`, `Done` and `Wait`.
+- the `Add` method is used to register the number of new tasks.
+- the `Done` method is used to notify that a task is finished.
+- and the `Wait` method makes the caller goroutine become blocking until all
+  registered tasks are finished.
+
+## Deferred Function Calls
+
+When a defer statement is executed, the deferred function call is not executed
+immediately. Instead, it is pushed into a deferred call queue maintained by its
+caller goroutine.
+
+Deferred function calls can modify the named return results of nesting
+functions.
+
+The arguments of a deferred function call are all evaluated at the moment when
+the corresponding defer statement is executed (a.k.a. when the deferred call is
+pushed into the deferred call queue). The evaluation results are used when the
+deferred call is executed later during the existing phase of the surrounding
+call (the caller of the deferred call).
+
+The same argument valuation moment rules also apply to goroutine function
+calls.
+
+## Panic and Recover
+
+We can call the built-in panic function to create a panic to make the current
+goroutine enter panicking status.
+
+Panicking is another way to make a function return.  Once a panic occurs in a
+function call, the function call returns immediately and enters its exiting
+phase.
+
+By calling the built-in recover function in a deferred call, an alive panic in
+the current goroutine can be removed so that the current goroutine will enter
+normal calm status again.
+
+If a panicking goroutine exits without being recovered, it will make the whole
+program crash.
+
+## Syntax: Type Definitions
+
+In Go, we can define new types by using the following form.  In the syntax,
+`type` is a keyword.
+
+```go
+// Define a solo new type.
+type NewTypeName SourceType
+
+// Define multiple new types together.
+type (
+   NewTypeName1 SourceType1
+   NewTypeName2 SourceType2
+)
+```
+
+Some type definition examples:
+```go
+// The following new defined and source types are all
+// basic types. The source types are all predeclared.
+type (
+  MyInt int
+  Age   int
+  Text  string
+)
+
+// The following new defined and source types are all
+// composite types. The source types are all unnamed.
+type IntPtr *int
+type Book struct{author, title string; pages int}
+type Convert func(in0 int, in1 bool)(out0 int, out1 string)
+type StringArray [5]string
+type StringSlice []string
+
+func f() {
+  // The names of the three defined types
+  // can be only used within the function.
+  type PersonAge map[string]int
+  type MessageQueue chan string
+  type Reader interface{Read([]byte) int}
+}
+```
