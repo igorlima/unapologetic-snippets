@@ -6,6 +6,12 @@ Makefile for Golang:
     - `https://makefile-go-gist.ilima.xyz/`
     - `curl -L https://makefile-go-download.ilima.xyz -o Makefile`
 
+```sh
+# vim shortcut: `tb`
+cp ~/workstation/gists/my-vimrc/ctagsrc .ctags
+ctags README.md
+```
+
 ## Keywords
 
 Keywords are predefined, reserved identifiers that have special meanings to the
