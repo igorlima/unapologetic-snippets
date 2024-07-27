@@ -6,10 +6,19 @@ Makefile for Golang:
     - `https://makefile-go-gist.ilima.xyz/`
     - `curl -L https://makefile-go-download.ilima.xyz -o Makefile`
 
+Ctags:
+- vim shortcut: `tb`
 ```sh
-# vim shortcut: `tb`
+cp ctagsrc .ctags
 cp ~/workstation/gists/my-vimrc/ctagsrc .ctags
+```
+
+Other Alternatives:
+```sh
 ctags README.md
+ctags ~/workstation/github/unapologetic-snippets/docs/algorithms-data-structures/snippets/golang/README.md
+ctags --options=$HOME/workstation/gists/my-vimrc/ctagsrc README.md
+ctags --options=ctagsrc ~/workstation/github/unapologetic-snippets/docs/algorithms-data-structures/snippets/golang/README.md
 ```
 
 ## Keywords
@@ -46,6 +55,109 @@ default value of the type.
 - The zero value of a numeric type is zero, though zeros of different numeric
   types may have different sizes in memory.
 - The zero value of a string type is an empty string.”
+
+### Categories of Go types
+
+| One single memory block | Multiple memory blocks |
+| ----------------------- | ---------------------- |
+| boolean types           | slice types            |
+| numeric types           | map types              |
+| pointer types           | channel types          |
+| unsafe pointer types    | function types         |
+| struct types            | interface types        |
+| array types             | string types           |
+
+The types in the second category are not very fundamental types for a language,
+we can implement them from scratch by using the types from the first category.
+
+#### Internal definitions of map, channel and function types
+
+The internal definitions of map, channel and function types are similar:
+
+```go
+// map types
+type _map *hashtableImpl
+
+// channel types
+type _channel *channelImpl
+
+// function types
+type _function *functionImpl
+```
+
+So, internally, types of the three kinds are just pointer types. In other
+words, the direct parts of values of these types are pointers internally. For
+each non-zero value of these types, its direct part (a pointer) references its
+indirect underlying implementation part.
+
+The standard Go compiler uses hashtables to implement maps.
+
+#### Internal definition of slice types
+
+The internal definition of slice types is like:
+
+```go
+type _slice struct {
+   // referencing underlying elements
+   elements unsafe.Pointer
+   // number of elements and capacity
+   len, cap int
+}
+```
+
+So, internally, slice types are pointer wrapper struct types.  Each non-zero
+slice value has an indirect underlying part which stores the element values of
+the slice value.  The `elements` field of the direct part references the
+indirect underlying part of the slice value.
+
+#### Internal definition of string types
+
+Below is the internal definition for string types:
+
+```go
+type _string struct {
+   elements *byte // referencing underlying bytes
+   len      int   // number of bytes
+}
+```
+
+So string types are also pointer wrapper struct types internally. Each string
+value has an indirect underlying part storing the bytes of the string value,
+the indirect part is referenced by the `elements` field of that string value.
+
+#### Internal definition of interface types
+
+Below is the internal definition for general interface types:
+
+```go
+type _interface struct {
+   dynamicType  *_type         // the dynamic type
+   dynamicValue unsafe.Pointer // the dynamic value
+}
+```
+
+Internally, interface types are also pointer wrapper struct types. The internal
+definition of an interface type has two pointer fields. Each non-zero interface
+value has two indirect underlying parts which store the dynamic type and
+dynamic value of that interface value. The two indirect parts are referenced by
+the `dynamicType` and `dynamicValue` fields of that interface value.
+
+In fact, for the standard Go compiler, the above definition is only used for
+blank interface types. Blank interface types are the interface types which
+don't specify any methods.
+
+For non-blank interface types, the definition like the following one is used.
+
+```go
+type _interface struct {
+   dynamicTypeInfo *struct {
+      dynamicType *_type       // the dynamic type
+      methods     []*_function // method table
+   }
+   dynamicValue unsafe.Pointer // the dynamic value
+}
+```
+
 
 ## String
 
