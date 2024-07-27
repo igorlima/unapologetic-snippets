@@ -311,3 +311,22 @@ func f() {
   type Reader interface{Read([]byte) int}
 }
 ```
+
+## Pointers
+
+Pointer is one kind of type in Go. A pointer value is used to store a memory
+address, which is generally the address of another value.
+
+Zero values of any pointer types are represented with the predeclared `nil`.
+No addresses are stored in `nil` pointer values.
+
+### Pointer Dereference
+
+`*` is called dereference operator. `*p` is called the dereference of pointer
+`p`.  Pointer dereference is the inverse process of address taking.  The result
+of `*p` is a value of type `T` (the base type of the type of `p`).
+
+Dereferencing a `nil` pointer causes a runtime panic.
+
+
+
