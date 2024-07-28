@@ -515,5 +515,164 @@ func main() {
 		}
 	}()
 
+	func() {
+
+		type Person struct {
+			name string
+			age  int
+		}
+		func() {
+			persons := [2]Person{{"Alice", 28}, {"Bob", 25}}
+			for i, p := range persons {
+				fmt.Println(i, p)
+
+				// This modification has no effects on
+				// the iteration, for the ranged array
+				// is a copy of the persons array.
+				persons[1].name = "Jack"
+
+				// This modification has not effects on
+				// the persons array, for p is just a
+				// copy of a copy of one persons element.
+				p.age = 31
+			}
+			fmt.Println("persons:", &persons)
+		}()
+
+		func() {
+			// A slice.
+			persons := []Person{{"Alice", 28}, {"Bob", 25}}
+			for i, p := range persons {
+				fmt.Println(i, p)
+
+				// Now this modification has effects
+				// on the iteration.
+				persons[1].name = "Jack"
+
+				// This modification still has not
+				// any real effects.
+				p.age = 31
+			}
+			fmt.Println("persons:", &persons)
+		}()
+	}()
+
+	func() {
+
+		m := map[int]struct{ dynamic, strong bool }{
+			0: {true, false},
+			1: {false, true},
+			2: {false, false},
+		}
+
+		for _, v := range m {
+			// This following line has no effects on the map m.
+			v.dynamic, v.strong = true, true
+		}
+
+		fmt.Println(m[0]) // {true false}
+		fmt.Println(m[1]) // {false true}
+		fmt.Println(m[2]) // {false false}
+	}()
+
+	func() {
+
+		type Buffer struct {
+			start, end int
+			data       [1024]byte
+		}
+
+		fa := func(buffers []Buffer) int {
+			numUnreads := 0
+			for _, buf := range buffers {
+				numUnreads += buf.end - buf.start
+			}
+			return numUnreads
+		}
+
+		fb := func(buffers []Buffer) int {
+			numUnreads := 0
+			for i := range buffers {
+				numUnreads += buffers[i].end - buffers[i].start
+			}
+			return numUnreads
+		}
+
+		println(fa([]Buffer{}), fb([]Buffer{}))
+	}()
+
+	func() {
+		for i, n := range []int{0, 1, 2} {
+			defer func() {
+				fmt.Println(i, n)
+			}()
+		}
+
+		var m = map[*int]uint32{}
+		for i, n := range []int{1, 2, 3} {
+			m[&i]++
+			m[&n]++
+		}
+		fmt.Println(len(m))
+	}()
+
+	func() {
+		// Use Array Pointers as Arrays
+
+		func() {
+			var a [100]int
+			// Copying a pointer is cheap.
+			for i, n := range &a {
+				fmt.Println(i, n)
+			}
+			// Copying a slice is cheap.
+			for i, n := range a[:] {
+				fmt.Println(i, n)
+			}
+		}()
+
+		func() {
+			var p *[5]int         // nil
+			for i, _ := range p { // okay
+				fmt.Println(i)
+			}
+			for i := range p { // okay
+				fmt.Println(i)
+			}
+			return
+			for i, n := range p { // panic
+				fmt.Println(i, n)
+			}
+		}()
+
+	}()
+
+	func() {
+		// Use the built-in `clear` function to clear map entries and reset slice elements
+
+		s := []int{1, 2, 3}
+		clear(s)
+		fmt.Println(s) // [0 0 0]
+
+		a := [4]int{5, 6, 7, 8}
+		clear(a[1:3])
+		fmt.Println(a) // [5 0 0 8]
+
+		m := map[float64]float64{}
+		x := 0.0
+		m[x] = x
+		x /= x // x is NaN now
+
+		m[x] = x
+		fmt.Println(len(m)) // 2
+		for k := range m {
+			delete(m, k)
+		}
+		fmt.Println(len(m)) // 1
+		clear(m)
+		fmt.Println(len(m)) // 0
+
+	}()
+
 	fmt.Println("vim-go")
 }
