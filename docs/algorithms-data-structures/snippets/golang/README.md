@@ -56,6 +56,8 @@ default value of the type.
   types may have different sizes in memory.
 - The zero value of a string type is an empty string.”
 
+## Other Types
+
 ### Categories of Go types
 
 | One single memory block | Multiple memory blocks |
@@ -155,6 +157,37 @@ type _interface struct {
       methods     []*_function // method table
    }
    dynamicValue unsafe.Pointer // the dynamic value
+}
+```
+
+### Container Types
+
+Each value of the three kinds of types is used to store a collection of element
+values: Arrays, Slices and Maps.
+
+Each element in a container has an associated key. An element value can be
+accessed or modified through its associated key.
+
+Each container value has a length property, which indicates how many elements
+are stored in that container.
+
+The literal representations of the three kinds of unnamed container types:
+- array types: `[N]T`
+- slice types: `[]T`
+- map types: `map[K]T`
+
+The length and capacity of an array value can never change. The lengths and
+capacities of all values of an array type always equal to the length of the
+array type. The length and capacity of a slice value may change at run time.
+So slices can be viewed as dynamic arrays. Slices are much more flexible than
+arrays and are used more popularly than arrays in practice.
+
+Internal structure of slice types:
+```go
+type _slice struct {
+   elements unsafe.Pointer // referencing underlying elements
+   len      int            // length
+   cap      int            // capacity
 }
 ```
 
