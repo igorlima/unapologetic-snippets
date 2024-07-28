@@ -268,6 +268,17 @@ A list if format verbs:
 There are some built-in functions in Go, for example, the `println` and `print`
 functions. We can call these functions without importing any packages.
 
+### Variadic Functions
+
+The last parameter of a function can be a variadic parameter. Each function can
+have at most one variadic parameter.
+
+Variadic function declarations are similar to general function declarations.
+The difference is that the last parameter of a variadic function must be
+variadic parameter.
+
+All function arguments are passed by copy
+
 ## Expressions, Statements
 
 Simply speaking, an expression represents a value and a statement represents an
@@ -479,5 +490,64 @@ of `*p` is a value of type `T` (the base type of the type of `p`).
 
 Dereferencing a `nil` pointer causes a runtime panic.
 
+## Channels
 
+Channel mainly acts as a concurrency synchronization technique.
+
+One suggestion (made by Rob Pike) for concurrent programming is __don't (let
+computations) communicate by sharing memory, (let them) share memory by
+communicating (through channels)__.
+
+Communicating by sharing memory and sharing memory by communicating are two
+programming manners in concurrent programming.
+
+Channels make goroutines share memory by communicating.  We can view a channel
+as an internal FIFO (first in, first out) queue within a program. Some
+goroutines send values to the queue (the channel) and some other goroutines
+receive values from the queue.
+
+Like array, slice and map, each channel type has an element type.  A channel
+can only transfer values of the element type of the channel.
+
+Channel types can be bi-directional or single-directional.
+- `chan T` denotes a bidirectional channel type. Compilers allow both
+  receiving values from and sending values to bidirectional channels.
+- `chan<- T` denotes a send-only channel type. Compilers don't allow receiving
+  values from send-only channels.
+- `<-chan T` denotes a receive-only channel type. Compilers don't allow
+  sending values to receive-only channels.
+
+Each channel value has a capacity. A channel value with a zero capacity is
+called unbuffered channel and a channel value with a non-zero capacity is
+called buffered channel.
+
+The zero values of channel types are represented with the predeclared
+identifier `nil`. A non-nil channel value must be created by using the built-in
+`make` function.
+
+Channel Operations:
+- close the channel by using the following function call
+  - `close(ch)`
+- send a value, `v`, to the channel by using the following syntax
+  - `ch <- v`
+- receive a value from the channel by using the following syntax
+  - `<-ch`
+- query the value buffer capacity of the channel by using the following function call
+  - `cap(ch)`
+- query the current number of values in the value buffer (or the length) of the
+  channel by using the following function call
+  - `len(ch)`
+
+Three categories:
+- nil channels.
+- non-nil but closed channels.
+- not-closed non-nil channels.
+
+| Operation          | A Nil Channel  | A Closed Channel | A Not-Closed Non-Nil Channel  |
+| -----------------  | -------------  | ---------------- | ----------------------------- |
+| Close              | panic          | panic            | succeed to close              |
+| Send Value To      | block for ever | panic            | block or succeed to send      |
+| Receive Value From | block for ever | never block      | block or succeed to receive   |
+
+Channel element values are transferred by copy.
 
