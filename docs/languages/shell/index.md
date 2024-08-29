@@ -45,3 +45,5 @@ A shell is a program that provides an interface for users to interact with the o
     </details>
 
 
+![image](https://github.com/user-attachments/assets/9eef088e-d426-4bc3-8136-94c9087c1bfb)
+
