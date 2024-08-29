@@ -46,4 +46,8 @@ A shell is a program that provides an interface for users to interact with the o
 
 
 ![image](https://github.com/user-attachments/assets/9eef088e-d426-4bc3-8136-94c9087c1bfb)
+_<sup style="display:block;">image from Medium [^1]</sup>_
 
+------ ------
+
+[^1]: [5 Must-Have Command Line AI Tools](https://piotrzan.medium.com/5-must-have-command-line-ai-tools-839b0cf95c97)
