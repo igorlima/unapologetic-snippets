@@ -22,7 +22,7 @@ writing.
   <sup>[++](https://github.com/igorlima/unapologetic-snippets/tree/main/docs/algorithms-data-structures/snippets)</sup>
 
 ```sh
-EDITOR=vim nap
+EDITOR=vim NAP_CONFIG=config.yaml nap
 ```
 ```sh
 vim +"help ilima-help-snippets-code"
