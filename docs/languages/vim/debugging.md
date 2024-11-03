@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Debugging
-nav_order: 2
+nav_order: 8
 parent: Vim
 grand_parent: Programming Languages
 has_children: true
