@@ -141,3 +141,79 @@ echo '12345678-1234-1234-1234-123456789012' =~ '^[0-9a-z]\{8}-[0-9a-z]\{4}-[0-9a
 echo '2024a' =~ '^[0-9a-z]\{8}-[0-9a-z]\{4}-[0-9a-z]\{4}-[0-9a-z]\{4}-[0-9a-z]\{12}'
 ```
 </details>
+
+<details markdown="block">
+  <summary>
+    Setting markers using search via vim script
+  </summary>
+
+- filename: `playground.vimrc` <a id="playground-setting-marker"></a>
+
+```vim
+" This function creates a marker for each pattern in the list
+" `vim -N -u path/to/your/vimrc`
+" `vim -N -u playground.vimrc`
+"
+function! GenerateVimwikiMarkerTemplateA()
+  let l:markers = [
+    \ ['a', '^\#\# Meetings$'],
+    \ ['b', '^\#\# Messages$'],
+    \ ['c', '^\#\# Emails$'],
+    \ ['d', '^\#\# Notes$'],
+    \ ['e', '^\#\# Energy Level and Mood Tracker$'],
+  \]
+  for l:marker in l:markers
+    let l:letter = l:marker[0]
+    let l:pattern = l:marker[1]
+    let l:pos = search(l:pattern, 'W')
+    " https://vimdoc.sourceforge.net/htmldoc/motion.html#%3amark
+    execute ':' . l:pos . 'mark ' . l:letter
+  endfor
+  echom "markers created: 'a' for Meetings, 'b' for Messages, 'c' for Emails, 'd' for Notes, 'e' for Mood Tracker"
+endfunction
+
+nnoremap <c-k><c-m> :call GenerateVimwikiMarkerTemplateA()<CR>
+inoremap <c-k><c-m> <esc>:call GenerateVimwikiMarkerTemplateA()<CR>a
+
+" REFERENCES:
+" • Looping through Vimscript: iterate over an array or dictionary
+"  - https://learnvimscriptthehardway.stevelosh.com/chapters/36.html
+"  - https://learnvimscriptthehardway.stevelosh.com/chapters/37.html
+"  - https://renenyffenegger.ch/notes/development/vim/script/vimscript/arrays-and-hashes/iterate_over_array
+" • search() function
+"  - How can I tell if a search was successful in vimscript?
+"   - https://stackoverflow.com/questions/27660221/how-can-i-tell-if-a-search-was-successful-in-vimscript
+"  - How can I make a search in vimscript let n and N look for more?
+"   - https://vi.stackexchange.com/questions/3655/how-can-i-make-a-search-in-vimscript-let-n-and-n-look-for-more
+"  - VIM check for search pattern match in vim script
+"   - https://stackoverflow.com/questions/39930288/vim-check-for-search-pattern-match-in-vim-script
+" • set mark
+"  - Vim documentation: motion
+"   - https://vimdoc.sourceforge.net/htmldoc/motion.html#%3amark
+"  - set marker (tag) in vim command
+"   - https://stackoverflow.com/questions/10034645/set-marker-tag-in-vim-command
+" • Using markers for folding
+"  - Writing a custom fold expression
+"   - http://vimcasts.org/transcripts/38/en/
+"  - How can I automatically fold a file when start and end markers are the same?
+"   - https://superuser.com/questions/557502/how-can-i-automatically-fold-a-file-when-start-and-end-markers-are-the-same
+"  - vim: set fix jump marker in a source comment of the current file
+"   - https://stackoverflow.com/questions/50985045/vim-set-fix-jump-marker-in-a-source-comment-of-the-current-file
+"
+" ALTERNATIVE SCRIPT:
+" GO TO:
+" - either `/ctrl-r 0` or `:execute '/' . @0`
+"   - `/ctrl-r"` or `:execute '/' . @"`
+"   - `:@"` or `:@0`
+"     - `:execute '/.\+Mettings$'`
+"     - `:execute '/.\+Messages$'`
+"     - `:execute '/.\+Emails$'`
+"     - `:execute '/.\+Notes$'`
+"   - `:[range]ma[rk] {a-zA-Z'}`
+"     - `https://vimdoc.sourceforge.net/htmldoc/motion.html#%3amark`
+"     - `'a`: Mettings
+"     - `'b`: Messages
+"     - `'c`: Emails
+"     - `'d`: Notes
+"     - `let @a = search('^\#\# Meetings$')`
+```
