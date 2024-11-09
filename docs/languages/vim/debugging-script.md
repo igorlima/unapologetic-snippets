@@ -144,7 +144,47 @@ echo '2024a' =~ '^[0-9a-z]\{8}-[0-9a-z]\{4}-[0-9a-z]\{4}-[0-9a-z]\{4}-[0-9a-z]\{
 
 <details markdown="block">
   <summary>
-    Setting markers using search via vim script
+    counting the number of occurrences of each word in the selection
+  </summary>
+
+```vim
+" This function will count the number of occurrences of each word in the selection
+" vim -N -u path/to/your/vimrc
+" vim -N -u test.vimrc
+function SGrep0()
+  " if the execute comes from visual mode, it will yank the selection in register t
+  normal! gv"ty
+  " let l:selection = @* " read it from clipboard
+  " let l:selection = @@ " read it from yank register
+  let l:selection = @t " read it from the register 't'
+  let l:splitted = split(l:selection, " ")
+  " let l:splitted = map(l:splitted[:], 'substitute(v:val, "\s", "", "g")')
+  let l:splitted = map(l:splitted[:], 'trim(v:val)')
+  let l:splitted = filter(l:splitted, 'v:val != ""')
+  let l:counter = {}
+  for l:tag in l:splitted
+    let l:pos = search(l:tag, 'W')
+    while l:pos != 0
+      let l:counter[l:tag] = get(l:counter, l:tag, 0) + 1
+      let l:pos = search(l:tag, 'W')
+    endwhile
+  endfor
+  redir @z
+  for [key, value] in items(l:counter)
+    echom key . " " . value
+  endfor
+  redir END
+  echom "coped it into `\"z`, paste it by pressing `\"zp` in normal mode"
+endfunction
+nnoremap <c-k>s0 :call SGrep0()<CR>
+vnoremap <c-k>s0 :call SGrep0()<CR>
+```
+
+</details>
+
+<details markdown="block">
+  <summary>
+    setting markers using search via vim script
   </summary>
 
 - filename: `playground.vimrc` <a id="playground-setting-marker"></a>
@@ -217,3 +257,4 @@ inoremap <c-k><c-m> <esc>:call GenerateVimwikiMarkerTemplateA()<CR>a
 "     - `'d`: Notes
 "     - `let @a = search('^\#\# Meetings$')`
 ```
+</details>
