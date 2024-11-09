@@ -11,6 +11,8 @@ permalink: /docs/languages/vim/script-for-debugging
 # Script for Debugging in Vim
 
 - [go back]({% link docs/languages/vim/index.md %})
+- [vim snippets]({% link docs/algorithms-data-structures/snippets/index.md %})
+  <sup>[+](https://github.com/igorlima/unapologetic-snippets/tree/main/docs/algorithms-data-structures/snippets/vim)</sup>
 
 <details markdown="block">
   <summary>
