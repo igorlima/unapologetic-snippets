@@ -73,3 +73,8 @@ git diff --no-color > patch.patch
   - https://semanticdiff.com/online-diff/json/
   - https://jsoncompare.org/
   - https://jsondiff.com/
+- Compare JSON files
+  - copy the current JSON
+    - `cat snippets.json | pbcopy`
+  - copy the previous JSON
+    - `git show HEAD~1:./snippets.json | pbcopy`
