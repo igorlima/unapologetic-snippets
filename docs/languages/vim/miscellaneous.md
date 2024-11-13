@@ -25,3 +25,27 @@ Quick tips! I've got a list of handy shortcuts and commands that save the day wh
       - `:%s/\(^[^-].\+\)/  - \1/gc`
     - `\0` means the whole find and `\1` means a sub group under the find - the sub group is defined by parenthesis _"(subgroup)"_.
   </details>
+
+- <details markdown="block"> <summary> diff </summary>
+
+
+  ```sh
+  # this is equivalent to calling vimdiff directly.
+  vim -d file1 [file2 ...]
+  ```
+  
+  **start** and **stop diff** of two files opened in 2 windows _(works in both, vertical and horizontal split)_:
+  ```sh
+  # You can also open vim in split-screen mode, with the -O option:-
+  vim -O file1 [file2 ...]
+  ```
+
+  ```vim
+  # to then turn on diff mode
+  :windo diffthis
+  # To then turn off diff mode
+  :windo diffoff
+  ```
+
+  <a id="vimdiff"></a>
+  </details>

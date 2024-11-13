@@ -74,6 +74,8 @@ git diff --no-color > patch.patch
   - https://jsoncompare.org/
   - https://jsondiff.com/
 - Compare JSON files
+  - [how to `vimdiff`]({% link docs/languages/vim/miscellaneous.md %}#vimdiff)
+    - `vim -d file1 [file2 ...]`
   - copy the current JSON
     - `cat snippets.json | pbcopy`
   - copy the previous JSON
