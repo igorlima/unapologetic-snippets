@@ -69,14 +69,20 @@ git diff --no-color > patch.patch
   - `go install github.com/maaslalani/nap@main`
     - Github repo:
       - `https://github.com/maaslalani/nap`
-- JSON DIFF
-  - https://semanticdiff.com/online-diff/json/
-  - https://jsoncompare.org/
-  - https://jsondiff.com/
 - Compare JSON files
-  - [how to `vimdiff`]({% link docs/languages/vim/miscellaneous.md %}#vimdiff)
+  - how to [`vimdiff`]({% link docs/languages/vim/miscellaneous.md %}#vimdiff) or [`diff` JSON files]({% link docs/languages/vim/miscellaneous.md %}#vimdiff-json-files)
     - `vim -d file1 [file2 ...]`
+    - ```sh
+      vim -d <(git show f87d746:./snippets.json | jq . -) <(git show c147b39:./snippets.json | jq . -)
+      ```
   - copy the current JSON
     - `cat snippets.json | pbcopy`
   - copy the previous JSON
     - `git show HEAD~1:./snippets.json | pbcopy`
+  - <details markdown="block"> <summary> JSON diff <i>online</i> </summary>
+  
+    - links:
+      - [https://semanticdiff.com/online-diff/json/](https://semanticdiff.com/online-diff/json/)
+      - [https://jsoncompare.org/](https://jsoncompare.org/)
+      - [https://jsondiff.com/](https://jsondiff.com/)
+    </details>

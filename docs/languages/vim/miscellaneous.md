@@ -47,5 +47,18 @@ Quick tips! I've got a list of handy shortcuts and commands that save the day wh
   :windo diffoff
   ```
 
+
+  <details markdown="block"> <summary><strong><i>diff JSON files</i></strong></summary>
+
+  ```sh
+  vim -d <(git show HEAD~1:./snippets.json | jq . -) <(git show HEAD~2:./snippets.json | jq . -)
+  vim -d <(git show f87d746:./snippets.json | jq . -) <(git show c147b39:./snippets.json | jq . -)
+  
+  diff -u <(git show f87d746:./snippets.json | jq . -) <(git show c147b39:./snippets.json | jq . -)
+  vimdiff <(git show f87d746:./snippets.json | jq . -) <(git show c147b39:./snippets.json | jq . -)
+  ```
+  <a id="vimdiff-json-files"></a>
+  </details>
+
   <a id="vimdiff"></a>
   </details>
