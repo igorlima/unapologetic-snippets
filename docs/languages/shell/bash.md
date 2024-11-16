@@ -92,6 +92,21 @@ echo "Sum: $sum"
 <!-- getting started -->
 </details>
 
+<details markdown="block"> <summary> input/output redirection </summary>
+
+```sh
+cat << EOF
+Hey Everyone
+Hope your'e liking this guide
+if so, feel free to share your thoughts
+Thanks
+EOF
+```
+
+--------
+<!-- input/output redirection -->
+</details>
+
 setting variables
 ```sh
 TEST_VAR='Hello World!'
@@ -130,6 +145,26 @@ else
 fi
 ```
 
+<details markdown="block"> <summary> <strong>positional arguments</strong> </summary>
+
+to take the positional Arguments with `$1` and `$2`:
+
+```sh
+#!/bin/bash
+echo "First argument: $1"
+echo "Second argument: $2"
+```
+
+run the executable with two arguments:
+
+```sh
+./positional_arguments.sh Arindam Magician
+```
+
+--------
+<!-- positional arguments -->
+</details>
+
 bash variable $?
 ```sh
 # '$?' is used to find the return value of the last executed command.
@@ -144,7 +179,7 @@ fi
 
 ## Control Flow Statements
 
-__if statements__
+<details markdown="block"><summary> <strong>if/else statements</strong> </summary>
 
 ```bash
 if condition
@@ -159,7 +194,71 @@ then
 if
 ```
 
-__for loops__
+```sh
+if (condition);then
+  statement
+elif(condition);then
+  statement
+else
+  statement
+fi
+```
+
+```sh
+#!/bin/bash
+if [[ "${1,,}" = "arindam" ]]; then
+  echo "Hey Admin, Welcome to our Bash Tutorial."
+elif [[ "${1,,}" = "magician" ]]; then
+  echo "Hey Magician, You don't have Admin Access"
+else
+  echo "You Don't have Admin access, login as an Admin"
+fi
+```
+
+--------
+<!-- if statements -->
+</details>
+
+<details markdown="block"><summary> <strong>case statements</strong> </summary>
+
+```sh
+case EXPRESSION in
+  PATTERN_1)
+    STATEMENTS
+    ;;
+  PATTERN_2)
+    STATEMENTS
+    ;;
+  PATTERN_N)
+    STATEMENTS
+    ;;
+  *)
+    STATEMENTS
+    ;;
+esac
+```
+
+```sh
+#!/bin/bash
+case ${1,,} in
+  "arindam")
+    echo "Hey Admin, Welcome to our Bash Tutorial."
+    ;;
+  "magician")
+    echo "Hey Magician, You don't have Admin Access"
+    ;;
+  *)
+    echo "You Don't have Admin access, login as an Admin"
+    ;;
+esac
+```
+
+--------
+<!-- case statements -->
+</details>
+
+
+<details markdown="block"><summary> <strong>for loops</strong> </summary>
 
 ```bash
 for variable_name in list
@@ -174,7 +273,11 @@ do
 done
 ```
 
-__while loops__
+--------
+<!-- for loops -->
+</details>
+
+<details markdown="block"><summary> <strong>while loops</strong> </summary>
 
 ```bash
 while condition
@@ -188,6 +291,44 @@ do
   my_variable="Goodbye, world!"
 done
 ```
+
+--------
+<!-- while loops -->
+</details>
+
+## Other Fundamental Concepts
+
+<details markdown="block"><summary> <strong>string manipulation</strong> </summary>
+
+<details markdown="block"><summary> AWK </summary>
+
+AWK is to filter file contents or output of a command in such a way that we get the essential part of the output and the way we like it.
+
+```sh
+# this will print the whole content of the file
+awk '{ print }' /path/to/file
+
+# if we want to print specific text like the first/second word, then we can use `$1` and `$2`.
+awk '{print $1}' temp.txt
+
+# use different characters as separators
+awk -F, {print $3} temp.csv
+```
+<!-- AWK -->
+</details>
+
+<details markdown="block"><summary> SED </summary>
+
+SED is a command-line tool that lets us modify certain values in a text file using regular expressions.
+
+```sh
+sed 's/text_to_change/to_this_text/g' filename
+```
+<!-- SED -->
+</details>
+
+<!-- string manipulation -->
+</details>
 
 
 ## Strict Mode
@@ -215,6 +356,34 @@ if ! command; then
   echo "Command failed." >&2
   exit 1
 fi
+```
+
+## Functions
+
+```sh
+function_name () {
+  commands
+}
+```
+
+```sh
+#!/bin/bash
+first_fn () {
+   echo 'This is my first Bash function'
+}
+first_fn
+```
+
+```sh
+#!/bin/bash
+first_fn () {
+   echo 'This is my first Bash function'
+}
+first_arg(){
+   echo "this is the first argument: $1"
+}
+first_fn
+first_arg Arindam
 ```
 
 ## Array
@@ -362,6 +531,7 @@ str="Python"
 change_str_var str
 echo $str
 ```
+
 
 ## Cron System [^2]
 
