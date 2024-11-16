@@ -10,7 +10,9 @@ permalink: /docs/languages/shell/ssh
 # SSH
 
 ## file transfer - download and upload
+<a id="ssh-file-transfering"></a>
 
+- [how to compress and extract `tar` files]({% link docs/languages/shell/termux.md %}#compress-and-extract-tar-files)
 - [mosh]({% link docs/languages/shell/mosh.md %})
   - `mosh user@oracle-server`
     ```sh

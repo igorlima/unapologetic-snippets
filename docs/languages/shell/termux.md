@@ -9,7 +9,10 @@ permalink: /docs/languages/shell/termux
 
 # Termux
 
-## Uploading and Downloading Files to/from a Remote Server
+## Uploading and Downloading TAR files <sup>_to/from a remote server_</sup>
+<a id="compress-and-extract-tar-files"></a>
+
+- [further details about file transfering - download and upload]({% link docs/languages/shell/ssh.md %}#ssh-file-transfering)
 
 ```sh
 # upload: local -> remote
