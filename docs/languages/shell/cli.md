@@ -1,6 +1,7 @@
 ---
 layout: default
 title: shell - CLI
+nav_order: 99
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/cli

@@ -84,7 +84,7 @@ Make has a decent amount of [builtin functions](https://www.gnu.org/software/mak
 shell - This calls the shell, but it replaces newlines with spaces!
 
 ```
-all: 
+all:
 	@echo $(shell ls -la) # Very ugly because the newlines are gone!
 ```
 

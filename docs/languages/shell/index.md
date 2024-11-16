@@ -15,9 +15,9 @@ A shell is a program that provides an interface for users to interact with the o
   - <details markdown="block"><summary><i>futher info...</i></summary>
 
     __Bash__, short for Bourne Again SHell, is a Unix shell and command language. It was created by Brian Fox for the GNU Project as a free software replacement for the Bourne shell1. It’s an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh).
-    
+
     Here are some key features of Bash:
-    
+
     - **Command-line editing**: Allows you to move around the command prompt and edit your command.
     - **Unlimited size command history**: You can access any command you’ve previously entered.
     - **Job control**: You can control multiple processes.

@@ -1,13 +1,15 @@
 ---
 layout: default
 title: mosh
-nav_order: 9
+nav_order: 8
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/mosh
 ---
 
 # mosh
+
+- [go to SSH session]({% link docs/languages/shell/ssh.md %})
 
 _basic things_
 ```bash
