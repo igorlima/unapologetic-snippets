@@ -1,11 +1,18 @@
 ---
 layout: default
 title: sed
-nav_order: 3
+nav_order: 8
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/sed
 ---
+
+# SED
+
+- [advanced text processing]({% link docs/languages/shell/07-text-processing.md %})
+- [`sed` basic - bash script]({% link docs/languages/shell/bash.md %}#sed)
+- [awk]({% link docs/languages/shell/08-awk.md %})
+  - [bash script basics]({% link docs/languages/shell/bash.md %}#awk)
 
 <details markdown="block">
   <summary>
@@ -16,10 +23,10 @@ permalink: /docs/languages/shell/sed
 {:toc}
 </details>
 
-- [more about advanced text processing]({% link docs/languages/shell/text-processing.md %})
+<br/>
 
 
-Sed stands for Stream Editor. It is very powerful tool to manipulate, filter, and transform text.
+`sed` stands for Stream Editor. It is very powerful tool to manipulate, filter, and transform text.
 
 ```sh
 # SAMPLE
@@ -102,5 +109,5 @@ Sed will:
 
 ## other resources
 
-- [more about advanced text processing]({% link docs/languages/shell/text-processing.md %})
+- [more about advanced text processing]({% link docs/languages/shell/07-text-processing.md %})
 

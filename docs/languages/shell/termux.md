@@ -1,7 +1,7 @@
 ---
 layout: default
 title: termux
-nav_order: 9
+nav_order: 10
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/termux

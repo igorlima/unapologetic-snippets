@@ -1,7 +1,7 @@
 ---
 layout: default
 title: advanced text processing
-nav_order: 1
+nav_order: 7
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/text-processing
@@ -9,7 +9,8 @@ permalink: /docs/languages/shell/text-processing
 
 # Advanced Text Processing
 
-- [sed]({% link docs/languages/shell/sed.md %})
+- [sed]({% link docs/languages/shell/08-sed.md %})
+- [awk]({% link docs/languages/shell/08-awk.md %})
 
 ```sh
 sed 's/[old_string]/[new_string]/g' [file_name] # replaces all occurrences of a string in a file.

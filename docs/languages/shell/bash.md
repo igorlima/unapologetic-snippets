@@ -300,7 +300,7 @@ done
 
 <details markdown="block"><summary> <strong>string manipulation</strong> </summary>
 
-<details markdown="block"><summary> AWK </summary>
+<details markdown="block"><summary> AWK </summary> <a id="awk"></a>
 
 AWK is to filter file contents or output of a command in such a way that we get the essential part of the output and the way we like it.
 
@@ -317,7 +317,7 @@ awk -F, {print $3} temp.csv
 <!-- AWK -->
 </details>
 
-<details markdown="block"><summary> SED </summary>
+<details markdown="block"><summary> SED </summary> <a id="sed"></a>
 
 SED is a command-line tool that lets us modify certain values in a text file using regular expressions.
 
@@ -588,7 +588,7 @@ While it doesn’t render images or complex layouts like modern graphical browse
       - `-s` means "include linebreaks" (mnemonic: "slurp")
       - `-a` means "ascii output" (optional)
       - `.` means "output the root of the JSON document"
-- [others]({% link docs/languages/shell/text-processing.md %}#miscellaneous-for-script)
+- [others]({% link docs/languages/shell/07-text-processing.md %}#miscellaneous-for-script)
 
 ----
 

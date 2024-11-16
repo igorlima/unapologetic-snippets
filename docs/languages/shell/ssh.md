@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ssh
-nav_order: 8
+nav_order: 9
 parent: Shell
 grand_parent: Programming Languages
 permalink: /docs/languages/shell/ssh
