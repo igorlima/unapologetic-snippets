@@ -22,6 +22,7 @@ writing.
   <sup>[++](https://github.com/igorlima/unapologetic-snippets/tree/main/docs/algorithms-data-structures/snippets)</sup>
 
 ```sh
+cd ~/workstation/github/unapologetic-snippets/docs/algorithms-data-structures/snippets
 EDITOR=vim NAP_CONFIG=config.yaml nap
 ```
 ```sh
