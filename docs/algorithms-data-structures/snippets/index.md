@@ -74,12 +74,13 @@ git diff --no-color > patch.patch
   - how to [`vimdiff`]({% link docs/languages/vim/miscellaneous.md %}#vimdiff) or [`diff` JSON files]({% link docs/languages/vim/miscellaneous.md %}#vimdiff-json-files)
     - `vim -d file1 [file2 ...]`
       ```sh
+      # raw diff
       vim -d <(cat snippets.json | jq . -) <(git show HEAD~1:./snippets.json | jq . -)
-
       # sorting by date
       vim -d <(cat snippets.json | jq ". | sort_by(.date)" -) <(git show HEAD~1:./snippets.json | jq ". | sort_by(.date)" -)
       ```
       ```sh
+      # advanced diff
       vim -d <(git show f87d746:./snippets.json | jq . -) <(git show c147b39:./snippets.json | jq . -)
       ```
   - <details markdown="block"> <summary> JSON diff <i>online</i> </summary>
