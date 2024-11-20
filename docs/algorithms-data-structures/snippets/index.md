@@ -15,8 +15,6 @@ permalink: /docs/algorithms-and-data-structures/snippets
   <sup>[+](https://gist.github.com/igorlima/90f67ef56912aa16306d9c4bd72b46c3#file-snippets-sh)</sup>
   <sup>[++](https://github.com/igorlima/unapologetic-snippets/tree/main/docs/algorithms-data-structures/snippets)</sup>
 
-Got a spark or a bright idea? There's [**a place**](https://igorlima.github.io/unapologetic-thoughts/snippets/#git-remote-s3k) _to plant that seed and watch it grow!_ 🌱
-
 Snippets code refers to small, reusable pieces of source code or text that can
 be easily inserted into a larger program or document. These snippets are
 typically used to save time and reduce repetitive typing when coding or
@@ -148,3 +146,5 @@ export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 --------
 <!-- git-remote-s3 -->
 </details>
+
+💡 Got a spark or a bright idea? There's [**a place**](https://igorlima.github.io/unapologetic-thoughts/snippets/#git-remote-s3k) _to plant that seed and watch it grow!_ 🌱
