@@ -129,11 +129,12 @@ cd ~/workstation/git-remote-s3
 ```
 
 ```sh
-# python3 -m venv my-s3-git
-# source my-s3-git/bin/activate
+# python3 -m venv my-s3-git-env
+# source my-s3-git-env/bin/activate
 #
 # pip3 show git-remote-s3
 # pip3 index versions git-remote-s3
+# pip3 list
 #
 # pip3 install --no-cache --upgrade-strategy eager -I git-remote-s3==0.2.0
 #
