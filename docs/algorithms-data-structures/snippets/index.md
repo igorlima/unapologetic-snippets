@@ -107,67 +107,9 @@ git diff --no-color > patch.patch
 <a id="git-remote-s3"></a>
 
 - [ilima vim help file](https://gist.githubusercontent.com/igorlima/90f67ef56912aa16306d9c4bd72b46c3/raw/ilima-help-snippets.txt) <sup>[+](https://gist.github.com/igorlima/90f67ef56912aa16306d9c4bd72b46c3/#file-ilima-help-snippets-txt)</sup>
-
-<details markdown="block"><summary><sub>bash script <sup><i>to check repo size</i></sup></sub></summary>
-
-```sh
-# how to check repo size
-# https://stackoverflow.com/questions/8185276/find-size-of-git-repository
-{
-
-git count-objects -vH
-
-}
-```
-<!-- bash script to check repo size -->
--------
-</details>
-
-```sh
-mkdir ~/workstation/git-remote-s3
-cd ~/workstation/git-remote-s3
-```
-
-```sh
-# python3 -m venv my-s3-git-env
-# source my-s3-git-env/bin/activate
-#
-# pip3 show git-remote-s3
-# pip3 index versions git-remote-s3
-# pip3 list
-#
-# pip3 install --no-cache --upgrade-strategy eager -I git-remote-s3==0.2.0
-#
-# pip3 install -r requirement.txt
-#
-
-pip3 install git-remote-s3==0.2.0
-
-# VIM dependencies plugin
-pip3 install awscli==1.36.4
-pip3 install click==8.1.7
-pip3 install rich==13.9.4
-```
-
-```sh
-# set ENV VAR in a way value is not saved to the history
-# BASH
-read -s -p "Enter the ACCESS KEY:"        AWS_ACCESS_KEY_ID
-read -s -p "Enter the SECRET ACCESS KEY:" AWS_SECRET_ACCESS_KEY
-# ZSH
-read -rs PASSWORD
-export PASSWORD
-# ...
-# HISTORY
-export AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXXX"
-export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
-
-```sh
-export AWS_ACCESS_KEY_ID="A7BVMQYGV282XDSL02NC"
-export AWS_SECRET_ACCESS_KEY="xt90dr1m6mqywieguzw8yc3j6m2tp8uy"
-git clone s3://my-git-bucket/my-repo
-```
+- `git-remote-s3`
+  - [setup](https://igorlima.github.io/unapologetic-thoughts/snippets/#git-remote-s3)
+  - [tmuxp yaml](https://igorlima.github.io/unapologetic-thoughts/technical/2013/01/01/tmuxp.html#my-git-remote-s3-tmuxp-yaml)
 
 --------
 <!-- git-remote-s3 -->
