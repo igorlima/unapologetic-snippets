@@ -35,7 +35,7 @@ permalink: /docs/languages/vim/debugging
 
 ## Debugging Vimscript
 
-```
+```vim
 " debug on a line
 debug echo "here"
 
@@ -58,8 +58,8 @@ Interact with the debugger:
 
 You can start up Vim in its debug mode with the `-D` argument.
 
-```
-" opens vim in debug mode
+```sh
+# opens vim in debug mode
 vim -D somefile.txt
 ```
 
@@ -67,8 +67,8 @@ This is useful for seeing what is run when Vim initializes and might help give y
 
 If you are interested in profiling your Vim's startup, you may be interested in starting Vim with the `startuptime` option, which will write to a file you specify with timestamps and information about what Vim is loading. You can use this to find bottlenecks or problematic plugins that might be causing Vim to be slow.
 
-```
-" this will write startup info to a file: vim.log
+```sh
+# this will write startup info to a file: vim.log
 vim --startuptime vim.log
 ```
 
@@ -76,7 +76,7 @@ vim --startuptime vim.log
 
 Before we jump into how to use the debugger, you should also know that you can do more than just start up Vim in debug mode as that would not be terribly useful. You can also call the `debug` command from within Vim to debug Vimscript functions or commands that have already been sourced.
 
-```
+```vim
 " debug a command
 debug CommandName
 
@@ -99,7 +99,7 @@ The last thing you need to know is how to manage breakpoints to your Vimscript. 
 
 _**Adding Breakpoints**_
 
-```
+```vim
 " bracketed [] arguments are optional
 
 " add breakpoint to function
@@ -112,7 +112,7 @@ breakadd here
 
 _**Deleting Breakpoints**_
 
-```
+```vim
 " bracketed [] arguments are optional
 
 " delete breakpoint number from breaklist output
@@ -135,7 +135,7 @@ Read the documentation for `debug`:
 
 Other than the `debug` command, Vim also has a `verbose` command that provides logging when actions take place in Vim, which can also be useful for debugging, especially things like autocommands. I recently used verbose to determine what autocommands I could leverage to hook into netrw ([see post](http://inlehmansterms.net/2014/09/04/sane-vim-working-directories/)). Using verbose is as simple as:
 
-```
+```vim
 " set verbose command
 set verbose=9
 
@@ -159,7 +159,7 @@ You can set verbose to any value from 0-15, where 0 is no extra output, and 15 g
 
 It will not take much playing around with verbose to become overwhelmed by the amount of output showing up in the status bar. Each message interrupts the flow of Vim, and may make it difficult to do anything. To get around this you can send verbose output to a file:
 
-```
+```vim
 set verbosefile=filename.txt
 ```
 
@@ -187,7 +187,7 @@ Now you should have a good idea of where to begin when debugging and logging out
 vim -e playground.vimrc
 ```
 
-```vimrc
+```vim
 " we can enter Ex mode from Normal mode by
 " pressing `Shift-Q`. This switches to Ex mode
 " and displays a prompt at the bottom of the
