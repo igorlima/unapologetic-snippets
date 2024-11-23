@@ -283,7 +283,7 @@ permalink: /docs/languages/vim/script-for-debugging
   - <details markdown="block"><summary>filename: <code>ideas.2024a11m14d.15h04.vimrc</code></summary>
     
     <a id="playground-getting-the-current-visual-selection-under-cursor"></a>
-    ```vimrc
+    ```vim
     " This function is a simple example of how to get the current visual selection
     " `vim -N -u path/to/your/vimrc`
     " `vim -N -u ideas.2024a11m14d.15h04.vimrc lorem-ipsum.txt`

@@ -43,7 +43,7 @@ permalink: /docs/languages/vim/vimwiki
     You can **save and restore** the position of a mark in Vim with the following snippet:
     <a id="how-to-save-restore-vim-mark-position"></a>
   
-    ```vimrc
+    ```vim
     let save_a_mark = getpos("'a")
     call setpos("'a", save_a_mark)
     :help '<
@@ -162,12 +162,15 @@ permalink: /docs/languages/vim/vimwiki
       ```
       </details>
   
-    <details markdown="block"><summary><strong>Helpful Resources</strong></summary>
+    <details markdown="block"><summary><strong>helpful resources</strong></summary>
   
     For more in-depth information, check out:
     - Vim's built-in help:
       - `:help :cfdo`
       - `:help :cdo`
+    - internal resources:
+      - [how to set marker via _vimscript_]({% link docs/languages/vim/debugging-script.md %}#playground-setting-marker)
+      - [how to get the current visual selection under cursor via _vimscript_]({% link docs/languages/vim/debugging-script.md %}#playground-getting-the-current-visual-selection-under-cursor)
     - online resources:
       - [StackOverflow - Find and replace all instances of specific string in multiple files in vim](https://stackoverflow.com/questions/70003193/find-and-replace-all-instances-of-specific-string-in-multiple-files-in-vim)
       - [beezwax - Advanced Search and Replace with Vim](https://blog.beezwax.net/advanced-search-and-replace-with-vim/)
