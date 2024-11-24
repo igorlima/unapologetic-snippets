@@ -1,4 +1,9 @@
 """
+SNIPPET
+Simplify using O/S commands and pipelines in Python
+"""
+
+"""
 python3 -m venv tmp-env
 source tmp-env/bin/activate
 #
