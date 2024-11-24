@@ -1,0 +1,4 @@
+total 8
+drwxr-xr-x  3 igorribeirolima  staff    96 Nov 23 23:20 aux
+-rw-r--r--  1 igorribeirolima  staff  2720 Nov 23 23:19 plumbum-run-os-commands.py
+drwxr-xr-x  7 igorribeirolima  staff   224 Nov 23 22:56 tmp-env

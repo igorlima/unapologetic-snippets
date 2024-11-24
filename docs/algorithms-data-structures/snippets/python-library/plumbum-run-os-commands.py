@@ -47,7 +47,7 @@ print(10*"-")
 # RE-DIRECTING INPUT AND OUTPUT
 cmd1 = local["ls"]
 cmd2 = local["cat"]
-pipeline = (cmd1["-l"] | cmd2) > "output.txt"
+pipeline = (cmd1["-l"] | cmd2) > "aux/output.txt"
 print(pipeline)
 stdout = pipeline()  # capture the output from the pipeline
 print(stdout)
@@ -56,7 +56,7 @@ print(10*"-")
 # CHECK OUTPUT REDIRECTION
 cmd1 = local["cat"]
 # run the command and capture the output, including stderr if needed
-result = cmd1["output.txt"].run()
+result = cmd1["aux/output.txt"].run()
 code, stdout, stderr = result
 # print the standard output
 print(stdout)
