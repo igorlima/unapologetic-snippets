@@ -11,6 +11,13 @@ permalink: /docs/algorithms-and-data-structures/notebooks
 # Notebooks
 
 - [Python Notebook]({% link docs/languages/python/notebook.md %})
+- <i>create a virtual env</i>
+- <details markdown="block"><summary><a href="https://colab.research.google.com/">Colabs</a></summary>
+   
+  - [link](https://colab.research.google.com/)
+
+  **Colab** is a web-based Notebook service that requires no setup to use and provides **free access to computing resources, including GPUs and TPUs**. Colab is especially well suited to machine learning, data science, and education (e.g. to lean python, JAX, Tensorflow, Pytorch…).
+  </details>
 
 ## My Notebooks
 
