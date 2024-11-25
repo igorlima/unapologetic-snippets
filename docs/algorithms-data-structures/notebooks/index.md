@@ -11,7 +11,6 @@ permalink: /docs/algorithms-and-data-structures/notebooks
 # Notebooks
 
 - [Python Notebook]({% link docs/languages/python/notebook.md %})
-- <i>create a virtual env</i>
 - <details markdown="block"><summary><a href="https://colab.research.google.com/">Colabs</a></summary>
    
   - [link](https://colab.research.google.com/)
