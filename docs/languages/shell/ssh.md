@@ -78,6 +78,16 @@ scp local_file user@remote_host:remote_file
 # download: remote -> local
 scp user@remote_host:remote_file local_file
 ```
+
+- <details markdown="block"><summary><sub><sup>copy directories recursively</sup></sub></summary>
+  
+  - use `-r`:
+    ```sh
+    scp -rp sourcedirectory user@dest:/path
+    ```
+    - `-r` means recursive
+    - `-p` preserves modification times, access times, and modes from the original file.
+  </details>
 </details>
 
 <details markdown="block"> <summary>reverse tunnel port on ssh server</summary>
