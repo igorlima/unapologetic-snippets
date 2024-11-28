@@ -95,6 +95,10 @@ git diff --no-color > patch.patch
       - [https://semanticdiff.com/online-diff/json/](https://semanticdiff.com/online-diff/json/)
       - [https://jsoncompare.org/](https://jsoncompare.org/)
       - [https://jsondiff.com/](https://jsondiff.com/)
+      - <details markdown="block"> <summary>Diff Text</summary>
+         
+        [Diff Text](https://difftext.com/): A Simple Online Diff Checker Tool — Lets you compare by words, characters, or lines and you can toggle show all lines or only changed lines.
+        </details>
     </details>
 
 --------
