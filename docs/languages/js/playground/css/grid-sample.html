@@ -1,0 +1,101 @@
+<!doctype html>
+
+<!--
+The Power of Conditional Styling with `@container`
+
+The `@container` CSS at-rule applies styles based on specific conditions. It
+allows you to define a condition group rule that filters style declarations and
+applies them to a containment context only when the condition is met.
+
+Here's how it works:
+
+* Style declarations are evaluated based on a defined condition.  * When the
+condition is true, the styles are applied to the container.  * The condition is
+re-evaluated whenever the container's size or value changes.
+
+By using `@container`, you can create dynamic and responsive layouts that adapt
+to different conditions, making your web development process more efficient and
+effective.
+
+```sh
+mkdir $(date +tmp-%Ya%mm%dd.%Hh%Mm%S)
+touch index.html
+```
+
+-->
+<html>
+<head>
+<title>Sample</title>
+<meta name="description" content="html draft sketch">
+<meta name="keywords" content="html sample">
+<style>
+  .main {
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@container */
+    container: button-group / inline-size;
+    width: 100%;
+  }
+
+  @container button-group (width < 300px) {
+    .button-group {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container button-group (width >= 300px) and (width < 500px) {
+    .button-group {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @container button-group (width >= 500px) and (width < 700px) {
+    .button-group {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  @container button-group (width >= 700px) {
+    .button-group {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .button-group {
+    display: grid;
+    gap: 12px 12px;
+
+    .button {
+      height: 40px;
+      min-width: 70px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      background: #fff;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <input type="range" id="width-slider" name="cowbell" min="0" max="100" value="100" step="5" style="width: 100%">
+  <div class="main">
+    <div class="button-group">
+      <div class="button">S</div>
+      <div class="button">M</div>
+      <div class="button">L</div>
+      <div class="button">XL</div>
+      <div class="button">2XL</div>
+      <div class="button">3XL</div>
+    </div>
+  </div>
+
+
+<script>
+  const input = document.querySelector("#width-slider");
+  const container = document.querySelector(".main");
+  input.addEventListener("input", (event) => {
+    container.style.width = `${event.target.value}%`;
+    value.textContent = event.target.value;
+  });
+</script>
+</body>
+</html>

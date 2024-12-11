@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+
+Example of a simple React app in a single HTML file.
+
+And different ways to write a React component.
+https://dev.to/mateo_garcia/6-ways-to-write-a-react-component-ts-included-2k42
+
+```sh
+mkdir $(date +tmp-%Ya%mm%dd.%Hh%Mm%S)
+touch index.html
+```
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic Example with JSX</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 33px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Basic Example with JSX</h1>
+
+  <div id="container"></div>
+
+  <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  <script type="text/babel">
+    const renderFn = (props) => {
+      const elapsed = Math.round(props.elapsed  / 100);
+      const seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+      const message = 'React has been successfully running for ' + seconds + ' seconds.';
+      return <p>{message}</p>;
+    }
+
+    // usage of ES6 class
+    class ExampleApplicationA extends React.Component {
+      render() {
+        return renderFn(this.props);
+      }
+    }
+
+    // usage of React.createClass
+    const ExampleApplicationB = React.createClass({
+      render: function() {
+        return renderFn(this.props);
+      }
+    });
+
+    // usage of functional stateless component
+    const ExampleApplication = (props) => {
+      return (
+        <div>
+          <ExampleApplicationA {...props} />
+          <ExampleApplicationB {...props} />
+        </div>
+      )
+    }
+
+    const start = new Date().getTime();
+    const container = document.getElementById('container');
+    setInterval(function() {
+      const now = new Date().getTime();
+      ReactDOM.render(<ExampleApplication elapsed={now - start} />, container);
+    }, 50);
+  </script>
+
+</body>
+</html>
