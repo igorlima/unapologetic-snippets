@@ -19,7 +19,11 @@ data:text/html,<html contenteditable>
 
 - Example of a simple React app in a single HTML file.
   - It show different ways to write a React component.
-  - [gh](...) / [page]({% link /docs/languages/js/playground/react/react-sample.html %}) / [download](...)
+  - ::
+    [gh](https://github.com/igorlima/unapologetic-snippets/blob/fd6a30a6d3fd414fc3975b4d51d3f62b5be7243d/docs/languages/js/playground/react/react-sample.html)
+    ::
+    [page]({% link /docs/languages/js/playground/react/react-sample.html %})
+    ::
 
 ## CSS
 
@@ -42,7 +46,11 @@ data:text/html,<html contenteditable>
     efficient and effective.
       
     </details>
-  - [gh](...) / [page]({% link /docs/languages/js/playground/css/grid-sample.html %}) / [download](...)
+  - ::
+    [gh](https://github.com/igorlima/unapologetic-snippets/blob/fd6a30a6d3fd414fc3975b4d51d3f62b5be7243d/docs/languages/js/playground/css/grid-sample.html)
+    ::
+    [page]({% link /docs/languages/js/playground/css/grid-sample.html %})
+    ::
 
 
 # Navigation Structure
