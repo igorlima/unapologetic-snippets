@@ -75,8 +75,53 @@ permalink: /docs/languages/vim/vimwiki
   </details>
 
 - <details markdown="block"><summary>folding</summary>
-  
+   
   <a id="vim-folding"></a>
+  - <details markdown="block"><summary>shortcut</summary>
+
+    - utilities
+      - `<ctrl-k>i` to set fold method
+      - `g<Ctrl-G>` to see word count
+    - creating fold
+      - <strong>manual</strong> method
+        - it is the simplest, and is the default.
+        - it method uses markers in the text to define the start and end of each fold.
+          - | command | description |
+            | ------- | ----------- |
+            | `zf`    | create a fold |
+            | `zd`    | delete a fold |
+            | `zE`    | delete all folds |
+            | `zR`    | open all folds |
+            | `zM`    | close all folds |
+    - cheat sheet
+      - main commands
+        - | command | description |
+          | ------- | ----------- |
+          | `zR`    | decreases the foldlevel to zero -- all folds will be open |
+          | `zM`    | closes all open folds |
+      - fold commands
+        - | command | description |
+          | ------- | ----------- |
+          | `za`    | toggle fold at the cursor |
+          | `zA`    | toggle all folds recursively at the cursor |
+          | `zo`    | opens a fold at the cursor |
+          | `zO`    | opens all folds at the cursor |
+          | `zc`    | close fold at the cursor |
+          | `zC`    | close all folds at the cursor |
+          | `zm`    | increases the foldlevel by one |
+          | `zM`    | closes all open folds |
+          | `zr`    | decreases the foldlevel by one |
+          | `zR`    | decreases the foldlevel to zero -- all folds will be open |
+      - jump commands
+        - | command | description |
+          | ------- | ----------- |
+          | `zj`    | moves the cursor to the next fold |
+          | `zk`    | moves the cursor to the previous fold |
+          | `[z`    | move to start of open fold |
+          | `]z`    | move to end of open fold |
+         
+    <!-- folding shortcut -->
+    </details>
   - <details markdown="block"><summary><strong>helpful resources</strong></summary>
     
     for more in-depth information, check out:
