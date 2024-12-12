@@ -17,6 +17,7 @@ permalink: /docs/algorithms-and-data-structures/notebooks
 
   **Colab** is a web-based Notebook service that requires no setup to use and provides **free access to computing resources, including GPUs and TPUs**. Colab is especially well suited to machine learning, data science, and education (e.g. to lean python, JAX, Tensorflow, Pytorch…).
   </details>
+- [opennb](https://github.com/basnijholt/opennb) - to open Jupyter notebooks from GitHub repositories
 
 ## My Notebooks
 
