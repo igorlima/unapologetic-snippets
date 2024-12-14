@@ -11,13 +11,29 @@ permalink: /docs/algorithms-and-data-structures/notebooks
 # Notebooks
 
 - [Python Notebook]({% link docs/languages/python/notebook.md %})
-- <details markdown="block"><summary><a href="https://colab.research.google.com/">Colabs</a></summary>
-   
-  - [link](https://colab.research.google.com/)
+  - <details markdown="block"><summary><sup><sub>tools</sub></sup></summary>
+     
+    - <details markdown="block"><summary><a href="https://colab.research.google.com/">Colabs</a></summary>
+       
+      - [link](https://colab.research.google.com/)
+       
+      **Colab** is a web-based Notebook service that requires no setup to use and provides **free access to computing resources, including GPUs and TPUs**. Colab is especially well suited to machine learning, data science, and education (e.g. to lean python, JAX, Tensorflow, Pytorch…).
+      </details>
+    - <details markdown="block"><summary>Marimo</summary>
+        
+       Marimo - Reactive notebook for Python
+       - [marino.io](https://marimo.io/)
+       - [github link](https://github.com/marimo-team/marimo)
+        
+       Marimo is an open source Python-based notebook environment that makes working with data more interactive and intuitive. It supports both Python scripts and notebooks, allowing for seamless version control through Git.
+        
+       Marimo’s standout feature is its reactive UI, where changes in one part of the notebook automatically update other dependent parts, making it ideal for real-time data exploration.
+        
+       It is easy to use with plenty of features for advanced users. For example, it can be used to create interactive tools like embedding visualizers.
+      </details>
+    - [opennb](https://github.com/basnijholt/opennb) - to open Jupyter notebooks from GitHub repositories
+    </details>
 
-  **Colab** is a web-based Notebook service that requires no setup to use and provides **free access to computing resources, including GPUs and TPUs**. Colab is especially well suited to machine learning, data science, and education (e.g. to lean python, JAX, Tensorflow, Pytorch…).
-  </details>
-- [opennb](https://github.com/basnijholt/opennb) - to open Jupyter notebooks from GitHub repositories
 
 ## My Notebooks
 
