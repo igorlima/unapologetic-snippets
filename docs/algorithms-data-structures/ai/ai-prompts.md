@@ -69,6 +69,8 @@ Ditch “rewrite” and improve your AI content immediately with these prompts: 
     </details>
 
 ## Journal Writing Prompts
+<a id="journal-writing-prompts"></a>
+- [see more about prompts](https://igorlima.github.io/unapologetic-thoughts/journal-springboard#writing-prompts)
 
 ```
 Output a journal writing prompt example - to help me write what I've done and
