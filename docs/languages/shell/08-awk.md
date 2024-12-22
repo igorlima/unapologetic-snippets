@@ -11,5 +11,5 @@ permalink: /docs/languages/shell/awk
 
 - [advanced text processing]({% link docs/languages/shell/07-text-processing.md %})
 - [`awk` basic - bash script]({% link docs/languages/shell/bash.md %}#awk)
-- [sed]({% link docs/languages/shell/08-sed.md %})
-  - [bash script basics]({% link docs/languages/shell/bash.md %}#sed)
+- [sed]({% link docs/languages/shell/08-sed.md %}) <sup>[+]({% link docs/languages/shell/bash.md %}#sed)</sup>
+- [jq]({% link docs/languages/shell/08-jq.md %})   <sup>[+]({% link docs/languages/shell/bash.md %}#jq)</sup>

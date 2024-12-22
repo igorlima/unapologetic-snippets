@@ -330,6 +330,20 @@ sed 's/text_to_change/to_this_text/g' filename
 <!-- string manipulation -->
 </details>
 
+<details markdown="block"><summary> <strong>json manipulation</strong> </summary>
+
+<details markdown="block"><summary> JQ </summary> <a id="jq"></a>
+
+`jq` is a command line tool for working with JSON.
+
+```sh
+curl 'https://jsonplaceholder.typicode.com/users/1' | jq
+```
+
+<!-- SED -->
+</details>
+<!-- json manipulation -->
+</details>
 
 ## Strict Mode
 
