@@ -15,6 +15,7 @@ Tools to help understanding shell commands better:
 
 CLI:
 - [cURL]({% link docs/languages/shell/cli.curl.md %})
+- [find]({% link docs/languages/shell/cli.find.md %})
 - [fzf]({% link docs/languages/shell/cli.fzf.md %})
 - [Github CLI]({% link docs/languages/shell/cli.gh.md %})
 - [Gitlab CLI](https://gitlab.com/gitlab-org/cli)
