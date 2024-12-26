@@ -98,6 +98,21 @@ data:text/html,<html contenteditable>
 <!-- CSS section -->
 </details>
 
+## Web Assembly
+
+<details markdown="block"> <summary> expands... </summary>
+
+- Python Pyodide
+  - ::
+    [gh](https://github.com/igorlima/unapologetic-snippets/blob/main/docs/languages/js/playground/web-assembly/python-pyodide.html)
+    ::
+    [page]({% link /docs/languages/js/playground/web-assembly/python-pyodide.html %})
+    ::
+
+----------
+<!-- Web Assembly -->
+</details>
+
 # Navigation Structure
 {: .no_toc }
 

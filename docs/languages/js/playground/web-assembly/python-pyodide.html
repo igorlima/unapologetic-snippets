@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+
+Example of a simple React app in a single HTML file.
+
+And different ways to write a React component.
+https://dev.to/mateo_garcia/6-ways-to-write-a-react-component-ts-included-2k42
+
+```sh
+mkdir $(date +tmp-%Ya%mm%dd.%Hh%Mm%S)
+touch index.html
+```
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pyodide — Running Python on the Browser via WebAssembly</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 33px;
+    }
+  </style>
+</head>
+<body>
+  Pyodide test page <br>
+  Open your browser console to see Pyodide output <br>
+  <br>
+  Using the <a href="https://pyodide.org/en/stable/console.html">online Pyodide REPL</a> on a browser.
+  <br>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+  <script>
+    async function main() {
+      let pyodide = await loadPyodide();
+      console.log(pyodide.runPython(`
+      import math
+      math.sqrt(20.1)
+
+      import js
+      div = js.document.createElement("div")
+      div.innerHTML = "<p>This element was created from Python</p>"
+      # js.document.body.prepend(div)
+      js.document.body.append(div)
+    `)); // 4.483...
+    };
+    main();
+  </script>
+</body>
+</html>
+
+<!--
+REFERENCE:
+
+GITHUB
+Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
+- https://github.com/pyodide/pyodide
+- https://pyodide.org/en/stable/index.html
+
+Impressive Open-Source Projects That Only A Few Programmers Know
+- https://levelup.gitconnected.com/impressive-open-source-projects-that-only-a-few-programmers-know-c0f6b81d15fe
+-->
