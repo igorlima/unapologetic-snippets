@@ -26,15 +26,23 @@ touch index.html
   Pyodide test page <br>
   Open your browser console to see Pyodide output <br>
   <br>
-  Using the <a href="https://pyodide.org/en/stable/console.html">online Pyodide REPL</a> on a browser.
+  <ul>
+    <li>
+      Using the <a href="https://pyodide.org/en/stable/console.html">online Pyodide REPL</a> on a browser.
+    </li>
+    <li>
+      <a href="https://pyodide.org/en/stable/usage/loading-packages.html">Loading packages</a>
+    </li>
+  </ul>
   <br>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
   <script>
     async function main() {
       let pyodide = await loadPyodide();
+
       console.log(pyodide.runPython(`
       import math
-      math.sqrt(20.1)
+      print(math.sqrt(20.1))
 
       import js
       div = js.document.createElement("div")
@@ -55,6 +63,9 @@ GITHUB
 Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
 - https://github.com/pyodide/pyodide
 - https://pyodide.org/en/stable/index.html
+
+Loading packages
+- https://pyodide.org/en/stable/usage/loading-packages.html
 
 Impressive Open-Source Projects That Only A Few Programmers Know
 - https://levelup.gitconnected.com/impressive-open-source-projects-that-only-a-few-programmers-know-c0f6b81d15fe
