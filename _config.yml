@@ -12,6 +12,13 @@ url: "https://igorlima.github.io/unapologetic-snippets"
 aux_links:
   Github: https://github.com/igorlima/unapologetic-snippets
 
+exclude:
+  - my-env-jupyter/
+  - docs/algorithms-data-structures/snippets/
+
+include:
+  - docs/algorithms-data-structures/snippets/index.md
+
 nav_external_links:
   - title: Unapologetic Thoughts
     url: http://thoughts.ilima.xyz/
