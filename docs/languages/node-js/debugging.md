@@ -108,6 +108,22 @@ const memoryUsage = () => {
 console.log(memoryUsage());
 ```
 
+## how to take a heapdump of a Node.js process?
+
+```js
+const v8 = require("v8");
+process.on('SIGUSR2', () => {
+  const fileName = v8.writeHeapSnapshot();
+  console.log(`Created heapdump file: ${fileName}`);
+});
+```
+```sh
+lsof -i :3000
+kill -SIGUSR2 <the_process_id>
+```
+- **reference:**
+  - [Preventing and Debugging Memory Leaks in Node.js](https://betterstack.com/community/guides/scaling-nodejs/high-performance-nodejs/nodejs-memory-leaks/) [<sup>+</sup>](https://github.com/igorlima/unapologetic-thoughts/blob/48130e8cb5d76a920cca105ae5d18be5037b6410/snippets/nodejs/heapdump.js)
+
 ## debugging performance on the terminal
 
 ```sh
