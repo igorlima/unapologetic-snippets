@@ -9,7 +9,21 @@ permalink: /docs/languages/shell/makefile
 
 # Makefile
 
-A Makefile is a simple text file that contains instructions for building a software project. The Makefile specifies the project’s dependencies, build rules, and targets, allowing the ‘make’ utility to compile and link your source files into an executable program.
+A Makefile is a text file that specifies the dependencies between files and the
+commands needed to create or update those files.
+
+A Makefile is a simple text file that contains instructions for building a
+software project. The Makefile specifies the project’s dependencies, build
+rules, and targets, allowing the ‘make’ utility to compile and link your source
+files into an executable program.
+
+Each rule specifies a target file, a list of dependency files, and a set of
+commands to be executed to create or update the target file. [^1]
+
+If the module is missing, or if it is older than the dependency file, make
+considers it to be out of date, and issues the commands necessary to rebuild
+it. A module can be treated as out of date if the commands used to build it
+have changed.
 
 ## Structure
 
@@ -88,6 +102,23 @@ all:
 	@echo $(shell ls -la) # Very ugly because the newlines are gone!
 ```
 
+## Other
+
+### PHONY
+
+- `.PHONY: all build test`: Specifies that `all`, `build`, and `test` are phony
+  targets, **meaning that they don't correspond to actual files.** [^1]
+
+In a Makefile, `.PHONY` is a special target that is used to declare phony
+targets. A phony target is a target that does not represent a physical file but
+instead represents a command that needs to be executed.  When a phony target is
+declared using `.PHONY`, it tells Make that the target should always be
+considered out-of-date and should be rebuilt every time it is requested,
+regardless of whether a file with the same name as the target exists or not.
+
 # Samples
 
 - [Build Process with Makefiles in Golang]({% link docs/languages/golang/other.makefile.md %})
+
+
+[^1]: [A Comprehensive Guide for Using Makefile In Golang Projects](https://levelup.gitconnected.com/a-comprehensive-guide-for-using-makefile-in-golang-projects-c89edebcbe6e)
