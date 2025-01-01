@@ -23,6 +23,27 @@ permalink: /docs/languages/vim/script-for-debugging
 {:toc}
 </details>
 
+## Script
+
+- <details markdown="block"><summary>variable scopes</summary>
+
+  There are 9 different variable scopes in Vim. You can recognize them from their prepended letter:
+   
+  | Scope       | Description                        |
+  | :---        | :---                               |
+  | `g:`        | global variable                    |
+  | `{nothing}` | global variable                    |
+  | `b:`        | buffer-local variable              |
+  | `w:`        | window-local variable              |
+  | `t:`        | tab-local variable                 |
+  | `s:`        | sourced Vimscript variable         |
+  | `l:`        | function local variable            |
+  | `a:`        | function formal parameter variable |
+  | `v:`        | built-in Vim variable              |
+
+  </details>
+
+
 ## Folding method
 
 - <details markdown="block"><summary>toggle between two folding methods</summary>
