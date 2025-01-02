@@ -21,4 +21,5 @@ CLI:
 - [Gitlab CLI](https://gitlab.com/gitlab-org/cli)
   - [documentation](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/)
 - [AI CLI]({% link docs/languages/shell/cli.ai.md %})
+- [Terminal-based Presentation]({% link docs/languages/shell/cli.terminal-based-presentation.md %})
 
