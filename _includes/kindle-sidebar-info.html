@@ -1,0 +1,71 @@
+<h2 class="text-delta">Table of contents for Kindle</h2>
+
+{% assign all_parents = "" | split: ',' %}
+{% assign parent_children = "" | split: ',' %}
+
+{%- for node in site.pages -%}
+  {%- if node.nav_exclude != true -%}
+    {%- if node.layout -%}
+      {%- unless node.grand_parent -%}
+        {%- unless node.parent -%}
+          {% assign all_parents = all_parents | push: node %}
+        {%- endunless -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for node in site.pages -%}
+  {%- if node.nav_exclude != true -%}
+    {%- if node.layout -%}
+      {%- unless node.grand_parent -%}
+        {%- if node.parent -%}
+          {% assign parent_children = parent_children | push: node %}
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{% assign all_parents = all_parents | sort: "nav_order" %}
+{% assign parent_children = parent_children | sort: "nav_order" %}
+
+<ul>
+  {%- for node in all_parents -%}
+    <li>
+      <a href="{{ node.url | absolute_url }}"> {{ node.title }} </a>
+      <ul>
+        {%- for child in parent_children -%}
+          {%- if child.parent == node.title -%}
+            <li>
+              <a href="{{ child.url | absolute_url }}"> {{ child.title }} </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </li>
+  {%- endfor -%}
+</ul>
+
+{%- comment -%}
+<p>https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/jekyll/</p>
+<p>https://jekyllrb.com/docs/variables/</p>
+<p>https://stackoverflow.com/questions/34048313/jekyll-debug-or-print-all-variables</p>
+{{ site.pages | debug }}
+{{ site.pages | inspect }}
+<pre>
+  site: {{ site | jsonify | escape }}
+  page: {{ page | jsonify | escape }}
+  layout: {{ layout | jsonify | escape }}
+  content: {{ content | jsonify | escape }}
+  paginator: {{ paginator | jsonify | escape }}
+</pre>
+{%- endcomment -%}
+
+<ul>
+  {%- for node in site.nav_external_links -%}
+    <li>
+      <a href="{{ node.url | absolute_url }}">
+        {{ node.title }}
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
