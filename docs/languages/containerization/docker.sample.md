@@ -431,6 +431,12 @@ curl -X POST \
   -H "Content-Type: application/json; charset=utf-8" \
   -d @request.json \
   "https://translation.googleapis.com/language/translate/v2"
+#
+# REFERENCES:
+# Docker Hub: https://hub.docker.com/r/google/cloud-sdk/tags
+# Installing the Google Cloud CLI Docker image: https://cloud.google.com/sdk/docs/downloads-docker
+# GitHub cloud-sdk-docker: https://github.com/GoogleCloudPlatform/cloud-sdk-docker/blob/fce92493b14e954ac026d5a087d0e7004e671562/README.md
+# Google Cloud CLI - Release Notes: https://cloud.google.com/sdk/docs/release-notes
 ```
 
 ----
