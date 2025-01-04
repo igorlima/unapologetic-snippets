@@ -421,6 +421,12 @@ gcloud config set project PROJECT_ID
 gcloud auth application-default set-quota-project PROJECT_ID
 
 cp ~/.config/gcloud/application_default_credentials.json .
+#
+# REFERENCES:
+# Docker Hub: https://hub.docker.com/r/google/cloud-sdk/tags
+# Installing the Google Cloud CLI Docker image: https://cloud.google.com/sdk/docs/downloads-docker
+# GitHub cloud-sdk-docker: https://github.com/GoogleCloudPlatform/cloud-sdk-docker/blob/fce92493b14e954ac026d5a087d0e7004e671562/README.md
+# Google Cloud CLI - Release Notes: https://cloud.google.com/sdk/docs/release-notes
 ```
 ```sh
 # Set the quota project with a REST request
@@ -431,13 +437,60 @@ curl -X POST \
   -H "Content-Type: application/json; charset=utf-8" \
   -d @request.json \
   "https://translation.googleapis.com/language/translate/v2"
-#
-# REFERENCES:
-# Docker Hub: https://hub.docker.com/r/google/cloud-sdk/tags
-# Installing the Google Cloud CLI Docker image: https://cloud.google.com/sdk/docs/downloads-docker
-# GitHub cloud-sdk-docker: https://github.com/GoogleCloudPlatform/cloud-sdk-docker/blob/fce92493b14e954ac026d5a087d0e7004e671562/README.md
-# Google Cloud CLI - Release Notes: https://cloud.google.com/sdk/docs/release-notes
 ```
+
+- <details markdown="block"> <summary>VertexAI/Gemini through REST API</summary>
+  
+  <a id="vertexai-gemini-rest-api"></a>
+  ```bash
+  # Call Gemini with the Chat Completions API
+  # - https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#curl
+  # Authenticate for using REST
+  # - https://cloud.google.com/docs/authentication/rest#curl
+  ({
+  # https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library
+  VERTEXAI_TOKEN=$(gcloud auth print-access-token)
+  PROJECT_ID=xxxxxxxxxy
+  LOCATION=xxxxxxxxz
+  # https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#supported-gemini-models
+  MODEL_ID=google/gemini-1.5-flash
+  curl -X POST \
+    -H "Authorization: Bearer ${VERTEXAI_TOKEN}" \
+    -H "Content-Type: application/json" \
+    https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/endpoints/openapi/chat/completions \
+    -d '{
+      "model": "'$MODEL_ID'",
+      "messages": [{
+        "role": "user",
+        "content": "Write a story about a magic backpack."
+      }]
+    }'
+  })
+  
+  ({
+  # Generate content with the Gemini Enterprise API
+  # - https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#request
+  # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference
+  VERTEXAI_TOKEN=$(gcloud auth print-access-token)
+  PROJECT_ID=xxxxxxxxxy
+  LOCATION=xxxxxxxxz
+  # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#supported-models
+  MODEL_ID=gemini-1.5-flash
+  curl -X POST \
+    -H "Authorization: Bearer ${VERTEXAI_TOKEN}" \
+    -H "Content-Type: application/json" \
+    https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/publishers/google/models/${MODEL_ID}:generateContent \
+    -d '{
+      "contents": [{
+        "role": "user",
+        "parts": [{
+          "text": "Write a story about a magic backpack."
+        }]
+      }]
+    }'
+  })
+  ```
+  </details>
 
 ----
 <br/>
