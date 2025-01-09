@@ -90,9 +90,7 @@ exploration.*
 </details>
 
 <details markdown="block">
-  <summary>
-    <sup><i>ipython magic commands</i></sup>
-  </summary>
+  <summary> <sup><i>ipython magic commands</i></sup> </summary>
 
 IPython magic commands are a set of special commands that can be used to
 enhance the functionality of the IPython shell. These commands are prefixed
@@ -137,7 +135,7 @@ and cell magics.
 - __Creating Custom Magic Commands__
   - IPython allows users to create and register their own custom magic commands. These custom magic commands can be used to provide special functionalities that are not available in the standard Python shell.
 
-
+<!-- ipython magic commands -->
 </details>
 
 - `?` and `??`
@@ -168,9 +166,26 @@ help('math')
 
 
 <details markdown="block">
-  <summary>
-    <sup><i>troubleshooting</i></sup>
-  </summary>
+  <summary> <sup><i>ipython extensions</i></sup> </summary>
+
+- [ipychat](https://github.com/vinayak-mehta/ipychat): An AI extension for IPython that makes it work like Cursor
+  - ipychat is an AI extension for IPython that helps you understand, debug, and write Python faster.
+  - ...
+    ```sh
+    pip install ipychat
+    ipychat config
+    ```
+    ```ipython
+    %load_ext ipychat
+    %ask what can I do with the cities dataframe
+    %models
+    ```
+
+<!-- ipython extensions -->
+</details>
+
+<details markdown="block">
+  <summary> <sup><i>troubleshooting</i></sup> </summary>
 
 - `No module named 'sqlite3'`
   - on CentOS
@@ -181,6 +196,7 @@ help('math')
       pyenv install -f -v 3.10.4
       ```
 
+<!-- ipython troubleshooting -->
 </details>
 
 
