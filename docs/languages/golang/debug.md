@@ -140,6 +140,7 @@ the config file on MacOS is by default in this following location:
 
 
 ## debuging go with `vim-go`
+<sup>[+]({% link docs/languages/golang/other.vim-go-tutorial.md %})</sup>
 
 - basic
   - press `K` or `:GoDoc` or `:GoDocBrowser`
@@ -192,6 +193,8 @@ the config file on MacOS is by default in this following location:
 - [how-to](#how-to-session-with-vim-go)
 
 ### using vim-go while coding
+<sup>[+]({% link docs/languages/golang/other.vim-go-tutorial.md %})</sup>
+
 - press `K` or `:GoDoc` or `:GoDocBrowser`
 - to trigger completion, while in INSERT mode
    - type `<ctrl+x><ctrl+o>`
@@ -221,6 +224,7 @@ the config file on MacOS is by default in this following location:
    - `:call go#template#create()`
 
 ### debug commands in vim-go
+<sup>[+]({% link docs/languages/golang/other.vim-go-tutorial.md %})</sup>
 
 - intro
   - `pgrep dlv` a command to list all delve process
@@ -264,6 +268,7 @@ the config file on MacOS is by default in this following location:
         `bool`, and pointers
 
 ### miscellaneous vim-go functions
+<sup>[+]({% link docs/languages/golang/other.vim-go-tutorial.md %})</sup>
 
 - `:GoInstall`
 - `:GoTest`
@@ -336,6 +341,7 @@ the config file on MacOS is by default in this following location:
 
 
 ### how to session with vim-go
+<sup>[+]({% link docs/languages/golang/other.vim-go-tutorial.md %})</sup>
 
 - refresh/update the window layout during the debug
    - set any variable by using `:GoDebugSet`
