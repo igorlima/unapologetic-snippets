@@ -14,7 +14,7 @@ module.exports = {
     filename: 'bundle.js',
     // https://webpack.js.org/configuration/output/
     library: {
-      name: 'Bundle_20250124_1321',
+      name: 'Bundle_20250124_1829',
       type: 'window',
     },
   },
