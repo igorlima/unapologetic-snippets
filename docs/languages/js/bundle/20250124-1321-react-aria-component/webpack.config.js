@@ -14,7 +14,7 @@ module.exports = {
     filename: 'bundle.js',
     // https://webpack.js.org/configuration/output/
     library: {
-      name: 'ReactAriaComponents_1_6_0',
+      name: 'Bundle_20250124_1321',
       type: 'window',
     },
   },
