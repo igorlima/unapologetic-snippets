@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^18.3.1",
-    "react-aria-components": "file:~/workstation/github/react-spectrum/packages/react-aria-components",
+    "react-aria-components": "^1.6.0",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {

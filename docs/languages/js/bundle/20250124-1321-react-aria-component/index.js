@@ -1,7 +1,7 @@
-import { Button, Form, Input, Label, TextField } from "react-aria-components";
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
+import { Button, Form, Input, Label, TextField } from "react-aria-components";
 import {
   ListBox,
   ListBoxItem,
@@ -10,4 +10,4 @@ import {
   SelectValue,
 } from "react-aria-components";
 
-export { Button, Form, Input, Label, TextField, ListBox, ListBoxItem, Popover, Select, SelectValue, React, ReactDOM };
+export { Button, Form, Input, Label, TextField, ListBox, ListBoxItem, Popover, Select, SelectValue, React, createRoot };

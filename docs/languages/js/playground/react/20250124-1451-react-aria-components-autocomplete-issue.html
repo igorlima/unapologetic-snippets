@@ -44,164 +44,90 @@ touch index.html
 
   <!-- https://www.unpkg.com/react/ -->
   <!-- https://www.unpkg.com/browse/react@18.3.1/ -->
-  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
   <script src="../../bundle/20250124-1321-react-aria-component/bundle.js"></script>
   <script src="../../bundle/20250124-1829-react-aria-component/bundle.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
   <script type="text/babel" data-type="module">
     // How to make script type both text/babel and module?
     // https://stackoverflow.com/questions/54018182/how-to-make-script-type-both-text-babel-and-module
-    const { React, ReactDOM } = Bundle_20250124_1321;
-    const { Button, Form, Input, Label, TextField } = Bundle_20250124_1321;
-    const { ListBox, ListBoxItem, Popover, Select, SelectValue } = Bundle_20250124_1321;
-    class AutoCompleteApp extends React.Component {
-      constructor(props) {
-        super(props)
-        this.options = [
-          { value: "us", label: "United States", name: "United States", abbr: "us" },
-          { value: "in", label: "India", name: "India", abbr: "in" },
-          { value: "ca", label: "Canada", name: "Canada", abbr: "ca" },
-          { value: "br", label: "Brazil", name: "Brazil", abbr: "br" },
-          {
-            value: "uk",
-            label: "United Kingdom",
-            name: "United Kingdom",
-            abbr: "uk",
-          },
-        ];
-        this.state = {
-          collection: {
-            options: this.options,
-          },
-          selectedKey: null,
-          isOpen: false,
-          close: true,
-        };
-      }
+    const renderer = (Bundle, elementId) => {
+      const { React, createRoot } = Bundle;
+      const { Button, Form, Input, Label, TextField } = Bundle;
+      const { ListBox, ListBoxItem, Popover, Select, SelectValue } = Bundle;
+      class AutoCompleteApp extends React.Component {
+        constructor(props) {
+          super(props)
+          this.options = [
+            { value: "us", label: "United States", name: "United States", abbr: "us" },
+            { value: "in", label: "India", name: "India", abbr: "in" },
+            { value: "ca", label: "Canada", name: "Canada", abbr: "ca" },
+            { value: "br", label: "Brazil", name: "Brazil", abbr: "br" },
+            {
+              value: "uk",
+              label: "United Kingdom",
+              name: "United Kingdom",
+              abbr: "uk",
+            },
+          ];
+          this.state = {
+            collection: {
+              options: this.options,
+            },
+            selectedKey: null,
+            isOpen: false,
+            close: true,
+          };
+        }
 
-      render() {
-        return (
-          <Form>
-            <TextField name="name" autoComplete="name">
-              <Label>Name</Label>
-              <Input />
-            </TextField>
-            <TextField name="address" autoComplete="street-address">
-              <Label>Address</Label>
-              <Input />
-            </TextField>
-            <TextField name="city" autoComplete="address-level2">
-              <Label>City</Label>
-              <Input />
-            </TextField>
-            <TextField name="pincode" autoComplete="postal-code">
-              <Label>Pincode</Label>
-              <Input />
-            </TextField>
-            <Select name="country" autoComplete="country">
-              <Label>Country</Label>
-              <Button>
-                <SelectValue />
-                <span aria-hidden="true">▼</span>
-              </Button>
-              <Popover>
-                <ListBox>
-                  {this.options.map((option, index) => (
-                    <ListBoxItem
-                      key={option.value}
-                      id={option.value}
-                      textValue="text"
-                    >
-                      {option.label}
-                    </ListBoxItem>
-                  ))}
-                </ListBox>
-              </Popover>
-            </Select>
-            <Button type="submit">Submit</Button>
-          </Form>
-        )
+        render() {
+          return (
+            <Form>
+              <TextField name="name" autoComplete="name">
+                <Label>Name</Label>
+                <Input />
+              </TextField>
+              <TextField name="address" autoComplete="street-address">
+                <Label>Address</Label>
+                <Input />
+              </TextField>
+              <TextField name="city" autoComplete="address-level2">
+                <Label>City</Label>
+                <Input />
+              </TextField>
+              <TextField name="pincode" autoComplete="postal-code">
+                <Label>Pincode</Label>
+                <Input />
+              </TextField>
+              <Select name="country" autoComplete="country">
+                <Label>Country</Label>
+                <Button>
+                  <SelectValue />
+                  <span aria-hidden="true">▼</span>
+                </Button>
+                <Popover>
+                  <ListBox>
+                    {this.options.map((option, index) => (
+                      <ListBoxItem
+                        key={option.value}
+                        id={option.value}
+                        textValue="text"
+                      >
+                        {option.label}
+                      </ListBoxItem>
+                    ))}
+                  </ListBox>
+                </Popover>
+              </Select>
+              <Button type="submit">Submit</Button>
+            </Form>
+          )
+        }
       }
+      const rootElement = createRoot(document.getElementById(elementId));
+      rootElement.render(<AutoCompleteApp />);
     }
-    const rootElement = document.getElementById("autocomplete-before");
-    ReactDOM.render(<AutoCompleteApp />, rootElement);
-  </script>
-  <script type="text/babel" data-type="module">
-    // How to make script type both text/babel and module?
-    // https://stackoverflow.com/questions/54018182/how-to-make-script-type-both-text-babel-and-module
-    const { React, ReactDOM } = Bundle_20250124_1829;
-    const { Button, Form, Input, Label, TextField } = Bundle_20250124_1829;
-    const { ListBox, ListBoxItem, Popover, Select, SelectValue } = Bundle_20250124_1829;
-    class AutoCompleteApp extends React.Component {
-      constructor(props) {
-        super(props)
-        this.options = [
-          { value: "us", label: "United States", name: "United States", abbr: "us" },
-          { value: "in", label: "India", name: "India", abbr: "in" },
-          { value: "ca", label: "Canada", name: "Canada", abbr: "ca" },
-          { value: "br", label: "Brazil", name: "Brazil", abbr: "br" },
-          {
-            value: "uk",
-            label: "United Kingdom",
-            name: "United Kingdom",
-            abbr: "uk",
-          },
-        ];
-        this.state = {
-          collection: {
-            options: this.options,
-          },
-          selectedKey: null,
-          isOpen: false,
-          close: true,
-        };
-      }
-
-      render() {
-        return (
-          <Form>
-            <TextField name="name" autoComplete="name">
-              <Label>Name</Label>
-              <Input />
-            </TextField>
-            <TextField name="address" autoComplete="street-address">
-              <Label>Address</Label>
-              <Input />
-            </TextField>
-            <TextField name="city" autoComplete="address-level2">
-              <Label>City</Label>
-              <Input />
-            </TextField>
-            <TextField name="pincode" autoComplete="postal-code">
-              <Label>Pincode</Label>
-              <Input />
-            </TextField>
-            <Select name="country" autoComplete="country">
-              <Label>Country</Label>
-              <Button>
-                <SelectValue />
-                <span aria-hidden="true">▼</span>
-              </Button>
-              <Popover>
-                <ListBox>
-                  {this.options.map((option, index) => (
-                    <ListBoxItem
-                      key={option.value}
-                      id={option.value}
-                      textValue="text"
-                    >
-                      {option.label}
-                    </ListBoxItem>
-                  ))}
-                </ListBox>
-              </Popover>
-            </Select>
-            <Button type="submit">Submit</Button>
-          </Form>
-        )
-      }
-    }
-    const rootElement = document.getElementById("autocomplete-after");
-    ReactDOM.render(<AutoCompleteApp />, rootElement);
+    renderer(Bundle_20250124_1321, "autocomplete-before");
+    renderer(Bundle_20250124_1829, "autocomplete-after");
   </script>
 
 </body>
