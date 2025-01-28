@@ -79,11 +79,25 @@ touch index.html
             isOpen: false,
             close: true,
           };
+
+          this.onSubmit = (e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.currentTarget));
+            debugger;
+            console.log('state in onSubmit ', this.state);
+            console.log('selectedKey state in onSubmit ', this.state.selectedKey);
+            console.log('whole data in onSubmit ', data);
+          }
+          this.onSelectionChange = (selected) => {
+            debugger;
+            this.setState({ selectedKey: selected });
+            console.log('selected value in onSelectionChange ', selected);
+          };
         }
 
         render() {
           return (
-            <Form>
+            <Form onSubmit={this.onSubmit}>
               <TextField name="name" autoComplete="name">
                 <Label>Name</Label>
                 <Input />
@@ -100,7 +114,7 @@ touch index.html
                 <Label>Pincode</Label>
                 <Input />
               </TextField>
-              <Select name="country" autoComplete="country">
+              <Select name="country" autoComplete="country" onSelectionChange={this.onSelectionChange}>
                 <Label>Country</Label>
                 <Button>
                   <SelectValue />
