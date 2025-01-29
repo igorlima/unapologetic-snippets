@@ -9,6 +9,8 @@ aux_links:
 exclude:
   - my-env-jupyter/
   - docs/algorithms-data-structures/snippets/
+  - docs/languages/js/bundle/20250124-1321-react-aria-component/node_modules/
+  - docs/languages/js/bundle/20250124-1829-react-aria-component/node_modules/
 
 include:
   - docs/algorithms-data-structures/snippets/index.md

@@ -191,6 +191,25 @@ Lookahead and lookbehind are two types of zero-width assertions in regular expre
 </details>
 <!-- H2: lookahead and lookbehind -->
 
+If you're familiar with PCRE or other regex engines, you may prefer lookahead and lookbehind assertions. Negative lookaround is also the only way to assert that a certain pattern is not present. [<sup>+</sup>](https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind)
+
+The following strings with `@` are assertions that the preceding atom (which may be a group) does or does not exist just ahead or behind the current position in the pattern. The atom (or its absence) will match with zero length.
+
+| lookbehind | lookahead      |               |
+| :---       | :---           | :---          |
+| positive   | `\(atom\)\@<=` | `\(atom\)\@=` |
+| negative   | `\(atom\)\@<!` | `\(atom\)\@!` |
+
+- <details markdown="block"><summary> in very magic mode...</summary>
+   
+  | lookbehind | lookahead   |            |
+  | :---       | :---        | :---       |
+  | positive   | `(atom)@<=` | `(atom)@=` |
+  | negative   | `(atom)@<!` | `(atom)@!` |
+
+  </details>
+
+
 ## Miscellaneous
 
 <details markdown="block"> <summary> expand </summary>
