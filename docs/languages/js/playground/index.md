@@ -62,7 +62,7 @@ data:text/html,<html contenteditable>
       ::
   - a counter example with React 18
     - ::
-      [gh](https://github.com/igorlima/unapologetic-snippets/blob/main/docs/languages/js/playground/react/react-18-sample.html)
+      [gh](https://github.com/igorlima/unapologetic-snippets/blob/2cc6be2d3bd2217c346d339656fb1d962b0fa0c1/docs/languages/js/playground/react/react-18-sample.html)
       ::
       [page]({% link /docs/languages/js/playground/react/react-18-sample.html %})
       ::
