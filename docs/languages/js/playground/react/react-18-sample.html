@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Example of a simple React app in a single HTML file.
+And different ways to write a React component.
+https://dev.to/mateo_garcia/6-ways-to-write-a-react-component-ts-included-2k42
+
+```sh
+mkdir $(date +tmp-%Ya%mm%dd.%Hh%Mm%S)
+touch index.html
+```
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic Example with JSX</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 33px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Basic Example with JSX</h1>
+
+  <div id="container"></div>
+
+  <script src="https://www.unpkg.com/react@18.3.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  <script type="text/babel">
+    const App = () => {
+      const [counter, setCounter] = React.useState(0);
+      const increment = () => {
+        setCounter(counter + 1);
+      };
+      const decrement = () => {
+        setCounter(counter - 1);
+      };
+      return (
+        <div>
+          <h1>Counter App</h1>
+          <h2>{counter}</h2>
+          <button onClick={() => increment()}>Increment</button>
+          <button onClick={() => decrement()}>Decrement</button>
+        </div>
+      );
+    };
+    const container = document.getElementById('container');
+    ReactDOM.render(<App/>, container);
+  </script>
+</body>
+</html>

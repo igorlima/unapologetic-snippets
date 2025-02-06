@@ -54,12 +54,18 @@ data:text/html,<html contenteditable>
 <details markdown="block"> <summary> expands... </summary>
 
 - Example of a simple React app in a single HTML file.
-  - It show different ways to write a React component.
-  - ::
-    [gh](https://github.com/igorlima/unapologetic-snippets/blob/fd6a30a6d3fd414fc3975b4d51d3f62b5be7243d/docs/languages/js/playground/react/react-sample.html)
-    ::
-    [page]({% link /docs/languages/js/playground/react/react-sample.html %})
-    ::
+  - it shows different ways to write a React component.
+    - ::
+      [gh](https://github.com/igorlima/unapologetic-snippets/blob/fd6a30a6d3fd414fc3975b4d51d3f62b5be7243d/docs/languages/js/playground/react/react-sample.html)
+      ::
+      [page]({% link /docs/languages/js/playground/react/react-sample.html %})
+      ::
+  - a counter example with React 18
+    - ::
+      [gh](https://github.com/igorlima/unapologetic-snippets/blob/main/docs/languages/js/playground/react/react-18-sample.html)
+      ::
+      [page]({% link /docs/languages/js/playground/react/react-18-sample.html %})
+      ::
 
 ----------
 <!-- React section -->
