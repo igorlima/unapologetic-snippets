@@ -135,13 +135,27 @@ permalink: /docs/languages/vim/vimwiki
   ---------
   </details>
 
-- <details markdown="block"><summary>text <strong>replacement</strong> and/or <strong>manipulation</strong></summary>
-   
+- <details markdown="block">
+  <summary>
+  text <strong>replacement</strong> and/or <strong>manipulation</strong>
+  <a href="#text-manipulation-in-vim">§</a>
+  </summary>
+
   <a id="text-manipulation-in-vim"></a>
-   
+
   - delete blank lines
     - `:%s/^\s*$\n//gc`
     - `:g/^\s*$/d`
+  - <details markdown="block"><summary>extracting email addresses</summary>
+     
+    - for extracting multiple email addresses from a single line, separating them with commas:
+      - `:%s/[^<]*<\([^>]\+\)>[^<]*/\1, /gc`
+      - <sup><sub>it looks for anything between `<` and `>` and captures it (that's an email address!) - then, it replaces the entire matched section with just the captured email address followed by a comma and a space.</sub></sup>
+    - for extracting a single email address per line
+      - `:%s/.\+<\(.\+\)>.*/\1/gc`
+      - <sup><sub>it captures the email address within the `<` and `>` and replaces the entire line with just the captured address.</sub></sup>
+    <!-- extracting email addresses -->
+    </details>
   - [advanced search and replace in Vim](#advanced-search-and-replace-in-vim)
   </details>
 - <details markdown="block"><summary>advanced <strong>search</strong> and <strong>replace</strong> in Vim</summary>
