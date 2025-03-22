@@ -170,7 +170,8 @@ permalink: /docs/languages/vim/vimwiki
      
     ```vim
     :grep foo **/*.js      " Search for 'foo' in JavaScript files
-    :cdo s/foo/bar/gc      " Replace 'foo' with 'bar' (with confirmation)
+    :cdo s/foo/bar/gc      " Line-wise replace 'foo' with 'bar' (with confirmation)
+    :cfdo %s/foo/bar/gc    " File-wise replace 'foo' with 'bar' (with confirmation)
     :cfdo up               " Save changes
     ```
      
