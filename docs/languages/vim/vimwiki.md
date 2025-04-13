@@ -156,11 +156,69 @@ permalink: /docs/languages/vim/vimwiki
       - <sup><sub>it captures the email address within the `<` and `>` and replaces the entire line with just the captured address.</sub></sup>
     <!-- extracting email addresses -->
     </details>
+  - [the vim global command](#the-vim-global-command)
   - [advanced search and replace in Vim](#advanced-search-and-replace-in-vim)
   </details>
 - <details markdown="block"><summary>advanced <strong>search</strong> and <strong>replace</strong> in Vim</summary>
    
   <a id="advanced-search-and-replace-in-vim"></a>
+
+  - <details markdown="block"><summary>the vim global command <a href="#the-vim-global-command">§</a></summary>
+
+    <a id="the-vim-global-command"></a>
+    The global command is one that can be very powerful for performing operations across a matched pattern.
+    The general idea is to match some text in a buffer and then perform an operation on all matches.
+    Example: `:g/pattern/command` <sup>[+](https://levelup.gitconnected.com/the-vim-global-command-8ecd657a15de)</sup>
+
+    - __Delete Matching Lines__
+      - `:g/pattern/d`
+        - This command deletes all lines matching the pattern.
+      - `:g/error/d`
+        - Deletes all lines matching error
+    - __Delete Non-Matching Lines__
+      - Use almost the same command but instead use a g! instead of just g. This will invert the match and grab all lines that do NOT match.
+        - `:g!/pattern/d`
+          - This command deletes all lines not matching the pattern.
+        - `:g!/error/d`
+          - Deletes all lines not matching error.
+    - __Substitute in Matching Lines__
+      - Similar to how you would use `%s`, you can use g to find and replace a pattern.
+        - `:g/error/s/error/errorMessage/`
+          - Performs a substitution __only__ on lines matching pattern.
+          - This will replace only the first “error”, if you want to replace all then add g to the end:
+            - `:g/pattern/s/foo/bar/g`
+              - This command replaces all occurrences of "foo" with "bar" in lines matching the pattern.
+            - `:g/error/s/foo/bar/g`
+              - Replaces all occurrences of "foo" with "bar" in lines matching error.
+    - __Execute a Command on Matching Lines__
+      - To run a command you can still use the g command in the same structure that we have seen before and using the `normal` keyword:
+        - `g/pattern/normal command`
+          - Executes a normal-mode command on all matching lines.
+            - `:g/TODO/normal A // Comment`
+              - This example will append ` // Comment` to lines containing `TODO`.
+    - __Yank Matching Lines__
+      - `:g/pattern/yank`
+        - Yanks all lines matching pattern into the default register.
+      - `g/error/y`
+        - Yank lines containing “error”.
+    - __Advanced Patterns__
+      - using regular expressions to narrow down your matches to a smaller subset:
+        - `:g/^foo/d`
+          - Match lines starting with “foo”
+        - `:g/bar$/d`
+          - Match lines ending with “bar”
+        - `:g/\d/d`
+          - Match lines ending with “bar”
+    - __Chaining Multiple Commands__
+      - To chain commands, use the `|` like this:
+        - `:g/pattern/command1 | command2`
+          - This will execute command1 and then command2.
+        - `:g/DEBUG/d | w`
+          - Delete lines containing “DEBUG” and then save the file.
+
+    <!-- the vim global command -->
+    ---------
+    </details>
    
   - <details markdown="block"><summary>replacing in multiple files</summary>
      
