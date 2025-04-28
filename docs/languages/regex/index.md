@@ -63,6 +63,20 @@ Regular expressions are a powerful tool for pattern matching and text manipulati
     - internal link
       - [browser JS]({% link docs/languages/js/regex.md %})
 
+- **Concepts** [^1]
+  - Back References: Matching the same text captured earlier in the pattern.
+    - Backreferences allow you to match the same text that was previously matched by a capturing group. In a regex pattern, you can refer to a capturing group by using a backslash followed by its group number. Group numbers are assigned based on the order of the opening parentheses in the pattern, starting from 1.
+  - Assertions: Checking conditions before or after a match without including them in the match.
+    - There are two main types of assertions: **lookaheads** and **lookbehinds**.
+    - Assertions are patterns that check for conditions before or after a match. Once a regex matches, assertions verify if it's preceded or followed by a specific pattern.
+    - While they are considered during the search, they aren't included in the final match. There are two main types of assertions: lookaheads and lookbehinds.
+  - Anchors: Using `^` and `$` to match the start and end of lines, respectively.
+  - Quantifiers: Specifying how many times a character or group should appear.
+  - Non-Capturing Groups: Grouping without capturing for performance optimization.
+    - By default, any group you define in a regular expression captures the matched expression for use in subsequent parts of the pattern. If you don't want the group to capture, simply prefix the pattern inside the parentheses with `?`:
+      - This allows for better performance.
+      - e.g. `/^(?: hello) world $/`
+
 ----
 
-[^1]: [...](...)
+[^1]: [Learning These Things Made Me A RegEx Expert](https://levelup.gitconnected.com/learning-these-things-made-me-a-regex-expert-7385e95886b7)
