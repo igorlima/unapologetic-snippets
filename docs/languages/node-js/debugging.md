@@ -155,6 +155,7 @@ node inspect 0.0.0.0:9235
 
 ```js
 // Node.js v14.21.3
+// node --inspect-brk=0.0.0.0:9235 sample-measuring.js
 const { performance, PerformanceObserver } = require('perf_hooks')
 // https://nodejs.org/docs/latest-v14.x/api/perf_hooks.html
 
@@ -172,6 +173,10 @@ const observer = new PerformanceObserver((list, obs) => {
 
 // subscribe to various performance event types
 observer.observe({
+  // https://nodejs.org/api/perf_hooks.html#performanceentryentrytype
+  // https://nodejs.org/api/perf_hooks.html#examples
+
+  // entryTypes: ["mark", "measure", "function"],
   // entryTypes: ["mark", "measure"],
   entryTypes: ["measure"],
 })
@@ -196,8 +201,11 @@ function measurementTest(callback, iterations = 3) {
 measurementTest(function() {
   performance.mark('measurement end')
   performance.measure('measurement', 'measurement start', 'measurement end')
-  debugger
-  observer.disconnect()
+}).then(() => {
+  setTimeout(function() {
+    debugger
+    observer.disconnect()
+  }, 10000)
 })
 ```
 
