@@ -28,7 +28,7 @@ To make it as easy as possible to write documentation in plain Markdown, most UI
 ```html
 <!-- § reference sample § -->
 [ref to ...](#ref-8c678ce8-89c1-45e1-834f-294729cb7d8e)
-[another ref to ...]({% link docs/languages/languages.md#ref-8c678ce8-89c1-45e1-834f-294729cb7d8e %})
+{% raw %}[another ref to ...]({% link docs/languages/languages.md %}#ref-8c678ce8-89c1-45e1-834f-294729cb7d8e){% endraw %}
 
 <!-- either -->
 <details markdown="block">
