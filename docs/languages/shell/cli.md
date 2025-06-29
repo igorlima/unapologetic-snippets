@@ -87,6 +87,65 @@ Tools to help understanding shell commands better:
     - [Overview](https://docs.anthropic.com/en/docs/claude-code/overview)
     - [CLI usage and controls](https://docs.anthropic.com/en/docs/claude-code/cli-usage)
     </details>
+  - <details markdown="block"><summary>Google Gemini CLI <sup><a href="https://igorlima.github.io/unapologetic-thoughts/journal-springboard#ai-tool-google-gemini-cli">+</a></sup> <a id="ai-tool-google-gemini-cli" href="#ai-tool-google-gemini-cli">§</a></summary>
+
+    - [Github link](https://github.com/google-gemini/gemini-cli)
+      ```sh
+      # Run the CLI
+      npx https://github.com/google-gemini/gemini-cli
+
+      # Or install it with
+      npm install -g @google/gemini-cli
+      gemini
+      ```
+    - <details markdown="block"><summary>Examples</summary>
+
+      - start a project from a new directory
+        ```sh
+        cd new-project/
+        gemini
+        > Write me a Gemini Discord bot that answers questions using a FAQ.md file I will provide
+        ```
+      - or work with an existing project:
+        ```sh
+        git clone https://github.com/google-gemini/gemini-cli
+        cd gemini-cli
+        gemini
+        > Give me a summary of all of the changes that went in yesterday
+        ```
+      - <details markdown="block"><summary>other examples</summary>
+
+        - Explore a new codebase
+          ```
+          > Describe the main pieces of this system's architecture.
+
+          > What security mechanisms are in place?
+          ```
+        - Work with your existing code
+          ```
+          > Implement a first draft for GitHub issue #123.
+
+          > Help me migrate this codebase to the latest version of Java. Start with a plan.
+          ```
+        - Automate your workflows
+          ```
+          > Make me a slide deck showing the git history from the last 7 days, grouped by feature and team member.
+
+          > Make a full-screen web app for a wall display to show our most interacted-with GitHub issues.
+          ```
+        - Interact with your system
+          ```
+          > Convert all the images in this directory to png, and rename them to use dates from the exif data.
+
+          > Organise my PDF invoices by month of expenditure.
+          ```
+        <!-- other examples -->
+        </details>
+      <!-- examples -->
+      </details>
+    <!-- Google Gemini CLI -->
+    </details>
+  <!-- AI tool -->
   </details>
 
 CLI:
