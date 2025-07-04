@@ -6,6 +6,8 @@ nav_order: 99
 
 [Return to main website]({{site.baseurl}}/).
 
+> “Software gets slower faster than hardware gets faster.”
+- _by Wirth’s Law_ - __Fri, Jul 04, 2025__
 
 > “There are two methods in software design. One is to make the program so simple, there are obviously no errors. The other is to make it so complicated, there are no obvious errors.”
 - _by Tony Hoare_, inventor of the quicksort algorithm. - __Thu, Oct 26, 2023__
