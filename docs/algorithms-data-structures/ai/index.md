@@ -35,6 +35,15 @@ k-NN is an algorithm that retrieves the k most similar data points to a given qu
 **Approximate Nearest Neighbors (ANN): "A Faster Alternative to k-NN"**.
 ANN algorithms provide approximate solutions to the nearest neighbor problem. They sacrifice accuracy in favor of significantly reduced computation time, making them suitable for large-scale data analysis and real-time applications.
 
+## Neurons: the building blocks of AI
+
+What a neuron is and how researchers and engineers piece these neurons together to build complex systems capable of incredibly challenging tasks. [^2]
+
+You can think of these neurons as the mathematical functions that are doing this hard investigative work, getting into the weeds of the data and figuring out what’s going on.
+
+Researchers can combine neurons in two ways. First, neurons can be lined up in a sequence, so the output of one becomes the input of the next. Neurons can also be stacked in layers, where they don’t interact directly but take the same input values. Some special neurons can even accept their own output and use it to update their internal function, in a kind of simulated memory.
+
 ------ ------
 
 [^1]: [What are: Embeddings? Vector Databases? Vector Search? k-NN? ANN?](https://kozyrkov.medium.com/what-are-embeddings-vector-databases-vector-search-k-nn-ann-9eb35f715c94)
+[^2]: [The beginner’s guide to AI model architectures](https://read.technically.dev/p/all-about-ai-model-architectures)
