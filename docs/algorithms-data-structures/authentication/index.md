@@ -3,7 +3,7 @@ layout: default
 title: Authentication
 nav_order: 2
 parent: Algorithms and Data Structures
-has_children: false
+has_children: true
 has_toc: true
 permalink: /docs/algorithms-and-data-structures/authentication
 ---
