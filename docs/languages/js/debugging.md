@@ -14,10 +14,45 @@ There are three main pillars of being a good software engineer: writing code, de
 
 > "Debugging is a separate skill from writing code. Writing code is creative, its like art. Debugging is like science, you need to formulate a small hypothesis and test it, then keep doing that till you've fixed the problem".
 
-other resources:
-- not yet available
+- other resources:
+  - not yet available
+- other tricks
+  - `$0` - refers to the last element you clicked in the Elements tab
+  - `copy(someVar)` - copies a variable’s value to your clipboard
+  - `$_` - gives you the result of your last expression
+  - edit any text on the webpage:
+    - ```js
+      document.designMode = "on"
+      ```
 
 <br/>
+<details markdown="block">
+  <summary>
+    <code>debug</code> function
+  </summary>
+
+- before
+  - ```js
+    console.log('Before call');
+    someFunction();
+    console.log('After call');
+    ```
+- after
+  - ```js
+    debug(someFunction);
+    ```
+
+Why it’s awesome: <sup>[+](https://javascript.plainenglish.io/top-3-chrome-devtools-tricks-i-wish-i-knew-earlier-84ec870623eb) </sup>
+1. It works even for functions from external libraries
+2. You get full control - check variables, call stack, scope, everything
+3. You don’t need to even know where the function is defined
+
+
+<br/>
+<!-- debug function -->
+</details>
+
+
 <details markdown="block">
   <summary>
     JS Performance Timing
