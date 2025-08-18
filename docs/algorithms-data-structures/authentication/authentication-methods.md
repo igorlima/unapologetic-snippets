@@ -24,17 +24,25 @@ permalink: /docs/algorithms-and-data-structures/authentication/authentication-me
 
 Below will break down six common authentication methods — Basic Auth, Cookies, Tokens, API Keys, OTP, and SSO — and explain when (and why) to use each. [^1]
 
+![img](https://github.com/user-attachments/assets/49d7ec07-ebc6-4c4f-becd-9e68483c432e)
+
 ## Basic Authentication
 
 Basic authentication works by sending the encoded username and password to the server with every request. These credentials are included in the request headers.
 
 The username and password are combined into a single string and encoded using Base64. This encoded string is then sent in the Authorization header of the HTTP request.
 
+![img](https://github.com/user-attachments/assets/c514e258-313a-4eed-bc5a-e8cb5f2fad0c)
+
+
 ## Cookie-Based Authentication
 
 Cookie-based authentication works by generating a session ID when the user logs in, which is then stored as a cookie in the user’s browser. For subsequent requests, the browser automatically includes this cookie, allowing the server to verify the user’s identity.
 
 The generated session ID is given an expiry time to ensure that a single cookie cannot be used for infinity.
+
+![img](https://github.com/user-attachments/assets/700c7fcb-3f67-4493-91ba-7d08a62b808b)
+
 
 ## Token-Based Authentication
 
@@ -44,6 +52,9 @@ In token-based authentication, the server doesn’t need to store any session da
 
 Once the client obtains a token, it can include it in the request headers to make authenticated requests. This makes token-based authentication stateless and well-suited for scalable, distributed systems.
 
+![img](https://github.com/user-attachments/assets/09a737c1-28f6-450c-b19c-26b1d1b62df7)
+
+
 ## API Key-Based Authentication
 
 API key-based authentication is a method for authenticating users or applications accessing an API (Application Programming Interface).
@@ -51,6 +62,9 @@ API key-based authentication is a method for authenticating users or application
 An API key is a unique identifier (usually a long alphanumeric string) issued to a developer or application to access an API. It acts as a simple access token, identifying the calling project or app.
 
 API keys are issued when developers register with an API provider and request access. These keys are typically associated with specific projects and can be configured with varying levels of access control. API providers use them to monitor usage and enforce rate limits, often for billing, analytics, or security purposes.
+
+![img](https://github.com/user-attachments/assets/9d271fd5-b709-44b1-a647-5777882ca25d)
+
 
 ## OTP Based Authentication
 
@@ -69,6 +83,9 @@ This method adds an additional layer of security by:
 ## Single Sign On (SSO)
 
 Single Sign-On (SSO) is a way to let users log in just once and then access multiple apps or systems without having to log in again each time. After the user signs in through the SSO provider, a token is created and passed to other trusted services, so the user can move between them smoothly without being asked to enter their credentials again.
+
+![img](https://github.com/user-attachments/assets/048f83b7-6679-4589-bfe0-119db9282ebe)
+
 
 Here is how it works:
 - The user visits the website and tries to log in.
