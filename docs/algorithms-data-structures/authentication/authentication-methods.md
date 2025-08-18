@@ -22,7 +22,7 @@ permalink: /docs/algorithms-and-data-structures/authentication/authentication-me
 
 # Authentication Methods
 
-Below will break down six common authentication methods — Basic Auth, Cookies, Tokens, API Keys, OTP, and SSO — and explain when (and why) to use each. [^1]
+Below will break down six common authentication methods — **Basic Auth, Cookies, Tokens, API Keys, OTP, and SSO** — and explain when (and why) to use each. [^1]
 
 ![img](https://github.com/user-attachments/assets/49d7ec07-ebc6-4c4f-becd-9e68483c432e)
 
@@ -54,6 +54,7 @@ Once the client obtains a token, it can include it in the request headers to mak
 
 ![img](https://github.com/user-attachments/assets/09a737c1-28f6-450c-b19c-26b1d1b62df7)
 
+> The most popular token based authentication is Json Web Tokens (or JWT).
 
 ## API Key-Based Authentication
 
@@ -65,6 +66,10 @@ API keys are issued when developers register with an API provider and request ac
 
 ![img](https://github.com/user-attachments/assets/9d271fd5-b709-44b1-a647-5777882ca25d)
 
+There are several different ways in which a client can send an API key to the server:
+1. **HTTP Header** — `Authorization: Api-Key <your_api_key> or x-api-key: <your_api_key>`
+1. **Query Parameter** — `https://api.example.com/data?api_key=<your_api_key>`
+1. **Request Body** (for POST requests) — `{ "api_key": "<your_api_key>" }`
 
 ## OTP Based Authentication
 
