@@ -43,6 +43,12 @@ You can think of these neurons as the mathematical functions that are doing this
 
 Researchers can combine neurons in two ways. First, neurons can be lined up in a sequence, so the output of one becomes the input of the next. Neurons can also be stacked in layers, where they don’t interact directly but take the same input values. Some special neurons can even accept their own output and use it to update their internal function, in a kind of simulated memory.
 
+## Predictive AI vs. Generative AI
+
+Generative AI - The LLMs (like ChatGPT) that spit out text, images, and deepfakes. Predictive AI–The machine learning models that forecast trends and detect patterns.
+
+Predictive AI figures out what's about to happen. Generative AI automates a response.
+
 ------ ------
 
 [^1]: [What are: Embeddings? Vector Databases? Vector Search? k-NN? ANN?](https://kozyrkov.medium.com/what-are-embeddings-vector-databases-vector-search-k-nn-ann-9eb35f715c94)
