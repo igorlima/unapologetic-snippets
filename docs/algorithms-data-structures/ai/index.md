@@ -49,6 +49,18 @@ Generative AI - The LLMs (like ChatGPT) that spit out text, images, and deepfake
 
 Predictive AI figures out what's about to happen. Generative AI automates a response.
 
+## MCP
+
+MCP stands for Model Context Protocol. It's a relatively new open standard for connecting AI models to the world outside–the datasets, tools and systems they need to access, which helps them produce better, more contextually relevant responses.
+
+MCP provides a standardized 'connector'–a single protocol that integrates multiple tools and services, which is a significant advancement on the fragmented, complex system of separate connectors for different data sources that developers have had to use until now.
+
+MCP is open and model-agnostic, which means any AI model can use it and any developer can create an MCP integration without permission, making it an attractive prospect for the AI community.
+
+The protocol defines how clients and servers communicate, keeping everything in sync.
+
+MCP (Model Context Protocol) is a groundbreaking open standard for connecting AI models to external data and tools.
+
 ------ ------
 
 [^1]: [What are: Embeddings? Vector Databases? Vector Search? k-NN? ANN?](https://kozyrkov.medium.com/what-are-embeddings-vector-databases-vector-search-k-nn-ann-9eb35f715c94)
