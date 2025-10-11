@@ -6,6 +6,9 @@ nav_order: 99
 
 [Return to main website]({{site.baseurl}}/).
 
+> “So much complexity in software comes from trying to make one thing do two things.”
+- _by Ryan Singer_ - __Thu, Oct 09, 2025__
+
 > “Software gets slower faster than hardware gets faster.”
 - _by Wirth’s Law_ - __Fri, Jul 04, 2025__
 
