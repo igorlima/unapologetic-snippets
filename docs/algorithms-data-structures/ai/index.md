@@ -49,6 +49,14 @@ Generative AI - The LLMs (like ChatGPT) that spit out text, images, and deepfake
 
 Predictive AI figures out what's about to happen. Generative AI automates a response.
 
+## AI Agents
+
+An AI agent is more like a robot that can perform tasks independently. It has “agency”. An AI agent can: [^3]
+- Perform actions and take feedback from its environment
+- Think through to improve its actions based on the feedback
+- Work towards completing a goal rather than waiting for it to be further prompted (unless specified to do so)
+- Work in collaboration with other agents
+
 ## MCP
 
 MCP stands for Model Context Protocol. It's a relatively new open standard for connecting AI models to the world outside–the datasets, tools and systems they need to access, which helps them produce better, more contextually relevant responses.
@@ -65,3 +73,4 @@ MCP (Model Context Protocol) is a groundbreaking open standard for connecting AI
 
 [^1]: [What are: Embeddings? Vector Databases? Vector Search? k-NN? ANN?](https://kozyrkov.medium.com/what-are-embeddings-vector-databases-vector-search-k-nn-ann-9eb35f715c94)
 [^2]: [The beginner’s guide to AI model architectures](https://read.technically.dev/p/all-about-ai-model-architectures)
+[^3]: [Building Your First AI Agent (That Will Actually Improve You As An AI Engineer)](https://levelup.gitconnected.com/building-your-first-ai-agent-that-will-actually-improve-you-as-an-ai-engineer-4cb99e590d30)
