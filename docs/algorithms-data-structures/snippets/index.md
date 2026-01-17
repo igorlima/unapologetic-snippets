@@ -20,6 +20,8 @@ be easily inserted into a larger program or document. These snippets are
 typically used to save time and reduce repetitive typing when coding or
 writing.
 
+- [tmuxp yaml templates](https://igorlima.github.io/unapologetic-thoughts/technical/2013/01/01/tmuxp.html)
+
 
 <details markdown="block"><summary>nap</summary>
 
